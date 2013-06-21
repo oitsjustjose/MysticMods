@@ -22,8 +22,8 @@ public class BlockPlanks extends Block {
 
 	public BlockPlanks(int ID) {
 		super(ID, Material.wood);
-		setHardness(2F);
-		setResistance(5F);
+		setHardness(2.5F);
+		setResistance(10F);
 		setCreativeTab(MysticStones.MysticStonesTab);
 	}
 	
