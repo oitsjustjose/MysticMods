@@ -1,0 +1,16 @@
+--TEXTURES TEXTURES TEXTURES		]
+--Finish Water Wand			]____
+--Finish normal wands/wand parts	]    |
+--Finish wand recipes			]    |
+					]    |
+--Make world type			]    |
+	-Make dungeon gen		]    |---- Jose'
+	-Make ore gen			]    |
+	-Make Ruin gen			]    |
+	-Make stone gen			]    |
+					]    |
+--Remove vanilla recipes where needed	]    |
+	-Vanilla tools			]____|
+	-Vanilla armor			]
+					]
+--Add Mod Armors			]
