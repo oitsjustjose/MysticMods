@@ -27,7 +27,7 @@ public class ItemOrbAir extends Item {
 		if (entityPlayer.onGround)
 			entityPlayer.addVelocity(0, 2.5, 0);
 		else
-			entityPlayer.addVelocity(entityPlayer.motionX * (double)2 * 0.6000000238418579D / (double)f3, 0.5, entityPlayer.motionZ * (double)2 * 0.6000000238418579D / (double)f3);
+			entityPlayer.addVelocity(entityPlayer.motionX + 0.25, 0, entityPlayer.motionZ + 0.25);
 		
         if (!world.isRemote)
         {    	
