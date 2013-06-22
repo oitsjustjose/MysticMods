@@ -16,17 +16,5 @@ public class ItemOrbWater extends Item {
         this.setMaxDamage(64);
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
-
-	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)
-	{
-		world.playSoundEffect(entityPlayer.posX, entityPlayer.posY, entityPlayer.posZ, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-	
-        if (!world.isRemote)
-        {
-            itemStack.damageItem(1, entityPlayer);
-        }
-        
-        return itemStack;
-	}
 	
 }
