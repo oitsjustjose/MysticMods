@@ -9,6 +9,7 @@ import MysticWorld.Items.ItemHandler$1;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.entity.projectile.EntityPotion;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
@@ -35,6 +36,12 @@ public class TickHandler implements IScheduledTickHandler
 	public void tickEnd(EnumSet<TickType> type, Object... tickData){
 		EntityPlayer player = (EntityPlayer)tickData[0];
 		World world = player.worldObj;
+		InventoryPlayer inventory = player.inventory;
+		
+		if (inventory.hasItem(ItemHandler$1.fireOrb.itemID)){
+			if (player.isBurning())
+				player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
+		}
 	}
 	
 	public EnumSet ticks(){
