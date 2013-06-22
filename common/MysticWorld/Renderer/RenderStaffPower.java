@@ -21,13 +21,13 @@ public class RenderStaffPower extends Render {
 	private int meta = 0;
 	
 	public RenderStaffPower(int par1){
-		this.item = ItemHandler$1.ItemStaffPower;
+		this.item = ItemHandler$1.staffPower;
 		this.meta = par1;
 	}
 	
 	@Override
 	public void doRender(Entity entity, double d0, double d1, double d2, float f, float f1) {	
-        Icon icon = ItemHandler$1.ItemStaffPower.getIconFromDamage(this.meta);
+        Icon icon = ItemHandler$1.staffPower.getIconFromDamage(this.meta);
 
         if (icon != null)
         {
