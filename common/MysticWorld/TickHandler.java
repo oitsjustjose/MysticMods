@@ -41,6 +41,7 @@ public class TickHandler implements IScheduledTickHandler
 		if (inventory.hasItem(ItemHandler$1.fireOrb.itemID)){
 			if (player.isBurning())
 				player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
+				player.extinguish();
 		}
 	}
 	
