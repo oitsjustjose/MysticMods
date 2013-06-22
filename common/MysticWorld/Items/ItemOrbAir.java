@@ -14,7 +14,7 @@ public class ItemOrbAir extends Item {
 	{
 		super(par1);
         this.setMaxStackSize(1);
-        this.setMaxDamage(500);
+        this.setMaxDamage(300);
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 
