@@ -1,7 +1,7 @@
 package MysticOres.Blocks;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import MysticOres.Config;
+import MysticOres.ConfigurationManager;
 import MysticOres.MysticOres;
 import MysticOres.Items.ItemHandler;
 import net.minecraft.block.Block;
@@ -15,8 +15,8 @@ public class BlockHandler {
 	public static Block BlockOres;
 	
 	public static void init() {
-		ReinforcedGlass = new BlockReinforcedGlass(Config.ReinforcedGlassID, true).setHardness(4.5F).setResistance(2000.0F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("Reinforced Glass");
-		BlockOres = new BlockOres(Config.BlockOresID).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("MysticOreBlocks");
+		ReinforcedGlass = new BlockReinforcedGlass(ConfigurationManager.ReinforcedGlassID, true).setHardness(4.5F).setResistance(2000.0F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("Reinforced Glass");
+		BlockOres = new BlockOres(ConfigurationManager.BlockOresID).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("MysticOreBlocks");
 		
 		registerBlocks();
 		setBlockHarvestLevels();

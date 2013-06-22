@@ -44,70 +44,70 @@ public class RecipeHandler {
 		
 		/*----------------------------------Verdite--------------------------------------*/
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.verditeHelmet), new Object[] {
-			"###", "# #", '#', ItemHandler.VerditeIngot
+			"###", "# #", '#', new ItemStack(ItemHandler.Resource, 1, 0)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.verditeChestplate), new Object[] {
-			"# #", "###", "###", '#', ItemHandler.VerditeIngot
+			"# #", "###", "###", '#', new ItemStack(ItemHandler.Resource, 1, 0)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.verditeLeggings), new Object[] {
-			"###", "# #", "# #", '#', ItemHandler.VerditeIngot
+			"###", "# #", "# #", '#', new ItemStack(ItemHandler.Resource, 1, 0)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.verditeBoots), new Object[] {
-			"# #", "# #", '#', ItemHandler.VerditeIngot
+			"# #", "# #", '#', new ItemStack(ItemHandler.Resource, 1, 0)
 		});
 		
 		/*----------------------------------Mithril--------------------------------------*/
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.mithrilHelmet), new Object[] {
-			"###", "# #", '#', ItemHandler.MithrilIngot
+			"###", "# #", '#', new ItemStack(ItemHandler.Resource, 1, 1)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.mithrilChestplate), new Object[] {
-			"# #", "###", "###", '#', ItemHandler.MithrilIngot
+			"# #", "###", "###", '#', new ItemStack(ItemHandler.Resource, 1, 1)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.mithrilLeggings), new Object[] {
-			"###", "# #", "# #", '#', ItemHandler.MithrilIngot
+			"###", "# #", "# #", '#', new ItemStack(ItemHandler.Resource, 1, 1)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.mithrilBoots), new Object[] {
-			"# #", "# #", '#', ItemHandler.MithrilIngot
+			"# #", "# #", '#', new ItemStack(ItemHandler.Resource, 1, 1)
 		});
 		
 		/*----------------------------------Adamantine--------------------------------------*/
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.adamantineHelmet), new Object[] {
-			"###", "# #", '#', ItemHandler.AdamantineIngot
+			"###", "# #", '#', new ItemStack(ItemHandler.Resource, 1, 2)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.adamantineChestplate), new Object[] {
-			"# #", "###", "###", '#', ItemHandler.AdamantineIngot
+			"# #", "###", "###", '#', new ItemStack(ItemHandler.Resource, 1, 2)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.adamantineLeggings), new Object[] {
-			"###", "# #", "# #", '#', ItemHandler.AdamantineIngot
+			"###", "# #", "# #", '#', new ItemStack(ItemHandler.Resource, 1, 2)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.adamantineBoots), new Object[] {
-			"# #", "# #", '#', ItemHandler.AdamantineIngot
+			"# #", "# #", '#', new ItemStack(ItemHandler.Resource, 1, 2)
 		});
 		
 		/*----------------------------------Iridium--------------------------------------*/
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.iridiumHelmet), new Object[] {
-			"###", "# #", '#', ItemHandler.IridiumIngot
+			"###", "# #", '#', new ItemStack(ItemHandler.Resource, 1, 3)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.iridiumChestplate), new Object[] {
-			"# #", "###", "###", '#', ItemHandler.IridiumIngot
+			"# #", "###", "###", '#', new ItemStack(ItemHandler.Resource, 1, 3)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.iridiumLeggings), new Object[] {
-			"###", "# #", "# #", '#', ItemHandler.IridiumIngot
+			"###", "# #", "# #", '#', new ItemStack(ItemHandler.Resource, 1, 3)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.iridiumBoots), new Object[] {
-			"# #", "# #", '#', ItemHandler.IridiumIngot
+			"# #", "# #", '#', new ItemStack(ItemHandler.Resource, 1, 3)
 		});
 		
 	}

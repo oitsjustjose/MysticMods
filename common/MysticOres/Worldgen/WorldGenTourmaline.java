@@ -2,7 +2,7 @@ package MysticOres.Worldgen;
 
 import java.util.Random;
 
-import MysticOres.Config;
+import MysticOres.ConfigurationManager;
 import MysticOres.MysticOres;
 import MysticOres.Blocks.BlockHandler;
 
@@ -22,7 +22,7 @@ public class WorldGenTourmaline implements IWorldGenerator {
 	} 
 
 	private void generateSurface(World world, Random random, int blockX, int blockZ) {
-		for (int i = 0; i < Config.TourmalineRarity; i++){
+		for (int i = 0; i < ConfigurationManager.TourmalineRarity; i++){
 			int Xcoord = blockX + random.nextInt(32);
 			int Ycoord = random.nextInt(60);
 			int Zcoord = blockZ + random.nextInt(32);

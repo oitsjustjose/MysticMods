@@ -2,7 +2,7 @@ package MysticOres.Worldgen;
 
 import java.util.Random;
 
-import MysticOres.Config;
+import MysticOres.ConfigurationManager;
 import MysticOres.MysticOres;
 import MysticOres.Blocks.BlockHandler;
 
@@ -23,7 +23,7 @@ public class WorldGenMithril implements IWorldGenerator {
 	}	
 
 	private void generateSurface(World world, Random random, int blockX, int blockZ) {
-		for (int i = 0; i < Config.MithrilRarity; i++)
+		for (int i = 0; i < ConfigurationManager.MithrilRarity; i++)
 			{
 				int Xcoord = blockX + random.nextInt(16);
 				int Ycoord = random.nextInt(64);

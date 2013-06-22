@@ -47,7 +47,14 @@ public class BlockReinforcedGlass extends BlockBreakable
 	
 	public int idDropped(int par1, Random par2Random, int par3)
 	{
-		return ItemHandler.GlassShard.itemID;
+		return ItemHandler.Resource.itemID;
+	}
+	
+	
+	@Override
+	public int damageDropped(int j)
+	{
+		return 11;
 	}
 	
 	public int quantityDropped(Random par1Random)

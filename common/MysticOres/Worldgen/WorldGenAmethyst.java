@@ -2,7 +2,7 @@ package MysticOres.Worldgen;
 
 import java.util.Random;
 
-import MysticOres.Config;
+import MysticOres.ConfigurationManager;
 import MysticOres.MysticOres;
 import MysticOres.Blocks.BlockHandler;
 
@@ -24,7 +24,7 @@ public class WorldGenAmethyst implements IWorldGenerator {
 
 	private void generateSurface(World world, Random random, int blockX, int blockZ) 
 	{
-		for (int i = 0; i < Config.AmethystRarity; i++)
+		for (int i = 0; i < ConfigurationManager.AmethystRarity; i++)
 		{
 			int Xcoord = blockX + random.nextInt(24);
 			int Ycoord = random.nextInt(60);

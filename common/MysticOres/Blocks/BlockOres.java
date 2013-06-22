@@ -13,6 +13,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.IBlockAccess;
@@ -25,12 +26,32 @@ public class BlockOres extends Block {
 	
 	Icon[] textures;
 	
+
 	public BlockOres(int ID) {
 		super(ID, Material.rock);
 		setHardness(3F);
 		setResistance(5F);
 		setCreativeTab(MysticOres.MysticOresTab);
 	}
+	
+	  @Override
+      public int getLightOpacity(World world, int x, int y, int z)
+      {
+              return 0;
+      }
+
+      @Override
+      public int getLightValue(IBlockAccess world, int x, int y, int z)
+      {
+    	  int damageValue = world.getBlockMetadata(x, y, z);
+    	  if(damageValue == 2 || damageValue == 3)
+    	  {
+    		  return 7;
+    	  }
+    	  else return 0;
+      }
+	
+	
 	
 	@Override
 	@SideOnly(Side.CLIENT)
@@ -50,15 +71,15 @@ public class BlockOres extends Block {
 	
 	public int idDropped(int par1, Random par2Random, int par3) {
         switch(par1){
-        case 1:return ItemHandler.AmethystGem.itemID;
-        case 2:return ItemHandler.IridiumNugget.itemID;
-        case 4:return ItemHandler.TourmalineGem.itemID;
-        case 5:return ItemHandler.TopazGem.itemID;
-        case 7:return ItemHandler.BloodstoneShard.itemID;
+        case 1:return ItemHandler.Resource.itemID;
+        case 2:return ItemHandler.Resource.itemID;
+        case 4:return ItemHandler.Resource.itemID;
+        case 5:return ItemHandler.Resource.itemID;
+        case 7:return ItemHandler.Resource.itemID;
         case 8:return this.BlackSoulstoneDrops(par1, par2Random, par3);
         case 9:return this.BlueSoulstoneDrops(par1, par2Random, par3);
         case 10:return this.RedSoulstoneDrops(par1, par2Random, par3);
-        case 11:return ItemHandler.AgateGem.itemID;
+        case 11:return ItemHandler.Resource.itemID;
         default:return blockID;
         }
     }
@@ -66,15 +87,15 @@ public class BlockOres extends Block {
 	@Override
 	public int damageDropped(int j) {
 		switch(j){
-		case 1:return 0;
-		case 2:return 0;
-		case 4:return 0;
-		case 5:return 0;
-		case 7:return 0;
+		case 1:return 8;
+		case 2:return 4;
+		case 4:return 5;
+		case 5:return 7;
+		case 7:return 10;
 		case 8:return 0;
 		case 9:return 0;
 		case 10:return 0;
-		case 11:return 0;
+		case 11:return 6;
 		default: return j;
 		}
 	}
@@ -100,11 +121,6 @@ public class BlockOres extends Block {
         return true;
     }
     
-    public void onBlockDestroyedByPlayer(World world, int x, int y, int z, int meta)
-    {
-    	this.dropXpOnBlockBreak(world, x, y, z, xpDropAmount(meta));
-    }
-    
     public int BlackSoulstoneDrops(int par1, Random par2Random, int par3)
     {
     	int w = par2Random.nextInt(6);
@@ -116,6 +132,7 @@ public class BlockOres extends Block {
 		{
 			return Item.gunpowder.itemID;
 		}
+		/*
 		if (w == 2)
 		{
 			return ItemHandler.ObsidianShard.itemID;
@@ -124,14 +141,20 @@ public class BlockOres extends Block {
 		{
 			return ItemHandler.GlassShard.itemID;
 		}
+		*/
 		else
 		{
-			return ItemHandler.ObsidianShard.itemID;
+			return Item.sugar.itemID;
 		}
+		
     }
     
     public int RedSoulstoneDrops(int par1, Random par2Random, int par3)
     {
+    	for(int i=0;i<3;i++)
+    	{
+    		
+    	}
     	int w = par2Random.nextInt(6);
         if (w == 0)
         {
@@ -141,6 +164,7 @@ public class BlockOres extends Block {
         {
                 return Item.gunpowder.itemID;
         }
+        /*
         if (w == 2)
         {
                 return ItemHandler.ObsidianShard.itemID;
@@ -149,22 +173,27 @@ public class BlockOres extends Block {
         {
                 return ItemHandler.GlassShard.itemID;
         }
+        */
         if (w == 4)
         {
         	return Item.redstone.itemID;
         }
+        /*
         if (w == 5)
         {
             return ItemHandler.MysticPowder.itemID;
         }
+        */
         if (w==6)
         {
         	return Block.obsidian.blockID;
         }
+        /*
         if (w==7)
         {
         	return ItemHandler.ObsidianShard.itemID;
         }
+        */
         else
         {
                 return blockID;
@@ -174,6 +203,7 @@ public class BlockOres extends Block {
     public int BlueSoulstoneDrops(int par1, Random par2Random, int par3)
     {
     	int w = par2Random.nextInt(6);
+    	/*
         if (w == 0)
         {
                 return ItemHandler.AgateGem.itemID;
@@ -194,6 +224,7 @@ public class BlockOres extends Block {
         {
         	return ItemHandler.IridiumNugget.itemID;
         }
+        */
         if (w == 5)
         {
             return Item.diamond.itemID;

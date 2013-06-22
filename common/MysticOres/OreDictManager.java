@@ -5,18 +5,19 @@ import MysticOres.Items.ItemHandler;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class OreDictionaryHandler
+public class OreDictManager
 {
 	public static void init()
 	{
-		OreDictionary.registerOre("ingotAdamantine", new ItemStack(ItemHandler.AdamantineIngot));
-		OreDictionary.registerOre("ingotMithril", new ItemStack(ItemHandler.MithrilIngot));
-		OreDictionary.registerOre("ingotVerdite", new ItemStack(ItemHandler.VerditeIngot));
-		OreDictionary.registerOre("ingotIridium", new ItemStack(ItemHandler.IridiumIngot));
-		OreDictionary.registerOre("gemTourmaline", new ItemStack(ItemHandler.TourmalineGem));
-		OreDictionary.registerOre("gemTopaz", new ItemStack(ItemHandler.TopazGem));
-		OreDictionary.registerOre("gemAmethyst", new ItemStack(ItemHandler.AmethystGem));
-		OreDictionary.registerOre("gemAgate", new ItemStack(ItemHandler.AgateGem));
+		OreDictionary.registerOre("ingotAdamantine", new ItemStack(ItemHandler.Resource, 1, 2));
+		OreDictionary.registerOre("ingotMithril", new ItemStack(ItemHandler.Resource, 1, 1));
+		OreDictionary.registerOre("ingotVerdite", new ItemStack(ItemHandler.Resource, 1, 0));
+		OreDictionary.registerOre("ingotIridium", new ItemStack(ItemHandler.Resource, 1, 3));
+		OreDictionary.registerOre("nuggetIridium", new ItemStack(ItemHandler.Resource, 1, 4));
+		OreDictionary.registerOre("gemTourmaline", new ItemStack(ItemHandler.Resource, 1, 5));
+		OreDictionary.registerOre("gemTopaz", new ItemStack(ItemHandler.Resource, 1, 7));
+		OreDictionary.registerOre("gemAmethyst", new ItemStack(ItemHandler.Resource, 1, 8));
+		OreDictionary.registerOre("gemAgate", new ItemStack(ItemHandler.Resource, 1, 6));
 		
 		OreDictionary.registerOre("oreAdamantine", new ItemStack(BlockHandler.BlockOres, 1, 0));
 		OreDictionary.registerOre("oreAmethyst", new ItemStack(BlockHandler.BlockOres, 1, 1));

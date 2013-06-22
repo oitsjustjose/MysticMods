@@ -5,7 +5,7 @@ import MysticOres.Items.ItemHandler;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-public class Lang
+public class LanguageManager
 {
 	public static void init()
 	{		
@@ -23,24 +23,22 @@ public class Lang
 		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockOres, 1, 9), "Blue Soulstone");
 		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockOres, 1, 10), "Red Soulstone");
 		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockOres, 1, 11), "Agate Ore");
-	
-		LanguageRegistry.instance().addName(ItemHandler.AdamantineIngot, "Adamantine Ingot");
-		LanguageRegistry.instance().addName(ItemHandler.MithrilIngot, "Mithril Ingot");
-		LanguageRegistry.instance().addName(ItemHandler.ObsidianShard, "Obsidian Shard");
-		LanguageRegistry.instance().addName(ItemHandler.ObsidianRod, "Obsidian Rod");
-		LanguageRegistry.instance().addName(ItemHandler.BloodstoneShard, "Bloodstone Shard");
-		LanguageRegistry.instance().addName(ItemHandler.TopazGem, "Topaz");
-		LanguageRegistry.instance().addName(ItemHandler.AmethystGem, "Amethyst");
-		LanguageRegistry.instance().addName(ItemHandler.TourmalineGem, "Tourmaline");
-		LanguageRegistry.instance().addName(ItemHandler.MysticPowder, "Mystic Powder");
-		LanguageRegistry.instance().addName(ItemHandler.IridiumIngot, "Iridium Ingot");
-		LanguageRegistry.instance().addName(ItemHandler.IridiumNugget, "Iridium Nugget");
-		LanguageRegistry.instance().addName(ItemHandler.GlassShard, "Glass Shard");
-		LanguageRegistry.instance().addName(ItemHandler.VerditeIngot, "Verdite Ingot");
-		LanguageRegistry.instance().addName(ItemHandler.VerditeDust, "Verdite Dust");
-		LanguageRegistry.instance().addName(ItemHandler.MithrilDust, "Mithril Dust");
-		LanguageRegistry.instance().addName(ItemHandler.AdamantineDust, "Adamantine Dust");
-		LanguageRegistry.instance().addName(ItemHandler.AgateGem, "Agate");
+		
+		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 0), "Verdite Ingot");
+		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 1), "Mithril Ingot");
+		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 2), "Adamantine Ingot");
+		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 3), "Iridium Ingot");
+		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 4), "Iridium Nugget");
+		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 5), "Tourmaline Gemstone");
+		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 6), "Agate Gemstone");
+		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 7), "Topaz Gemstone");
+		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 8), "Amethyst Gemstone");
+		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 9), "Mystic Powder");
+		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 10), "Bloodstone Shard");
+		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 11), "Glass Shard");
+		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 12), "Obsidian Shard");
+		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 13), "Obsidian Rod");
+		
 		LanguageRegistry.instance().addName(ItemHandler.AdamantineSword, "Adamantine Sword");
 		LanguageRegistry.instance().addName(ItemHandler.MithrilSword, "Mithril Sword");
 		LanguageRegistry.instance().addName(ItemHandler.VerditeSword, "Verdite Sword");

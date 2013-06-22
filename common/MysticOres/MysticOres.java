@@ -67,8 +67,8 @@ public class MysticOres
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event)
 	{		
-        Config.initialize(new File(event.getModConfigurationDirectory(), "Mystic Mods/Mystic Ores.cfg"));
-        Config.save();
+        ConfigurationManager.initialize(new File(event.getModConfigurationDirectory(), "Mystic Mods/Mystic Ores.cfg"));
+        ConfigurationManager.save();
     }
 	
 	@Init
@@ -77,15 +77,15 @@ public class MysticOres
 		BlockHandler.init();
 		ItemHandler.init();
 		GameRegistry.registerFuelHandler(new IridiumFuel());
-		RecipeHandler.init();
-		OreDictionaryHandler.init();
+		RecipeManager.init();
+		OreDictManager.init();
 		WorldGenHandler.init();
-		Lang.init();
+		LanguageManager.init();
 	}
 	
 	@PostInit
     public void postInit(FMLPostInitializationEvent event) 
 	{
-		ModHandler.init();
+		ThaumcraftAPIManager.init();
     }
 }
