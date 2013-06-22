@@ -69,7 +69,12 @@ public class Lang
 		LanguageRegistry.instance().addName(ItemHandler$1.iridiumChestplate, "Iridium Chestplate");
 		LanguageRegistry.instance().addName(ItemHandler$1.iridiumLeggings, "Iridium Leggings");
 		LanguageRegistry.instance().addName(ItemHandler$1.iridiumBoots, "Iridium Boots");
-
+		
+		LanguageRegistry.instance().addName(ItemHandler$1.fireOrb, "Fire Orb");
+		LanguageRegistry.instance().addName(ItemHandler$1.waterOrb, "Water Orb");
+		LanguageRegistry.instance().addName(ItemHandler$1.earthOrb, "Earth Orb");
+		LanguageRegistry.instance().addName(ItemHandler$1.airOrb, "Air Orb");
+		LanguageRegistry.instance().addName(ItemHandler$1.earthOrb, "Energy Orb");
 		
 		for(int i=0;i<12;i++)
 		{

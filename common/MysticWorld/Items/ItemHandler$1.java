@@ -17,6 +17,32 @@ import net.minecraftforge.liquids.LiquidStack;
 
 public class ItemHandler$1 {
 	
+	public static Item staffParts;
+	
+	public static Item imbuedShard;
+	 
+	public static Item fireStaff;
+	public static Item waterStaff;
+	public static Item earthStaff;
+	public static Item airStaff;
+	public static Item energyStaff;
+	
+	public static Item fireStaffPower;
+	public static Item waterStaffPower;
+	public static Item earthStaffPower;
+	public static Item airStaffPower;
+	public static Item energyStaffPower;
+	
+	public static Item staffPower;
+	
+	public static Item fireOrb;
+	public static Item waterOrb;
+	public static Item earthOrb;
+	public static Item airOrb;
+	public static Item energyOrb;
+
+	public static Item bushFruit;
+	
 	public static Item verditeHelmet;
 	public static Item verditeChestplate;
 	public static Item verditeLeggings;
@@ -37,25 +63,6 @@ public class ItemHandler$1 {
 	public static Item iridiumLeggings;
 	public static Item iridiumBoots;
 
-	public static Item staffParts;
-	
-	public static Item imbuedShard;
-	 
-	public static Item fireStaff;
-	public static Item waterStaff;
-	public static Item earthStaff;
-	public static Item airStaff;
-	public static Item energyStaff;
-	
-	public static Item fireStaffPower;
-	public static Item waterStaffPower;
-	public static Item earthStaffPower;
-	public static Item airStaffPower;
-	public static Item energyStaffPower;
-	
-	public static Item ItemStaffPower;
-
-	public static Item bushFruit;
 	
 	public static void init(){
 
@@ -69,7 +76,13 @@ public class ItemHandler$1 {
 		airStaff = new ItemStaffAir(ItemIds.AIR_STAFF).setUnlocalizedName(Strings.AIR_STAFF_NAME);
 		energyStaff = new ItemStaffEnegy(ItemIds.ENERGY_STAFF).setUnlocalizedName(Strings.ENERGY_STAFF_NAME);
 		
-		ItemStaffPower = new ItemStaffPower(ItemIds.STAFF_POWER);
+		staffPower = new ItemStaffPower(ItemIds.STAFF_POWER).setUnlocalizedName(Strings.POWER_STAFF_NAME);
+		
+		fireOrb = new ItemOrbFire(ItemIds.FIRE_ORB).setUnlocalizedName(Strings.FIRE_ORB_NAME);
+		waterOrb = new ItemOrbWater(ItemIds.WATER_ORB).setUnlocalizedName(Strings.WATER_ORB_NAME);
+		earthOrb = new ItemOrbEarth(ItemIds.EARTH_ORB).setUnlocalizedName(Strings.EARTH_ORB_NAME);
+		airOrb = new ItemOrbAir(ItemIds.AIR_ORB).setUnlocalizedName(Strings.AIR_ORB_NAME);
+		energyOrb = new ItemOrbEnergy(ItemIds.ENERGY_ORB).setUnlocalizedName(Strings.EARTH_ORB_NAME);
 		
 		bushFruit = new ItemBushFruit(ItemIds.BUSH_FRUIT, 2).setUnlocalizedName(Strings.BUSH_FRUIT_NAME);
 		

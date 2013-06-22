@@ -32,8 +32,15 @@ public class Strings {
 	public static final String AIR_STAFF_NAME = "airStaff";
 	public static final String ENERGY_STAFF_NAME = "energyStaff";
 	
-	public static final String BUSH_FRUIT_NAME = "bushFruit";
 	public static final String POWER_STAFF_NAME = "staffPoweredItem";
+	
+	public static final String FIRE_ORB_NAME = "fireOrb";
+	public static final String WATER_ORB_NAME = "waterOrb";
+	public static final String EARTH_ORB_NAME = "earthOrb";
+	public static final String AIR_ORB_NAME = "airOrb";
+	public static final String ENERGY_ORB_NAME = "energyOrb";
+	
+	public static final String BUSH_FRUIT_NAME = "bushFruit";
 	
 	public static final String VERDITE_HELMET_NAME = "verditeHelmet";
 	public static final String VERDITE_CHESTPLATE_NAME = "verditeChestplate";

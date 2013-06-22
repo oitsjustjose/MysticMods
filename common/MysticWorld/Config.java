@@ -26,11 +26,13 @@ public class Config
 		ItemIds.IMBUED_SHARD = config.getItem(Strings.IMBUED_SHARD_NAME, ItemIds.IMBUED_SHARD_DEFAULT).getInt(ItemIds.IMBUED_SHARD_DEFAULT);
 		
 		ItemIds.STAFF_PARTS = config.getItem(Strings.STAFF_NAME, ItemIds.STAFF_PARTS_DEFAULT).getInt(ItemIds.STAFF_PARTS_DEFAULT);
+		
 		ItemIds.FIRE_STAFF = config.getItem(Strings.FIRE_STAFF_NAME, ItemIds.FIRE_STAFF_DEFAULT).getInt(ItemIds.FIRE_STAFF_DEFAULT);
 		ItemIds.WATER_STAFF = config.getItem(Strings.WATER_STAFF_NAME, ItemIds.WATER_STAFF_DEFAULT).getInt(ItemIds.WATER_STAFF_DEFAULT);
 		ItemIds.EARTH_STAFF = config.getItem(Strings.EARTH_STAFF_NAME, ItemIds.EARTH_STAFF_DEFAULT).getInt(ItemIds.EARTH_STAFF_DEFAULT);
 		ItemIds.AIR_STAFF = config.getItem(Strings.AIR_STAFF_NAME, ItemIds.AIR_STAFF_DEFAULT).getInt(ItemIds.AIR_STAFF_DEFAULT);
 		ItemIds.ENERGY_STAFF = config.getItem(Strings.ENERGY_STAFF_NAME, ItemIds.ENERGY_STAFF_DEFAULT).getInt(ItemIds.ENERGY_STAFF_DEFAULT);
+		
 		ItemIds.STAFF_POWER = config.getItem(Strings.POWER_STAFF_NAME, ItemIds.STAFF_POWER_DEFAULT).getInt(ItemIds.STAFF_POWER_DEFAULT);
 		
 		ItemIds.BUSH_FRUIT = config.getItem(Strings.BUSH_FRUIT_NAME, ItemIds.BUSH_FRUIT_DEFAULT).getInt(ItemIds.BUSH_FRUIT_DEFAULT);
@@ -54,6 +56,12 @@ public class Config
 		ItemIds.IRIDIUM_CHESTPLATE = config.getItem(Strings.IRIDIUM_CHESTPLATE_NAME, ItemIds.IRIDIUM_CHESTPLATE_DEFAULT).getInt(ItemIds.IRIDIUM_CHESTPLATE_DEFAULT);
 		ItemIds.IRIDIUM_LEGGINGS = config.getItem(Strings.IRIDIUM_LEGGINGS_NAME, ItemIds.IRIDIUM_LEGGINGS_DEFAULT).getInt(ItemIds.IRIDIUM_LEGGINGS_DEFAULT);
 		ItemIds.IRIDIUM_BOOTS = config.getItem(Strings.IRIDIUM_BOOTS_NAME, ItemIds.IRIDIUM_BOOTS_DEFAULT).getInt(ItemIds.IRIDIUM_BOOTS_DEFAULT);
+		
+		ItemIds.FIRE_ORB = config.getItem(Strings.FIRE_ORB_NAME, ItemIds.FIRE_ORB_DEFAULT).getInt(ItemIds.FIRE_ORB);
+		ItemIds.WATER_ORB = config.getItem(Strings.WATER_ORB_NAME, ItemIds.WATER_ORB_DEFAULT).getInt(ItemIds.WATER_ORB);
+		ItemIds.EARTH_ORB = config.getItem(Strings.EARTH_ORB_NAME, ItemIds.EARTH_ORB_DEFAULT).getInt(ItemIds.EARTH_ORB);
+		ItemIds.AIR_ORB = config.getItem(Strings.AIR_ORB_NAME, ItemIds.AIR_ORB_DEFAULT).getInt(ItemIds.AIR_ORB);
+		ItemIds.ENERGY_ORB = config.getItem(Strings.ENERGY_ORB_NAME, ItemIds.ENERGY_ORB_DEFAULT).getInt(ItemIds.ENERGY_ORB);
 		
 		config.save();
   }
