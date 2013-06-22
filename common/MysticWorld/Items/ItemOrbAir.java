@@ -14,20 +14,18 @@ public class ItemOrbAir extends Item {
 	{
 		super(par1);
         this.setMaxStackSize(1);
-        this.setMaxDamage(500);
+        this.setMaxDamage(200);
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)
 	{
 		world.playSoundEffect(entityPlayer.posX, entityPlayer.posY, entityPlayer.posZ, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-		
-		double f3 = MathHelper.sqrt_double(entityPlayer.motionX * entityPlayer.motionX + entityPlayer.motionZ * entityPlayer.motionZ);
-		
+	
 		if (entityPlayer.onGround)
 			entityPlayer.addVelocity(0, 2.5, 0);
 		else
-			entityPlayer.addVelocity(entityPlayer.motionX + 0.25, 0, entityPlayer.motionZ + 0.25);
+			entityPlayer.addVelocity(entityPlayer.motionX * 1.0, 0, entityPlayer.motionZ * 1.0);
 		
         if (!world.isRemote)
         {    	

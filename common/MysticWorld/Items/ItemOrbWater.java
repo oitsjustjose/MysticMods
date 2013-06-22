@@ -13,7 +13,7 @@ public class ItemOrbWater extends Item {
 	{
 		super(par1);
         this.setMaxStackSize(1);
-        this.setMaxDamage(64);
+        this.setMaxDamage(200);
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 	

@@ -22,7 +22,7 @@ public class ItemOrbFire extends ItemFlintAndSteel {
 	{
 		super(par1);
         this.setMaxStackSize(1);
-        this.setMaxDamage(500);
+        this.setMaxDamage(200);
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 	
