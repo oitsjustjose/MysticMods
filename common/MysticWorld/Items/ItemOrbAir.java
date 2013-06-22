@@ -21,8 +21,11 @@ public class ItemOrbAir extends Item {
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)
 	{
 		world.playSoundEffect(entityPlayer.posX, entityPlayer.posY, entityPlayer.posZ, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-	
-		entityPlayer.addVelocity(0, 2.5, 0);
+		
+		if (entityPlayer.onGround)
+			entityPlayer.addVelocity(0, 2.5, 0);
+		else
+			entityPlayer.addVelocity(0, 0.5, 0);
 		
         if (!world.isRemote)
         {    	
