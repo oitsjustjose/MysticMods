@@ -82,7 +82,7 @@ public class ItemHandler$1 {
 		waterOrb = new ItemOrbWater(ItemIds.WATER_ORB).setUnlocalizedName(Strings.WATER_ORB_NAME);
 		earthOrb = new ItemOrbEarth(ItemIds.EARTH_ORB).setUnlocalizedName(Strings.EARTH_ORB_NAME);
 		airOrb = new ItemOrbAir(ItemIds.AIR_ORB).setUnlocalizedName(Strings.AIR_ORB_NAME);
-		energyOrb = new ItemOrbEnergy(ItemIds.ENERGY_ORB).setUnlocalizedName(Strings.EARTH_ORB_NAME);
+		energyOrb = new ItemOrbEnergy(ItemIds.ENERGY_ORB).setUnlocalizedName(Strings.ENERGY_ORB_NAME);
 		
 		bushFruit = new ItemBushFruit(ItemIds.BUSH_FRUIT, 2).setUnlocalizedName(Strings.BUSH_FRUIT_NAME);
 		
