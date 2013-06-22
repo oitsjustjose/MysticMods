@@ -74,7 +74,7 @@ public class Lang
 		LanguageRegistry.instance().addName(ItemHandler$1.waterOrb, "Water Orb");
 		LanguageRegistry.instance().addName(ItemHandler$1.earthOrb, "Earth Orb");
 		LanguageRegistry.instance().addName(ItemHandler$1.airOrb, "Air Orb");
-		LanguageRegistry.instance().addName(ItemHandler$1.earthOrb, "Energy Orb");
+		LanguageRegistry.instance().addName(ItemHandler$1.energyOrb, "Energy Orb");
 		
 		for(int i=0;i<12;i++)
 		{
