@@ -7,6 +7,7 @@ import MysticWorld.Blocks.BlockBush;
 import MysticWorld.Blocks.BlockHandler;
 import MysticWorld.Items.ItemHandler$1;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -31,18 +32,17 @@ public class TickHandler implements IScheduledTickHandler
 	public void tickStart(EnumSet<TickType> type, Object... tickData){
 		EntityPlayer player = (EntityPlayer)tickData[0];
 		World world = player.worldObj;
+		InventoryPlayer inventory = player.inventory;
+		
+		if (inventory.hasItem(ItemHandler$1.fireOrb.itemID) && player.isBurning()){
+			player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
+		}
     }
 
 	public void tickEnd(EnumSet<TickType> type, Object... tickData){
 		EntityPlayer player = (EntityPlayer)tickData[0];
 		World world = player.worldObj;
 		InventoryPlayer inventory = player.inventory;
-		
-		if (inventory.hasItem(ItemHandler$1.fireOrb.itemID)){
-			if (player.isBurning())
-				player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
-				player.extinguish();
-		}
 	}
 	
 	public EnumSet ticks(){
