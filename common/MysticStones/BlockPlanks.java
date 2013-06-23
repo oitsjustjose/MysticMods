@@ -59,7 +59,7 @@ public class BlockPlanks extends Block {
 
 		for (int i = 0; i < 7; i++)
 		{
-			textures[i] = iconRegister.registerIcon("MysticTextures" + ":" + "Planks_" + i);
+			textures[i] = iconRegister.registerIcon("MysticTextures" + ":" + ItemBlockPlanks.PLANK_TYPE[i] + " Planks");
 		}
 	}
 	

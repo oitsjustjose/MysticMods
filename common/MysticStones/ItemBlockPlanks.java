@@ -8,8 +8,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.util.MathHelper;
 
 public class ItemBlockPlanks extends ItemBlock {
+	
+	public static String[] PLANK_TYPE = new String[] {"Purple", "Green", "Black", "Orange", "Red", "Blue", "Yellow"};
 
 	public ItemBlockPlanks(int par1) {
 		super(par1);
@@ -17,18 +20,11 @@ public class ItemBlockPlanks extends ItemBlock {
         setHasSubtypes(true);
 	}
 	
-	public String getUnlocalizedName(ItemStack i){
-		switch(i.getItemDamage()){
-		case 0:return "BlackPlank";
-		case 1:return "RedPlank";
-		case 2:return "GreenPlank";
-		case 3:return "PurplePlank";
-		case 4:return "BluePlank";
-		case 5:return "LimePlank";
-		case 6:return "YellowPlank";
-		default:return "";
-		}
-	}
+    @Override
+    public String getUnlocalizedName(ItemStack itemStack) {
+        int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, PLANK_TYPE.length);
+        return super.getUnlocalizedName() + PLANK_TYPE[meta];
+    }
 	
     public int getMetadata(int par1)
     {

@@ -16,7 +16,7 @@ public class BlockHandler {
 	
 	public static void init() {
 		ReinforcedGlass = new BlockReinforcedGlass(ConfigurationManager.ReinforcedGlassID, true).setHardness(4.5F).setResistance(2000.0F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("Reinforced Glass");
-		BlockOres = new BlockOres(ConfigurationManager.BlockOresID).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("MysticOreBlocks");
+		BlockOres = new BlockOres(ConfigurationManager.BlockOresID).setStepSound(Block.soundStoneFootstep);
 		
 		registerBlocks();
 		setBlockHarvestLevels();

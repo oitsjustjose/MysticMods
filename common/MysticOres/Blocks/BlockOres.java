@@ -60,7 +60,7 @@ public class BlockOres extends Block {
 
 		for (int i = 0; i < 12; i++)
 		{
-			textures[i] = iconRegister.registerIcon("MysticTextures" + ":" + "MysticOre_" + i);
+			textures[i] = iconRegister.registerIcon("MysticTextures" + ":" + ItemBlockOres.ORE_NAMES[i]);
 		}
 	}
 	

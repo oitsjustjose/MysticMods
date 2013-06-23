@@ -51,10 +51,10 @@ public class MysticStones
 	public void load(FMLInitializationEvent event)
 	{
 
-		Planks = new BlockPlanks(Config.PlanksID).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("ColoredPlanks");
-		Stones = new BlockStones(Config.StonesID).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("MysticStones");
-		StoneBricks = new BlockStoneBricks(Config.StoneBricksID).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("MysticStoneBricks");
-		ReinforcedBricks = new BlockReinforced(Config.ReinforcedBricksID).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("ReinforcedBricks");
+		Planks = new BlockPlanks(Config.PlanksID).setStepSound(Block.soundWoodFootstep);
+		Stones = new BlockStones(Config.StonesID).setStepSound(Block.soundStoneFootstep);
+		StoneBricks = new BlockStoneBricks(Config.StoneBricksID).setStepSound(Block.soundStoneFootstep);
+		ReinforcedBricks = new BlockReinforced(Config.ReinforcedBricksID).setStepSound(Block.soundMetalFootstep);
 		
 		GameRegistry.registerBlock(Planks, ItemBlockPlanks.class, "Planks");
 		GameRegistry.registerBlock(Stones, ItemBlockStones.class, "Stones");

@@ -10,8 +10,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.util.MathHelper;
 
 public class ItemBlockOres extends ItemBlock {
+	
+	public static String[] ORE_NAMES = new String[] {"Adamantine Ore", "Amethyst Ore", "Iridium Ore", "Mithril Ore", "Tourmaline Ore", "Topaz Ore", "Verdite Ore", "Bloodstone", "Black Soulstone", 
+		"Blue Soulstone", "Red Soulstone", "Agate Ore"};
 
 	public ItemBlockOres(int par1) {
 		super(par1);
@@ -19,23 +23,11 @@ public class ItemBlockOres extends ItemBlock {
         setHasSubtypes(true);
 	}
 	
-	public String getUnlocalizedName(ItemStack i){
-		switch(i.getItemDamage()){
-		case 0:return "Adamantine";
-		case 1:return "Amethyst";
-		case 2:return "Iridium";
-		case 3:return "Mithril";
-		case 4:return "Sapphire";
-		case 5:return "Topaz";
-		case 6:return "Verdite";
-		case 7:return "Bloodstone";
-		case 8:return "BlackSoulstone";
-		case 9:return "BlueSoulstone";
-		case 10:return "RedSoulstone";
-		case 11:return "Agate";
-		default:return "";
-		}
-	}
+    @Override
+    public String getUnlocalizedName(ItemStack itemStack) {
+        int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, ORE_NAMES.length);
+        return super.getUnlocalizedName() + ORE_NAMES[meta];
+    }
 	
     public int getMetadata(int par1)
     {

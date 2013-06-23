@@ -9,8 +9,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.util.MathHelper;
 
 public class ItemBlockReinforced extends ItemBlock {
+	
+	public static String[] BRICK_TYPE = new String[] {"Mithril", "Verdite", "Iridium", "Adamantine", "Tourmaline", "Topaz", "Amethyst", "Agate"};
 
 	public ItemBlockReinforced(int par1) {
 		super(par1);
@@ -18,20 +21,13 @@ public class ItemBlockReinforced extends ItemBlock {
         setHasSubtypes(true);
 	}
 	
-	public String getUnlocalizedName(ItemStack i){
-		switch(i.getItemDamage()){
-		case 0:return "MithrilBricks";
-		case 1:return "VerditeBricks";
-		case 2:return "IridiumBricks";
-		case 3:return "AdamantineBricks";
-		case 4:return "TourmalineBricks";
-		case 5:return "TopazBricks";
-		case 6:return "AmethystBricks";
-		case 7:return "AgateBricks";
-		default:return "";
-		}
-	}
 	
+    @Override
+    public String getUnlocalizedName(ItemStack itemStack) {
+        int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, BRICK_TYPE.length);
+        return super.getUnlocalizedName() + BRICK_TYPE[meta];
+    }
+    
     public int getMetadata(int par1)
     {
         return par1;
@@ -40,7 +36,7 @@ public class ItemBlockReinforced extends ItemBlock {
     @SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
 	{
-		if(par2EntityPlayer.isSneaking() == false)
+		if(par2EntityPlayer.isSneaking() == true)
 		{
 			par3List.add("Works As A Beacon Block Too!");
 		}
