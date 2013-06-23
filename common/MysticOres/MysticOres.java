@@ -8,7 +8,6 @@ import MysticOres.Blocks.BlockOres;
 import MysticOres.Blocks.BlockReinforcedGlass;
 import MysticOres.Blocks.ItemBlockOres;
 import MysticOres.Items.ItemAxes;
-import MysticOres.Items.ItemBase;
 import MysticOres.Items.ItemHandler;
 import MysticOres.Items.ItemHoes;
 import MysticOres.Items.ItemPickaxes;

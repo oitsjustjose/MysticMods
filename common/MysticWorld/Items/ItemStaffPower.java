@@ -23,7 +23,6 @@ public class ItemStaffPower extends Item {
 	{
 		super(id);
         this.setHasSubtypes(true);
-        this.setUnlocalizedName("charge");
         this.setCreativeTab(null);
         maxStackSize = 64;
 	}
@@ -42,7 +41,7 @@ public class ItemStaffPower extends Item {
 		 icons = new Icon[CHARGE_NAMES.length];
 		 
 	     for (int i = 0; i < CHARGE_NAMES.length; ++i) {
-	            icons[i] = iconRegister.registerIcon("MysticTextures" + ":" + "item.charge_" + i);
+	            icons[i] = iconRegister.registerIcon("MysticTextures" + ":" + CHARGE_NAMES[i] + " Charge");
 	        }
 	    }
     

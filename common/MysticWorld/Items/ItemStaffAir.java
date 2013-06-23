@@ -22,7 +22,7 @@ public class ItemStaffAir extends Item {
 	@Override
 	public void registerIcons(IconRegister iconRegister)
 	{
-	    itemIcon = iconRegister.registerIcon("MysticTextures" + ":" + "item.AirStaff");
+	    itemIcon = iconRegister.registerIcon("MysticTextures" + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
 	}
 	
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)

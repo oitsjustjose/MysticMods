@@ -33,16 +33,16 @@ public class ItemIridiumArmor extends ItemArmor implements IArmorTextureProvider
 		{
 			switch (ArmorType){
 			case 0:
-		        itemIcon = iconRegister.registerIcon("MysticTextures:item.helmetIridium");
+		        itemIcon = iconRegister.registerIcon("MysticTextures:HelmetIridium");
 		        break;
 			case 1:
-				itemIcon = iconRegister.registerIcon("MysticTextures:item.chestplateIridium");
+				itemIcon = iconRegister.registerIcon("MysticTextures:ChestplateIridium");
 		        break;
 			case 2:
-				itemIcon = iconRegister.registerIcon("MysticTextures:item.leggingsIridium");
+				itemIcon = iconRegister.registerIcon("MysticTextures:LeggingsIridium");
 		        break;
 			case 3:
-				itemIcon = iconRegister.registerIcon("MysticTextures:item.bootsIridium");
+				itemIcon = iconRegister.registerIcon("MysticTextures:BootsIridium");
 		        break;
 			}
 		}

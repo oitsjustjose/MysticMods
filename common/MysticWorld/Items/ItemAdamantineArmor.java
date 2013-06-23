@@ -29,16 +29,16 @@ public class ItemAdamantineArmor extends ItemArmor implements IArmorTextureProvi
 		{
 			switch (ArmorType){
 			case 0:
-		        itemIcon = iconRegister.registerIcon("MysticTextures:item.helmetAdamantine");
+		        itemIcon = iconRegister.registerIcon("MysticTextures:HelmetAdamantine");
 		        break;
 			case 1:
-				itemIcon = iconRegister.registerIcon("MysticTextures:item.chestplateAdamantine");
+				itemIcon = iconRegister.registerIcon("MysticTextures:ChestplateAdamantine");
 		        break;
 			case 2:
-				itemIcon = iconRegister.registerIcon("MysticTextures:item.leggingsAdamantine");
+				itemIcon = iconRegister.registerIcon("MysticTextures:LeggingsAdamantine");
 		        break;
 			case 3:
-				itemIcon = iconRegister.registerIcon("MysticTextures:item.bootsAdamantine");
+				itemIcon = iconRegister.registerIcon("MysticTextures:BootsAdamantine");
 		        break;
 			}
 		}

@@ -26,7 +26,6 @@ public class ItemStaffParts extends Item {
 	public ItemStaffParts(int id) {
 		super(id);
         this.setHasSubtypes(true);
-        this.setUnlocalizedName(Strings.IMBUED_SHARD_NAME);
         this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 	
@@ -42,7 +41,7 @@ public class ItemStaffParts extends Item {
 		 icons = new Icon[STAFF_PARTS.length];
 		 
 	     for (int i = 0; i < STAFF_PARTS.length; ++i) {
-	    	 icons[i] = iconRegister.registerIcon("MysticTextures" + ":" + "item.staff_" + i);
+	    	 icons[i] = iconRegister.registerIcon("MysticTextures" + ":" + STAFF_PARTS[i]);
 	     }
 	 }
     

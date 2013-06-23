@@ -25,6 +25,6 @@ public class ItemHoes extends ItemHoe
   @Override
   public void registerIcons(IconRegister iconRegister)
   {
-           itemIcon = iconRegister.registerIcon("MysticTextures" + ":" + this.getUnlocalizedName());
+           itemIcon = iconRegister.registerIcon("MysticTextures" + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
   }
 }

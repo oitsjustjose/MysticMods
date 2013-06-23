@@ -29,16 +29,16 @@ public class ItemMithrilArmor extends ItemArmor implements IArmorTextureProvider
 		{
 			switch (ArmorType){
 			case 0:
-		        itemIcon = iconRegister.registerIcon("MysticTextures:item.helmetMithril");
+		        itemIcon = iconRegister.registerIcon("MysticTextures:HelmetMithril");
 		        break;
 			case 1:
-				itemIcon = iconRegister.registerIcon("MysticTextures:item.chestplateMithril");
+				itemIcon = iconRegister.registerIcon("MysticTextures:ChestplateMithril");
 		        break;
 			case 2:
-				itemIcon = iconRegister.registerIcon("MysticTextures:item.leggingsMithril");
+				itemIcon = iconRegister.registerIcon("MysticTextures:LeggingsMithril");
 		        break;
 			case 3:
-				itemIcon = iconRegister.registerIcon("MysticTextures:item.bootsMithril");
+				itemIcon = iconRegister.registerIcon("MysticTextures:BootsMithril");
 		        break;
 			}
 		}

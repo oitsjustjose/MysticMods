@@ -28,7 +28,6 @@ public class ItemResource extends Item
 	public ItemResource(int id) {
 		super(id);
         this.setHasSubtypes(true);
-        this.setUnlocalizedName("ItemResource");
         this.setCreativeTab(MysticOres.MysticOresTab);
 	}
 	
@@ -44,7 +43,7 @@ public class ItemResource extends Item
 		 icons = new Icon[RESOURCE_TYPES.length];
 		 
 	     for (int i = 0; i < RESOURCE_TYPES.length; ++i) {
-	    	 icons[i] = iconRegister.registerIcon("MysticTextures" + ":" + "item.resource_" + i);
+	    	 icons[i] = iconRegister.registerIcon("MysticTextures" + ":" + RESOURCE_TYPES[i]);
 	     }
 	 }
     

@@ -29,16 +29,16 @@ public class ItemVerditeArmor extends ItemArmor implements IArmorTextureProvider
 		{
 			switch (ArmorType){
 			case 0:
-		        itemIcon = iconRegister.registerIcon("MysticTextures:item.helmetVerdite");
+		        itemIcon = iconRegister.registerIcon("MysticTextures:HelmetVerdite");
 		        break;
 			case 1:
-				itemIcon = iconRegister.registerIcon("MysticTextures:item.chestplateVerdite");
+				itemIcon = iconRegister.registerIcon("MysticTextures:ChestplateVerdite");
 		        break;
 			case 2:
-				itemIcon = iconRegister.registerIcon("MysticTextures:item.leggingsVerdite");
+				itemIcon = iconRegister.registerIcon("MysticTextures:LeggingsVerdite");
 		        break;
 			case 3:
-				itemIcon = iconRegister.registerIcon("MysticTextures:item.bootsVerdite");
+				itemIcon = iconRegister.registerIcon("MysticTextures:BootsVerdite");
 		        break;
 			}
 		}

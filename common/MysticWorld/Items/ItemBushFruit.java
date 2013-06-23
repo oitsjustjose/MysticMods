@@ -31,7 +31,6 @@ public class ItemBushFruit extends ItemFood {
 	{
 		super(id, health, 0.6F, false);
         this.setHasSubtypes(true);
-        this.setUnlocalizedName(Strings.BUSH_FRUIT_NAME);
         this.setCreativeTab(MysticWorld.MysticWorldTab);
         maxStackSize = 64;
         setAlwaysEdible();
@@ -155,7 +154,7 @@ public class ItemBushFruit extends ItemFood {
 		 icons = new Icon[FRUIT_TYPES.length];
 		 
 	     for (int i = 0; i < FRUIT_TYPES.length; ++i) {
-	            icons[i] = iconRegister.registerIcon("MysticTextures" + ":" + "item.fruit_" + i);
+	            icons[i] = iconRegister.registerIcon("MysticTextures" + ":" + FRUIT_TYPES[i] + " Fruit");
 	        }
 	    }
     

@@ -66,9 +66,9 @@ public class ItemHandler$1 {
 	
 	public static void init(){
 
-		staffParts = new ItemStaffParts(ItemIds.STAFF_PARTS).setUnlocalizedName(Strings.STAFF_NAME);
-		
-		imbuedShard = new ItemImbuedShard(ItemIds.IMBUED_SHARD).setUnlocalizedName(Strings.IMBUED_SHARD_NAME);
+		staffParts = new ItemStaffParts(ItemIds.STAFF_PARTS);
+		imbuedShard = new ItemImbuedShard(ItemIds.IMBUED_SHARD);
+		bushFruit = new ItemBushFruit(ItemIds.BUSH_FRUIT, 2);
 		
 		fireStaff = new ItemStaffFire(ItemIds.FIRE_STAFF).setUnlocalizedName(Strings.FIRE_STAFF_NAME);
 		waterStaff = new ItemStaffWater(ItemIds.WATER_STAFF).setUnlocalizedName(Strings.WATER_STAFF_NAME);
@@ -76,15 +76,13 @@ public class ItemHandler$1 {
 		airStaff = new ItemStaffAir(ItemIds.AIR_STAFF).setUnlocalizedName(Strings.AIR_STAFF_NAME);
 		energyStaff = new ItemStaffEnegy(ItemIds.ENERGY_STAFF).setUnlocalizedName(Strings.ENERGY_STAFF_NAME);
 		
-		staffPower = new ItemStaffPower(ItemIds.STAFF_POWER).setUnlocalizedName(Strings.POWER_STAFF_NAME);
+		staffPower = new ItemStaffPower(ItemIds.STAFF_POWER);
 		
 		fireOrb = new ItemOrbFire(ItemIds.FIRE_ORB).setUnlocalizedName(Strings.FIRE_ORB_NAME);
 		waterOrb = new ItemOrbWater(ItemIds.WATER_ORB).setUnlocalizedName(Strings.WATER_ORB_NAME);
 		earthOrb = new ItemOrbEarth(ItemIds.EARTH_ORB).setUnlocalizedName(Strings.EARTH_ORB_NAME);
 		airOrb = new ItemOrbAir(ItemIds.AIR_ORB).setUnlocalizedName(Strings.AIR_ORB_NAME);
 		energyOrb = new ItemOrbEnergy(ItemIds.ENERGY_ORB).setUnlocalizedName(Strings.ENERGY_ORB_NAME);
-		
-		bushFruit = new ItemBushFruit(ItemIds.BUSH_FRUIT, 2).setUnlocalizedName(Strings.BUSH_FRUIT_NAME);
 		
 		verditeHelmet = new ItemVerditeArmor(ItemIds.VERDITE_HELMET, EnumArmor.Verdite, MysticWorld.proxy.addArmor(EnumArmor.Verdite.name()), 0).setUnlocalizedName(Strings.VERDITE_HELMET_NAME);
 		verditeChestplate = new ItemVerditeArmor(ItemIds.VERDITE_CHESTPLATE, EnumArmor.Verdite, MysticWorld.proxy.addArmor(EnumArmor.Verdite.name()), 1).setUnlocalizedName(Strings.VERDITE_CHESTPLATE_NAME);
