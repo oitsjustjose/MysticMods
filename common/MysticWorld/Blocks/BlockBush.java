@@ -52,7 +52,7 @@ public class BlockBush extends Block implements IPlantable{
 
 		for (int i = 0; i < 12; i++)
 		{
-			textures[i] = iconRegister.registerIcon("MysticTextures" + ":" + "Bush_" + i);
+			textures[i] = iconRegister.registerIcon("MysticTextures" + ":" + ItemBlockBush.BUSH_TYPES[i]);
 		}
 	}
 	

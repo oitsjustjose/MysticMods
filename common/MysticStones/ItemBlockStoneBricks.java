@@ -8,8 +8,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.util.MathHelper;
 
 public class ItemBlockStoneBricks extends ItemBlock {
+	
+	public static String[] STONEBRICK_TYPES = new String[] {"Anorthosite", "Limestone", "Marble", "Migmatite", "Orthogneiss", "Slate", "Travertine"};
 
 	public ItemBlockStoneBricks(int par1) {
 		super(par1);
@@ -17,18 +20,11 @@ public class ItemBlockStoneBricks extends ItemBlock {
         setHasSubtypes(true);
 	}
 	
-	public String getUnlocalizedName(ItemStack i){
-		switch(i.getItemDamage()){
-		case 0:return "AnorthositeBricks";
-		case 1:return "LimestoneBricks";
-		case 2:return "MarbleBricks";
-		case 3:return "MigmatiteBricks";
-		case 4:return "OrthogneissBricks";
-		case 5:return "SlateBricks";
-		case 6:return "TravertineBricks";
-		default:return "";
-		}
-	}
+    @Override
+    public String getUnlocalizedName(ItemStack itemStack) {
+        int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, STONEBRICK_TYPES.length);
+        return super.getUnlocalizedName() + STONEBRICK_TYPES[meta];
+    }
 	
     public int getMetadata(int par1)
     {

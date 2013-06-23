@@ -11,32 +11,25 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.util.MathHelper;
 
 public class ItemBlockBush extends ItemBlock {
 
+	public static String[] BUSH_TYPES = new String[] {Strings.BUSH_NAME, Strings.POISON_BUSH_NAME, Strings.WEAKNESS_BUSH_NAME, Strings.SLOWNESS_BUSH_NAME,
+		Strings.HARMING_BUSH_NAME, Strings.WITHER_BUSH_NAME, Strings.HEALTH_BUSH_NAME, Strings.SPEED_BUSH_NAME, Strings.FIRE_RESISTANCE_BUSH_NAME,
+		Strings.REGEN_BUSH_NAME, Strings.NIGHT_VISION_BUSH_NAME, Strings.INVISIBILITY_BUSH_NAME};
+	
 	public ItemBlockBush(int par1) {
 		super(par1);
         setMaxDamage(0);
         setHasSubtypes(true);
 	}
 	
-	public String getUnlocalizedName(ItemStack i){
-		switch(i.getItemDamage()){
-		case 0:return Strings.BUSH_NAME;
-		case 1:return Strings.POISON_BUSH_NAME;
-		case 2:return Strings.WEAKNESS_BUSH_NAME;
-		case 3:return Strings.SLOWNESS_BUSH_NAME;
-		case 4:return Strings.HARMING_BUSH_NAME;
-		case 5:return Strings.WITHER_BUSH_NAME;
-		case 6:return Strings.HEALTH_BUSH_NAME;
-		case 7:return Strings.SPEED_BUSH_NAME;
-		case 8:return Strings.FIRE_RESISTANCE_BUSH_NAME;
-		case 9:return Strings.REGEN_BUSH_NAME;
-		case 10:return Strings.NIGHT_VISION_BUSH_NAME;
-		case 11:return Strings.INVISIBILITY_BUSH_NAME;
-		default:return "";
-		}
-	}
+    @Override
+    public String getUnlocalizedName(ItemStack itemStack) {
+    	int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, BUSH_TYPES.length);
+        return super.getUnlocalizedName() + BUSH_TYPES[meta];
+    }
 	
 	
     public int getMetadata(int par1)

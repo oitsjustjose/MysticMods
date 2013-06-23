@@ -63,7 +63,7 @@ public class BlockStones extends Block {
 
 		for (int i = 0; i < 14; i++)
 		{
-			textures[i] = iconRegister.registerIcon("MysticTextures" + ":" + "Stones_" + i);
+			textures[i] = iconRegister.registerIcon("MysticTextures" + ":" + ItemBlockStones.STONE_TYPES[i]);
 		}
 	}
 	

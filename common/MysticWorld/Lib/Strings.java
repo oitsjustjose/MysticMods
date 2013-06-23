@@ -5,18 +5,18 @@ public class Strings {
 	//Block Names
 	public static final String IMBUED_STONE_NAME = "imbuedStone";
 	
-	public static final String BUSH_NAME = "bush";
-	public static final String POISON_BUSH_NAME = "poisonBush";
-	public static final String WEAKNESS_BUSH_NAME = "weaknessBush";
-	public static final String SLOWNESS_BUSH_NAME = "slownessBush";
-	public static final String HARMING_BUSH_NAME = "harmingBush";
-	public static final String WITHER_BUSH_NAME = "witherBush";
-	public static final String HEALTH_BUSH_NAME = "healthBush";
-	public static final String SPEED_BUSH_NAME = "speedBush";
-	public static final String FIRE_RESISTANCE_BUSH_NAME = "fireResistanceBush";
-	public static final String REGEN_BUSH_NAME = "regenBush";
-	public static final String NIGHT_VISION_BUSH_NAME = "nightVisionBush";
-	public static final String INVISIBILITY_BUSH_NAME = "invisibilityBush";
+	public static final String BUSH_NAME = "Bush";
+	public static final String POISON_BUSH_NAME = "Poisonous Bush";
+	public static final String WEAKNESS_BUSH_NAME = "Weakness Bush";
+	public static final String SLOWNESS_BUSH_NAME = "Slowness Bush";
+	public static final String HARMING_BUSH_NAME = "Harming Bush";
+	public static final String WITHER_BUSH_NAME = "Wither Bush";
+	public static final String HEALTH_BUSH_NAME = "Health Bush";
+	public static final String SPEED_BUSH_NAME = "Speed Bush";
+	public static final String FIRE_RESISTANCE_BUSH_NAME = "Fire Resistance Bush";
+	public static final String REGEN_BUSH_NAME = "Regen Bush";
+	public static final String NIGHT_VISION_BUSH_NAME = "Night Vision Bush";
+	public static final String INVISIBILITY_BUSH_NAME = "Invisibility Bush";
 	
 	public static final String LIGHT_CUBE_NAME = "lightCube";
 	

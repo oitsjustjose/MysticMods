@@ -9,8 +9,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.util.MathHelper;
 
 public class ItemBlockImbuedStone extends ItemBlock {
+	
+	public static String[] IMBUED_STONE_TYPE = new String[] {"Fire", "Water", "Earth", "Air", "Energy"};
 
 	public ItemBlockImbuedStone(int par1) {
 		super(par1);
@@ -18,16 +21,13 @@ public class ItemBlockImbuedStone extends ItemBlock {
         setHasSubtypes(true);
 	}
 	
-	public String getUnlocalizedName(ItemStack i){
-		switch(i.getItemDamage()){
-		case 0:return "Fire";
-		case 1:return "Water";
-		case 2:return "Earth";
-		case 3:return "Air";
-		case 4:return "Energy";
-		default:return "";
-		}
-	}
+	
+    @Override
+    public String getUnlocalizedName(ItemStack itemStack) {
+    	int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, IMBUED_STONE_TYPE.length);
+        return super.getUnlocalizedName() + IMBUED_STONE_TYPE[meta];
+    }
+	
 	
     public int getMetadata(int par1)
     {
