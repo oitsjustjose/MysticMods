@@ -20,7 +20,7 @@ public class Config
 		//Block Configuration
 		BlockIds.ORE_STONE_1 = config.getBlock(Strings.IMBUED_STONE_NAME, BlockIds.ORE_STONE_1_DEFAULT).getInt(BlockIds.ORE_STONE_1);
 		BlockIds.BUSH = config.getBlock(Strings.BUSH_NAME, BlockIds.BUSH_DEFAULT).getInt(BlockIds.BUSH_DEFAULT);
-		
+		BlockIds.LIGHT_CUBE = config.getBlock(Strings.LIGHT_CUBE_NAME, BlockIds.LIGHT_CUBE_DEFAULT).getInt(BlockIds.LIGHT_CUBE_DEFAULT);		
 		//Item Configuration
 		
 		ItemIds.IMBUED_SHARD = config.getItem(Strings.IMBUED_SHARD_NAME, ItemIds.IMBUED_SHARD_DEFAULT).getInt(ItemIds.IMBUED_SHARD_DEFAULT);

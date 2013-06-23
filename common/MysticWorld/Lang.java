@@ -13,11 +13,11 @@ public class Lang
 		LanguageRegistry.instance().addStringLocalization("itemGroup.MysticWorldTab", "en_US", "Mystic World!");
 		
 		//Blocks
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.OreImbuedStone, 1, 0), "Charred Stone");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.OreImbuedStone, 1, 1), "Moistened Stone");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.OreImbuedStone, 1, 2), "Mossified Stone");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.OreImbuedStone, 1, 3), "Oxygenated Stone");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.OreImbuedStone, 1, 4), "Energized Stone");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.oreImbuedStone, 1, 0), "Charred Stone");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.oreImbuedStone, 1, 1), "Moistened Stone");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.oreImbuedStone, 1, 2), "Mossified Stone");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.oreImbuedStone, 1, 3), "Oxygenated Stone");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.oreImbuedStone, 1, 4), "Energized Stone");
 		
 		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.bush, 1, 0), "Bush");
 		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.bush, 1, 1), "Poisonous Bush");
@@ -31,6 +31,8 @@ public class Lang
 		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.bush, 1, 9), "Bush of Regen");
 		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.bush, 1, 10), "Bush of Vision");
 		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.bush, 1, 11), "Bush of Invisibility");
+		
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.lightCube, 1), "Light Cube");
 		
 		//Items
 		LanguageRegistry.instance().addName(new ItemStack(ItemHandler$1.staffParts, 1, 0), "Staff");

@@ -3,6 +3,7 @@ package MysticWorld;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import MysticWorld.Client.FX.AirFX;
+import MysticWorld.Client.FX.LightCubeFX;
 
 public class CommonProxy {
 	
@@ -28,6 +29,9 @@ public class CommonProxy {
 	}
 	
 	public void waterFX(World worldObj, double x, double y, double z, float scale){
+	}
+	
+	public void lightCubeFX(World worldObj, double x, double y, double z, double motionX, double motionY, double motionZ, float scale){
 	}
 	
 }

@@ -15,32 +15,34 @@ import net.minecraftforge.common.MinecraftForge;
 
 public class BlockHandler {
 
-	public static Block OreImbuedStone;
+	public static Block oreImbuedStone;
 	public static Block bush;
+	public static Block lightCube;
 	
 	public static void init() {
 		
-		OreImbuedStone = new BlockImbuedStone(BlockIds.ORE_STONE_1).setUnlocalizedName(Strings.IMBUED_STONE_NAME);
+		oreImbuedStone = new BlockImbuedStone(BlockIds.ORE_STONE_1).setUnlocalizedName(Strings.IMBUED_STONE_NAME);
 		bush = new BlockBush(BlockIds.BUSH).setUnlocalizedName(Strings.BUSH_NAME);
+		lightCube = new BlockLightCube(BlockIds.LIGHT_CUBE).setUnlocalizedName(Strings.LIGHT_CUBE_NAME);
 		
 		registerBlocks();
 		setBlockHarvestLevels();
 	}
 	
 	private static void registerBlocks() {
-		GameRegistry.registerBlock(OreImbuedStone, ItemBlockImbuedStone.class, Strings.IMBUED_STONE_NAME);
+		GameRegistry.registerBlock(oreImbuedStone, ItemBlockImbuedStone.class, Strings.IMBUED_STONE_NAME);
 		GameRegistry.registerBlock(bush, ItemBlockBush.class, Strings.BUSH_NAME);
+		GameRegistry.registerBlock(lightCube, Strings.LIGHT_CUBE_NAME);
 		
 		GameRegistry.registerWorldGenerator(new WorldGenBushes());
 		GameRegistry.registerWorldGenerator(new WorldGenStones());
-
 	}
 
 	private static void setBlockHarvestLevels() {
-		MinecraftForge.setBlockHarvestLevel(OreImbuedStone, 0, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(OreImbuedStone, 1, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(OreImbuedStone, 2, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(OreImbuedStone, 3, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(OreImbuedStone, 4, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(oreImbuedStone, 0, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(oreImbuedStone, 1, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(oreImbuedStone, 2, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(oreImbuedStone, 3, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(oreImbuedStone, 4, "pickaxe", 2);
 	}
 }

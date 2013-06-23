@@ -37,7 +37,7 @@ public class ItemBlockImbuedStone extends ItemBlock {
 	@SideOnly(Side.CLIENT)
     public Icon getIconFromDamage(int par1)
     {
-        return BlockHandler.OreImbuedStone.getIcon(2, par1);
+        return BlockHandler.oreImbuedStone.getIcon(2, par1);
     }
 
 }

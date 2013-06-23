@@ -17,9 +17,9 @@ public class StonesGen extends WorldGenerator
             int j1 = par4 + par2Random.nextInt(4) - par2Random.nextInt(4);
             int k1 = par5 + par2Random.nextInt(8) - par2Random.nextInt(8);
 
-            if (par1World.isAirBlock(i1, j1, k1) && par1World.getBlockId(i1, j1 - 1, k1) == Block.grass.blockID && BlockHandler.OreImbuedStone.canPlaceBlockAt(par1World, i1, j1, k1))
+            if (par1World.isAirBlock(i1, j1, k1) && par1World.getBlockId(i1, j1 - 1, k1) == Block.grass.blockID && BlockHandler.oreImbuedStone.canPlaceBlockAt(par1World, i1, j1, k1))
             {
-                par1World.setBlock(i1, j1, k1, BlockHandler.OreImbuedStone.blockID, par2Random.nextInt(5), 2);
+                par1World.setBlock(i1, j1, k1, BlockHandler.oreImbuedStone.blockID, par2Random.nextInt(5), 2);
             }
         }
 

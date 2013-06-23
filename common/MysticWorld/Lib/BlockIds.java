@@ -17,6 +17,8 @@ public class BlockIds {
 	public static int REGEN_BUSH_DEFAULT = 610;
 	public static int NIGHT_VISION_BUSH_DEFAULT = 611;
 	public static int INVISIBILITY_BUSH_DEFAULT = 612;
+	
+	public static int LIGHT_CUBE_DEFAULT = 613;
 
     //Current Block IDs
     public static int ORE_STONE_1;
@@ -33,5 +35,7 @@ public class BlockIds {
 	public static int REGEN_BUSH;
 	public static int NIGHT_VISION_BUSH;
 	public static int INVISIBILITY_BUSH;
+	
+	public static int LIGHT_CUBE;
 	
 }

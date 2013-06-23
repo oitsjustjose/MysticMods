@@ -10,6 +10,7 @@ import MysticWorld.Client.FX.AirFX;
 import MysticWorld.Client.FX.EarthFX;
 import MysticWorld.Client.FX.EnergyFX;
 import MysticWorld.Client.FX.FireFX;
+import MysticWorld.Client.FX.LightCubeFX;
 import MysticWorld.Client.FX.WaterFX;
 import MysticWorld.Entity.EntityChargeAir;
 import MysticWorld.Entity.EntityChargeEarth;
@@ -70,6 +71,13 @@ public class ClientProxy extends CommonProxy {
 	{
 		WaterFX waterFX = new WaterFX(worldObj, x, y, z, scale);
 		ModLoader.getMinecraftInstance().effectRenderer.addEffect(waterFX);
+	}
+	
+	@Override
+	public void lightCubeFX(World worldObj, double x, double y, double z, double motionX, double motionY, double motionZ, float scale)
+	{
+		LightCubeFX lightCubeFX = new LightCubeFX(worldObj, x, y, z, motionX, motionY, motionZ, scale);
+		ModLoader.getMinecraftInstance().effectRenderer.addEffect(lightCubeFX);
 	}
 	
 }

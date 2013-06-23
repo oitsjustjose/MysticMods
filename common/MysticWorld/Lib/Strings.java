@@ -18,6 +18,8 @@ public class Strings {
 	public static final String NIGHT_VISION_BUSH_NAME = "nightVisionBush";
 	public static final String INVISIBILITY_BUSH_NAME = "invisibilityBush";
 	
+	public static final String LIGHT_CUBE_NAME = "lightCube";
+	
 	//Item Names
 	public static final String STAFF_HILT_NAME = "staffHilt";
 	public static final String STAFF_HANDLE_NAME = "staffHandle";
