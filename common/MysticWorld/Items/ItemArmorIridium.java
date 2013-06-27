@@ -12,14 +12,14 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IArmorTextureProvider;
 
-public class ItemIridiumArmor extends ItemArmor implements IArmorTextureProvider
+public class ItemArmorIridium extends ItemArmor implements IArmorTextureProvider
 {
 	int ArmorType;
 	
 	String ArmorFile_1;
 	String ArmorFile_2;
 
-	public ItemIridiumArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
+	public ItemArmorIridium(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
 			
 			super(par1, par2EnumArmorMaterial,par3,par4);
 			this.ArmorType=par4;
@@ -33,16 +33,16 @@ public class ItemIridiumArmor extends ItemArmor implements IArmorTextureProvider
 		{
 			switch (ArmorType){
 			case 0:
-		        itemIcon = iconRegister.registerIcon("MysticTextures:HelmetIridium");
+		        itemIcon = iconRegister.registerIcon("MysticTextures:IridiumArmor_0");
 		        break;
 			case 1:
-				itemIcon = iconRegister.registerIcon("MysticTextures:ChestplateIridium");
+				itemIcon = iconRegister.registerIcon("MysticTextures:IridiumArmor_1");
 		        break;
 			case 2:
-				itemIcon = iconRegister.registerIcon("MysticTextures:LeggingsIridium");
+				itemIcon = iconRegister.registerIcon("MysticTextures:IridiumArmor_2");
 		        break;
 			case 3:
-				itemIcon = iconRegister.registerIcon("MysticTextures:BootsIridium");
+				itemIcon = iconRegister.registerIcon("MysticTextures:IridiumArmor_3");
 		        break;
 			}
 		}

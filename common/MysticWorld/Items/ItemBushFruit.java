@@ -24,7 +24,7 @@ public class ItemBushFruit extends ItemFood {
 	
 	private Icon[] icons;
 	
-    private static final String[] FRUIT_TYPES = new String[] {"Mundane", "Poison", "Weakness", "Slowness", "Harming", "Wither", "Health", "Speed", "Fire Resistance", "Regen", "Night Vision", "Invisibility"};
+    private static final String[] FRUIT_TYPES = new String[] {"Mundane", "Poison", "Weakness", "Slowness", "Harming", "Wither", "Health", "Speed", "FireResistance", "Regen", "NightVision", "Invisibility"};
 
 
 	public ItemBushFruit(int id, int health)
@@ -154,7 +154,7 @@ public class ItemBushFruit extends ItemFood {
 		 icons = new Icon[FRUIT_TYPES.length];
 		 
 	     for (int i = 0; i < FRUIT_TYPES.length; ++i) {
-	            icons[i] = iconRegister.registerIcon("MysticTextures" + ":" + FRUIT_TYPES[i] + " Fruit");
+	            icons[i] = iconRegister.registerIcon("MysticTextures:Fruit" + FRUIT_TYPES[i]);
 	        }
 	    }
     

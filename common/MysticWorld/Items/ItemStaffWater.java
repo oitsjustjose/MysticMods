@@ -29,7 +29,7 @@ public class ItemStaffWater extends Item {
     @Override
     public void registerIcons(IconRegister iconRegister)
     {
-             itemIcon = iconRegister.registerIcon("MysticTextures" + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+             itemIcon = iconRegister.registerIcon("MysticTextures:StaffWater");
     }
 	
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer){

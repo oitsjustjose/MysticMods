@@ -41,7 +41,7 @@ public class ItemStaffParts extends Item {
 		 icons = new Icon[STAFF_PARTS.length];
 		 
 	     for (int i = 0; i < STAFF_PARTS.length; ++i) {
-	    	 icons[i] = iconRegister.registerIcon("MysticTextures" + ":" + STAFF_PARTS[i]);
+	    	 icons[i] = iconRegister.registerIcon("MysticTextures:StaffPart_" + STAFF_PARTS[i]);
 	     }
 	 }
     

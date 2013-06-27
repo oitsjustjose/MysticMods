@@ -19,11 +19,11 @@ public class ItemStaffEnegy extends Item{
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 	
-	  @Override
-	    public void registerIcons(IconRegister iconRegister)
-	    {
-	             itemIcon = iconRegister.registerIcon("MysticTextures" + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
-	    }
+	@Override
+	public void registerIcons(IconRegister iconRegister)
+	{
+	    itemIcon = iconRegister.registerIcon("MysticTextures:StaffEnergy");
+	}
 	
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer){
 		world.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)entityPlayer.posX, (int)entityPlayer.posY, (int)entityPlayer.posZ, 0);

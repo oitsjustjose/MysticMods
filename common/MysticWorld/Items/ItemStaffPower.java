@@ -34,16 +34,16 @@ public class ItemStaffPower extends Item {
         return super.getUnlocalizedName() + CHARGE_NAMES[meta];
     }
   
-	 @Override
-	 @SideOnly(Side.CLIENT)
-	 public void registerIcons(IconRegister iconRegister)
-	 {
-		 icons = new Icon[CHARGE_NAMES.length];
+    @Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister iconRegister)
+	{
+		icons = new Icon[CHARGE_NAMES.length];
 		 
-	     for (int i = 0; i < CHARGE_NAMES.length; ++i) {
-	            icons[i] = iconRegister.registerIcon("MysticTextures" + ":" + CHARGE_NAMES[i] + " Charge");
-	        }
+	    for (int i = 0; i < CHARGE_NAMES.length; ++i) {
+	        icons[i] = iconRegister.registerIcon("MysticTextures:Charge" + CHARGE_NAMES[i]);
 	    }
+	}
     
     @Override
     @SideOnly(Side.CLIENT)

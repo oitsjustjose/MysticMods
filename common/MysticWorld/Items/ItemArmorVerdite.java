@@ -8,14 +8,14 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.IArmorTextureProvider;
 
-public class ItemVerditeArmor extends ItemArmor implements IArmorTextureProvider
+public class ItemArmorVerdite extends ItemArmor implements IArmorTextureProvider
 {
 	int ArmorType;
 	
 	String ArmorFile_1;
 	String ArmorFile_2;
 
-	public ItemVerditeArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
+	public ItemArmorVerdite(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
 			
 			super(par1, par2EnumArmorMaterial,par3,par4);
 			this.ArmorType=par4;
@@ -29,16 +29,16 @@ public class ItemVerditeArmor extends ItemArmor implements IArmorTextureProvider
 		{
 			switch (ArmorType){
 			case 0:
-		        itemIcon = iconRegister.registerIcon("MysticTextures:HelmetVerdite");
+		        itemIcon = iconRegister.registerIcon("MysticTextures:VerditeArmor_0");
 		        break;
 			case 1:
-				itemIcon = iconRegister.registerIcon("MysticTextures:ChestplateVerdite");
+				itemIcon = iconRegister.registerIcon("MysticTextures:VerditeArmor_1");
 		        break;
 			case 2:
-				itemIcon = iconRegister.registerIcon("MysticTextures:LeggingsVerdite");
+				itemIcon = iconRegister.registerIcon("MysticTextures:VerditeArmor_2");
 		        break;
 			case 3:
-				itemIcon = iconRegister.registerIcon("MysticTextures:BootsVerdite");
+				itemIcon = iconRegister.registerIcon("MysticTextures:VerditeArmor_3");
 		        break;
 			}
 		}
