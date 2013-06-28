@@ -21,6 +21,9 @@ public class EarthFX extends EntityFX
       this.motionX *= 0.019999999552965164D;
       this.motionY *= 0.019999999552965164D;
       this.motionZ *= 0.019999999552965164D;
+      this.motionX += motionX;
+      this.motionY += motionY;
+      this.motionZ += motionZ;
 	  this.particleRed = 1.0F;
 	  this.particleGreen = 1.0F;
       this.particleBlue = 1.0F;
@@ -31,17 +34,32 @@ public class EarthFX extends EntityFX
 
   public void onUpdate()
   {
-      this.prevPosX = this.posX;
+	  this.prevPosX = this.posX;
       this.prevPosY = this.posY;
       this.prevPosZ = this.posZ;
-      this.moveEntity(this.motionX, this.motionY, this.motionZ);
-      this.motionX *= 0.99D;
-      this.motionY *= 0.99D;
-      this.motionZ *= 0.99D;
 
-      if (this.particleMaxAge-- <= 0)
+      if (this.particleAge++ >= this.particleMaxAge)
       {
           this.setDead();
+      }
+
+      this.motionY += 0.004D;
+      this.moveEntity(this.motionX, this.motionY, this.motionZ);
+
+      if (this.posY == this.prevPosY)
+      {
+          this.motionX *= 1.1D;
+          this.motionZ *= 1.1D;
+      }
+
+      this.motionX *= 0.9599999785423279D;
+      this.motionY *= 0.9599999785423279D;
+      this.motionZ *= 0.9599999785423279D;
+
+      if (this.onGround)
+      {
+          this.motionX *= 0.699999988079071D;
+          this.motionZ *= 0.699999988079071D;
       }
   }
 
