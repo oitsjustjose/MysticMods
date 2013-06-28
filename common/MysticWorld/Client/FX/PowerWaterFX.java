@@ -9,14 +9,14 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 
-public class WaterFX extends EntityFX
+public class PowerWaterFX extends EntityFX
 {
-  public WaterFX(World world, double x, double y, double z)
+  public PowerWaterFX(World world, double x, double y, double z)
   {
     super(world, x, y, z);
   }
 
-  public WaterFX(World world, double x, double y, double z, float scale){
+  public PowerWaterFX(World world, double x, double y, double z, float scale){
 	  super(world, x, y, z);
       this.motionX *= 0.019999999552965164D;
       this.motionY *= 0.019999999552965164D;

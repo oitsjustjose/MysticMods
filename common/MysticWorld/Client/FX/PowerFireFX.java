@@ -9,14 +9,14 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 
-public class FireFX extends EntityFX
+public class PowerFireFX extends EntityFX
 {
-  public FireFX(World world, double x, double y, double z)
+  public PowerFireFX(World world, double x, double y, double z)
   {
     super(world, x, y, z);
   }
 
-  public FireFX(World world, double x, double y, double z, float scale){
+  public PowerFireFX(World world, double x, double y, double z, float scale){
 	  super(world, x, y, z);
       this.motionX *= 0.019999999552965164D;
       this.motionY *= 0.019999999552965164D;

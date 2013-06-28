@@ -6,12 +6,12 @@ import net.minecraft.item.Item;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import MysticWorld.CommonProxy;
-import MysticWorld.Client.FX.AirFX;
-import MysticWorld.Client.FX.EarthFX;
-import MysticWorld.Client.FX.EnergyFX;
-import MysticWorld.Client.FX.FireFX;
+import MysticWorld.Client.FX.PowerAirFX;
+import MysticWorld.Client.FX.PowerEarthFX;
+import MysticWorld.Client.FX.PowerEnergyFX;
+import MysticWorld.Client.FX.PowerFireFX;
 import MysticWorld.Client.FX.LightCubeFX;
-import MysticWorld.Client.FX.WaterFX;
+import MysticWorld.Client.FX.PowerWaterFX;
 import MysticWorld.Entity.EntityChargeAir;
 import MysticWorld.Entity.EntityChargeEarth;
 import MysticWorld.Entity.EntityChargeEnergy;
@@ -41,35 +41,35 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void airFX(World worldObj, double x, double y, double z, float scale)
 	{
-		AirFX airFX = new AirFX(worldObj, x, y, z, scale);
+		PowerAirFX airFX = new PowerAirFX(worldObj, x, y, z, scale);
 		ModLoader.getMinecraftInstance().effectRenderer.addEffect(airFX);
 	}
 	
 	@Override
 	public void earthFX(World worldObj, double x, double y, double z, float scale)
 	{
-		EarthFX earthFX = new EarthFX(worldObj, x, y, z, scale);
+		PowerEarthFX earthFX = new PowerEarthFX(worldObj, x, y, z, scale);
 		ModLoader.getMinecraftInstance().effectRenderer.addEffect(earthFX);
 	}
 	
 	@Override
 	public void energyFX(World worldObj, double x, double y, double z, float scale)
 	{
-		EnergyFX energyFX = new EnergyFX(worldObj, x, y, z, scale);
+		PowerEnergyFX energyFX = new PowerEnergyFX(worldObj, x, y, z, scale);
 		ModLoader.getMinecraftInstance().effectRenderer.addEffect(energyFX);
 	}
 	
 	@Override
 	public void fireFX(World worldObj, double x, double y, double z, float scale)
 	{
-		FireFX fireFX = new FireFX(worldObj, x, y, z, scale);
+		PowerFireFX fireFX = new PowerFireFX(worldObj, x, y, z, scale);
 		ModLoader.getMinecraftInstance().effectRenderer.addEffect(fireFX);
 	}
 	
 	@Override
 	public void waterFX(World worldObj, double x, double y, double z, float scale)
 	{
-		WaterFX waterFX = new WaterFX(worldObj, x, y, z, scale);
+		PowerWaterFX waterFX = new PowerWaterFX(worldObj, x, y, z, scale);
 		ModLoader.getMinecraftInstance().effectRenderer.addEffect(waterFX);
 	}
 	

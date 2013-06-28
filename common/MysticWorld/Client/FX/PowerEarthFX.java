@@ -9,14 +9,14 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 
-public class AirFX extends EntityFX
+public class PowerEarthFX extends EntityFX
 {
-  public AirFX(World world, double x, double y, double z)
+  public PowerEarthFX(World world, double x, double y, double z)
   {
     super(world, x, y, z);
   }
 
-  public AirFX(World world, double x, double y, double z, float scale){
+  public PowerEarthFX(World world, double x, double y, double z, float scale){
 	  super(world, x, y, z);
       this.motionX *= 0.019999999552965164D;
       this.motionY *= 0.019999999552965164D;
@@ -72,7 +72,7 @@ public class AirFX extends EntityFX
 	  GL11.glEnable(3042);
 	  GL11.glBlendFunc(770, 1);
 	  
-	  FMLClientHandler.instance().getClient().renderEngine.bindTexture("/mods/MysticTextures/textures/misc/airFX.png");
+	  FMLClientHandler.instance().getClient().renderEngine.bindTexture("/mods/MysticTextures/textures/misc/earthFX.png");
 
 	  GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.75F);
 	  

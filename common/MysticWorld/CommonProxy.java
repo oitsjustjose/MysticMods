@@ -2,7 +2,7 @@ package MysticWorld;
 
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
-import MysticWorld.Client.FX.AirFX;
+import MysticWorld.Client.FX.PowerAirFX;
 import MysticWorld.Client.FX.LightCubeFX;
 
 public class CommonProxy {
