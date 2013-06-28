@@ -1,5 +1,7 @@
 package MysticWorld.Items;
 
+import java.util.Random;
+
 import MysticWorld.MysticWorld;
 import MysticWorld.Blocks.BlockHandler;
 import MysticWorld.Entity.EntityChargeAir;
@@ -19,6 +21,8 @@ import net.minecraftforge.event.entity.player.FillBucketEvent;
 
 public class ItemOrbWater extends Item {
 
+	Random rand = new Random();
+	
 	public ItemOrbWater(int par1) 
 	{
 		super(par1);
@@ -61,8 +65,9 @@ public class ItemOrbWater extends Item {
 
 	                if (world.getBlockMaterial(i, j, k) == Material.water && world.getBlockMetadata(i, j, k) == 0)
 	                {
+	                	world.playSoundEffect((double)i + 0.5D, (double)j + 0.5D, (double)k + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
 	                    world.setBlockToAir(i, j, k);
-
+	                    
 	                    itemStack.damageItem(1, entityPlayer);
 	                    
 	                    return itemStack;
@@ -111,9 +116,8 @@ public class ItemOrbWater extends Item {
 	                        {
 	                            world.playSoundEffect((double)i + 0.5D, (double)j + 0.5D, (double)k + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
 	                            world.setBlock(i, j, k, Block.waterMoving.blockID);
+	                            itemStack.damageItem(1, entityPlayer);
 	                        }
-
-	                        itemStack.damageItem(1, entityPlayer);
 	                        
 	                        return itemStack;
 	                    }
