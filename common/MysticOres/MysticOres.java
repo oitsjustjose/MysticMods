@@ -7,6 +7,7 @@ import MysticOres.Blocks.BlockHandler;
 import MysticOres.Blocks.BlockOres;
 import MysticOres.Blocks.BlockReinforcedGlass;
 import MysticOres.Blocks.ItemBlockOres;
+import MysticOres.Items.IridiumFuelHandler;
 import MysticOres.Items.ItemAxes;
 import MysticOres.Items.ItemHandler;
 import MysticOres.Items.ItemHoes;
@@ -75,7 +76,7 @@ public class MysticOres
 	{	
 		BlockHandler.init();
 		ItemHandler.init();
-		GameRegistry.registerFuelHandler(new IridiumFuel());
+		GameRegistry.registerFuelHandler(new IridiumFuelHandler());
 		RecipeManager.init();
 		OreDictManager.init();
 		WorldGenHandler.init();

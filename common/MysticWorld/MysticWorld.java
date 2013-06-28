@@ -12,20 +12,24 @@ import MysticWorld.WorldGen.*;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.common.MinecraftForge;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
 import cpw.mods.fml.common.Mod.PreInit;
+import cpw.mods.fml.common.Mod.ServerStarted;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartedEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.TickRegistry;
@@ -62,7 +66,7 @@ public class MysticWorld
 		proxy.registerRenders();
 		
 		this.tickHandler = new TickHandler();
-		
+			
 	    TickRegistry.registerTickHandler(this.tickHandler, Side.SERVER);
 	    VillagerRegistry.instance().registerVillagerType(98943, "/mods/MysticTextures/textures/mob/MysticVillager.png");
         VillagerRegistry.instance().registerVillageTradeHandler(98943, new MysticVillagerTrades());
@@ -79,4 +83,13 @@ public class MysticWorld
     public void postInit(FMLPostInitializationEvent event) 
 	{
     }
+	
+	@ServerStarted
+	public void startedInit(FMLServerStartedEvent event, EntityPlayer player)
+	{		
+		if (player.username.equals("oitsjustjose") || !player.username.equals("oitsjustjose"))
+		{
+			player.addChatMessage("Welcome " + player.username + " to your world!");
+		}
+	}
 }

@@ -1,10 +1,9 @@
-package MysticOres;
+package MysticOres.Items;
 
-import MysticOres.Items.ItemHandler;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.IFuelHandler;
 
-public class IridiumFuel implements IFuelHandler {
+public class IridiumFuelHandler implements IFuelHandler {
 	public int getBurnTime(ItemStack fuel) 
 	{
 		if(fuel.getItemDamage() == 4)

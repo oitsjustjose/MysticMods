@@ -37,6 +37,10 @@ public class TickHandler implements IScheduledTickHandler
 		if (inventory.hasItem(ItemHandler$1.fireOrb.itemID) && player.isBurning()){
 			player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
 		}
+		
+		if (inventory.hasItem(ItemHandler$1.airOrb.itemID) && player.getHeldItem() == new ItemStack(ItemHandler$1.airOrb)){
+			player.fallDistance = 0.0F;
+		}
     }
 
 	public void tickEnd(EnumSet<TickType> type, Object... tickData){
