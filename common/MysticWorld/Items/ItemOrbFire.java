@@ -3,6 +3,7 @@ package MysticWorld.Items;
 import MysticWorld.MysticWorld;
 import MysticWorld.Entity.EntityChargeAir;
 import net.minecraft.block.BlockCloth;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.item.EntityItem;
@@ -45,5 +46,11 @@ public class ItemOrbFire extends ItemFlintAndSteel {
         
         return true;
     }
+    
+	@Override
+	public void registerIcons(IconRegister iconRegister)
+	{
+	    itemIcon = iconRegister.registerIcon("MysticTextures:OrbFire");
+	}
 	
 }

@@ -2,6 +2,7 @@ package MysticWorld.Items;
 
 import MysticWorld.MysticWorld;
 import MysticWorld.Entity.EntityChargeAir;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,4 +18,9 @@ public class ItemOrbWater extends Item {
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 	
+	@Override
+	public void registerIcons(IconRegister iconRegister)
+	{
+	    itemIcon = iconRegister.registerIcon("MysticTextures:OrbWater");
+	}
 }
