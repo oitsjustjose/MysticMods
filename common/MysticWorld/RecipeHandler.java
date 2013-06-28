@@ -36,11 +36,19 @@ public class RecipeHandler {
 			"  #", " X ", "Y  ", '#', new ItemStack(ItemHandler$1.staffParts, 1, 3), 'X', new ItemStack(ItemHandler$1.staffParts, 1, 2), 'Y', new ItemStack(ItemHandler$1.staffParts, 1, 1)
 		});
 		
-		staffRecipe(ItemHandler$1.fireStaff, new ItemStack(ItemHandler$1.imbuedShard, 1, 0));
-		staffRecipe(ItemHandler$1.waterStaff, new ItemStack(ItemHandler$1.imbuedShard, 1, 1));
-		staffRecipe(ItemHandler$1.earthStaff, new ItemStack(ItemHandler$1.imbuedShard, 1, 2));
-		staffRecipe(ItemHandler$1.airStaff, new ItemStack(ItemHandler$1.imbuedShard, 1, 3));
-		staffRecipe(ItemHandler$1.energyStaff, new ItemStack(ItemHandler$1.imbuedShard, 1, 4));
+		//Orb Recipes
+		orbRecipe(ItemHandler$1.fireOrb, new ItemStack(ItemHandler$1.imbuedShard, 1, 0));
+		orbRecipe(ItemHandler$1.waterOrb, new ItemStack(ItemHandler$1.imbuedShard, 1, 1));
+		orbRecipe(ItemHandler$1.earthOrb, new ItemStack(ItemHandler$1.imbuedShard, 1, 2));
+		orbRecipe(ItemHandler$1.airOrb, new ItemStack(ItemHandler$1.imbuedShard, 1, 3));
+		orbRecipe(ItemHandler$1.energyOrb, new ItemStack(ItemHandler$1.imbuedShard, 1, 4));
+		
+		//Staff Recipes
+		staffRecipe(ItemHandler$1.fireStaff, new ItemStack(ItemHandler$1.fireOrb));
+		staffRecipe(ItemHandler$1.waterStaff, new ItemStack(ItemHandler$1.waterOrb));
+		staffRecipe(ItemHandler$1.earthStaff, new ItemStack(ItemHandler$1.earthOrb));
+		staffRecipe(ItemHandler$1.airStaff, new ItemStack(ItemHandler$1.airOrb));
+		staffRecipe(ItemHandler$1.energyStaff, new ItemStack(ItemHandler$1.energyOrb));
 		
 		/*----------------------------------Verdite--------------------------------------*/
 		GameRegistry.addRecipe(new ItemStack(ItemHandler$1.verditeHelmet), new Object[] {
@@ -116,7 +124,13 @@ public class RecipeHandler {
 		
 	}
 	
-	private static void staffRecipe(Item outputItem, ItemStack inputBlock){
-		GameRegistry.addShapelessRecipe(new ItemStack(outputItem, 1), inputBlock, new ItemStack(ItemHandler$1.staffParts, 1, 0));
+	private static void staffRecipe(Item output, ItemStack input){
+		GameRegistry.addShapelessRecipe(new ItemStack(output, 1), input, new ItemStack(ItemHandler$1.staffParts, 1, 0));
+	}
+	
+	private static void orbRecipe(Item output, ItemStack input){
+		GameRegistry.addRecipe(new ItemStack(output, 1), new Object[] {
+			"##", "##", '#', input
+		});
 	}
 }
