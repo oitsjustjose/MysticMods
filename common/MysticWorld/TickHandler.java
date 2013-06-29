@@ -2,6 +2,7 @@ package MysticWorld;
 
 import java.util.EnumSet;
 import java.util.List;
+import java.util.Random;
 
 import MysticWorld.Blocks.BlockBush;
 import MysticWorld.Blocks.BlockHandler;
@@ -25,6 +26,8 @@ public class TickHandler implements IScheduledTickHandler
 {
 	private EnumSet ticks;
 
+	Random rand = new Random();
+	
 	public TickHandler(){
 		this.ticks = EnumSet.of(TickType.PLAYER);
 	}
@@ -37,14 +40,25 @@ public class TickHandler implements IScheduledTickHandler
 		
 		if (itemstack != null && itemstack.itemID == ItemHandler$1.fireOrb.itemID && player.isBurning()){
 			player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
+			MysticWorld.proxy.fireFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
 		}
 		
 		if (itemstack != null && itemstack.itemID == ItemHandler$1.airOrb.itemID){
 			player.fallDistance = 0.0F;
+			MysticWorld.proxy.airFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
 		}
 		
 		if (itemstack != null && itemstack.itemID == ItemHandler$1.energyOrb.itemID){
 			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 20, 2));
+			MysticWorld.proxy.energyFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+		}
+		
+		if (itemstack != null && itemstack.itemID == ItemHandler$1.earthOrb.itemID){
+			MysticWorld.proxy.earthFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+		}
+		
+		if (itemstack != null && itemstack.itemID == ItemHandler$1.waterOrb.itemID){
+			MysticWorld.proxy.waterFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
 		}
 		
     }
