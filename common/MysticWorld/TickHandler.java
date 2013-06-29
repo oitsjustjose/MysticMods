@@ -40,6 +40,9 @@ public class TickHandler implements IScheduledTickHandler
 		
 		if (itemstack != null && itemstack.itemID == ItemHandler$1.fireOrb.itemID && player.isBurning()){
 			player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
+		}
+		
+		if (itemstack != null && itemstack.itemID == ItemHandler$1.fireOrb.itemID){
 			MysticWorld.proxy.fireFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
 		}
 		
