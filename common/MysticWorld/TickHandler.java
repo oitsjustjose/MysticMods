@@ -43,6 +43,10 @@ public class TickHandler implements IScheduledTickHandler
 			player.fallDistance = 0.0F;
 		}
 		
+		if (itemstack != null && itemstack.itemID == ItemHandler$1.energyOrb.itemID){
+			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 20, 2));
+		}
+		
     }
 
 	public void tickEnd(EnumSet<TickType> type, Object... tickData){
