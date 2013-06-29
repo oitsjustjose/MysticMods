@@ -39,55 +39,54 @@ public class ItemOrbEarth extends Item {
 	    itemIcon = iconRegister.registerIcon("MysticTextures:OrbEarth");
 	}
 	
-	 public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
-	 {
-	      if (!par2EntityPlayer.canPlayerEdit(par4, par5, par6, par7, par1ItemStack))
-	      {
-	          return false;
-	      }
-	      else
-	      {
-	          if (applyBonemeal(par1ItemStack, par3World, par4, par5, par6, par2EntityPlayer))
-	          {
-	              if (!par3World.isRemote)
-	              {
-	                  par3World.playAuxSFX(2005, par4, par5, par6, 0);
-	              }
-	              return true;
-	          }
-	          return false;
-	      }
-	 }
-	
-	   public static boolean applyBonemeal(ItemStack itemStack, World par1World, int par2, int par3, int par4, EntityPlayer player)
+	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
+	{
+	    if (!par2EntityPlayer.canPlayerEdit(par4, par5, par6, par7, par1ItemStack))
 	    {
-	        int l = par1World.getBlockId(par2, par3, par4);
-
-	        BonemealEvent event = new BonemealEvent(player, par1World, l, par2, par3, par4);
-	        if (MinecraftForge.EVENT_BUS.post(event))
+	    	return false;
+	    }
+	    else
+	    {
+	        if (applyBonemeal(par1ItemStack, par3World, par4, par5, par6, par2EntityPlayer))
 	        {
-	            return false;
-	        }
-
-	        if (event.getResult() == Result.ALLOW)
-	        {
-	        	itemStack.damageItem(1, player);
-	        	
+	        	if (!par3World.isRemote)
+	            {
+	                par3World.playAuxSFX(2005, par4, par5, par6, 0);
+	            }
 	            return true;
 	        }
+	        return false;
+	    }
+	}
+	
+	public static boolean applyBonemeal(ItemStack itemStack, World par1World, int par2, int par3, int par4, EntityPlayer player)
+	{
+	    int l = par1World.getBlockId(par2, par3, par4);
 
-	        if (l == Block.sapling.blockID)
+	    BonemealEvent event = new BonemealEvent(player, par1World, l, par2, par3, par4);
+	    if (MinecraftForge.EVENT_BUS.post(event))
+	    {
+	        return false;
+	    }
+
+	    if (event.getResult() == Result.ALLOW)
+	    {
+	        itemStack.damageItem(1, player);
+	        	
+	        return true;
+	    }
+
+	    if (l == Block.sapling.blockID)
+	    {
+	        if (!par1World.isRemote)
 	        {
-	            if (!par1World.isRemote)
+	            if ((double)par1World.rand.nextFloat() < 0.45D)
 	            {
-	                if ((double)par1World.rand.nextFloat() < 0.45D)
-	                {
-	                    ((BlockSapling)Block.sapling).markOrGrowMarked(par1World, par2, par3, par4, par1World.rand);
-	                }
+	            	((BlockSapling)Block.sapling).markOrGrowMarked(par1World, par2, par3, par4, par1World.rand);
+	            }
 
 	                itemStack.damageItem(1, player);
 	            }
-
 	            return true;
 	        }
 	        else if (l == Block.cobblestone.blockID)
@@ -229,6 +228,6 @@ public class ItemOrbEarth extends Item {
 	        }
 	        
 	        return true;
-	    }
+	   }
 	
 }
