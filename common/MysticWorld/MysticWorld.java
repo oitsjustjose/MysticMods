@@ -83,13 +83,4 @@ public class MysticWorld
     public void postInit(FMLPostInitializationEvent event) 
 	{
     }
-	
-	@ServerStarted
-	public void startedInit(FMLServerStartedEvent event, EntityPlayer player)
-	{		
-		if (player.username.equals("oitsjustjose") || !player.username.equals("oitsjustjose"))
-		{
-			player.addChatMessage("Welcome " + player.username + " to your world!");
-		}
-	}
 }

@@ -1,6 +1,7 @@
 package MysticWorld.Blocks;
 
 import MysticWorld.Lib.BlockIds;
+import MysticWorld.Lib.Booleans;
 import MysticWorld.Lib.Strings;
 import MysticWorld.WorldGen.StonesGen;
 import MysticWorld.WorldGen.WorldGenBushes;
@@ -34,7 +35,10 @@ public class BlockHandler {
 		GameRegistry.registerBlock(bush, ItemBlockBush.class, Strings.BUSH_NAME);
 		GameRegistry.registerBlock(lightCube, Strings.LIGHT_CUBE_NAME);
 		
-		GameRegistry.registerWorldGenerator(new WorldGenBushes());
+		if(Booleans.ENABLE_BUSH_GEN)
+		{
+			GameRegistry.registerWorldGenerator(new WorldGenBushes());
+		}
 		GameRegistry.registerWorldGenerator(new WorldGenStones());
 	}
 

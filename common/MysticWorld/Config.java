@@ -6,25 +6,33 @@ import MysticWorld.Lib.BlockIds;
 import MysticWorld.Lib.EntityIds;
 import MysticWorld.Lib.ItemIds;
 import MysticWorld.Lib.Strings;
+import MysticWorld.Lib.Booleans;
 
 import net.minecraftforge.common.Configuration;
 
 public class Config
 {
 	public static Configuration config;
-	
+
 	public static void initialize(File file)
 	{
 		config = new Configuration(file);
+		
+		//Boolean Configurations
+		Booleans.ENABLE_BUSH_GEN = config.get("World Generation", "Enable Bush Generation", true).getBoolean(Booleans.ENABLE_BUSH_GEN);
+		Booleans.ENABLE_GLACIER_GEN = config.get("World Generation", "Enable Glacier Biome", true).getBoolean(Booleans.ENABLE_GLACIER_GEN);
+		Booleans.ENABLE_JUNGLE_REWRITE = config.get("World Generation", "Enable Vanilla Jungle Biome Modification", true).getBoolean(Booleans.ENABLE_JUNGLE_REWRITE);
+		Booleans.ENABLE_MOUNTAIN_GEN = config.get("World Generation", "Enable Mountain Biome", true).getBoolean(Booleans.ENABLE_MOUNTAIN_GEN);
+		Booleans.ENABLE_STEPPE_GEN = config.get("World Generation", "Enable Steppe Biome", true).getBoolean(Booleans.ENABLE_STEPPE_GEN);
+		Booleans.ENABLE_TUNDRA_GEN = config.get("World Generation", "Enable Tundra Biome", true).getBoolean(Booleans.ENABLE_TUNDRA_GEN);
 		
 		//Block Configuration
 		BlockIds.ORE_STONE_1 = config.getBlock(Strings.IMBUED_STONE_NAME, BlockIds.ORE_STONE_1_DEFAULT).getInt(BlockIds.ORE_STONE_1);
 		BlockIds.BUSH = config.getBlock(Strings.BUSH_NAME, BlockIds.BUSH_DEFAULT).getInt(BlockIds.BUSH_DEFAULT);
 		BlockIds.LIGHT_CUBE = config.getBlock(Strings.LIGHT_CUBE_NAME, BlockIds.LIGHT_CUBE_DEFAULT).getInt(BlockIds.LIGHT_CUBE_DEFAULT);		
+		
 		//Item Configuration
-		
 		ItemIds.IMBUED_SHARD = config.getItem(Strings.IMBUED_SHARD_NAME, ItemIds.IMBUED_SHARD_DEFAULT).getInt(ItemIds.IMBUED_SHARD_DEFAULT);
-		
 		ItemIds.STAFF_PARTS = config.getItem(Strings.STAFF_NAME, ItemIds.STAFF_PARTS_DEFAULT).getInt(ItemIds.STAFF_PARTS_DEFAULT);
 		
 		ItemIds.FIRE_STAFF = config.getItem(Strings.FIRE_STAFF_NAME, ItemIds.FIRE_STAFF_DEFAULT).getInt(ItemIds.FIRE_STAFF_DEFAULT);

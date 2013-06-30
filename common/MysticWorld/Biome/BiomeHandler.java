@@ -1,6 +1,7 @@
 package MysticWorld.Biome;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import MysticWorld.Lib.*;
 import MysticOres.Blocks.BlockHandler;
 import net.minecraft.block.Block;
 import net.minecraft.world.biome.BiomeDecorator;
@@ -19,8 +20,6 @@ public class BiomeHandler
 	{
 		initializeBiomes();
 		registerBiomes();
-		addSpawnBiomes();
-		addStructureBiomes();
 	}
 	
 	public static void initializeBiomes()
@@ -34,30 +33,36 @@ public class BiomeHandler
 	
 	public static void registerBiomes()
 	{
-		GameRegistry.removeBiome(BiomeGenBase.jungle);
-		GameRegistry.removeBiome(BiomeGenBase.jungleHills);
-	    GameRegistry.addBiome(Mountain);
-	    GameRegistry.addBiome(Tundra);
-	    GameRegistry.addBiome(Steppe);
-	    GameRegistry.addBiome(Glacier);   
-	    GameRegistry.addBiome(Jungle);
-	}
-	
-	public static void addSpawnBiomes()
-	{
-		BiomeManager.addSpawnBiome(Steppe);
-	    BiomeManager.addSpawnBiome(Mountain);
-	    BiomeManager.addSpawnBiome(Jungle);
-	}
-	
-	public static void addStructureBiomes()
-	{
-		BiomeManager.addVillageBiome(Steppe, true);
-		
-		BiomeManager.addStrongholdBiome(Glacier);
-		BiomeManager.addStrongholdBiome(Mountain);
-		BiomeManager.addStrongholdBiome(Steppe);
-		BiomeManager.addStrongholdBiome(Tundra);
-		BiomeManager.addStrongholdBiome(Jungle);
+		if(Booleans.ENABLE_JUNGLE_REWRITE)
+		{
+			GameRegistry.removeBiome(BiomeGenBase.jungle);
+			GameRegistry.removeBiome(BiomeGenBase.jungleHills);
+		    GameRegistry.addBiome(Jungle);
+		    BiomeManager.addSpawnBiome(Jungle);
+			BiomeManager.addStrongholdBiome(Jungle);
+		}
+		if(Booleans.ENABLE_GLACIER_GEN)
+		{
+		    GameRegistry.addBiome(Glacier); 
+		    BiomeManager.addStrongholdBiome(Glacier);
+		}
+		if(Booleans.ENABLE_MOUNTAIN_GEN)
+		{
+			GameRegistry.addBiome(Mountain);
+			BiomeManager.addSpawnBiome(Mountain);
+			BiomeManager.addStrongholdBiome(Mountain);
+		}
+	    if(Booleans.ENABLE_TUNDRA_GEN)
+	    {
+		    GameRegistry.addBiome(Tundra);
+		    BiomeManager.addStrongholdBiome(Tundra);
+	    }
+	    if(Booleans.ENABLE_STEPPE_GEN)
+	    {
+		    GameRegistry.addBiome(Steppe);
+			BiomeManager.addSpawnBiome(Steppe);	
+			BiomeManager.addVillageBiome(Steppe, true);
+			BiomeManager.addStrongholdBiome(Steppe);
+	    }
 	}
 }
