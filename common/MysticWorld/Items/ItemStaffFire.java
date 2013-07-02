@@ -21,7 +21,7 @@ public class ItemStaffFire extends Item {
 	public ItemStaffFire(int id) {
 		super(id);
         this.setMaxStackSize(1);
-        this.setMaxDamage(64);
+        this.setMaxDamage(200);
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 	

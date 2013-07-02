@@ -27,7 +27,7 @@ public class ItemStaffWater extends Item {
 	public ItemStaffWater(int id) {
 		super(id);
 		this.setMaxStackSize(1);
-		this.setMaxDamage(64);
+		this.setMaxDamage(200);
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 	
