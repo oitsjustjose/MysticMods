@@ -37,99 +37,97 @@ public class ItemStaffWater extends Item {
              itemIcon = iconRegister.registerIcon("MysticTextures:StaffWater");
     }
 	
-	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer){
-		if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
-		{
-			MovingObjectPosition movingobjectposition = this.getMovingObjectPositionFromPlayer(world, entityPlayer, true);
+    public boolean onItemUse(ItemStack itemStack, EntityPlayer entityPlayer, World world, int par4, int par5, int par6, int par7, float par8, float par9, float par10){
+    	MovingObjectPosition movingobjectposition = this.getMovingObjectPositionFromPlayer(world, entityPlayer, true);
 
-	        if (movingobjectposition == null)
-	        {
-	            return itemStack;
-	        }
-	        else
-	        {
-	            if (movingobjectposition.typeOfHit == EnumMovingObjectType.TILE)
-	            {
-	                int i = movingobjectposition.blockX;
-	                int j = movingobjectposition.blockY;
-	                int k = movingobjectposition.blockZ;
+        if (movingobjectposition == null)
+        {
+            return true;
+        }
+        else
+        {
+            if (movingobjectposition.typeOfHit == EnumMovingObjectType.TILE)
+            {
+                int i = movingobjectposition.blockX;
+                int j = movingobjectposition.blockY;
+                int k = movingobjectposition.blockZ;
 
-	                if (!world.canMineBlock(entityPlayer, i, j, k))
-	                {
-	                    return itemStack;
-	                }
+                if (!world.canMineBlock(entityPlayer, i, j, k))
+                {
+                    return true;
+                }
 
-	                if (!entityPlayer.canPlayerEdit(i, j, k, movingobjectposition.sideHit, itemStack))
-	                {
-	                    return itemStack;
-	                }
+                if (!entityPlayer.canPlayerEdit(i, j, k, movingobjectposition.sideHit, itemStack))
+                {
+                    return true;
+                }
 
-	                if (world.getBlockMaterial(i, j, k) == Material.water && world.getBlockMetadata(i, j, k) == 0)
-	                {
-	                	world.playSoundEffect((double)i + 0.5D, (double)j + 0.5D, (double)k + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-	                    world.setBlockToAir(i, j, k);
-	                    
-	                    itemStack.damageItem(1, entityPlayer);
-	                    
-	                    return itemStack;
-	                }
-	                else
-	                {
-	                	if (movingobjectposition.sideHit == 0)
-	                    {
-	                        --j;
-	                    }
+                if (world.getBlockMaterial(i, j, k) == Material.water && world.getBlockMetadata(i, j, k) == 0)
+                {
+                	world.playSoundEffect((double)i + 0.5D, (double)j + 0.5D, (double)k + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+                    world.setBlockToAir(i, j, k);
+                    
+                    itemStack.damageItem(1, entityPlayer);
+                    
+                    return true;
+                }
+                else
+                {
+                	if (movingobjectposition.sideHit == 0)
+                    {
+                        --j;
+                    }
 
-	                    if (movingobjectposition.sideHit == 1)
-	                    {
-	                        ++j;
-	                    }
+                    if (movingobjectposition.sideHit == 1)
+                    {
+                        ++j;
+                    }
 
-	                    if (movingobjectposition.sideHit == 2)
-	                    {
-	                        --k;
-	                    }
+                    if (movingobjectposition.sideHit == 2)
+                    {
+                        --k;
+                    }
 
-	                    if (movingobjectposition.sideHit == 3)
-	                    {
-	                        ++k;
-	                    }
+                    if (movingobjectposition.sideHit == 3)
+                    {
+                        ++k;
+                    }
 
-	                    if (movingobjectposition.sideHit == 4)
-	                    {
-	                        --i;
-	                    }
+                    if (movingobjectposition.sideHit == 4)
+                    {
+                        --i;
+                    }
 
-	                    if (movingobjectposition.sideHit == 5)
-	                    {
-	                        ++i;
-	                    }
+                    if (movingobjectposition.sideHit == 5)
+                    {
+                        ++i;
+                    }
 
-	                    if (!entityPlayer.canPlayerEdit(i, j, k, movingobjectposition.sideHit, itemStack))
-	                    {
-	                        return itemStack;
-	                    }
-	                    else
-	                    {
-	                        int i1 = world.getBlockId(i, j, k);
+                    if (!entityPlayer.canPlayerEdit(i, j, k, movingobjectposition.sideHit, itemStack))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        int i1 = world.getBlockId(i, j, k);
 
-	                        if (i1 == 0)
-	                        {
-	                            world.playSoundEffect((double)i + 0.5D, (double)j + 0.5D, (double)k + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-	                            world.setBlock(i, j, k, Block.waterMoving.blockID);
-	                            itemStack.damageItem(1, entityPlayer);
-	                        }
-	                        
-	                        return itemStack;
-	                    }
-	                }
-	            }
-
-	            return itemStack;
-	        }
-		}
-		else
-		{
+                        if (i1 == 0)
+                        {
+                        	world.playSoundEffect((double)i + 0.5D, (double)j + 0.5D, (double)k + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+                            world.setBlock(i, j, k, Block.waterMoving.blockID);
+                            itemStack.damageItem(1, entityPlayer);
+                        }
+                        
+                        return true;
+                    }
+                }
+            }
+        }
+		return true;
+	}
+    
+	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)
+	{
 			world.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)entityPlayer.posX, (int)entityPlayer.posY, (int)entityPlayer.posZ, 0);
 			
 	        if (!world.isRemote)
@@ -140,6 +138,5 @@ public class ItemStaffWater extends Item {
 	        }
 	        
 	        return itemStack;
-		}
 	}
 }

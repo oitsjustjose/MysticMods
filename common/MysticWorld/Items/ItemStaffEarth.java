@@ -42,40 +42,36 @@ public class ItemStaffEarth extends Item {
     }
 	
 	public boolean onItemUse(ItemStack itemStack, EntityPlayer entityPlayer, World world, int par4, int par5, int par6, int par7, float par8, float par9, float par10){
-		if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
+		if (!entityPlayer.canPlayerEdit(par4, par5, par6, par7, itemStack))
 		{
-			if (!entityPlayer.canPlayerEdit(par4, par5, par6, par7, itemStack))
-		    {
-		    	return false;
-		    }
-		    else
-		    {
-		        if (applyBonemeal(itemStack, world, par4, par5, par6, entityPlayer))
-		        {
-		        	if (!world.isRemote)
-		            {
-		                world.playAuxSFX(2005, par4, par5, par6, 0);
-		            }
-		            return true;
-		        }
-		        return false;
-		    }
+		    return false;
 		}
-		return true;
+		else
+		{
+		    if (applyBonemeal(itemStack, world, par4, par5, par6, entityPlayer))
+		    {
+		        if (!world.isRemote)
+		        {
+		            world.playAuxSFX(2005, par4, par5, par6, 0);
+		        }
+		            return true;
+		    }
+		    return false;
+		}
 	}
 	
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)
 	{
-		world.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)entityPlayer.posX, (int)entityPlayer.posY, (int)entityPlayer.posZ, 0);
+			world.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)entityPlayer.posX, (int)entityPlayer.posY, (int)entityPlayer.posZ, 0);
 
-		if (!world.isRemote)
-		{
-			world.spawnEntityInWorld(new EntityChargeEarth(world, entityPlayer));
-        
-			itemStack.damageItem(1, entityPlayer);
-		}
-    
-		return itemStack;
+			if (!world.isRemote)
+			{
+				world.spawnEntityInWorld(new EntityChargeEarth(world, entityPlayer));
+	        
+				itemStack.damageItem(1, entityPlayer);
+			}
+	    
+			return itemStack;
 	}
 	
 	public static boolean applyBonemeal(ItemStack itemStack, World par1World, int par2, int par3, int par4, EntityPlayer player)
