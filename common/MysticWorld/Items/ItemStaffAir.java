@@ -1,5 +1,7 @@
 package MysticWorld.Items;
 
+import org.lwjgl.input.Keyboard;
+
 import MysticWorld.MysticWorld;
 import MysticWorld.Entity.EntityChargeAir;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -27,15 +29,30 @@ public class ItemStaffAir extends Item {
 	
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)
 	{
-		world.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)entityPlayer.posX, (int)entityPlayer.posY, (int)entityPlayer.posZ, 0);
+		if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
+		{
+			if (entityPlayer.onGround)
+			{
+				world.playSoundEffect(entityPlayer.posX, entityPlayer.posY, entityPlayer.posZ, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+				itemStack.damageItem(1, entityPlayer);
+				entityPlayer.addVelocity(0, 2.5, 0);
+			}
+	        
+	        return itemStack;
+		}
+		else
+		{
+			world.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)entityPlayer.posX, (int)entityPlayer.posY, (int)entityPlayer.posZ, 0);
 	
-        if (!world.isRemote)
-        {
-            world.spawnEntityInWorld(new EntityChargeAir(world, entityPlayer));
+			if (!world.isRemote)
+			{
+				world.spawnEntityInWorld(new EntityChargeAir(world, entityPlayer));
             
-            itemStack.damageItem(1, entityPlayer);
-        }
-        
+            	itemStack.damageItem(1, entityPlayer);
+			}
+		}
+			
         return itemStack;
+		
 	}
 }
