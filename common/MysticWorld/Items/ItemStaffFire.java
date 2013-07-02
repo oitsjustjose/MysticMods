@@ -106,19 +106,21 @@ public class ItemStaffFire extends Item {
 	            return true;
 	        }
 		}
-		else
-		{
-			world.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)entityPlayer.posX, (int)entityPlayer.posY, (int)entityPlayer.posZ, 0);
-			
-	        if (!world.isRemote)
-	        {
-	            world.spawnEntityInWorld(new EntityChargeFire(world, entityPlayer));
-	            
-	            itemStack.damageItem(1, entityPlayer);
-	        }
-	        
-	        return true;
-		}
+		return true;
+	}
+    
+    public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)
+	{
+		world.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)entityPlayer.posX, (int)entityPlayer.posY, (int)entityPlayer.posZ, 0);
+		
+        if (!world.isRemote)
+        {
+            world.spawnEntityInWorld(new EntityChargeFire(world, entityPlayer));
+            
+            itemStack.damageItem(1, entityPlayer);
+        }
+        
+        return itemStack;
 	}
 
 }
