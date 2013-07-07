@@ -10,9 +10,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
-import net.minecraftforge.common.IArmorTextureProvider;
 
-public class ItemArmorIridium extends ItemArmor implements IArmorTextureProvider
+public class ItemArmorIridium extends ItemArmor
 {
 	int ArmorType;
 	

@@ -6,9 +6,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.IArmorTextureProvider;
 
-public class ItemArmorAdamantine extends ItemArmor implements IArmorTextureProvider
+public class ItemArmorAdamantine extends ItemArmor
 {
 	int ArmorType;
 	
