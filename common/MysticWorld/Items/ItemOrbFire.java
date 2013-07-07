@@ -2,7 +2,6 @@ package MysticWorld.Items;
 
 import MysticWorld.MysticWorld;
 import MysticWorld.Entity.EntityChargeAir;
-import net.minecraft.block.BlockCloth;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
