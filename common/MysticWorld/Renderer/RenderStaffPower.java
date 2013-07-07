@@ -8,6 +8,7 @@ import MysticWorld.Items.ItemStaffPower;
 
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.resources.ResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.EntityPotion;
 import net.minecraft.item.Item;
@@ -35,7 +36,6 @@ public class RenderStaffPower extends Render {
             GL11.glTranslatef((float)d0, (float)d1, (float)d2);
             GL11.glEnable(GL12.GL_RESCALE_NORMAL);
             GL11.glScalef(0.5F, 0.5F, 0.5F);
-            this.loadTexture("/gui/items.png");
             Tessellator tessellator = Tessellator.instance;
             
             if (icon == ItemPotion.func_94589_d("potion_splash"))
@@ -76,5 +76,10 @@ public class RenderStaffPower extends Render {
         par1Tessellator.addVertexWithUV((double)(0.0F - f5), (double)(f4 - f6), 0.0D, (double)f, (double)f2);
         par1Tessellator.draw();
     }
+
+	@Override
+	protected ResourceLocation func_110775_a(Entity entity) {
+		return null;
+	}
 
 }
