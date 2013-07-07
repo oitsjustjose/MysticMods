@@ -11,6 +11,7 @@ import MysticWorld.Lib.Strings;
 import MysticWorld.WorldGen.*;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.resources.ResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.WorldType;
@@ -68,7 +69,7 @@ public class MysticWorld
 		this.tickHandler = new TickHandler();
 			
 	    TickRegistry.registerTickHandler(this.tickHandler, Side.SERVER);
-	    VillagerRegistry.instance().registerVillagerType(98943, "/mods/MysticTextures/textures/mob/MysticVillager.png");
+	    VillagerRegistry.instance().registerVillagerSkin(98943, new ResourceLocation("/mods/MysticTextures/textures/mob/MysticVillager.png"));
         VillagerRegistry.instance().registerVillageTradeHandler(98943, new MysticVillagerTrades());
         VillagerRegistry.instance().registerVillageCreationHandler(new VillageHutHandler());
 		BlockHandler.init();

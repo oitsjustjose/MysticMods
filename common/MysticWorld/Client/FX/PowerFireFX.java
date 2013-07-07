@@ -6,6 +6,7 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.resources.ResourceLocation;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 
@@ -72,7 +73,7 @@ public class PowerFireFX extends EntityFX
 	  GL11.glEnable(3042);
 	  GL11.glBlendFunc(770, 1);
 	  
-	  FMLClientHandler.instance().getClient().renderEngine.bindTexture("/mods/MysticTextures/textures/misc/fireFX.png");
+	  FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation("/assets/MysticTextures/textures/misc/fireFX.png"));
 
 	  GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.75F);
 	  
@@ -97,7 +98,7 @@ public class PowerFireFX extends EntityFX
 	  GL11.glDepthMask(true);
 	  GL11.glPopMatrix();
 
-	  FMLClientHandler.instance().getClient().renderEngine.bindTexture("/particles.png");
+	  FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation("/assets/minecraft/textures/particle/particles.png"));
 	  tessellator.startDrawingQuads();
   }
 }
