@@ -35,7 +35,7 @@ import MysticWorld.MysticWorld;
 
 public class EntityChargeAir extends Entity {
 	
-	public EntityLiving shootingEntity;
+	public EntityPlayer shootingEntity;
 	public EntityPlayer entityPlayer;
 	public EntityDragon entityDragon;
 	public EntityWither entityWither;
@@ -52,16 +52,16 @@ public class EntityChargeAir extends Entity {
 		super(par1World);
 	}
 	
-    public EntityChargeAir(World par1World, EntityLiving par2EntityLiving)
+    public EntityChargeAir(World par1World, EntityPlayer par2EntityPlayer)
     {
         super(par1World);
         this.setSize(0.25F, 0.25F);
-        this.setLocationAndAngles(par2EntityLiving.posX, par2EntityLiving.posY + (double)par2EntityLiving.getEyeHeight(), par2EntityLiving.posZ, par2EntityLiving.rotationYaw, par2EntityLiving.rotationPitch);
+        this.setLocationAndAngles(par2EntityPlayer.posX, par2EntityPlayer.posY + (double)par2EntityPlayer.getEyeHeight(), par2EntityPlayer.posZ, par2EntityPlayer.rotationYaw, par2EntityPlayer.rotationPitch);
         this.setPosition(this.posX, this.posY, this.posZ);
         this.motionX = (double)(-MathHelper.sin(this.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(this.rotationPitch / 180.0F * (float)Math.PI));
         this.motionY = (double)(-MathHelper.sin((this.rotationPitch) / 180.0F * (float)Math.PI));
         this.motionZ = (double)(MathHelper.cos(this.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(this.rotationPitch / 180.0F * (float)Math.PI));
-        this.shootingEntity = par2EntityLiving;
+        this.shootingEntity = par2EntityPlayer;
     }
 
     public void onUpdate()
