@@ -25,7 +25,6 @@ public class EntityPigman extends EntityAnimal
     public EntityPigman(World par1World)
     {
         super(par1World);
-        this.texture = "/mob/pigman.png";
         this.setSize(0.9F, 0.9F);
         this.getNavigator().setAvoidsWater(true);
         float f = 0.25F;
