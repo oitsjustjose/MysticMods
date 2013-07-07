@@ -19,8 +19,8 @@ public class ItemArmorAdamantine extends ItemArmor
 			super(par1, par2EnumArmorMaterial,par3,par4);
 			this.ArmorType=par4;
 			this.setCreativeTab(MysticWorld.MysticWorldTab);
-			this.ArmorFile_1 = "/mods/MysticTextures/textures/armor/adamantine_1.png";
-			this.ArmorFile_2 = "/mods/MysticTextures/textures/armor/adamantine_2.png";
+			this.ArmorFile_1 = "/assets/MysticTextures/textures/armor/adamantine_1.png";
+			this.ArmorFile_2 = "/assets/MysticTextures/textures/armor/adamantine_2.png";
 		}
 
 		@Override
