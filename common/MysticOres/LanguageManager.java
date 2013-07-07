@@ -8,21 +8,21 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class LanguageManager
 {
 	public static void init()
-	{		
-		LanguageRegistry.instance().addName(BlockHandler.ReinforcedGlass, "Reinforced Glass");
-		
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockOres, 1, 0), "Adamantine");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockOres, 1, 1), "Amethyst Ore");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockOres, 1, 2), "Iridium Ore");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockOres, 1, 3), "Mithril Ore");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockOres, 1, 4), "Tourmaline Ore");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockOres, 1, 5), "Topaz Ore");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockOres, 1, 6), "Verdite Ore");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockOres, 1, 7), "Bloodstone");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockOres, 1, 8), "Black Soulstone");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockOres, 1, 9), "Blue Soulstone");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockOres, 1, 10), "Red Soulstone");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockOres, 1, 11), "Agate Ore");
+	{				
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 0), "Adamantine");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 1), "Amethyst Ore");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 2), "Iridium Ore");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 3), "Mithril Ore");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 4), "Tourmaline Ore");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 5), "Topaz Ore");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 6), "Verdite Ore");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 7), "Bloodstone");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 8), "Black Soulstone");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 9), "Blue Soulstone");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 10), "Red Soulstone");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 11), "Agate Ore");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 12), "Reinforced Glass");
+
 		
 		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 0), "Verdite Ingot");
 		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 1), "Mithril Ingot");

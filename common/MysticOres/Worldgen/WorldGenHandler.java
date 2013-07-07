@@ -16,9 +16,9 @@ public class WorldGenHandler
 		GameRegistry.registerWorldGenerator(new WorldGenAmethyst());
 		GameRegistry.registerWorldGenerator(new WorldGenAdamantine());
 		GameRegistry.registerWorldGenerator(new WorldGenAgate());
-		GameRegistry.registerWorldGenerator(new WorldGenMysticNetherMinable(BlockHandler.BlockOres.blockID, 7, 1));
-		GameRegistry.registerWorldGenerator(new WorldGenMysticNetherMinable(BlockHandler.BlockOres.blockID, 8, 3));
-		GameRegistry.registerWorldGenerator(new WorldGenMysticNetherMinable(BlockHandler.BlockOres.blockID, 9, 2));
-		GameRegistry.registerWorldGenerator(new WorldGenMysticNetherMinable(BlockHandler.BlockOres.blockID, 10, 3));
+		GameRegistry.registerWorldGenerator(new WorldGenMysticNetherMinable(BlockHandler.BlockBase.blockID, 7, 1));
+		GameRegistry.registerWorldGenerator(new WorldGenMysticNetherMinable(BlockHandler.BlockBase.blockID, 8, 3));
+		GameRegistry.registerWorldGenerator(new WorldGenMysticNetherMinable(BlockHandler.BlockBase.blockID, 9, 2));
+		GameRegistry.registerWorldGenerator(new WorldGenMysticNetherMinable(BlockHandler.BlockBase.blockID, 10, 3));
 	}
 }

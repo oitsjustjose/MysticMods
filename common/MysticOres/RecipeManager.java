@@ -33,43 +33,43 @@ public class RecipeManager
 	}
 	
 	private static void blockRecipes(){
-        GameRegistry.addRecipe(new ItemStack(BlockHandler.BlockOres, 8, 7), new Object[] {
+        GameRegistry.addRecipe(new ItemStack(BlockHandler.BlockBase, 8, 7), new Object[] {
             "XXX", "XOX", "XXX", Character.valueOf('X'), Block.dirt, Character.valueOf('O'), new ItemStack(ItemHandler.Resource, 1, 6)
         });
         
-        GameRegistry.addRecipe(new ItemStack(BlockHandler.BlockOres, 16, 7), new Object[] {
-            "XXX", "XOX", "XXX", Character.valueOf('X'), new ItemStack(BlockHandler.BlockOres, 1, 3), Character.valueOf('O'), new ItemStack(ItemHandler.Resource, 1, 6)
+        GameRegistry.addRecipe(new ItemStack(BlockHandler.BlockBase, 16, 7), new Object[] {
+            "XXX", "XOX", "XXX", Character.valueOf('X'), new ItemStack(BlockHandler.BlockBase, 1, 3), Character.valueOf('O'), new ItemStack(ItemHandler.Resource, 1, 6)
         });
         
-        GameRegistry.addRecipe(new ItemStack(BlockHandler.BlockOres, 8, 3), new Object[] {
+        GameRegistry.addRecipe(new ItemStack(BlockHandler.BlockBase, 8, 3), new Object[] {
             "XXX", "XOX", "XXX", Character.valueOf('X'), Block.dirt, Character.valueOf('O'), new ItemStack(ItemHandler.Resource, 1, 8)
         });
         
-		GameRegistry.addRecipe(new ItemStack(BlockHandler.ReinforcedGlass, 8), new Object[] {
+		GameRegistry.addRecipe(new ItemStack(BlockHandler.BlockBase, 8, 12), new Object[] {
 			"###", "#D#", "###", '#', new ItemStack(ItemHandler.Resource, 1, 11), 'D', new ItemStack(ItemHandler.Resource, 1, 12)
 		});
 		
-		GameRegistry.addRecipe(new ItemStack(BlockHandler.BlockOres, 1, 7), new Object[] {
+		GameRegistry.addRecipe(new ItemStack(BlockHandler.BlockBase, 1, 7), new Object[] {
 			"##", "##", '#', new ItemStack(ItemHandler.Resource, 1, 10)
 		});
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(BlockHandler.BlockOres, 2, 7), new Object[] {
-			new ItemStack(ItemHandler.Resource, 1, 9), new ItemStack(BlockHandler.BlockOres, 1, 7)
+		GameRegistry.addShapelessRecipe(new ItemStack(BlockHandler.BlockBase, 2, 7), new Object[] {
+			new ItemStack(ItemHandler.Resource, 1, 9), new ItemStack(BlockHandler.BlockBase, 1, 7)
 		});
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(BlockHandler.BlockOres, 2, 3), new Object[] {
-			new ItemStack(ItemHandler.Resource, 1, 9), new ItemStack(BlockHandler.BlockOres, 1, 3)
+		GameRegistry.addShapelessRecipe(new ItemStack(BlockHandler.BlockBase, 2, 3), new Object[] {
+			new ItemStack(ItemHandler.Resource, 1, 9), new ItemStack(BlockHandler.BlockBase, 1, 3)
 		});
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(BlockHandler.BlockOres, 2, 0), new Object[] {
-			new ItemStack(ItemHandler.Resource, 1, 9), new ItemStack(BlockHandler.BlockOres, 1, 0)
+		GameRegistry.addShapelessRecipe(new ItemStack(BlockHandler.BlockBase, 2, 0), new Object[] {
+			new ItemStack(ItemHandler.Resource, 1, 9), new ItemStack(BlockHandler.BlockBase, 1, 0)
 		});
 	}
 	
 	private static void blockSmelting(){
-		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockOres.blockID, 0, new ItemStack(ItemHandler.Resource, 1, 2), 0.9F);
-		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockOres.blockID, 3, new ItemStack(ItemHandler.Resource, 1, 1), 0.7F);
-		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockOres.blockID, 6, new ItemStack(ItemHandler.Resource, 1, 0), 0.4F);
+		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 0, new ItemStack(ItemHandler.Resource, 1, 2), 0.9F);
+		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 3, new ItemStack(ItemHandler.Resource, 1, 1), 0.7F);
+		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 6, new ItemStack(ItemHandler.Resource, 1, 0), 0.4F);
 	}
 	
 	private static void itemRecipes(){        
@@ -94,7 +94,7 @@ public class RecipeManager
 		});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemHandler.Resource, 2, 10), new Object[] {
-			new ItemStack(BlockHandler.BlockOres, 1, 7)
+			new ItemStack(BlockHandler.BlockBase, 1, 7)
 		});		
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler.VerditePickaxe, 1), new Object[] {
@@ -238,31 +238,31 @@ public class RecipeManager
 		});		
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler.BloodstonePickaxe, 1), new Object[] {
-			"###", " S ", " S ", '#', new ItemStack(BlockHandler.BlockOres, 1, 7), 'S', new ItemStack(ItemHandler.Resource, 1, 13)
+			"###", " S ", " S ", '#', new ItemStack(BlockHandler.BlockBase, 1, 7), 'S', new ItemStack(ItemHandler.Resource, 1, 13)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler.BloodstoneSword, 1), new Object[] {
-			"#", "#", "S", '#', new ItemStack(BlockHandler.BlockOres, 1, 7), 'S', new ItemStack(ItemHandler.Resource, 1, 13)
+			"#", "#", "S", '#', new ItemStack(BlockHandler.BlockBase, 1, 7), 'S', new ItemStack(ItemHandler.Resource, 1, 13)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler.BloodstoneShovel, 1), new Object[] {
-			"#", "S", "S", '#', new ItemStack(BlockHandler.BlockOres, 1, 7), 'S', new ItemStack(ItemHandler.Resource, 1, 13)
+			"#", "S", "S", '#', new ItemStack(BlockHandler.BlockBase, 1, 7), 'S', new ItemStack(ItemHandler.Resource, 1, 13)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler.BloodstoneAxe, 1), new Object[] {
-			"## ", "#S ", " S ", '#', new ItemStack(BlockHandler.BlockOres, 1, 7), 'S', new ItemStack(ItemHandler.Resource, 1, 13)
+			"## ", "#S ", " S ", '#', new ItemStack(BlockHandler.BlockBase, 1, 7), 'S', new ItemStack(ItemHandler.Resource, 1, 13)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler.BloodstoneAxe, 1), new Object[] {
-			"## ", "S# ", "S  ", '#', new ItemStack(BlockHandler.BlockOres, 1, 7), 'S', new ItemStack(ItemHandler.Resource, 1, 13)
+			"## ", "S# ", "S  ", '#', new ItemStack(BlockHandler.BlockBase, 1, 7), 'S', new ItemStack(ItemHandler.Resource, 1, 13)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler.BloodstoneHoe, 1), new Object[] {
-			"## ", " S ", " S ", '#', new ItemStack(BlockHandler.BlockOres, 1, 7), 'S', new ItemStack(ItemHandler.Resource, 1, 13)
+			"## ", " S ", " S ", '#', new ItemStack(BlockHandler.BlockBase, 1, 7), 'S', new ItemStack(ItemHandler.Resource, 1, 13)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler.BloodstoneHoe, 1), new Object[] {
-			"## ", "S  ", "S  ", '#', new ItemStack(BlockHandler.BlockOres, 1, 7), 'S', new ItemStack(ItemHandler.Resource, 1, 13)
+			"## ", "S  ", "S  ", '#', new ItemStack(BlockHandler.BlockBase, 1, 7), 'S', new ItemStack(ItemHandler.Resource, 1, 13)
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ItemHandler.Satchel, 1), new Object[] {

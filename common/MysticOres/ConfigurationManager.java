@@ -47,9 +47,8 @@ public class ConfigurationManager
 	public static int ResourcesID;
 	
 	public static int SatchelID;
-
-	public static int ReinforcedGlassID;
-	public static int BlockOresID;
+	
+	public static int BlockBaseID;
 	
 	public static int AgateRarity;
 	public static int AmethystRarity;
@@ -99,8 +98,7 @@ public class ConfigurationManager
         
         ResourcesID = config.getItem("Base Resource ID", 15031).getInt();
                
-        BlockOresID = config.getBlock("Base Ore ID", 500).getInt();
-        ReinforcedGlassID = config.getBlock("Reinforced Glass ID", 501).getInt();
+        BlockBaseID = config.getBlock("Base Block ID", 500).getInt();
         
         AgateRarity = config.get("Ore Rarity", "Rarity of Agate", 3).getInt();
         AmethystRarity = config.get("Ore Rarity", "Rarity of Amethyst", 3).getInt();

@@ -13,7 +13,7 @@ public class TabMysticOres extends CreativeTabs {
 
 	@Override
 	public ItemStack getIconItemStack() {
-	    return new ItemStack(BlockHandler.BlockOres, 1, 7);
+	    return new ItemStack(BlockHandler.BlockBase, 1, 7);
 	}
 
 }

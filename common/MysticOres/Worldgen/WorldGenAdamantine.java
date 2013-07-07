@@ -28,7 +28,7 @@ public class WorldGenAdamantine implements IWorldGenerator {
 			int Ycoord = random.nextInt(16);
 			int Zcoord = blockZ + random.nextInt(8);
   
-			(new WorldGenMinable(BlockHandler.BlockOres.blockID, 0, 3)).generate(world, random, Xcoord, Ycoord, Zcoord);
+			(new WorldGenMinable(BlockHandler.BlockBase.blockID, 0, 3)).generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 	}
 }

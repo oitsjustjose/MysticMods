@@ -30,7 +30,7 @@ public class WorldGenIridium implements IWorldGenerator {
 			int Ycoord = random.nextInt(12);
 			int Zcoord = blockZ + random.nextInt(16);
   
-			(new WorldGenMinable(BlockHandler.BlockOres.blockID, 2, 6, Block.stone.blockID)).generate(world, random, Xcoord, Ycoord, Zcoord);
+			(new WorldGenMinable(BlockHandler.BlockBase.blockID, 2, 6, Block.stone.blockID)).generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 	}
 }

@@ -11,35 +11,32 @@ import net.minecraftforge.common.MinecraftForge;
 
 public class BlockHandler {
 
-	public static Block ReinforcedGlass;
-	public static Block BlockOres;
+	public static Block BlockBase;
 	
 	public static void init() {
-		ReinforcedGlass = new BlockReinforcedGlass(ConfigurationManager.ReinforcedGlassID, true).setHardness(4.5F).setResistance(2000.0F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("Reinforced Glass");
-		BlockOres = new BlockOres(ConfigurationManager.BlockOresID).setStepSound(Block.soundStoneFootstep);
+		BlockBase = new BlockBase(ConfigurationManager.BlockBaseID).setStepSound(Block.soundStoneFootstep);
 		
 		registerBlocks();
 		setBlockHarvestLevels();
 	}
 	
 	private static void registerBlocks() {
-		GameRegistry.registerBlock(ReinforcedGlass, "ReinforcedGlass");
-		GameRegistry.registerBlock(BlockOres, ItemBlockOres.class, "OreBlocks!");
+		GameRegistry.registerBlock(BlockBase, ItemBlockBase.class, "Base Blocks");
 	}
 	
 	private static void setBlockHarvestLevels() {
-		MinecraftForge.setBlockHarvestLevel(BlockOres, 0, "pickaxe", 3);
-		MinecraftForge.setBlockHarvestLevel(BlockOres, 1, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockOres, 2, "pickaxe", 3);
-		MinecraftForge.setBlockHarvestLevel(BlockOres, 3, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockOres, 4, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockOres, 5, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockOres, 6, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(BlockOres, 7, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockOres, 8, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockOres, 9, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockOres, 10, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockOres, 11, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockBase, 0, "pickaxe", 3);
+		MinecraftForge.setBlockHarvestLevel(BlockBase, 1, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockBase, 2, "pickaxe", 3);
+		MinecraftForge.setBlockHarvestLevel(BlockBase, 3, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockBase, 4, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockBase, 5, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockBase, 6, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(BlockBase, 7, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockBase, 8, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockBase, 9, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockBase, 10, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(BlockBase, 11, "pickaxe", 2);
 	}
 	
 }

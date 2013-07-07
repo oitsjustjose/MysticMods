@@ -4,9 +4,8 @@ import java.io.File;
 import java.util.Random;
 
 import MysticOres.Blocks.BlockHandler;
-import MysticOres.Blocks.BlockOres;
-import MysticOres.Blocks.BlockReinforcedGlass;
-import MysticOres.Blocks.ItemBlockOres;
+import MysticOres.Blocks.BlockBase;
+import MysticOres.Blocks.ItemBlockBase;
 import MysticOres.Items.IridiumFuelHandler;
 import MysticOres.Items.ItemAxes;
 import MysticOres.Items.ItemHandler;
@@ -25,7 +24,6 @@ import MysticOres.Worldgen.WorldGenMysticNetherMinable;
 import MysticOres.Worldgen.WorldGenTopaz;
 import MysticOres.Worldgen.WorldGenTourmaline;
 import MysticOres.Worldgen.WorldGenVerdite;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockGrass;
 import net.minecraft.block.BlockLeaves;
@@ -43,6 +41,7 @@ import net.minecraftforge.common.ForgeVersion;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
@@ -64,16 +63,11 @@ public class MysticOres
 {
 	public static CreativeTabs MysticOresTab = new TabMysticOres(CreativeTabs.getNextID(), "MysticOresTab");
 
-	@PreInit
+	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{		
         ConfigurationManager.initialize(new File(event.getModConfigurationDirectory(), "Mystic Mods/Mystic Ores.cfg"));
         ConfigurationManager.save();
-    }
-	
-	@Init
-	public void load(FMLInitializationEvent event)
-	{	
 		BlockHandler.init();
 		ItemHandler.init();
 		GameRegistry.registerFuelHandler(new IridiumFuelHandler());
@@ -82,10 +76,4 @@ public class MysticOres
 		WorldGenHandler.init();
 		LanguageManager.init();
 	}
-	
-	@PostInit
-    public void postInit(FMLPostInitializationEvent event) 
-	{
-		ThaumcraftAPIManager.init();
-    }
 }

@@ -27,7 +27,7 @@ public class WorldGenTourmaline implements IWorldGenerator {
 			int Ycoord = random.nextInt(60);
 			int Zcoord = blockZ + random.nextInt(32);
 		  
-			(new WorldGenMinable(BlockHandler.BlockOres.blockID, 4, 4, Block.stone.blockID)).generate(world, random, Xcoord, Ycoord, Zcoord);
+			(new WorldGenMinable(BlockHandler.BlockBase.blockID, 4, 4, Block.stone.blockID)).generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 	}
  }

@@ -2,6 +2,7 @@ package MysticRuins;
 
 import java.io.File;
 import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.DungeonHooks;
@@ -9,6 +10,7 @@ import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
@@ -26,23 +28,14 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class MysticRuins
 {
-	@PreInit
+	@EventHandler
     public void preInit(FMLPreInitializationEvent event)
 	{
 		Config.initialize(new File(event.getModConfigurationDirectory(), "Mystic Mods/Mystic Ruins.cfg"));
         Config.save();
-    }
-	
-	@Init
-	public void load(FMLInitializationEvent event)
-	{
+        
 		GameRegistry.registerWorldGenerator(new WorldGenRuin());
 		GameRegistry.registerWorldGenerator(new WorldGenRuin$1());
 		GameRegistry.registerWorldGenerator(new WorldGenMysticDungeon());
 	}
-	
-	@PostInit
-    public void postInit(FMLPostInitializationEvent event) 
-	{
-    }
 }

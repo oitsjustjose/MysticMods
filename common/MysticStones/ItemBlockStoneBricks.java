@@ -12,7 +12,7 @@ import net.minecraft.util.MathHelper;
 
 public class ItemBlockStoneBricks extends ItemBlock {
 	
-	public static String[] STONEBRICK_TYPES = new String[] {"Anorthosite", "Limestone", "Marble", "Migmatite", "Orthogneiss", "Slate", "Travertine"};
+	public static String[] STONEBRICK_TYPES = new String[] {"Anorthosite Bricks", "Limestone Bricks", "Marble Bricks", "Migmatite Bricks", "Orthogneiss Bricks", "Slate Bricks", "Travertine Bricks"};
 
 	public ItemBlockStoneBricks(int par1) {
 		super(par1);

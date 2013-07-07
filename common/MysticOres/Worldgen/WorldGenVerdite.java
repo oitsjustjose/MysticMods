@@ -30,7 +30,7 @@ public class WorldGenVerdite implements IWorldGenerator {
 			int Ycoord = random.nextInt(30) + 70;
 			int Zcoord = blockZ + random.nextInt(16);
 		  
-			(new WorldGenMinable(BlockHandler.BlockOres.blockID, 6, 9, Block.stone.blockID)).generate(world, random, Xcoord, Ycoord, Zcoord);
+			(new WorldGenMinable(BlockHandler.BlockBase.blockID, 6, 9, Block.stone.blockID)).generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 	}
 }

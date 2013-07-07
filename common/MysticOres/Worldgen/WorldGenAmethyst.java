@@ -30,7 +30,7 @@ public class WorldGenAmethyst implements IWorldGenerator {
 			int Ycoord = random.nextInt(60);
 			int Zcoord = blockZ + random.nextInt(24);
   
-			(new WorldGenMinable(BlockHandler.BlockOres.blockID, 1, 4, Block.stone.blockID)).generate(world, random, Xcoord, Ycoord, Zcoord);
+			(new WorldGenMinable(BlockHandler.BlockBase.blockID, 1, 4, Block.stone.blockID)).generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 	}
 }

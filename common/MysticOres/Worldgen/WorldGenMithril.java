@@ -29,7 +29,7 @@ public class WorldGenMithril implements IWorldGenerator {
 				int Ycoord = random.nextInt(64);
 				int Zcoord = blockZ + random.nextInt(16);
 		  
-				(new WorldGenMinable(BlockHandler.BlockOres.blockID, 3, 6, Block.stone.blockID)).generate(world, random, Xcoord, Ycoord, Zcoord);
+				(new WorldGenMinable(BlockHandler.BlockBase.blockID, 3, 6, Block.stone.blockID)).generate(world, random, Xcoord, Ycoord, Zcoord);
 			}
 	}
 }
