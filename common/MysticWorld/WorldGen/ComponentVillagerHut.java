@@ -4,8 +4,12 @@ import java.util.List;
 import java.util.Random;
 
 import MysticOres.Blocks.BlockHandler;
+import MysticOres.Items.ItemHandler;
 import MysticStones.MysticStones;
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.ComponentVillage;
@@ -93,9 +97,9 @@ public class ComponentVillagerHut extends ComponentVillage
 		this.placeBlockAtCurrentPosition(world, Block.ladder.blockID, i, 3, 3, 5, sbb);
 		this.placeBlockAtCurrentPosition(world, Block.ladder.blockID, i, 3, 4, 5, sbb);
 		/*---------------------------------------------------------------Inside--------------------------------------------------------------------------*/
-		this.placeBlockAtCurrentPosition(world, Block.furnaceIdle.blockID, 0, 1, 1, 1, sbb);
+		this.placeBlockAtCurrentPosition(world, Block.furnaceIdle.blockID, i, 1, 1, 1, sbb);
 		this.placeBlockAtCurrentPosition(world, Block.workbench.blockID, 0, 1, 1, 4, sbb);
-		this.placeBlockAtCurrentPosition(world, Block.anvil.blockID, 2, 1, 1, 5, sbb);
+		this.placeBlockAtCurrentPosition(world, Block.anvil.blockID, 2, 1, 1, 5, sbb);		
 		this.generateStructureChestContents(world, sbb, random, 4, 1, 5, MysticHutUtil.MysticHutChest.getItems(random), MysticHutUtil.MysticHutChest.getCount(random));
 
 		for (int l = 0; l < 6; ++l)
