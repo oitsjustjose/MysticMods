@@ -20,11 +20,5 @@ public class EntityHandler {
 		EntityRegistry.registerModEntity(EntityChargeEarth.class, Strings.ENTITY_EARTH_CHARGE_NAME, EntityIds.ENTITY_EARTH_CHARGE, MysticWorld.instance, 80, 3, false);
 		EntityRegistry.registerModEntity(EntityChargeEnergy.class, Strings.ENTITY_ENERGY_CHARGE_NAME, EntityIds.ENTITY_ENERGY_CHARGE, MysticWorld.instance, 80, 3, false);
 		EntityRegistry.registerModEntity(EntityChargeWater.class, Strings.ENTITY_WATER_CHARGE_NAME, EntityIds.ENTITY_WATER_CHARGE, MysticWorld.instance, 80, 3, false);
-		
-		EntityRegistry.registerModEntity(EntityPigman.class, Strings.ENTITY_PIGMAN_NAME, EntityIds.ENTITY_PIGMAN, MysticWorld.instance, 80, 3, false);
-		
-		BiomeGenBase[] overworldbiomes = BiomeDictionary.getBiomesForType(BiomeDictionary.Type.PLAINS.DESERT.MAGICAL.MOUNTAIN.FOREST.HILLS);
-		
-		EntityRegistry.addSpawn(EntityPigman.class, 10, 2, 12, EnumCreatureType.creature, overworldbiomes);
 	}
 }

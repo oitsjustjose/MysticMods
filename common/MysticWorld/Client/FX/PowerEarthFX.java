@@ -73,7 +73,7 @@ public class PowerEarthFX extends EntityFX
 	  GL11.glEnable(3042);
 	  GL11.glBlendFunc(770, 1);
 	  
-	  FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation("/assets/MysticTextures/textures/misc/earthFX.png"));
+	  FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation("MysticTextures:textures" + "/misc/earthFX.png"));
 
 	  GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.75F);
 	  
@@ -98,7 +98,7 @@ public class PowerEarthFX extends EntityFX
 	  GL11.glDepthMask(true);
 	  GL11.glPopMatrix();
 
-	  FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation("/assets/minecraft/textures/particle/particles.png"));
+	  FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation("minecraft:textures" + "/particle/particles.png"));
 	  tessellator.startDrawingQuads();
   }
 }

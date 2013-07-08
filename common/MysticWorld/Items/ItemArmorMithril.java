@@ -3,6 +3,7 @@ package MysticWorld.Items;
 import MysticWorld.MysticWorld;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -42,15 +43,10 @@ public class ItemArmorMithril extends ItemArmor
 			}
 		}
 		
-		public String getArmorTextureFile(ItemStack par1){
-			if(par1.itemID == ItemHandler$1.mithrilHelmet.itemID||par1.itemID == ItemHandler$1.mithrilChestplate.itemID||par1.itemID == ItemHandler$1.mithrilBoots.itemID)
-			{
-				return ArmorFile_1;
-			}
-			if(par1.itemID == ItemHandler$1.mithrilLeggings.itemID)
-			{
-				return ArmorFile_2;
-			}
-			return ArmorFile_2;
-		}
+		 public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer)
+		  {
+		    int suffix = this.armorType == 2 ? 2 : 1;
+
+		    return "MysticTextures:textures" + "/models/armor/Mithril_layer_" + suffix + ".png";
+		  }
 }

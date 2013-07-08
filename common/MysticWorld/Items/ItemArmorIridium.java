@@ -3,6 +3,7 @@ package MysticWorld.Items;
 import MysticWorld.MysticWorld;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
@@ -46,17 +47,12 @@ public class ItemArmorIridium extends ItemArmor
 			}
 		}
 		
-		public String getArmorTextureFile(ItemStack par1){
-			if(par1.itemID == ItemHandler$1.iridiumHelmet.itemID||par1.itemID == ItemHandler$1.iridiumChestplate.itemID||par1.itemID == ItemHandler$1.iridiumBoots.itemID)
-			{
-				return ArmorFile_1;
-			}
-			if(par1.itemID == ItemHandler$1.iridiumLeggings.itemID)
-			{
-				return ArmorFile_2;
-			}
-			return ArmorFile_2;
-		}
+		 public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer)
+		  {
+		    int suffix = this.armorType == 2 ? 2 : 1;
+
+		    return "MysticTextures:textures" + "/models/armor/Iridium_layer_" + suffix + ".png";
+		  }
 		
 		@Override
 		public void onArmorTickUpdate(World world, EntityPlayer player, ItemStack itemStack)
