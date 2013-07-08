@@ -16,9 +16,12 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumMovingObjectType;
+import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.MinecraftForge;
@@ -41,27 +44,49 @@ public class ItemStaffEarth extends Item {
         itemIcon = iconRegister.registerIcon("MysticTextures:StaffEarth");
     }
 	
-	public boolean onItemUse(ItemStack itemStack, EntityPlayer entityPlayer, World world, int par4, int par5, int par6, int par7, float par8, float par9, float par10){
-		if (!entityPlayer.canPlayerEdit(par4, par5, par6, par7, itemStack))
+	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)
+	{
+		if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
 		{
-		    return false;
+			MovingObjectPosition movingobjectposition = this.getMovingObjectPositionFromPlayer(world, entityPlayer, true);
+
+	        if (movingobjectposition == null)
+	        {
+	            return itemStack;
+	        }
+	        else
+	        {
+	            if (movingobjectposition.typeOfHit == EnumMovingObjectType.TILE)
+	            {
+	                int i = movingobjectposition.blockX;
+	                int j = movingobjectposition.blockY;
+	                int k = movingobjectposition.blockZ;
+
+	                if (!world.canMineBlock(entityPlayer, i, j, k))
+	                {
+	                    return itemStack;
+	                }
+
+	                if (!entityPlayer.canPlayerEdit(i, j, k, movingobjectposition.sideHit, itemStack))
+	                {
+	                    return itemStack;
+	                }
+	                else
+	                {
+	                	if (applyBonemeal(itemStack, world, i, j, k, entityPlayer))
+	                	{
+	                		if (!world.isRemote)
+	                		{
+	                			world.playAuxSFX(2005, i, j, k, 0);
+	                		}
+	                		return itemStack;
+	                	}
+	                }
+	            }
+	        }
 		}
 		else
 		{
-		    if (applyBonemeal(itemStack, world, par4, par5, par6, entityPlayer))
-		    {
-		        if (!world.isRemote)
-		        {
-		            world.playAuxSFX(2005, par4, par5, par6, 0);
-		        }
-		            return true;
-		    }
-		    return false;
-		}
-	}
-	
-	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)
-	{
 			world.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)entityPlayer.posX, (int)entityPlayer.posY, (int)entityPlayer.posZ, 0);
 
 			if (!world.isRemote)
@@ -72,6 +97,9 @@ public class ItemStaffEarth extends Item {
 			}
 	    
 			return itemStack;
+		}
+		
+		return itemStack;
 	}
 	
 	public static boolean applyBonemeal(ItemStack itemStack, World par1World, int par2, int par3, int par4, EntityPlayer player)
@@ -99,7 +127,6 @@ public class ItemStaffEarth extends Item {
 	            {
 	            	((BlockSapling)Block.sapling).markOrGrowMarked(par1World, par2, par3, par4, par1World.rand);
 	            }
-
 	                itemStack.damageItem(1, player);
 	            }
 	            return true;
@@ -109,6 +136,16 @@ public class ItemStaffEarth extends Item {
 	        	if (!par1World.isRemote)
 	        	{
 	        		par1World.setBlock(par2, par3, par4, Block.cobblestoneMossy.blockID);
+	        	}
+	        	
+	        	itemStack.damageItem(1, player);
+	        }
+	        else if (l == Block.deadBush.blockID)
+	        {
+	        	if (!par1World.isRemote)
+	        	{
+	        		par1World.setBlock(par2, par3, par4, 0);
+	        		par1World.spawnEntityInWorld(new EntityItem(par1World, par2, par3, par4, new ItemStack(Block.sapling, 1)));
 	        	}
 	        	
 	        	itemStack.damageItem(1, player);
