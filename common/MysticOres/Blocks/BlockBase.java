@@ -143,6 +143,7 @@ public class BlockBase extends BlockBreakable {
         case 8:return random.nextInt(4) + 1;
         case 9:return random.nextInt(4) + 1;
         case 10:return random.nextInt(4) + 1;
+        case 12:return random.nextInt(5) + 1;
         default:return 1;
         }
     }
