@@ -18,6 +18,7 @@ public class ItemArmorAdamantine extends ItemArmor
 	public ItemArmorAdamantine(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
 			super(par1, par2EnumArmorMaterial,par3,par4);
 			this.ArmorType=par4;
+			this.setMaxDamage(3000);
 			this.setCreativeTab(MysticWorld.MysticWorldTab);
 			this.ArmorFile_1 = "/MysticTextures/textures/armor/adamantine_1.png";
 			this.ArmorFile_2 = "/MysticTextures/textures/armor/adamantine_2.png";

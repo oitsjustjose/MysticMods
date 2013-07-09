@@ -21,7 +21,7 @@ public class LanguageManager
 		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 9), "Blue Soulstone");
 		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 10), "Red Soulstone");
 		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 11), "Agate Ore");
-		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 12), "Reinforced Glass");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 12), "Tempered Glass");
 
 		
 		LanguageRegistry.instance().addName(new ItemStack(ItemHandler.Resource, 1, 0), "Verdite Ingot");

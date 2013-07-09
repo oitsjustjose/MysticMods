@@ -19,6 +19,7 @@ public class ItemArmorVerdite extends ItemArmor
 			
 			super(par1, par2EnumArmorMaterial,par3,par4);
 			this.ArmorType=par4;
+			this.setMaxDamage(262);
 			this.setCreativeTab(MysticWorld.MysticWorldTab);
 			this.ArmorFile_1 = "/assets/MysticTextures/textures/armor/verdite_1.png";
 			this.ArmorFile_2 = "/assets/MysticTextures/textures/armor/verdite_2.png";

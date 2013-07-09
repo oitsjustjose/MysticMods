@@ -555,8 +555,8 @@ public class RecipeManager
         	new ItemStack(ItemHandler.Resource, 1, 9), Item.redstone
         });
         
-        GameRegistry.addShapelessRecipe(new ItemStack(Item.lightStoneDust, 6), new Object[] {
-        	new ItemStack(ItemHandler.Resource, 1, 9), Item.lightStoneDust
+        GameRegistry.addShapelessRecipe(new ItemStack(Item.glowstone, 6), new Object[] {
+        	new ItemStack(ItemHandler.Resource, 1, 9), Item.glowstone
         });
         
         GameRegistry.addShapelessRecipe(new ItemStack(Item.gunpowder, 3), new Object[] {

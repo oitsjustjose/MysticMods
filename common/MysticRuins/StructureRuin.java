@@ -144,7 +144,7 @@ public class StructureRuin extends WorldGenerator
                     TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1 + l3, k1 - j5 - i6 - k4, l1 + l3 + 5);
                     if(spawner != null)
                     {
-                    	spawner.func_98049_a().setMobID("Zombie");
+                    	spawner.getSpawnerLogic().setMobID("Zombie");
                     }           
                     
                     

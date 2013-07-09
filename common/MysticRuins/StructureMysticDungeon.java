@@ -831,7 +831,7 @@ public class StructureMysticDungeon extends WorldGenerator
                             TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1, k1 + 1, l1 + 1);
                             if(spawner != null)
                             {
-                            	spawner.func_98049_a().setMobID("Zombie");
+                            	spawner.getSpawnerLogic().setMobID("Zombie");
                             }           
                             world.setBlock(j1, k1 + 2, l1 + 1, Block.chest.blockID);
                             TileEntityChest chest = (TileEntityChest) world.getBlockTileEntity(j1, k1 + 2, l1 + 1);
@@ -874,7 +874,7 @@ public class StructureMysticDungeon extends WorldGenerator
                             TileEntityMobSpawner spawnerII = (TileEntityMobSpawner) world.getBlockTileEntity(j1, k1 + 3, l1 + 1);
                             if(spawnerII != null)
                             {
-                            	spawnerII.func_98049_a().setMobID("CaveSpider");
+                            	spawnerII.getSpawnerLogic().setMobID("CaveSpider");
                             }           
                             world.setBlock(j1, k1 + 1, l1 + 2, 0);
                             world.setBlock(j1, k1 + 2, l1 + 2, 0);
@@ -928,7 +928,7 @@ public class StructureMysticDungeon extends WorldGenerator
                             TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1, k1 + 1, l1 + 3);
                             if(spawner != null)
                             {
-                            	spawner.func_98049_a().setMobID("Creeper");
+                            	spawner.getSpawnerLogic().setMobID("Creeper");
                             }           
                         }
                     }
@@ -969,7 +969,7 @@ public class StructureMysticDungeon extends WorldGenerator
                             TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1, k1 + 2, l1 + 2);
                             if(spawner != null)
                             {
-                            	spawner.func_98049_a().setMobID("Skeleton");
+                            	spawner.getSpawnerLogic().setMobID("Skeleton");
                             }           
                             world.setBlock(j1, k1 + 3, l1 + 2, Block.bookShelf.blockID);
                             world.setBlock(j1, k1 + 1, l1 + 3, Block.bookShelf.blockID);
@@ -1024,7 +1024,7 @@ public class StructureMysticDungeon extends WorldGenerator
                             TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1, k1 + 1, l1 + 2);
                             if(spawner != null)
                             {
-                            	spawner.func_98049_a().setMobID("Blaze");
+                            	spawner.getSpawnerLogic().setMobID("Blaze");
                             }           
                             world.setBlock(j1, k1 + 1, l1 + 3, Block.blockGold.blockID);
                         }
@@ -1089,7 +1089,7 @@ public class StructureMysticDungeon extends WorldGenerator
                             TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1, k1 + 2, l1 - 1);
                             if(spawner != null)
                             {
-                            	spawner.func_98049_a().setMobID("Zombie");
+                            	spawner.getSpawnerLogic().setMobID("Zombie");
                             }           
                             world.setBlock(j1, k1 + 1, l1 - 2, 0);
                             world.setBlock(j1, k1 + 2, l1 - 2, 0);
@@ -3805,7 +3805,7 @@ public class StructureMysticDungeon extends WorldGenerator
                 TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1 - 4, k1 - 10, l1);
                 if(spawner != null)
                 {
-                	spawner.func_98049_a().setMobID("Zombie");
+                	spawner.getSpawnerLogic().setMobID("Zombie");
                 }           
                 
                 

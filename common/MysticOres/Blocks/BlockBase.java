@@ -172,7 +172,7 @@ public class BlockBase extends BlockBreakable {
     	int w = par2Random.nextInt(3);
         if (w == 0)
         {
-                return Item.lightStoneDust.itemID;
+                return Item.glowstone.itemID;
         }
         if (w == 1)
         {
@@ -212,7 +212,7 @@ public class BlockBase extends BlockBreakable {
         }
         if (w==4)
         {
-        	return Item.lightStoneDust.itemID;
+        	return Item.glowstone.itemID;
         }
         else
         {

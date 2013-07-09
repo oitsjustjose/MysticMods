@@ -9,17 +9,15 @@ import MysticWorld.Entity.EntityHandler;
 import MysticWorld.Items.ItemHandler$1;
 import MysticWorld.Lib.Strings;
 import MysticWorld.WorldGen.*;
-
 import net.minecraft.block.Block;
-import net.minecraft.client.resources.ResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -70,7 +68,7 @@ public class MysticWorld
 			
 	    TickRegistry.registerTickHandler(this.tickHandler, Side.SERVER);
 	    VillagerRegistry.instance().registerVillagerSkin(98943, new ResourceLocation("/mods/MysticTextures/textures/mob/MysticVillager.png"));
-        VillagerRegistry.instance().registerVillageTradeHandler(98943, new MysticVillagerTrades());
+        VillagerRegistry.instance().registerVillageTradeHandler(98943, new VillageHutHandler());
         VillagerRegistry.instance().registerVillageCreationHandler(new VillageHutHandler());
 		BlockHandler.init();
 		ItemHandler$1.init();
