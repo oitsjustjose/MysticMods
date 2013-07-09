@@ -94,15 +94,15 @@ public class ItemStaffFire extends Item {
 	                {
 	                	ItemStack result = FurnaceRecipes.smelting().getSmeltingResult(new ItemStack(world.getBlockId(i, j, k), 1, world.getBlockMetadata(i, j, k)));
 	                	
-	                	int id = result.itemID;
-	                	int meta = result.getItemDamage();
-	                	
 	                	if (!world.isRemote && !(result == null))
 	        	        {
-	                			world.playSoundEffect((double)i + 0.5D, (double)j + 0.5D, (double)k + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-	                			world.setBlock(i, j, k, 0);
-	                			world.spawnEntityInWorld(new EntityItem(world, i, j, k, new ItemStack(id, 1, meta)));
-	                			itemStack.damageItem(1, entityPlayer);
+		                	int id = result.itemID;
+		                	int meta = result.getItemDamage();
+	                		
+	                		world.playSoundEffect((double)i + 0.5D, (double)j + 0.5D, (double)k + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+	                		world.setBlock(i, j, k, 0);
+	                		world.spawnEntityInWorld(new EntityItem(world, i, j, k, new ItemStack(id, 1, meta)));
+	                		itemStack.damageItem(1, entityPlayer);
 	        	        }
 	                }
 	            }
