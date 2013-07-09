@@ -12,6 +12,7 @@ import net.minecraft.block.BlockSapling;
 import net.minecraft.block.BlockStem;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -94,6 +95,16 @@ public class ItemOrbEarth extends Item {
 	        	if (!par1World.isRemote)
 	        	{
 	        		par1World.setBlock(par2, par3, par4, Block.cobblestoneMossy.blockID);
+	        	}
+	        	
+	        	itemStack.damageItem(1, player);
+	        }
+	        else if (l == Block.deadBush.blockID)
+	        {
+	        	if (!par1World.isRemote)
+	        	{
+	        		par1World.setBlock(par2, par3, par4, 0);
+	        		par1World.spawnEntityInWorld(new EntityItem(par1World, par2, par3, par4, new ItemStack(Block.sapling, 1)));
 	        	}
 	        	
 	        	itemStack.damageItem(1, player);
