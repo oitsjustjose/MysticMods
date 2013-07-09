@@ -70,6 +70,12 @@ public class RecipeManager
 		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 0, new ItemStack(ItemHandler.Resource, 1, 2), 0.9F);
 		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 3, new ItemStack(ItemHandler.Resource, 1, 1), 0.7F);
 		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 6, new ItemStack(ItemHandler.Resource, 1, 0), 0.4F);
+		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 1, new ItemStack(ItemHandler.Resource, 1, 8), 0.4F);
+		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 2, new ItemStack(ItemHandler.Resource, 1, 4), 0.4F);
+		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 4, new ItemStack(ItemHandler.Resource, 1, 5), 0.4F);
+		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 5, new ItemStack(ItemHandler.Resource, 1, 7), 0.4F);
+		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 7, new ItemStack(ItemHandler.Resource, 1, 10), 0.4F);
+		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 11, new ItemStack(ItemHandler.Resource, 1, 6), 0.4F);
 	}
 	
 	private static void itemRecipes(){        

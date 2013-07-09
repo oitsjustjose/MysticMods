@@ -1,7 +1,9 @@
 package MysticWorld;
 
 import java.io.File;
+import java.lang.reflect.Array;
 import java.util.Random;
+import java.util.Set;
 
 import MysticWorld.Biome.BiomeHandler;
 import MysticWorld.Blocks.BlockHandler;
@@ -12,13 +14,15 @@ import MysticWorld.WorldGen.*;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.client.resources.ResourceLocation;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
@@ -50,7 +54,9 @@ public class MysticWorld
 	
 	public static CreativeTabs MysticWorldTab = new TabMysticWorld(CreativeTabs.getNextID(), "MysticWorldTab");
 	
-	@PreInit
+	public static Object[] furnaceInput;
+	
+	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{	
 		Config.initialize(new File(event.getModConfigurationDirectory(), "Mystic Mods/Mystic World.cfg"));
@@ -59,7 +65,7 @@ public class MysticWorld
         instance = this;
     }
 	
-	@Init
+	@EventHandler
 	public void load(FMLInitializationEvent event)
 	{
 		proxy.registerRenders();
@@ -78,7 +84,7 @@ public class MysticWorld
 		Lang.init();
 	}
 	
-	@PostInit
+	@EventHandler
     public void postInit(FMLPostInitializationEvent event) 
 	{
     }

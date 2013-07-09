@@ -76,7 +76,6 @@ public class RecipeHandler {
 	}
 	
 	private static void itemSmelting(){
-		
 	}
 	
 	private static void staffRecipe(Item output, ItemStack input){
