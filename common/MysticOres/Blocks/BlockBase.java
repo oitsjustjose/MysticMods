@@ -55,13 +55,6 @@ public class BlockBase extends BlockBreakable {
     	}
      	else return 3.0F;
 	}
-	
-	
-	@Override
-    public int getLightOpacity(World world, int x, int y, int z)
-    {
-            return 0;
-    }
 
     @Override
     public int getLightValue(IBlockAccess world, int x, int y, int z)
@@ -91,6 +84,7 @@ public class BlockBase extends BlockBreakable {
 	public Icon getIcon(int side, int meta) {
 		return textures[meta];
 	}
+	
 	
 	public int idDropped(int par1, Random par2Random, int par3) {
         switch(par1){
@@ -139,12 +133,26 @@ public class BlockBase extends BlockBreakable {
 		default: return 0;
 		}
 	}
-
+	
+	@Override
+    public int quantityDropped(int meta, int fortune, Random random)
+    {
+        switch(meta){
+        case 2:return random.nextInt(5) + 1;
+        case 7:return random.nextInt(3) + 1;
+        case 8:return random.nextInt(4) + 1;
+        case 9:return random.nextInt(4) + 1;
+        case 10:return random.nextInt(4) + 1;
+        case 12:return random.nextInt(5) + 1;
+        default:return 1;
+        }
+    }
+    
     protected boolean canSilkHarvest()
     {
         return true;
     }
-    
+
     public int BlackSoulstoneDrops(int par1, Random par2Random, int par3)
     {
     	int w = par2Random.nextInt(3);
