@@ -20,7 +20,7 @@ public class ItemVoidShard extends Item {
 		super(id);
 		this.setMaxStackSize(1);
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
-		this.setMaxDamage(30);
+		this.setMaxDamage(1);
 	}
 	
 	@Override
@@ -52,6 +52,7 @@ public class ItemVoidShard extends Item {
 			entityPlayer.experienceLevel += itemStack.stackTagCompound.getInteger("xpStored");
 			itemStack.stackTagCompound.setInteger("xpStored", 0);
 			itemStack.stackTagCompound.setBoolean("filled", false);
+			itemStack.damageItem(2, entityPlayer);
 		}
 		
 		return itemStack;
