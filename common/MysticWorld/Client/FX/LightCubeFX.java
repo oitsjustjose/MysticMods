@@ -5,7 +5,7 @@ import org.lwjgl.opengl.GL11;
 import cpw.mods.fml.client.FMLClientHandler;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 public class LightCubeFX extends EntityFX {
