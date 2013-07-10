@@ -29,14 +29,21 @@ public class ItemVoidShard extends Item {
 		if (itemStack.stackTagCompound == null)
     		itemStack.setTagCompound(new NBTTagCompound());
 		
-		int currentExperience = entityPlayer.experienceLevel;
+		int experience = entityPlayer.experienceLevel;
+		int experienceSubtract = entityPlayer.experienceLevel - 30;
 		
 		if (itemStack.stackTagCompound.getBoolean("filled") == false)
 		{
-			if (currentExperience > 0)
+			if (experience > 0 && experience <= 30)
 			{
 				entityPlayer.experienceLevel = 0;
-				itemStack.stackTagCompound.setInteger("xpStored", currentExperience);
+				itemStack.stackTagCompound.setInteger("xpStored", experience);
+				itemStack.stackTagCompound.setBoolean("filled", true);
+			}
+			else if (experience > 30)
+			{
+				entityPlayer.experienceLevel = experienceSubtract;
+				itemStack.stackTagCompound.setInteger("xpStored", 30);
 				itemStack.stackTagCompound.setBoolean("filled", true);
 			}
 		}
