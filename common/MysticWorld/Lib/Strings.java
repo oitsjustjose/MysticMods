@@ -64,6 +64,8 @@ public class Strings {
 	public static final String IRIDIUM_LEGGINGS_NAME = "iridiumLeggings";
 	public static final String IRIDIUM_BOOTS_NAME = "iridiumBoots";
 	
+	public static final String VOID_SHARD_NAME = "voidShard";
+	
 	//Entity Names
 	public static final String ENTITY_AIR_CHARGE_NAME = "entityAirCharge";
 	public static final String ENTITY_FIREBALL_NAME = "entityFireball";

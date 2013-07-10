@@ -60,8 +60,9 @@ public class ItemHandler$1 {
 	public static Item iridiumChestplate;
 	public static Item iridiumLeggings;
 	public static Item iridiumBoots;
-
 	
+	public static Item voidShard;
+
 	public static void init(){
 
 		staffParts = new ItemStaffParts(ItemIds.STAFF_PARTS);
@@ -101,5 +102,7 @@ public class ItemHandler$1 {
 		iridiumChestplate = new ItemArmorIridium(ItemIds.IRIDIUM_CHESTPLATE, EnumArmor.Iridium, MysticWorld.proxy.addArmor(EnumArmor.Iridium.name()), 1).setUnlocalizedName(Strings.IRIDIUM_CHESTPLATE_NAME);
 		iridiumLeggings = new ItemArmorIridium(ItemIds.IRIDIUM_LEGGINGS, EnumArmor.Iridium, MysticWorld.proxy.addArmor(EnumArmor.Iridium.name()), 2).setUnlocalizedName(Strings.IRIDIUM_LEGGINGS_NAME);
 		iridiumBoots = new ItemArmorIridium(ItemIds.IRIDIUM_BOOTS, EnumArmor.Iridium, MysticWorld.proxy.addArmor(EnumArmor.Iridium.name()), 3).setUnlocalizedName(Strings.IRIDIUM_BOOTS_NAME);
+	
+		voidShard = new ItemVoidShard(ItemIds.VOID_SHARD).setUnlocalizedName(Strings.VOID_SHARD_NAME);
 	}
 }

@@ -78,6 +78,8 @@ public class Lang
 		LanguageRegistry.instance().addName(ItemHandler$1.airOrb, "Air Orb");
 		LanguageRegistry.instance().addName(ItemHandler$1.energyOrb, "Energy Orb");
 		
+		LanguageRegistry.instance().addName(ItemHandler$1.voidShard, "Void Shard");
+		
 		for (int i = 0; i < 12; i++)
 		{
 			LanguageRegistry.instance().addName(new ItemStack(ItemHandler$1.bushFruit, 1, i), "Strange Fruit");

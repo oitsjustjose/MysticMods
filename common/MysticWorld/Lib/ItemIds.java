@@ -43,6 +43,8 @@ public class ItemIds {
 	public static int AIR_ORB_DEFAULT = 5531;
 	public static int ENERGY_ORB_DEFAULT = 5532;	
 	
+	public static int VOID_SHARD_DEFAULT = 5533;
+	
 	//Current Item IDs
 	public static int STAFF_PARTS;
 	
@@ -83,4 +85,6 @@ public class ItemIds {
 	public static int EARTH_ORB;
 	public static int AIR_ORB;
 	public static int ENERGY_ORB;
+	
+	public static int VOID_SHARD;
 }

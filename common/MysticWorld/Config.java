@@ -65,11 +65,13 @@ public class Config
 		ItemIds.IRIDIUM_LEGGINGS = config.getItem(Strings.IRIDIUM_LEGGINGS_NAME, ItemIds.IRIDIUM_LEGGINGS_DEFAULT).getInt(ItemIds.IRIDIUM_LEGGINGS_DEFAULT);
 		ItemIds.IRIDIUM_BOOTS = config.getItem(Strings.IRIDIUM_BOOTS_NAME, ItemIds.IRIDIUM_BOOTS_DEFAULT).getInt(ItemIds.IRIDIUM_BOOTS_DEFAULT);
 		
-		ItemIds.FIRE_ORB = config.getItem(Strings.FIRE_ORB_NAME, ItemIds.FIRE_ORB_DEFAULT).getInt(ItemIds.FIRE_ORB);
-		ItemIds.WATER_ORB = config.getItem(Strings.WATER_ORB_NAME, ItemIds.WATER_ORB_DEFAULT).getInt(ItemIds.WATER_ORB);
-		ItemIds.EARTH_ORB = config.getItem(Strings.EARTH_ORB_NAME, ItemIds.EARTH_ORB_DEFAULT).getInt(ItemIds.EARTH_ORB);
-		ItemIds.AIR_ORB = config.getItem(Strings.AIR_ORB_NAME, ItemIds.AIR_ORB_DEFAULT).getInt(ItemIds.AIR_ORB);
-		ItemIds.ENERGY_ORB = config.getItem(Strings.ENERGY_ORB_NAME, ItemIds.ENERGY_ORB_DEFAULT).getInt(ItemIds.ENERGY_ORB);
+		ItemIds.FIRE_ORB = config.getItem(Strings.FIRE_ORB_NAME, ItemIds.FIRE_ORB_DEFAULT).getInt(ItemIds.FIRE_ORB_DEFAULT);
+		ItemIds.WATER_ORB = config.getItem(Strings.WATER_ORB_NAME, ItemIds.WATER_ORB_DEFAULT).getInt(ItemIds.WATER_ORB_DEFAULT);
+		ItemIds.EARTH_ORB = config.getItem(Strings.EARTH_ORB_NAME, ItemIds.EARTH_ORB_DEFAULT).getInt(ItemIds.EARTH_ORB_DEFAULT);
+		ItemIds.AIR_ORB = config.getItem(Strings.AIR_ORB_NAME, ItemIds.AIR_ORB_DEFAULT).getInt(ItemIds.AIR_ORB_DEFAULT);
+		ItemIds.ENERGY_ORB = config.getItem(Strings.ENERGY_ORB_NAME, ItemIds.ENERGY_ORB_DEFAULT).getInt(ItemIds.ENERGY_ORB_DEFAULT);
+		
+		ItemIds.VOID_SHARD = config.getItem(Strings.VOID_SHARD_NAME, ItemIds.VOID_SHARD_DEFAULT).getInt(ItemIds.VOID_SHARD_DEFAULT);
 		
 		config.save();
   }
