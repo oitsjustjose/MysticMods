@@ -8,9 +8,11 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BushesGen extends WorldGenerator
-{
+{	
     public boolean generate(World par1World, Random par2Random, int par3, int par4, int par5)
     {
+    	int bushType = par2Random.nextInt(12);
+    	
         for (int l = 0; l < 20; ++l)
         {
             int i1 = par3 + par2Random.nextInt(8) - par2Random.nextInt(8);
@@ -19,7 +21,7 @@ public class BushesGen extends WorldGenerator
 
             if (par1World.isAirBlock(i1, j1, k1) && par1World.getBlockId(i1, j1 - 1, k1) == Block.grass.blockID && BlockHandler.bush.canPlaceBlockAt(par1World, i1, j1, k1))
             {
-                par1World.setBlock(i1, j1, k1, BlockHandler.bush.blockID, par2Random.nextInt(12), 2);
+                par1World.setBlock(i1, j1, k1, BlockHandler.bush.blockID, bushType, 2);
             }
         }
 

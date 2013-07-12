@@ -15,7 +15,7 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.client.resources.ResourceLocation;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.ChestGenHooks;
@@ -54,8 +54,6 @@ public class MysticWorld
 	
 	public static CreativeTabs MysticWorldTab = new TabMysticWorld(CreativeTabs.getNextID(), "MysticWorldTab");
 	
-	public static Object[] furnaceInput;
-	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{	
@@ -78,6 +76,7 @@ public class MysticWorld
         VillagerRegistry.instance().registerVillageCreationHandler(new VillageHutHandler());
 		BlockHandler.init();
 		ItemHandler$1.init();
+		WorldGenHandler$1.init();
 		EntityHandler.init();
 		RecipeHandler.init();
 		MysticHutUtil.addLoot();
