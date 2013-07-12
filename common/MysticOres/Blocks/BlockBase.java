@@ -37,7 +37,8 @@ public class BlockBase extends BlockBreakable {
 	
 	private boolean RenderSide = false;
 
-	public BlockBase(int ID) {
+	public BlockBase(int ID)
+	{
 		super(ID, "BlockOres", Material.rock, true);
 		setCreativeTab(MysticOres.MysticOresTab);
 		setResistance(2000F);
@@ -81,12 +82,14 @@ public class BlockBase extends BlockBreakable {
 	}
 	
 	@Override
-	public Icon getIcon(int side, int meta) {
+	public Icon getIcon(int side, int meta)
+	{
 		return textures[meta];
 	}
 	
 	
-	public int idDropped(int par1, Random par2Random, int par3) {
+	public int idDropped(int par1, Random par2Random, int par3)
+	{
         switch(par1){
         case 1:return ItemHandler.Resource.itemID;
         case 2:return ItemHandler.Resource.itemID;

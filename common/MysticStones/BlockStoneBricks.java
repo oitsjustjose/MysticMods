@@ -25,6 +25,8 @@ public class BlockStoneBricks extends Block {
 		setHardness(2F);
 		setResistance(5F);
 		setCreativeTab(MysticStones.MysticStonesTab);
+		setUnlocalizedName("BlockMysticStoneBricks");
+		setStepSound(Block.soundStoneFootstep);
 	}
 	
 	@Override

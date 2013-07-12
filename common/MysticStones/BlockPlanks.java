@@ -25,6 +25,8 @@ public class BlockPlanks extends Block {
 		setHardness(2.5F);
 		setResistance(10F);
 		setCreativeTab(MysticStones.MysticStonesTab);
+		setUnlocalizedName("BlockMysticPlanks");
+		setStepSound(Block.soundWoodFootstep);
 	}
 	
 	@Override
@@ -59,7 +61,7 @@ public class BlockPlanks extends Block {
 
 		for (int i = 0; i < 7; i++)
 		{
-			textures[i] = iconRegister.registerIcon("MysticTextures" + ":" + ItemBlockPlanks.PLANK_TYPE[i] + " Planks");
+			textures[i] = iconRegister.registerIcon("MysticTextures" + ":" + ItemBlockPlanks.PLANK_TYPE[i]);
 		}
 	}
 	

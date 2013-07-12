@@ -26,6 +26,8 @@ public class BlockReinforced extends Block {
 		setHardness(4F);
 		setResistance(2000F);
 		setCreativeTab(MysticStones.MysticStonesTab);
+		setUnlocalizedName("BlockMysticReinforcedBrick");
+		setStepSound(Block.soundMetalFootstep);
 	}
 	
 	@Override

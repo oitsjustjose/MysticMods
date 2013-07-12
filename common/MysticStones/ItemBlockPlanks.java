@@ -12,7 +12,7 @@ import net.minecraft.util.MathHelper;
 
 public class ItemBlockPlanks extends ItemBlock {
 	
-	public static String[] PLANK_TYPE = new String[] {"Purple", "Green", "Black", "Orange", "Red", "Blue", "Yellow"};
+	public static String[] PLANK_TYPE = new String[] {"Purple Planks", "Green Planks", "Black Planks", "Orange Planks", "Red Planks", "Blue Planks", "Yellow Planks"};
 
 	public ItemBlockPlanks(int par1) {
 		super(par1);

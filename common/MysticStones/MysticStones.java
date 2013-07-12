@@ -41,17 +41,16 @@ public class MysticStones
 	
 	private Configuration config;
 
-	
 	@EventHandler
     public void preInit(FMLPreInitializationEvent event)
 	{
 		Config.initialize(new File(event.getModConfigurationDirectory(), "Mystic Mods/Mystic Stones.cfg"));
         Config.save();
 
-		Planks = new BlockPlanks(Config.PlanksID).setStepSound(Block.soundWoodFootstep);
-		Stones = new BlockStones(Config.StonesID).setStepSound(Block.soundStoneFootstep);
-		StoneBricks = new BlockStoneBricks(Config.StoneBricksID).setStepSound(Block.soundStoneFootstep);
-		ReinforcedBricks = new BlockReinforced(Config.ReinforcedBricksID).setStepSound(Block.soundMetalFootstep);
+		Planks = new BlockPlanks(Config.PlanksID);
+		Stones = new BlockStones(Config.StonesID);
+		StoneBricks = new BlockStoneBricks(Config.StoneBricksID);
+		ReinforcedBricks = new BlockReinforced(Config.ReinforcedBricksID);
 		
 		GameRegistry.registerBlock(Planks, ItemBlockPlanks.class, "Planks");
 		GameRegistry.registerBlock(Stones, ItemBlockStones.class, "Stones");
@@ -63,7 +62,6 @@ public class MysticStones
 		RecipeHandler.CraftStoneBricks();
 		RecipeHandler.CraftElse();
 		RecipeHandler.CraftReinforced();
-		
 		
 		GameRegistry.registerWorldGenerator(new WorldgenSmoothAnorthosite());
 		GameRegistry.registerWorldGenerator(new WorldgenSmoothLimestone());

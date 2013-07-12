@@ -7,6 +7,7 @@ import java.util.Set;
 
 import MysticWorld.Biome.BiomeHandler;
 import MysticWorld.Blocks.BlockHandler;
+import MysticWorld.Blocks.Override.OverrideManager;
 import MysticWorld.Entity.EntityHandler;
 import MysticWorld.Items.ItemHandler$1;
 import MysticWorld.Lib.Strings;
@@ -15,7 +16,7 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraft.client.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.ChestGenHooks;
@@ -74,6 +75,7 @@ public class MysticWorld
 	    VillagerRegistry.instance().registerVillagerSkin(98943, new ResourceLocation("/mods/MysticTextures/textures/mob/MysticVillager.png"));
         VillagerRegistry.instance().registerVillageTradeHandler(98943, new VillageHutHandler());
         VillagerRegistry.instance().registerVillageCreationHandler(new VillageHutHandler());
+        OverrideManager.init();
 		BlockHandler.init();
 		ItemHandler$1.init();
 		WorldGenHandler$1.init();
@@ -82,9 +84,4 @@ public class MysticWorld
 		MysticHutUtil.addLoot();
 		Lang.init();
 	}
-	
-	@EventHandler
-    public void postInit(FMLPostInitializationEvent event) 
-	{
-    }
 }

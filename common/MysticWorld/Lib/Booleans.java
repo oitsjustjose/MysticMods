@@ -8,4 +8,5 @@ public class Booleans
 	public static boolean ENABLE_MOUNTAIN_GEN;
 	public static boolean ENABLE_TUNDRA_GEN;
 	public static boolean ENABLE_STEPPE_GEN;
+	public static boolean VANILLA_OVERRIDE_ENABLE;
 }

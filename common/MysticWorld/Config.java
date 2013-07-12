@@ -25,6 +25,7 @@ public class Config
 		Booleans.ENABLE_MOUNTAIN_GEN = config.get("World Generation", "Enable Mountain Biome", true).getBoolean(Booleans.ENABLE_MOUNTAIN_GEN);
 		Booleans.ENABLE_STEPPE_GEN = config.get("World Generation", "Enable Steppe Biome", true).getBoolean(Booleans.ENABLE_STEPPE_GEN);
 		Booleans.ENABLE_TUNDRA_GEN = config.get("World Generation", "Enable Tundra Biome", true).getBoolean(Booleans.ENABLE_TUNDRA_GEN);
+		Booleans.VANILLA_OVERRIDE_ENABLE = config.get("Vanilla Override", "Enable Vanilla Block Override", true).getBoolean(Booleans.VANILLA_OVERRIDE_ENABLE);
 		
 		//Block Configuration
 		BlockIds.ORE_STONE_1 = config.getBlock(Strings.IMBUED_STONE_NAME, BlockIds.ORE_STONE_1_DEFAULT).getInt(BlockIds.ORE_STONE_1);
