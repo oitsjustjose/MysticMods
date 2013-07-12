@@ -25,19 +25,55 @@ import cpw.mods.fml.common.TickType;
 public class TickHandler implements IScheduledTickHandler
 {
 	private EnumSet ticks;
-
-	Random rand = new Random();
 	
 	public TickHandler(){
 		this.ticks = EnumSet.of(TickType.PLAYER);
 	}
 
 	public void tickStart(EnumSet<TickType> type, Object... tickData){
+		Random rand = new Random();
 		EntityPlayer player = (EntityPlayer)tickData[0];
 		World world = player.worldObj;
 		InventoryPlayer inventory = player.inventory;
 		ItemStack itemstack = inventory.getCurrentItem();
 		
+		staffAndOrbTick(player, world, itemstack, rand);
+		
+		pillarTick(player, world);
+    }
+
+	public void tickEnd(EnumSet<TickType> type, Object... tickData){
+		EntityPlayer player = (EntityPlayer)tickData[0];
+		World world = player.worldObj;
+		InventoryPlayer inventory = player.inventory;
+	}
+	
+	public EnumSet ticks(){
+		return this.ticks;
+	}
+
+	public String getLabel(){
+		return "mystic world tick";
+	}
+
+	public int nextTickSpacing(){
+		return 20;
+	}
+	
+	private static void pillarTick(EntityPlayer player, World world)
+	{
+		int block = world.getBlockId((int)player.posX, (int)player.posY, (int)player.posZ);
+    	int foodLevel = player.getFoodStats().getFoodLevel();
+	
+    	if (block == BlockHandler.pillarPlatform.blockID)
+    	{
+        	player.getFoodStats().setFoodLevel(foodLevel + 1);
+        	player.getFoodStats().setFoodSaturationLevel(20);
+    	}
+	}
+	
+	private static void staffAndOrbTick(EntityPlayer player, World world, ItemStack itemstack, Random rand)
+	{
 		if (itemstack != null && (itemstack.itemID == ItemHandler$1.fireOrb.itemID || itemstack.itemID == ItemHandler$1.fireStaff.itemID)){
 			player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
 			MysticWorld.proxy.fireFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
@@ -60,24 +96,5 @@ public class TickHandler implements IScheduledTickHandler
 		if (itemstack != null && (itemstack.itemID == ItemHandler$1.waterOrb.itemID || itemstack.itemID == ItemHandler$1.waterStaff.itemID)){
 			MysticWorld.proxy.waterFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
 		}
-		
-    }
-
-	public void tickEnd(EnumSet<TickType> type, Object... tickData){
-		EntityPlayer player = (EntityPlayer)tickData[0];
-		World world = player.worldObj;
-		InventoryPlayer inventory = player.inventory;
-	}
-	
-	public EnumSet ticks(){
-		return this.ticks;
-	}
-
-	public String getLabel(){
-		return "mystic world tick";
-	}
-
-	public int nextTickSpacing(){
-		return 10;
 	}
 }

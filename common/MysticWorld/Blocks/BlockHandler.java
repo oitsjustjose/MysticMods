@@ -20,11 +20,16 @@ public class BlockHandler {
 	public static Block bush;
 	public static Block lightCube;
 	
+	public static Block pillarPlatform;
+	public static Block pillarTower;
+	
 	public static void init() {
-		
 		oreImbuedStone = new BlockImbuedStone(BlockIds.ORE_STONE_1).setUnlocalizedName(Strings.IMBUED_STONE_NAME);
 		bush = new BlockBush(BlockIds.BUSH).setUnlocalizedName(Strings.BUSH_NAME);
 		lightCube = new BlockLightCube(BlockIds.LIGHT_CUBE).setUnlocalizedName(Strings.LIGHT_CUBE_NAME);
+		
+		pillarPlatform = new BlockPillarPlatform(614).setUnlocalizedName("pillarPlatform");
+		pillarTower = new BlockPillarTower(615).setUnlocalizedName("pillarTower");
 		
 		registerBlocks();
 		setBlockHarvestLevels();
@@ -35,11 +40,8 @@ public class BlockHandler {
 		GameRegistry.registerBlock(bush, ItemBlockBush.class, Strings.BUSH_NAME);
 		GameRegistry.registerBlock(lightCube, Strings.LIGHT_CUBE_NAME);
 		
-		if(Booleans.ENABLE_BUSH_GEN)
-		{
-			GameRegistry.registerWorldGenerator(new WorldGenBushes());
-		}
-		GameRegistry.registerWorldGenerator(new WorldGenStones());
+		GameRegistry.registerBlock(pillarPlatform, "pillarPlatform");
+		GameRegistry.registerBlock(pillarTower, "pillarTower");
 	}
 
 	private static void setBlockHarvestLevels() {

@@ -34,6 +34,9 @@ public class Lang
 		
 		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.lightCube, 1), "Light Cube");
 		
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.pillarPlatform, 1), "Pillar Platform");
+		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.pillarTower, 1), "Pillar Tower");
+		
 		//Items
 		LanguageRegistry.instance().addName(new ItemStack(ItemHandler$1.staffParts, 1, 0), "Staff");
 		LanguageRegistry.instance().addName(new ItemStack(ItemHandler$1.staffParts, 1, 1), "Staff Hilt");

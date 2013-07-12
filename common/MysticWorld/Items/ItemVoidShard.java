@@ -12,10 +12,12 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.Icon;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 public class ItemVoidShard extends Item {
-	
+
 	public ItemVoidShard(int id) {
 		super(id);
 		this.setMaxStackSize(1);
@@ -82,11 +84,12 @@ public class ItemVoidShard extends Item {
     		return false;
     	}
     }
-	
-	@Override
-	public void registerIcons(IconRegister iconRegister)
-	{
-	    itemIcon = iconRegister.registerIcon("MysticTextures:ShardVoid");
-	}
+    
+	 @Override
+	 @SideOnly(Side.CLIENT)
+	 public void registerIcons(IconRegister iconRegister)
+	 {
+		 itemIcon = iconRegister.registerIcon("MysticTextures:ShardVoid");
+	 }
     
 }
