@@ -76,6 +76,7 @@ public class RecipeHandler {
 	}
 	
 	private static void itemSmelting(){
+		GameRegistry.addSmelting(ItemHandler$1.imbuedShard.itemID, new ItemStack(ItemHandler$1.voidShard, 1), 0.5f);
 	}
 	
 	private static void staffRecipe(Item output, ItemStack input){
