@@ -35,6 +35,7 @@ public class BlockImbuedStone extends Block {
 		setResistance(5F);
 		setCreativeTab(MysticWorld.MysticWorldTab);
 		setBlockBounds(0.25F, 0.0F, 0.25F, 0.75F, 0.125F, 0.75F);
+		setLightValue(0.625f);
 	}
 	
 	@Override
