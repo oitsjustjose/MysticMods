@@ -20,6 +20,9 @@ public class Strings {
 	
 	public static final String LIGHT_CUBE_NAME = "lightCube";
 	
+	public static final String PILLAR_PLATFORM_NAME = "pillarPlatform";
+	public static final String PILLAR_TOWER_NAME = "pillarTower";
+	
 	//Item Names
 	public static final String STAFF_HILT_NAME = "staffHilt";
 	public static final String STAFF_HANDLE_NAME = "staffHandle";

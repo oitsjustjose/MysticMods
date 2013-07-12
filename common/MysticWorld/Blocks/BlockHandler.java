@@ -28,8 +28,8 @@ public class BlockHandler {
 		bush = new BlockBush(BlockIds.BUSH).setUnlocalizedName(Strings.BUSH_NAME);
 		lightCube = new BlockLightCube(BlockIds.LIGHT_CUBE).setUnlocalizedName(Strings.LIGHT_CUBE_NAME);
 		
-		pillarPlatform = new BlockPillarPlatform(614).setUnlocalizedName("pillarPlatform");
-		pillarTower = new BlockPillarTower(615).setUnlocalizedName("pillarTower");
+		pillarPlatform = new BlockPillarPlatform(BlockIds.PILLAR_PLATFORM).setUnlocalizedName(Strings.PILLAR_PLATFORM_NAME);
+		pillarTower = new BlockPillarTower(BlockIds.PILLAR_TOWER).setUnlocalizedName(Strings.PILLAR_TOWER_NAME);
 		
 		registerBlocks();
 		setBlockHarvestLevels();
@@ -40,8 +40,8 @@ public class BlockHandler {
 		GameRegistry.registerBlock(bush, ItemBlockBush.class, Strings.BUSH_NAME);
 		GameRegistry.registerBlock(lightCube, Strings.LIGHT_CUBE_NAME);
 		
-		GameRegistry.registerBlock(pillarPlatform, "pillarPlatform");
-		GameRegistry.registerBlock(pillarTower, "pillarTower");
+		GameRegistry.registerBlock(pillarPlatform, Strings.PILLAR_PLATFORM_NAME);
+		GameRegistry.registerBlock(pillarTower, Strings.PILLAR_TOWER_NAME);
 	}
 
 	private static void setBlockHarvestLevels() {
