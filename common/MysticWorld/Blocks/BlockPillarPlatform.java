@@ -69,7 +69,7 @@ public class BlockPillarPlatform extends Block {
     
     private boolean isTowersNearby(World world, int x, int y, int z)
     {
-    	int block = BlockHandler.pillarTower.blockID;
+    	int block = BlockHandler.pillar.blockID;
     	
         if (world.getBlockId(x - 2, y, z - 2) == block && world.getBlockId(x - 2, y, z + 2) == block && world.getBlockId(x + 2, y, z + 2) == block && world.getBlockId(x + 2, y, z - 2) == block
         		&& world.getBlockId(x - 2, y + 1, z - 2) == block && world.getBlockId(x - 2, y + 1, z + 2) == block && world.getBlockId(x + 2, y + 1, z + 2) == block && world.getBlockId(x + 2, y + 1, z - 2) == block
