@@ -25,14 +25,16 @@ public class Config
 		Booleans.ENABLE_MOUNTAIN_GEN = config.get("World Generation", "Enable Mountain Biome", true).getBoolean(Booleans.ENABLE_MOUNTAIN_GEN);
 		Booleans.ENABLE_STEPPE_GEN = config.get("World Generation", "Enable Steppe Biome", true).getBoolean(Booleans.ENABLE_STEPPE_GEN);
 		Booleans.ENABLE_TUNDRA_GEN = config.get("World Generation", "Enable Tundra Biome", true).getBoolean(Booleans.ENABLE_TUNDRA_GEN);
-		Booleans.VANILLA_OVERRIDE_ENABLE = config.get("Vanilla Override", "Enable Vanilla Block Override", true).getBoolean(Booleans.VANILLA_OVERRIDE_ENABLE);
 		
 		//Block Configuration
 		BlockIds.ORE_STONE_1 = config.getBlock(Strings.IMBUED_STONE_NAME, BlockIds.ORE_STONE_1_DEFAULT).getInt(BlockIds.ORE_STONE_1);
 		BlockIds.BUSH = config.getBlock(Strings.BUSH_NAME, BlockIds.BUSH_DEFAULT).getInt(BlockIds.BUSH_DEFAULT);
 		BlockIds.LIGHT_CUBE = config.getBlock(Strings.LIGHT_CUBE_NAME, BlockIds.LIGHT_CUBE_DEFAULT).getInt(BlockIds.LIGHT_CUBE_DEFAULT);		
-		BlockIds.PILLAR_PLATFORM = config.getBlock(Strings.PILLAR_PLATFORM_NAME, BlockIds.PILLAR_PLATFORM_DEFAULT).getInt(BlockIds.PILLAR_PLATFORM_DEFAULT);
-		BlockIds.PILLAR_TOWER = config.getBlock(Strings.PILLAR_TOWER_NAME, BlockIds.PILLAR_TOWER_DEFAULT).getInt(BlockIds.PILLAR_TOWER_DEFAULT);
+		
+		BlockIds.PLATFORM = config.getBlock(Strings.PLATFORM_NAME, BlockIds.PLATFORM_DEFAULT).getInt(BlockIds.PLATFORM_DEFAULT);
+		BlockIds.PILLAR = config.getBlock(Strings.PILLAR_NAME, BlockIds.PILLAR_DEFAULT).getInt(BlockIds.PILLAR_DEFAULT);
+		BlockIds.PILLAR_INSERT = config.getBlock(Strings.PILLAR_INSERT_NAME, BlockIds.PILLAR_INSERT_DEFAULT).getInt(BlockIds.PILLAR_INSERT_DEFAULT);
+
 		
 		//Item Configuration
 		ItemIds.IMBUED_SHARD = config.getItem(Strings.IMBUED_SHARD_NAME, ItemIds.IMBUED_SHARD_DEFAULT).getInt(ItemIds.IMBUED_SHARD_DEFAULT);

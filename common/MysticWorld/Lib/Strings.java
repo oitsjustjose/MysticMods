@@ -20,8 +20,9 @@ public class Strings {
 	
 	public static final String LIGHT_CUBE_NAME = "lightCube";
 	
-	public static final String PILLAR_PLATFORM_NAME = "pillarPlatform";
-	public static final String PILLAR_TOWER_NAME = "pillarTower";
+	public static final String PLATFORM_NAME = "platform";
+	public static final String PILLAR_NAME = "pillar";
+	public static final String PILLAR_INSERT_NAME = "pillarInsert";	
 	
 	//Item Names
 	public static final String STAFF_HILT_NAME = "staffHilt";
@@ -76,8 +77,9 @@ public class Strings {
 	public static final String ENTITY_ENERGY_CHARGE_NAME = "entityEnergyCharge";
 	public static final String ENTITY_WATER_CHARGE_NAME = "entityWaterCharge";
 	
-	public static final String ENTITY_PIGMAN_NAME = "entityPigman";
+	//Tile Entity Names
+	public static final String PILLAR_INSERT_TE_NAME = "pillarInsert";
 	
 	//Config Category Names
-	public static final String ENTITY_CATEGORY = "entity";	
+	public static final String ENTITY_CATEGORY = "entity";
 }

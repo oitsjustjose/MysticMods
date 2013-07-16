@@ -6,8 +6,8 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.src.ModLoader;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 public class PowerWaterFX extends EntityFX

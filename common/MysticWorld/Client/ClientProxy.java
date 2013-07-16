@@ -1,5 +1,6 @@
 package MysticWorld.Client;
 
+import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import net.minecraft.client.renderer.entity.RenderFireball;
 import net.minecraft.item.Item;
@@ -19,6 +20,8 @@ import MysticWorld.Entity.EntityChargeFire;
 import MysticWorld.Entity.EntityChargeWater;
 import MysticWorld.Items.ItemHandler$1;
 import MysticWorld.Renderer.RenderStaffPower;
+import MysticWorld.Renderer.TileEntityPillarInsertRenderer;
+import MysticWorld.TileEntity.TileEntityPillarInsert;
 
 public class ClientProxy extends CommonProxy {
 
@@ -30,6 +33,8 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeEarth.class, new RenderStaffPower(2));
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeAir.class, new RenderStaffPower(3));
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeEnergy.class, new RenderStaffPower(4));
+		
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPillarInsert.class, new TileEntityPillarInsertRenderer());
 	}
 	
 	public int addArmor(String armor)

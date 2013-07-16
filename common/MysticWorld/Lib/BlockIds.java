@@ -20,8 +20,9 @@ public class BlockIds {
 	
 	public static int LIGHT_CUBE_DEFAULT = 613;
 	
-	public static int PILLAR_PLATFORM_DEFAULT = 614;
-	public static int PILLAR_TOWER_DEFAULT = 615;
+	public static int PLATFORM_DEFAULT = 614;
+	public static int PILLAR_DEFAULT = 615;
+	public static int PILLAR_INSERT_DEFAULT = 616;
 
     //Current Block IDs
     public static int ORE_STONE_1;
@@ -41,7 +42,8 @@ public class BlockIds {
 	
 	public static int LIGHT_CUBE;
 	
-	public static int PILLAR_PLATFORM;
-	public static int PILLAR_TOWER;
+	public static int PLATFORM;
+	public static int PILLAR;
+	public static int PILLAR_INSERT;
 	
 }
