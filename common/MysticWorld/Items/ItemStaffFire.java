@@ -24,13 +24,10 @@ import net.minecraft.util.EnumMovingObjectType;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-public class ItemStaffFire extends Item {
+public class ItemStaffFire extends ItemStaff {
 	
 	public ItemStaffFire(int id) {
 		super(id);
-        this.setMaxStackSize(1);
-        this.setMaxDamage(200);
-		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 	
 	@Override

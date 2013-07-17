@@ -22,7 +22,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 
-public class ItemStaffWater extends Item {
+public class ItemStaffWater extends ItemStaff {
 
 	public ItemStaffWater(int id) {
 		super(id);

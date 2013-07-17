@@ -29,13 +29,10 @@ import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 
-public class ItemStaffEarth extends Item {
+public class ItemStaffEarth extends ItemStaff {
 	
 	public ItemStaffEarth(int id) {
 		super(id);
-		this.setMaxStackSize(1);
-		this.setMaxDamage(200);
-		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 	
     @Override

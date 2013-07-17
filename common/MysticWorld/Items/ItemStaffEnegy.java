@@ -16,13 +16,10 @@ import net.minecraft.util.EnumMovingObjectType;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-public class ItemStaffEnegy extends Item{
+public class ItemStaffEnegy extends ItemStaff {
 	
 	public ItemStaffEnegy(int id) {
 		super(id);
-        this.setMaxStackSize(1);
-        this.setMaxDamage(200);
-		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 	
 	@Override
