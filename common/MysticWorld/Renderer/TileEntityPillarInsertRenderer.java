@@ -29,19 +29,20 @@ public class TileEntityPillarInsertRenderer extends TileEntitySpecialRenderer {
 
     public void renderAModelAt(TileEntityPillarInsert tileentity, double d, double d1, double d2, float f)
     {  
-            GL11.glPushMatrix();
-            GL11.glTranslatef((float)d + 0.5F, (float)d1 + 1.52F, (float)d2 + 0.5F);
-            GL11.glRotatef(180F, 0F, 0F, 1F);
-            this.func_110628_a(texture);
-            GL11.glPushMatrix();
-            model.renderModel(0.0625F);
-            GL11.glPopMatrix();     
-            GL11.glPopMatrix();                                     
+    	GL11.glPushMatrix();
+        GL11.glTranslatef((float)d + 0.5F, (float)d1 + 1.5F, (float)d2 + 0.5F);
+        GL11.glRotatef(0F, 0F, 0F, 0F);
+        GL11.glScalef(1.0F, -1.0F, -1.0F);
+        FMLClientHandler.instance().getClient().renderEngine.func_110577_a(texture);
+        GL11.glPushMatrix();
+        model.renderModel(0.0625F);
+        GL11.glPopMatrix();     
+        GL11.glPopMatrix();                               
     }
     
     public void renderTileEntityAt(TileEntity tileentity, double d, double d1, double d2, float f)
     {
-            renderAModelAt((TileEntityPillarInsert)tileentity, d, d1, d2, f);
+        renderAModelAt((TileEntityPillarInsert)tileentity, d, d1, d2, f);
     }
     
 }

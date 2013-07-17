@@ -1,6 +1,7 @@
 package MysticWorld.Blocks;
 
 import MysticWorld.MysticWorld;
+import MysticWorld.Lib.RenderIds;
 import MysticWorld.TileEntity.TileEntityPillarInsert;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -15,8 +16,8 @@ public class BlockPillarInsert extends BlockContainer {
 		super(id, Material.rock);
 		this.setBlockUnbreakable();
 		this.setResistance(6000000.0F);
-		setCreativeTab(MysticWorld.MysticWorldTab);
-		setBlockBounds(0.15F, 0.0F, 0.15F, 0.85F, 1.0F, 0.85F);
+		this.setCreativeTab(MysticWorld.MysticWorldTab);
+		setBlockBounds(0.125F, 0.0F, 0.125F, 0.875F, 1.0F, 0.875F);
 	}
 
 	@Override
@@ -34,8 +35,13 @@ public class BlockPillarInsert extends BlockContainer {
 	@Override
     public int getRenderType()
     {
-        return -1;
+        return RenderIds.RENDER_PILLAR_INSERT;
     }
+	
+	@Override
+	public int getRenderBlockPass(){
+		return 1;
+	}
 	
 	@Override
     public boolean renderAsNormalBlock()

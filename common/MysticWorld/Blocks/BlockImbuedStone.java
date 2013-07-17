@@ -113,16 +113,15 @@ public class BlockImbuedStone extends Block {
     	this.dropXpOnBlockBreak(world, x, y, z, xpDropAmount(meta));
     }
     
-	//meta specific stuff
     public int idPicked(World par1World, int par2, int par3, int par4)
     {
-        return this.blockID;
+        return blockID;
     }
     
-	public ItemStack getPickBlock(MovingObjectPosition target,World world, int x, int y, int z)
-	{
-		return null;
-	}
+    public int getDamageValue(World par1World, int par2, int par3, int par4)
+    {
+        return par1World.getBlockMetadata(par2, par3, par4);
+    }
 	
 	public void getSubBlocks(int i,CreativeTabs tab, List list)
 	{

@@ -62,7 +62,7 @@ public class ItemHandler$1 {
 	public static Item iridiumBoots;
 	
 	public static Item voidShard;
-
+	
 	public static void init(){
 
 		staffParts = new ItemStaffParts(ItemIds.STAFF_PARTS);

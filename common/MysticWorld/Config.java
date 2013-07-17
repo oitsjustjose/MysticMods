@@ -77,7 +77,7 @@ public class Config
 		ItemIds.ENERGY_ORB = config.getItem(Strings.ENERGY_ORB_NAME, ItemIds.ENERGY_ORB_DEFAULT).getInt(ItemIds.ENERGY_ORB_DEFAULT);
 		
 		ItemIds.VOID_SHARD = config.getItem(Strings.VOID_SHARD_NAME, ItemIds.VOID_SHARD_DEFAULT).getInt(ItemIds.VOID_SHARD_DEFAULT);
-		
+				
 		config.save();
   }
 

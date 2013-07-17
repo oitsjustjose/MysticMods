@@ -6,16 +6,17 @@ import MysticWorld.Client.FX.PowerAirFX;
 import MysticWorld.Client.FX.LightCubeFX;
 
 public class CommonProxy {
-	
-	public int addArmor(String armor)
-	{
-		return 0;
-	}
 
+	public void registerRenderIDs(){
+	}
+	
 	public void registerRenders(){
 	}
 	
-	//particles
+	public int addArmor(String armor){
+		return 0;
+	}
+	
 	public void airFX(World worldObj, double x, double y, double z, float scale){
 	}
 	

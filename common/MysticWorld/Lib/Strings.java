@@ -82,4 +82,5 @@ public class Strings {
 	
 	//Config Category Names
 	public static final String ENTITY_CATEGORY = "entity";
+	
 }

@@ -60,15 +60,15 @@ public class MysticWorld
 	{	
 		Config.initialize(new File(event.getModConfigurationDirectory(), "Mystic Mods/Mystic World.cfg"));
         Config.save();
+        
         BiomeHandler.init();
+        
         instance = this;
     }
 	
 	@EventHandler
 	public void load(FMLInitializationEvent event)
 	{
-		proxy.registerRenders();
-		
 		this.tickHandler = new TickHandler();
 			
 	    TickRegistry.registerTickHandler(this.tickHandler, Side.SERVER);
@@ -83,6 +83,9 @@ public class MysticWorld
 		RecipeHandler.init();
 		MysticHutUtil.addLoot();
 		Lang.init();
+		
+		proxy.registerRenderIDs();
+		proxy.registerRenders();
 	}
 	
 	@EventHandler
