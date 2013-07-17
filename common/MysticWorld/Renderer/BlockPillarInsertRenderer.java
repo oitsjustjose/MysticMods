@@ -49,10 +49,10 @@ public class BlockPillarInsertRenderer implements IItemRenderer {
 			renderItem(0.0F, -1.0F, 0.0F, 1.0F);
 			break;
 		case EQUIPPED:
-			renderItem(0.5F, -0.4f, 0.50f, 1.0f);
+			renderItem(0.5F, -0.5f, 0.5f, 1.0f);
 			break;
 		case INVENTORY:
-			renderItem(0.5F, -0.5F, 0.5F, 1.0F);
+			renderItem(0.5F, -0.6F, 0.5F, 1.0F);
 			break;
 		case EQUIPPED_FIRST_PERSON:
 			renderItem(0.5F, -0.5F, 0.5F, 1.0F);
