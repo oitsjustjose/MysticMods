@@ -144,6 +144,7 @@ public class TickHandler implements IScheduledTickHandler
 		if (itemstack != null && (itemstack.itemID == ItemHandler$1.energyOrb.itemID || itemstack.itemID == ItemHandler$1.energyStaff.itemID)){
 			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 20, 2));
 			MysticWorld.proxy.energyFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+			player.stepHeight = 1.001F;
 		}
 		
 		if (itemstack != null && (itemstack.itemID == ItemHandler$1.earthOrb.itemID || itemstack.itemID == ItemHandler$1.earthStaff.itemID)){

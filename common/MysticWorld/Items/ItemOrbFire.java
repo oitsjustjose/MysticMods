@@ -45,11 +45,5 @@ public class ItemOrbFire extends ItemFlintAndSteel {
         
         return true;
     }
-    
-	@Override
-	public void registerIcons(IconRegister iconRegister)
-	{
-	    itemIcon = iconRegister.registerIcon("MysticTextures:OrbFire");
-	}
 	
 }

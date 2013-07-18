@@ -1,7 +1,6 @@
 package MysticWorld.TileEntity;
 
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet132TileEntityData;
@@ -22,7 +21,7 @@ public class TileEntityPillarInsert extends TileEntity {
     {
         readFromNBT(packet.customParam1);
     }
-	
+
 	@Override
 	public void writeToNBT(NBTTagCompound par1)
 	{

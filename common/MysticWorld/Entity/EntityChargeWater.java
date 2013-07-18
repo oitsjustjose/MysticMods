@@ -157,6 +157,11 @@ public class EntityChargeWater extends Entity {
                 {
                     par1MovingObjectPosition.entityHit.attackEntityFrom(DamageSource.magic, 20);
                 }
+                
+                if (par1MovingObjectPosition.entityHit.isBurning())
+                {
+                	par1MovingObjectPosition.entityHit.extinguish();
+                }
             }
             else
             {

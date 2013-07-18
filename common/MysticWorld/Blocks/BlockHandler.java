@@ -48,10 +48,5 @@ public class BlockHandler {
 	}
 
 	private static void setBlockHarvestLevels() {
-		MinecraftForge.setBlockHarvestLevel(oreImbuedStone, 0, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(oreImbuedStone, 1, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(oreImbuedStone, 2, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(oreImbuedStone, 3, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(oreImbuedStone, 4, "pickaxe", 2);
 	}
 }
