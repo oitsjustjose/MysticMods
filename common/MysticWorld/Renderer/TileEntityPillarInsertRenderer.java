@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 
 public class TileEntityPillarInsertRenderer extends TileEntitySpecialRenderer {
 
-    private static final ResourceLocation texture = new ResourceLocation("mystictextures:textures" + "/blocks/PillarInsert.png");
+    private static final ResourceLocation texture = new ResourceLocation("mystictextures:textures" + "/models/PillarInsert.png");
 	private ModelPillarInsert model;
 	
 	public TileEntityPillarInsertRenderer()
