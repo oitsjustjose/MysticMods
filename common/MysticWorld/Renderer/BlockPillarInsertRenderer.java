@@ -15,7 +15,7 @@ import net.minecraftforge.client.IItemRenderer;
 
 public class BlockPillarInsertRenderer implements IItemRenderer {
 	
-	private static final ResourceLocation texture = new ResourceLocation("mystictextures:textures" + "/blocks/PillarInsert.png");
+	private static final ResourceLocation texture = new ResourceLocation("mystictextures:textures" + "/models/PillarInsert.png");
 	private final ModelPillarInsert model;
 	
 	public BlockPillarInsertRenderer()
@@ -46,23 +46,23 @@ public class BlockPillarInsertRenderer implements IItemRenderer {
 		switch(type)
 		{
 		case ENTITY:
-			renderItem(0.0F, -1.0F, 0.0F, 1.0F);
+			renderModel(0.0F, -1.0F, 0.0F, 1.0F);
 			break;
 		case EQUIPPED:
-			renderItem(0.5F, -0.5f, 0.5f, 1.0f);
+			renderModel(0.5F, -0.5f, 0.5f, 1.0f);
 			break;
 		case INVENTORY:
-			renderItem(0.5F, -0.6F, 0.5F, 1.0F);
+			renderModel(0.5F, -0.6F, 0.5F, 1.0F);
 			break;
 		case EQUIPPED_FIRST_PERSON:
-			renderItem(0.5F, -0.5F, 0.5F, 1.0F);
+			renderModel(0.5F, -0.5F, 0.5F, 1.0F);
 			break;
 		default:
 			break;
 		}
 	}
 	
-	private void renderItem(float x, float y, float z, float scale){
+	private void renderModel(float x, float y, float z, float scale){
 		GL11.glPushMatrix();
 		GL11.glDisable(GL11.GL_LIGHTING);
 		GL11.glScalef(scale, scale, scale);

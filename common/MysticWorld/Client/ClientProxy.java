@@ -19,6 +19,11 @@ import MysticWorld.Entity.EntityChargeWater;
 import MysticWorld.Items.ItemHandler$1;
 import MysticWorld.Lib.RenderIds;
 import MysticWorld.Renderer.BlockPillarInsertRenderer;
+import MysticWorld.Renderer.ItemStaffAirRenderer;
+import MysticWorld.Renderer.ItemStaffEarthRenderer;
+import MysticWorld.Renderer.ItemStaffEnergyRenderer;
+import MysticWorld.Renderer.ItemStaffFireRenderer;
+import MysticWorld.Renderer.ItemStaffWaterRenderer;
 import MysticWorld.Renderer.RenderStaffPower;
 import MysticWorld.Renderer.TileEntityPillarInsertRenderer;
 import MysticWorld.TileEntity.TileEntityPillarInsert;
@@ -38,6 +43,12 @@ public class ClientProxy extends CommonProxy {
 	{
 		MinecraftForgeClient.registerItemRenderer(BlockHandler.pillarInsert.blockID, new BlockPillarInsertRenderer());
 		
+		MinecraftForgeClient.registerItemRenderer(ItemHandler$1.fireStaff.itemID, new ItemStaffFireRenderer());
+		MinecraftForgeClient.registerItemRenderer(ItemHandler$1.earthStaff.itemID, new ItemStaffEarthRenderer());
+		MinecraftForgeClient.registerItemRenderer(ItemHandler$1.airStaff.itemID, new ItemStaffAirRenderer());
+		MinecraftForgeClient.registerItemRenderer(ItemHandler$1.energyStaff.itemID, new ItemStaffEnergyRenderer());
+		MinecraftForgeClient.registerItemRenderer(ItemHandler$1.waterStaff.itemID, new ItemStaffWaterRenderer());
+
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeFire.class, new RenderStaffPower(0));
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeWater.class, new RenderStaffPower(1));
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeEarth.class, new RenderStaffPower(2));

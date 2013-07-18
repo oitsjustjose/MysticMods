@@ -30,12 +30,6 @@ public class ItemStaffFire extends ItemStaff {
 		super(id);
 	}
 	
-	@Override
-	public void registerIcons(IconRegister iconRegister)
-	{
-	    itemIcon = iconRegister.registerIcon("MysticTextures:StaffFire");
-	}	
-	
     public boolean itemInteractionForEntity(ItemStack itemStack, EntityLiving entityLiving)
     {
     	if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
