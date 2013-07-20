@@ -1,24 +1,44 @@
 package MysticWorld.Items;
 
+import java.util.Random;
+
 import MysticWorld.MysticWorld;
 import MysticWorld.Entity.EntityChargeAir;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class ItemOrbAir extends Item {
-
-	public ItemOrbAir(int par1) 
+public class ItemOrbAir extends ItemOrb 
+{	
+	public ItemOrbAir(int id) 
 	{
-		super(par1);
-        this.setMaxStackSize(1);
-        this.setMaxDamage(200);
-		this.setCreativeTab(MysticWorld.MysticWorldTab);
+		super(id);
 	}
 
+	@Override
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) 
+	{
+		EntityPlayer player = (EntityPlayer)entity;
+		ItemStack currentItem = player.inventory.getCurrentItem();
+		
+		if (!world.isRemote)
+		{
+			if (currentItem != null)
+			{
+				if (currentItem.itemID == itemStack.itemID)
+				{
+					player.fallDistance = 0.0F;
+					MysticWorld.proxy.airFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+				}
+			}
+		}
+	}
+	
+	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)
 	{
 		if (entityPlayer.onGround)
@@ -29,12 +49,6 @@ public class ItemOrbAir extends Item {
 		}
         
         return itemStack;
-	}
-	
-	@Override
-	public void registerIcons(IconRegister iconRegister)
-	{
-	    itemIcon = iconRegister.registerIcon("MysticTextures:OrbAir");
 	}
 	
 }

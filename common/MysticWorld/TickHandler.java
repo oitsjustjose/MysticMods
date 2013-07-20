@@ -43,8 +43,6 @@ public class TickHandler implements IScheduledTickHandler
 		InventoryPlayer inventory = player.inventory;
 		ItemStack itemstack = inventory.getCurrentItem();
 		
-		staffAndOrbTick(player, world, itemstack, rand);
-		
 		pillarTick(player, world, inventory, rand);
     }
 
@@ -127,32 +125,5 @@ public class TickHandler implements IScheduledTickHandler
         				break;
     		}
     	}
-	}
-	
-	private static void staffAndOrbTick(EntityPlayer player, World world, ItemStack itemstack, Random rand)
-	{
-		if (itemstack != null && (itemstack.itemID == ItemHandler$1.fireOrb.itemID || itemstack.itemID == ItemHandler$1.fireStaff.itemID)){
-			player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
-			MysticWorld.proxy.fireFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
-		}
-		
-		if (itemstack != null && (itemstack.itemID == ItemHandler$1.airOrb.itemID || itemstack.itemID == ItemHandler$1.airStaff.itemID)){
-			player.fallDistance = 0.0F;
-			MysticWorld.proxy.airFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
-		}
-		
-		if (itemstack != null && (itemstack.itemID == ItemHandler$1.energyOrb.itemID || itemstack.itemID == ItemHandler$1.energyStaff.itemID)){
-			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 20, 2));
-			MysticWorld.proxy.energyFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
-			player.stepHeight = 1.001F;
-		}
-		
-		if (itemstack != null && (itemstack.itemID == ItemHandler$1.earthOrb.itemID || itemstack.itemID == ItemHandler$1.earthStaff.itemID)){
-			MysticWorld.proxy.earthFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
-		}
-		
-		if (itemstack != null && (itemstack.itemID == ItemHandler$1.waterOrb.itemID || itemstack.itemID == ItemHandler$1.waterStaff.itemID)){
-			MysticWorld.proxy.waterFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
-		}
 	}
 }

@@ -12,10 +12,13 @@ import net.minecraft.block.BlockSapling;
 import net.minecraft.block.BlockStem;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumMovingObjectType;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
@@ -24,22 +27,32 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 
-public class ItemOrbEarth extends Item {
-
-	public ItemOrbEarth(int par1) 
+public class ItemOrbEarth extends ItemOrb 
+{
+	public ItemOrbEarth(int id) 
 	{
-		super(par1);
-        this.setMaxStackSize(1);
-        this.setMaxDamage(200);
-		this.setCreativeTab(MysticWorld.MysticWorldTab);
+		super(id);
 	}
 	
 	@Override
-	public void registerIcons(IconRegister iconRegister)
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) 
 	{
-	    itemIcon = iconRegister.registerIcon("MysticTextures:OrbEarth");
+		EntityPlayer player = (EntityPlayer)entity;
+		ItemStack currentItem = player.inventory.getCurrentItem();
+		
+		if (!world.isRemote)
+		{
+			if (currentItem != null)
+			{
+				if (currentItem.itemID == itemStack.itemID)
+				{
+					MysticWorld.proxy.earthFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+				}
+			}
+		}
 	}
 	
+	@Override
 	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
 	{
 	    if (!par2EntityPlayer.canPlayerEdit(par4, par5, par6, par7, par1ItemStack))

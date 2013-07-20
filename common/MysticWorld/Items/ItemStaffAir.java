@@ -1,5 +1,7 @@
 package MysticWorld.Items;
 
+import java.util.Random;
+
 import org.lwjgl.input.Keyboard;
 
 import cpw.mods.fml.relauncher.Side;
@@ -9,6 +11,7 @@ import MysticWorld.MysticWorld;
 import MysticWorld.Entity.EntityChargeAir;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -16,16 +19,29 @@ import net.minecraft.item.ItemTool;
 import net.minecraft.world.World;
 
 public class ItemStaffAir extends ItemStaff {
-
+	
 	public ItemStaffAir(int id) 
 	{
 		super(id);
 	}
 	
 	@Override
-	public void registerIcons(IconRegister iconRegister)
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) 
 	{
-	    itemIcon = iconRegister.registerIcon("MysticTextures:StaffAir");
+		EntityPlayer player = (EntityPlayer)entity;
+		ItemStack currentItem = player.inventory.getCurrentItem();
+		
+		if (!world.isRemote)
+		{
+			if (currentItem != null)
+			{
+				if (currentItem.itemID == itemStack.itemID)
+				{
+					player.fallDistance = 0.0F;
+					MysticWorld.proxy.airFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+				}	
+			}
+		}
 	}
 	
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)
@@ -56,5 +72,5 @@ public class ItemStaffAir extends ItemStaff {
         return itemStack;
 		
 	}
-
+	
 }

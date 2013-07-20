@@ -10,6 +10,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
@@ -31,12 +32,25 @@ public class ItemStaffWater extends ItemStaff {
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 	
-    @Override
-    public void registerIcons(IconRegister iconRegister)
-    {
-             itemIcon = iconRegister.registerIcon("MysticTextures:StaffWater");
-    }
+	@Override
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) 
+	{
+		EntityPlayer player = (EntityPlayer)entity;
+		ItemStack currentItem = player.inventory.getCurrentItem();
+		
+		if (!world.isRemote)
+		{
+			if (currentItem != null)
+			{
+				if (currentItem.itemID == itemStack.itemID)
+				{
+					MysticWorld.proxy.waterFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+				}
+			}
+		}
+	}
 	
+	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer){
 		if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
 		{
@@ -142,4 +156,5 @@ public class ItemStaffWater extends ItemStaff {
 	        return itemStack;
 		}
 	}
+	
 }

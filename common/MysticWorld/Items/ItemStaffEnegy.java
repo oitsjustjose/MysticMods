@@ -9,9 +9,12 @@ import MysticWorld.Entity.EntityChargeFire;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumMovingObjectType;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
@@ -23,11 +26,25 @@ public class ItemStaffEnegy extends ItemStaff {
 	}
 	
 	@Override
-	public void registerIcons(IconRegister iconRegister)
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) 
 	{
-	    itemIcon = iconRegister.registerIcon("MysticTextures:StaffEnergy");
+		EntityPlayer player = (EntityPlayer)entity;
+		ItemStack currentItem = player.inventory.getCurrentItem();
+		
+		if (!world.isRemote)
+		{
+			if (currentItem != null)
+			{
+				if (currentItem.itemID == itemStack.itemID)
+				{
+					player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 20, 2));
+					MysticWorld.proxy.energyFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+				}
+			}
+		}
 	}
 	
+	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)
 	{
 		if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))

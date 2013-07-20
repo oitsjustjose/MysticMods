@@ -14,6 +14,7 @@ import net.minecraft.block.BlockSapling;
 import net.minecraft.block.BlockStem;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.item.EntityItem;
@@ -29,18 +30,32 @@ import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 
-public class ItemStaffEarth extends ItemStaff {
-	
-	public ItemStaffEarth(int id) {
+public class ItemStaffEarth extends ItemStaff 
+{
+	public ItemStaffEarth(int id) 
+	{
 		super(id);
 	}
 	
-    @Override
-    public void registerIcons(IconRegister iconRegister)
-    {
-        itemIcon = iconRegister.registerIcon("MysticTextures:StaffEarth");
-    }
+	@Override
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) 
+	{
+		EntityPlayer player = (EntityPlayer)entity;
+		ItemStack currentItem = player.inventory.getCurrentItem();
+
+		if (!world.isRemote)
+		{
+			if (currentItem != null)
+			{
+				if (currentItem.itemID == itemStack.itemID)
+				{
+					MysticWorld.proxy.earthFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+				}
+			}
+		}
+	}
 	
+	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)
 	{
 		if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))

@@ -8,10 +8,13 @@ import MysticWorld.Entity.EntityChargeAir;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumMovingObjectType;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
@@ -19,24 +22,32 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 
-public class ItemOrbWater extends Item {
-
-	Random rand = new Random();
+public class ItemOrbWater extends ItemOrb {
 	
-	public ItemOrbWater(int par1) 
+	public ItemOrbWater(int id) 
 	{
-		super(par1);
-        this.setMaxStackSize(1);
-        this.setMaxDamage(200);
-		this.setCreativeTab(MysticWorld.MysticWorldTab);
+		super(id);
 	}
 	
 	@Override
-	public void registerIcons(IconRegister iconRegister)
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) 
 	{
-	    itemIcon = iconRegister.registerIcon("MysticTextures:OrbWater");
+		EntityPlayer player = (EntityPlayer)entity;
+		ItemStack currentItem = player.inventory.getCurrentItem();
+		
+		if (itemStack != null)
+		{
+			if (currentItem != null)
+			{
+				if (currentItem.itemID == itemStack.itemID)
+				{
+					MysticWorld.proxy.waterFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+				}
+			}
+		}
 	}
 	
+	@Override
 	 public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)
 	    {
 	        MovingObjectPosition movingobjectposition = this.getMovingObjectPositionFromPlayer(world, entityPlayer, true);

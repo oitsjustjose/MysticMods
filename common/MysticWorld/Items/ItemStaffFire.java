@@ -19,6 +19,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumMovingObjectType;
 import net.minecraft.util.MovingObjectPosition;
@@ -28,6 +30,25 @@ public class ItemStaffFire extends ItemStaff {
 	
 	public ItemStaffFire(int id) {
 		super(id);
+	}
+	
+	@Override
+	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) 
+	{
+		EntityPlayer player = (EntityPlayer)entity;
+		ItemStack currentItem = player.inventory.getCurrentItem();
+		
+		if (!world.isRemote)
+		{
+			if (currentItem != null)
+			{
+				if (currentItem.itemID == itemStack.itemID)
+				{
+					player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
+					MysticWorld.proxy.fireFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+				}
+			}
+		}
 	}
 	
     public boolean itemInteractionForEntity(ItemStack itemStack, EntityLiving entityLiving)
