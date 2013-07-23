@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
+import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 
 import MysticWorld.MysticWorld;
@@ -53,7 +54,7 @@ public class ItemStaffAir extends ItemStaff {
 						}
 					}
 					
-					if (Mouse.isButtonDown(1))
+					if (Mouse.isButtonDown(1) && !(Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)))
 					{
 						if (itemStack.stackTagCompound.getBoolean("charging") == true)
 						{
