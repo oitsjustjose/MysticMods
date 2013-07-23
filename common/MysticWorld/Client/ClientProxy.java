@@ -1,6 +1,5 @@
 package MysticWorld.Client;
 
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
@@ -12,7 +11,6 @@ import MysticWorld.Client.FX.PowerEarthFX;
 import MysticWorld.Client.FX.PowerEnergyFX;
 import MysticWorld.Client.FX.PowerFireFX;
 import MysticWorld.Client.FX.PowerWaterFX;
-import MysticWorld.Entity.EntityChargeAir;
 import MysticWorld.Entity.EntityChargeEarth;
 import MysticWorld.Entity.EntityChargeEnergy;
 import MysticWorld.Entity.EntityChargeFire;
@@ -64,7 +62,6 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeFire.class, new RenderStaffPower(0));
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeWater.class, new RenderStaffPower(1));
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeEarth.class, new RenderStaffPower(2));
-		RenderingRegistry.registerEntityRenderingHandler(EntityChargeAir.class, new RenderStaffPower(3));
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeEnergy.class, new RenderStaffPower(4));
 		
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPillarInsert.class, new TileEntityPillarInsertRenderer());
