@@ -144,8 +144,8 @@ public class EntityChargeAir extends Entity {
                 f2 = 0.8F;
             }
             
-            MysticWorld.proxy.airFeetFX(this.worldObj, this.posX + (rand.nextDouble()/2), this.posY + 0.5D, this.posZ + (rand.nextDouble()/2), particleScale);
-            MysticWorld.proxy.airFeetFX(this.worldObj, this.posX + (rand.nextDouble()/2), this.posY + 0.5D, this.posZ + (rand.nextDouble()/2), particleScale);
+            MysticWorld.proxy.airFeetFX(this.worldObj, this.posX + (rand.nextDouble()/2), this.posY + 0.5D, this.posZ + (rand.nextDouble()/2), particleScale, 15);
+            MysticWorld.proxy.airFeetFX(this.worldObj, this.posX + (rand.nextDouble()/2), this.posY + 0.5D, this.posZ + (rand.nextDouble()/2), particleScale, 15);
 
             this.setPosition(this.posX, this.posY, this.posZ);
         }

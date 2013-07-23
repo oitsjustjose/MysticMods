@@ -77,9 +77,9 @@ public class ClientProxy extends CommonProxy {
 	
 	//particles
 	@Override
-	public void airFeetFX(World worldObj, double x, double y, double z, float scale)
+	public void airFeetFX(World worldObj, double x, double y, double z, float scale, int age)
 	{
-		PowerAirFX airFX = new PowerAirFX(worldObj, x, y, z, scale);
+		PowerAirFX airFX = new PowerAirFX(worldObj, x, y, z, scale, age);
 		ModLoader.getMinecraftInstance().effectRenderer.addEffect(airFX);
 	}
 	

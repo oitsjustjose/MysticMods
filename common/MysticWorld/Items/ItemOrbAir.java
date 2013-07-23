@@ -32,7 +32,7 @@ public class ItemOrbAir extends ItemOrb
 				if (currentItem.itemID == itemStack.itemID)
 				{
 					player.fallDistance = 0.0F;
-					MysticWorld.proxy.airFeetFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+					MysticWorld.proxy.airFeetFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F, 15);
 				}
 			}
 		}

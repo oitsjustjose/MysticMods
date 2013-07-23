@@ -18,7 +18,7 @@ public class CommonProxy {
 		return 0;
 	}
 	
-	public void airFeetFX(World worldObj, double x, double y, double z, float scale){
+	public void airFeetFX(World worldObj, double x, double y, double z, float scale, int age){
 	}
 	
 	public void earthFX(World worldObj, double x, double y, double z, float scale){

@@ -18,7 +18,7 @@ public class PowerAirFX extends EntityFX
     super(world, x, y, z);
   }
 
-  public PowerAirFX(World world, double x, double y, double z, float scale){
+  public PowerAirFX(World world, double x, double y, double z, float scale, int age){
 	  super(world, x, y, z);
       this.motionX += motionX;
       this.motionY += motionY;
@@ -31,7 +31,7 @@ public class PowerAirFX extends EntityFX
       this.particleBlue = 1.0F;
       this.particleScale =  scale;
       this.noClip = true;
-      this.particleMaxAge = 15;
+      this.particleMaxAge = age;
   }
   
   public PowerAirFX(World world, double x, double y, double z, double motionX, double motionY, double motionZ, float rotPitch, float rotYaw){
