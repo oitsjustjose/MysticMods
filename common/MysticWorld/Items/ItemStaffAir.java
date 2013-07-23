@@ -43,18 +43,21 @@ public class ItemStaffAir extends ItemStaff {
 					{
 						if (itemStack.stackTagCompound.getInteger("chargeTime") > 0)
 						{
-							world.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)player.posX, (int)player.posY, (int)player.posZ, 0);
-						
-							if (!world.isRemote)
+							if (!(Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)))
 							{
-								world.spawnEntityInWorld(new EntityChargeAir(world, player, 1.0f + ((float)(itemStack.stackTagCompound.getInteger("chargeTime")) * (5.0f * (1 / (float)itemStack.stackTagCompound.getInteger("maxChargeTime")))), (float)(itemStack.stackTagCompound.getInteger("chargeTime")) * (2.5D * (1.0D / (double)itemStack.stackTagCompound.getInteger("maxChargeTime")))));
+								world.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)player.posX, (int)player.posY, (int)player.posZ, 0);
+						
+								if (!world.isRemote)
+								{
+									world.spawnEntityInWorld(new EntityChargeAir(world, player, 1.0f + ((float)(itemStack.stackTagCompound.getInteger("chargeTime")) * (5.0f * (1 / (float)itemStack.stackTagCompound.getInteger("maxChargeTime")))), (float)(itemStack.stackTagCompound.getInteger("chargeTime")) * (2.5D * (1.0D / (double)itemStack.stackTagCompound.getInteger("maxChargeTime")))));
 					        
-								itemStack.damageItem(1, player);
-							}					  
+									itemStack.damageItem(1, player);
+								}	
+							}
 						}
 					}
 					
-					if (Mouse.isButtonDown(1) && !(Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)))
+					if (Mouse.isButtonDown(1))
 					{
 						if (itemStack.stackTagCompound.getBoolean("charging") == true)
 						{
@@ -77,7 +80,7 @@ public class ItemStaffAir extends ItemStaff {
 	}
 	
 	@Override
-	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer)
+	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player)
 	{	
 		if (itemStack.stackTagCompound == null)
     		itemStack.setTagCompound(new NBTTagCompound());
@@ -87,13 +90,13 @@ public class ItemStaffAir extends ItemStaff {
 			itemStack.stackTagCompound.setBoolean("charging", true);
 		}
 		
-		if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
+		if ((Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)))
 		{
-			if (entityPlayer.onGround)
+			if (player.onGround)
 			{
-				world.playSoundEffect(entityPlayer.posX, entityPlayer.posY, entityPlayer.posZ, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-				itemStack.damageItem(1, entityPlayer);
-				entityPlayer.addVelocity(0, 2.5, 0);
+				player.worldObj.playSoundEffect(player.posX, player.posY, player.posZ, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+				itemStack.damageItem(1, player);
+				player.addVelocity(0, 2.5, 0);
 			}
 		}
 		
