@@ -7,6 +7,7 @@ import cpw.mods.fml.client.FMLClientHandler;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.src.ModLoader;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
@@ -19,18 +20,33 @@ public class PowerAirFX extends EntityFX
 
   public PowerAirFX(World world, double x, double y, double z, float scale){
 	  super(world, x, y, z);
-      this.motionX *= 0.019999999552965164D;
-      this.motionY *= 0.019999999552965164D;
-      this.motionZ *= 0.019999999552965164D;
       this.motionX += motionX;
       this.motionY += motionY;
       this.motionZ += motionZ;
+      this.motionX *= 0.019999999552965164D;
+      this.motionY *= 0.019999999552965164D;
+      this.motionZ *= 0.019999999552965164D;
 	  this.particleRed = 1.0F;
 	  this.particleGreen = 1.0F;
       this.particleBlue = 1.0F;
       this.particleScale =  scale;
       this.noClip = true;
       this.particleMaxAge = 15;
+  }
+  
+  public PowerAirFX(World world, double x, double y, double z, double motionX, double motionY, double motionZ, float rotPitch, float rotYaw){
+	  super(world, x, y, z);
+      this.motionX = (double)(-MathHelper.sin(this.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(this.rotationPitch / 180.0F * (float)Math.PI));
+      this.motionY = (double)(-MathHelper.sin((this.rotationPitch) / 180.0F * (float)Math.PI));
+      this.motionZ = (double)(MathHelper.cos(this.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(this.rotationPitch / 180.0F * (float)Math.PI));
+	  this.particleRed = 1.0F;
+	  this.particleGreen = 1.0F;
+      this.particleBlue = 1.0F;
+      this.particleScale = 1.0F;
+      this.noClip = true;
+      this.particleMaxAge = 120;
+      this.rotationPitch = rotPitch;
+      this.rotationYaw = rotYaw;
   }
 
   public void onUpdate()
@@ -62,6 +78,12 @@ public class PowerAirFX extends EntityFX
           this.motionX *= 0.699999988079071D;
           this.motionZ *= 0.699999988079071D;
       }
+      
+      this.posX += this.motionX;
+      this.posY += this.motionY;
+      this.posZ += this.motionZ;
+      
+      this.setPosition(this.posX, this.posY, this.posZ);
   }
 
   public void renderParticle(Tessellator tessellator, float par2, float par3, float par4, float par5, float par6, float par7)

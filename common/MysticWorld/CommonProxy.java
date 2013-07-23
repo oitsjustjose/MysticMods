@@ -1,5 +1,6 @@
 package MysticWorld;
 
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import MysticWorld.Client.FX.PowerAirFX;
@@ -17,7 +18,7 @@ public class CommonProxy {
 		return 0;
 	}
 	
-	public void airFX(World worldObj, double x, double y, double z, float scale){
+	public void airFeetFX(World worldObj, double x, double y, double z, float scale){
 	}
 	
 	public void earthFX(World worldObj, double x, double y, double z, float scale){

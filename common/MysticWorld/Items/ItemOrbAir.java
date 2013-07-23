@@ -32,7 +32,7 @@ public class ItemOrbAir extends ItemOrb
 				if (currentItem.itemID == itemStack.itemID)
 				{
 					player.fallDistance = 0.0F;
-					MysticWorld.proxy.airFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+					MysticWorld.proxy.airFeetFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
 				}
 			}
 		}
@@ -47,7 +47,7 @@ public class ItemOrbAir extends ItemOrb
 			itemStack.damageItem(1, entityPlayer);
 			entityPlayer.addVelocity(0, 2.5, 0);
 		}
-        
+		
         return itemStack;
 	}
 	

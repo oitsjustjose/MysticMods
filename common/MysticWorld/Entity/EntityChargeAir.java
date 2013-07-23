@@ -36,23 +36,26 @@ import MysticWorld.MysticWorld;
 public class EntityChargeAir extends Entity {
 	
 	public EntityPlayer shootingEntity;
-	public EntityPlayer entityPlayer;
-	public EntityDragon entityDragon;
-	public EntityWither entityWither;
+	
 	private boolean inGround = false;
+	
 	private int xTile = -1;
     private int yTile = -1;
     private int zTile = -1;
 	private int inTile = 0;
 	private int ticksAlive;
     private int ticksInAir = 0;
+    
+    private float particleScale = 1.0f;
+    
+    private double powerHeight = 0.75D;
 	
 	public EntityChargeAir(World par1World) 
 	{
 		super(par1World);
 	}
 	
-    public EntityChargeAir(World par1World, EntityPlayer par2EntityPlayer)
+    public EntityChargeAir(World par1World, EntityPlayer par2EntityPlayer, float pScale, double pHeight)
     {
         super(par1World);
         this.setSize(0.25F, 0.25F);
@@ -62,6 +65,8 @@ public class EntityChargeAir extends Entity {
         this.motionY = (double)(-MathHelper.sin((this.rotationPitch) / 180.0F * (float)Math.PI));
         this.motionZ = (double)(MathHelper.cos(this.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(this.rotationPitch / 180.0F * (float)Math.PI));
         this.shootingEntity = par2EntityPlayer;
+        this.particleScale = pScale;
+        this.powerHeight = pHeight;
     }
 
     public void onUpdate()
@@ -139,7 +144,9 @@ public class EntityChargeAir extends Entity {
                 f2 = 0.8F;
             }
             
-            MysticWorld.proxy.airFX(this.worldObj, this.posX + (rand.nextDouble()/2), this.posY + 0.5D, this.posZ + (rand.nextDouble()/2), 1.0F);
+            MysticWorld.proxy.airFeetFX(this.worldObj, this.posX + (rand.nextDouble()/2), this.posY + 0.5D, this.posZ + (rand.nextDouble()/2), particleScale);
+            MysticWorld.proxy.airFeetFX(this.worldObj, this.posX + (rand.nextDouble()/2), this.posY + 0.5D, this.posZ + (rand.nextDouble()/2), particleScale);
+
             this.setPosition(this.posX, this.posY, this.posZ);
         }
     }
@@ -157,14 +164,14 @@ public class EntityChargeAir extends Entity {
         {
         	this.worldObj.playSoundEffect(this.posX, this.posY, this.posZ, "random.explode", 4.0F, (1.0F + (this.worldObj.rand.nextFloat() - this.worldObj.rand.nextFloat()) * 0.2F) * 0.7F);
         	
-            if (par1MovingObjectPosition.entityHit != entityPlayer && par1MovingObjectPosition.entityHit != entityDragon && par1MovingObjectPosition.entityHit != entityWither)
+            if (par1MovingObjectPosition.entityHit != null)
             {
-                double f3 = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionZ * this.motionZ);
+            	double f3 = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionZ * this.motionZ);
 
-                if (f3 > 0.0F)
-                {
-                    par1MovingObjectPosition.entityHit.addVelocity(this.motionX * (double)2 * 0.6000000238418579D / (double)f3, 2.5, this.motionZ * (double)2 * 0.6000000238418579D / (double)f3);
-                }
+            	if (f3 > 0.0F)
+            	{
+            		par1MovingObjectPosition.entityHit.addVelocity(this.motionX * (double)2 * 0.6000000238418579D / (double)f3, 1.0D + powerHeight, this.motionZ * (double)2 * 0.6000000238418579D / (double)f3);
+            	}
             }
             else
             {
