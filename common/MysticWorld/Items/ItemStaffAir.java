@@ -87,6 +87,16 @@ public class ItemStaffAir extends ItemStaff {
 			itemStack.stackTagCompound.setBoolean("charging", true);
 		}
 		
+		if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))
+		{
+			if (entityPlayer.onGround)
+			{
+				world.playSoundEffect(entityPlayer.posX, entityPlayer.posY, entityPlayer.posZ, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+				itemStack.damageItem(1, entityPlayer);
+				entityPlayer.addVelocity(0, 2.5, 0);
+			}
+		}
+		
 		return itemStack;
 	}
 	
