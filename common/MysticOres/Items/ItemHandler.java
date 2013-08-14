@@ -1,93 +1,79 @@
 package MysticOres.Items;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import MysticOres.ConfigurationManager;
-import MysticOres.MysticOres;
-import MysticOres.Blocks.BlockHandler;
-import cpw.mods.fml.common.registry.GameRegistry;
+import MysticOres.Lib.ItemID;
 
-public class ItemHandler {
-	public static Item AdamantineSword;
-	public static Item AdamantinePickaxe;
-	public static Item AdamantineShovel;
-	public static Item AdamantineAxe;
-	public static Item AdamantineHoe;
-	
-	public static Item BloodstoneSword;
-	public static Item BloodstonePickaxe;
-	public static Item BloodstoneShovel;
-	public static Item BloodstoneAxe;
-	public static Item BloodstoneHoe;
-	
-	public static Item IridiumSword;
-	public static Item IridiumPickaxe;
-	public static Item IridiumShovel;
-	public static Item IridiumAxe;
-	public static Item IridiumHoe;
-	
+public class ItemHandler
+{
+	public static Item VerditeSword;
+	public static Item VerditePickaxe;
+	public static Item VerditeShovel;
+	public static Item VerditeAxe;
+	public static Item VerditeHoe;
 	public static Item MithrilSword;
 	public static Item MithrilPickaxe;
 	public static Item MithrilShovel;
 	public static Item MithrilAxe;
 	public static Item MithrilHoe;
-	
+	public static Item AdamantineSword;
+	public static Item AdamantinePickaxe;
+	public static Item AdamantineShovel;
+	public static Item AdamantineAxe;
+	public static Item AdamantineHoe;
+	public static Item IridiumSword;
+	public static Item IridiumPickaxe;
+	public static Item IridiumShovel;
+	public static Item IridiumAxe;
+	public static Item IridiumHoe;
+	public static Item BloodstoneSword;
+	public static Item BloodstonePickaxe;
+	public static Item BloodstoneShovel;
+	public static Item BloodstoneAxe;
+	public static Item BloodstoneHoe;
 	public static Item ObsidianSword;
 	public static Item ObsidianPickaxe;
 	public static Item ObsidianShovel;
 	public static Item ObsidianAxe;
 	public static Item ObsidianHoe;
 	
-	public static Item VerditeSword;
-	public static Item VerditePickaxe;
-	public static Item VerditeShovel;
-	public static Item VerditeAxe;
-	public static Item VerditeHoe;
-	
 	public static Item Resource;
-	
 	public static Item Satchel;
 	
 	public static void init()
 	{
-		AdamantineSword = new ItemSwords(ConfigurationManager.AdamantineSwordID, EnumTools.adamantineToolMaterial).setUnlocalizedName("AdamantineSword");
-		VerditeSword = new ItemSwords(ConfigurationManager.VerditeSwordID, EnumTools.verditeToolMaterial).setUnlocalizedName("VerditeSword");
-		MithrilSword = new ItemSwords(ConfigurationManager.MithrilSwordID, EnumTools.mithrilToolMaterial).setUnlocalizedName("MithrilSword");
-		IridiumSword = new ItemSwords(ConfigurationManager.IridiumSwordID, EnumTools.iridiumToolMaterial).setUnlocalizedName("IridiumSword");
-		ObsidianSword = new ItemSwords(ConfigurationManager.ObsidianSwordID, EnumTools.obsidianToolMaterial).setUnlocalizedName("ObsidianSword");
-		BloodstoneSword = new ItemSwords(ConfigurationManager.BloodstoneSwordID, EnumTools.bloodstoneToolMaterial).setUnlocalizedName("BloodstoneSword");
+		Resource = new ItemResource(ItemID.RESOURCES);
 		
-		AdamantinePickaxe = new ItemPickaxes(ConfigurationManager.AdamantinePickaxeID, EnumTools.adamantineToolMaterial).setUnlocalizedName("AdamantinePickaxe");
-		VerditePickaxe = new ItemPickaxes(ConfigurationManager.VerditePickaxeID, EnumTools.verditeToolMaterial).setUnlocalizedName("VerditePickaxe");
-		MithrilPickaxe = new ItemPickaxes(ConfigurationManager.MithrilPickaxeID, EnumTools.mithrilToolMaterial).setUnlocalizedName("MithrilPickaxe");
-		IridiumPickaxe = new ItemPickaxes(ConfigurationManager.IridiumPickaxeID, EnumTools.iridiumToolMaterial).setUnlocalizedName("IridiumPickaxe");
-		ObsidianPickaxe = new ItemPickaxes(ConfigurationManager.ObsidianPickaxeID, EnumTools.obsidianToolMaterial).setUnlocalizedName("ObsidianPickaxe");
-		BloodstonePickaxe = new ItemPickaxes(ConfigurationManager.BloodstonePickaxeID, EnumTools.bloodstoneToolMaterial).setUnlocalizedName("BloodstonePickaxe");
-		
-		AdamantineShovel = new ItemShovels(ConfigurationManager.AdamantineShovelID, EnumTools.adamantineToolMaterial).setUnlocalizedName("AdamantineShovel");
-		VerditeShovel = new ItemShovels(ConfigurationManager.VerditeShovelID, EnumTools.verditeToolMaterial).setUnlocalizedName("VerditeShovel");
-		MithrilShovel = new ItemShovels(ConfigurationManager.MithrilShovelID, EnumTools.mithrilToolMaterial).setUnlocalizedName("MithrilShovel");
-		IridiumShovel = new ItemShovels(ConfigurationManager.IridiumShovelID, EnumTools.iridiumToolMaterial).setUnlocalizedName("IridiumShovel");
-		ObsidianShovel = new ItemShovels(ConfigurationManager.ObsidianShovelID, EnumTools.obsidianToolMaterial).setUnlocalizedName("ObsidianShovel");
-		BloodstoneShovel = new ItemShovels(ConfigurationManager.BloodstoneShovelID, EnumTools.bloodstoneToolMaterial).setUnlocalizedName("BloodstoneShovel");
-		
-		AdamantineAxe = new ItemAxes(ConfigurationManager.AdamantineAxeID, EnumTools.adamantineToolMaterial).setUnlocalizedName("AdamantineAxe");
-		VerditeAxe = new ItemAxes(ConfigurationManager.VerditeAxeID, EnumTools.verditeToolMaterial).setUnlocalizedName("VerditeAxe");
-		MithrilAxe = new ItemAxes(ConfigurationManager.MithrilAxeID, EnumTools.mithrilToolMaterial).setUnlocalizedName("MithrilAxe");
-		IridiumAxe = new ItemAxes(ConfigurationManager.IridiumAxeID, EnumTools.iridiumToolMaterial).setUnlocalizedName("IridiumAxe");
-		ObsidianAxe = new ItemAxes(ConfigurationManager.ObsidianAxeID, EnumTools.obsidianToolMaterial).setUnlocalizedName("ObsidianAxe");
-		BloodstoneAxe = new ItemAxes(ConfigurationManager.BloodstoneAxeID, EnumTools.bloodstoneToolMaterial).setUnlocalizedName("BloodstoneAxe");
-		
-		AdamantineHoe = new ItemHoes(ConfigurationManager.AdamantineHoeID, EnumTools.adamantineToolMaterial).setUnlocalizedName("AdamantineHoe");
-		VerditeHoe = new ItemHoes(ConfigurationManager.VerditeHoeID, EnumTools.verditeToolMaterial).setUnlocalizedName("VerditeHoe");
-		MithrilHoe = new ItemHoes(ConfigurationManager.MithrilHoeID, EnumTools.mithrilToolMaterial).setUnlocalizedName("MithrilHoe");
-		IridiumHoe = new ItemHoes(ConfigurationManager.IridiumHoeID, EnumTools.iridiumToolMaterial).setUnlocalizedName("IridiumHoe");
-		ObsidianHoe = new ItemHoes(ConfigurationManager.ObsidianHoeID, EnumTools.obsidianToolMaterial).setUnlocalizedName("ObsidianHoe");
-		BloodstoneHoe = new ItemHoes(ConfigurationManager.BloodstoneHoeID, EnumTools.bloodstoneToolMaterial).setUnlocalizedName("BloodstoneHoe");
-		
-		Resource = new ItemResource(ConfigurationManager.ResourcesID);
-		
-		Satchel = new ItemSatchel(ConfigurationManager.SatchelID).setUnlocalizedName("Satchel"); 
+		VerditeSword = new ItemSwords(ItemID.VERDITESWORD, EnumTools.verditeToolMaterial).setUnlocalizedName("VerditeSword");
+		VerditePickaxe = new ItemPickaxes(ItemID.VERDITEPICKAXE, EnumTools.verditeToolMaterial).setUnlocalizedName("VerditePickaxe");
+		VerditeShovel = new ItemShovels(ItemID.VERDITESHOVEL, EnumTools.verditeToolMaterial).setUnlocalizedName("VerditeShovel");
+		VerditeAxe = new ItemAxes(ItemID.VERDITEAXE, EnumTools.verditeToolMaterial).setUnlocalizedName("VerditeAxe");
+		VerditeHoe = new ItemHoes(ItemID.VERDITEHOE, EnumTools.verditeToolMaterial).setUnlocalizedName("VerditeHoe");
+		MithrilSword = new ItemSwords(ItemID.MITHRILSWORD, EnumTools.mithrilToolMaterial).setUnlocalizedName("MithrilSword");
+		MithrilPickaxe = new ItemPickaxes(ItemID.MITHRILPICKAXE, EnumTools.mithrilToolMaterial).setUnlocalizedName("MithrilPickaxe");
+		MithrilShovel = new ItemShovels(ItemID.MITHRILSHOVEL, EnumTools.mithrilToolMaterial).setUnlocalizedName("MithrilShovel");
+		MithrilAxe = new ItemAxes(ItemID.MITHRILAXE, EnumTools.mithrilToolMaterial).setUnlocalizedName("MithrilAxe");
+		MithrilHoe = new ItemHoes(ItemID.MITHRILHOE, EnumTools.mithrilToolMaterial).setUnlocalizedName("MithrilHoe");
+		AdamantineSword = new ItemSwords(ItemID.ADAMANTINESWORD, EnumTools.adamantineToolMaterial).setUnlocalizedName("AdamantineSword");
+		AdamantinePickaxe = new ItemPickaxes(ItemID.ADAMANTINEPICKAXE, EnumTools.adamantineToolMaterial).setUnlocalizedName("AdamantinePickaxe");
+		AdamantineShovel = new ItemShovels(ItemID.ADAMANTINESHOVEL, EnumTools.adamantineToolMaterial).setUnlocalizedName("AdamantineShovel");
+		AdamantineAxe = new ItemAxes(ItemID.ADAMANTINEAXE, EnumTools.adamantineToolMaterial).setUnlocalizedName("AdamantineAxe");
+		AdamantineHoe = new ItemHoes(ItemID.ADAMANTINEHOE, EnumTools.adamantineToolMaterial).setUnlocalizedName("AdamantineHoe");
+		IridiumSword = new ItemSwords(ItemID.IRIDIUMSWORD, EnumTools.iridiumToolMaterial).setUnlocalizedName("IridiumSword");
+		IridiumPickaxe = new ItemPickaxes(ItemID.IRIDIUMPICKAXE, EnumTools.iridiumToolMaterial).setUnlocalizedName("IridiumPickaxe");
+		IridiumShovel = new ItemShovels(ItemID.IRIDIUMSHOVEL, EnumTools.iridiumToolMaterial).setUnlocalizedName("IridiumShovel");
+		IridiumAxe = new ItemAxes(ItemID.IRIDIUMAXE, EnumTools.iridiumToolMaterial).setUnlocalizedName("IridiumAxe");
+		IridiumHoe = new ItemHoes(ItemID.IRIDIUMHOE, EnumTools.iridiumToolMaterial).setUnlocalizedName("IridiumHoe");
+		BloodstoneSword = new ItemSwords(ItemID.BLOODSTONESWORD, EnumTools.bloodstoneToolMaterial).setUnlocalizedName("BloodstoneSword");
+		BloodstonePickaxe = new ItemPickaxes(ItemID.BLOODSTONEPICKAXE, EnumTools.bloodstoneToolMaterial).setUnlocalizedName("BloodstonePickaxe");
+		BloodstoneShovel = new ItemShovels(ItemID.BLOODSTONESHOVEL, EnumTools.bloodstoneToolMaterial).setUnlocalizedName("BloodstoneShovel");
+		BloodstoneAxe = new ItemAxes(ItemID.BLOODSTONEAXE, EnumTools.bloodstoneToolMaterial).setUnlocalizedName("BloodstoneAxe");
+		BloodstoneHoe = new ItemHoes(ItemID.BLOODSTONEHOE, EnumTools.bloodstoneToolMaterial).setUnlocalizedName("BloodstoneHoe");
+		ObsidianSword = new ItemSwords(ItemID.OBSIDIANSWORD, EnumTools.obsidianToolMaterial).setUnlocalizedName("ObsidianSword");
+		ObsidianPickaxe = new ItemPickaxes(ItemID.OBSIDIANPICKAXE, EnumTools.obsidianToolMaterial).setUnlocalizedName("ObsidianPickaxe");
+		ObsidianShovel = new ItemShovels(ItemID.OBSIDIANSHOVEL, EnumTools.obsidianToolMaterial).setUnlocalizedName("ObsidianShovel");
+		ObsidianAxe = new ItemAxes(ItemID.OBSIDIANAXE, EnumTools.obsidianToolMaterial).setUnlocalizedName("ObsidianAxe");
+		ObsidianHoe = new ItemHoes(ItemID.OBSIDIANHOE, EnumTools.obsidianToolMaterial).setUnlocalizedName("ObsidianHoe");
+		Satchel = new ItemSatchel(ItemID.SATCHEL).setUnlocalizedName("Satchel"); 
 	}
 }

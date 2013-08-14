@@ -3,117 +3,70 @@ package MysticOres;
 import java.io.File;
 
 import net.minecraftforge.common.Configuration;
+import MysticOres.Lib.BlockID;
+import MysticOres.Lib.ItemID;
+import MysticOres.Lib.Rarity;
 
 public class ConfigurationManager
 {
 	public static Configuration config;
 	
-	public static int AdamantineSwordID;
-	public static int AdamantinePickaxeID;
-	public static int AdamantineShovelID;
-	public static int AdamantineAxeID;
-	public static int AdamantineHoeID;
-	
-	public static int BloodstoneSwordID;
-	public static int BloodstonePickaxeID;
-	public static int BloodstoneShovelID;
-	public static int BloodstoneAxeID;
-	public static int BloodstoneHoeID;
-	
-	public static int IridiumSwordID;
-	public static int IridiumPickaxeID;
-	public static int IridiumShovelID;
-	public static int IridiumAxeID;
-	public static int IridiumHoeID;
-	
-	public static int MithrilSwordID;
-	public static int MithrilPickaxeID;
-	public static int MithrilShovelID;
-	public static int MithrilAxeID;
-	public static int MithrilHoeID;
-	
-	public static int ObsidianSwordID;
-	public static int ObsidianPickaxeID;
-	public static int ObsidianShovelID;
-	public static int ObsidianAxeID;
-	public static int ObsidianHoeID;
-	
-	public static int VerditeSwordID;
-	public static int VerditePickaxeID;
-	public static int VerditeShovelID;
-	public static int VerditeAxeID;
-	public static int VerditeHoeID;
-	
-	public static int ResourcesID;
-	
-	public static int SatchelID;
-	
-	public static int BlockBaseID;
-	
-	public static int AgateRarity;
-	public static int AmethystRarity;
-	public static int TopazRarity;
-	public static int TourmalineRarity;
-	
-	public static int VerditeRarity;
-	public static int MithrilRarity;
-	public static int IridiumRarity;
-	public static int AdamantineRarity;
-		
 	public static void initialize(File file)
 	{
 		config = new Configuration(file);
 		
-		AdamantineSwordID = config.getItem("Tool IDs", "Adamantine Sword ID", 15000).getInt();
-        AdamantinePickaxeID = config.getItem("Tool IDs", "Adamantine Pickaxe ID", 15001).getInt();
-        AdamantineShovelID = config.getItem("Tool IDs", "Adamantine Shovel ID", 15002).getInt();
-        AdamantineAxeID = config.getItem("Tool IDs", "Adamantine Axe ID", 15003).getInt();
-        AdamantineHoeID = config.getItem("Tool IDs", "Adamantine Hoe ID", 15004).getInt();
-        BloodstoneSwordID = config.getItem("Tool IDs", "Bloodstone Sword ID", 15005).getInt();
-        BloodstonePickaxeID = config.getItem("Tool IDs", "Bloodstone Pickaxe ID", 15006).getInt();
-        BloodstoneShovelID = config.getItem("Tool IDs", "Bloodstone Shovel ID", 15007).getInt();
-        BloodstoneAxeID = config.getItem("Tool IDs", "Bloodstone Axe ID", 15008).getInt();
-        BloodstoneHoeID = config.getItem("Tool IDs", "Bloodstone Hoe ID", 15009).getInt();
-        IridiumSwordID = config.getItem("Tool IDs", "Iridium Sword ID", 15010).getInt();
-        IridiumPickaxeID = config.getItem("Tool IDs", "Iridium Pickaxe ID", 15011).getInt();
-        IridiumShovelID = config.getItem("Tool IDs", "Iridium Shovel ID", 15012).getInt();
-        IridiumAxeID = config.getItem("Tool IDs", "Iridium Axe ID", 15013).getInt();
-        IridiumHoeID = config.getItem("Tool IDs", "Iridium Hoe ID", 15014).getInt();
-        MithrilSwordID = config.getItem("Tool IDs", "Mithril Sword ID", 15015).getInt();
-        MithrilPickaxeID = config.getItem("Tool IDs", "Mithril Pickaxe ID", 15016).getInt();
-        MithrilShovelID = config.getItem("Tool IDs", "Mithril Shovel ID", 15017).getInt();
-        MithrilAxeID = config.getItem("Tool IDs", "Mithril Axe ID", 15018).getInt();
-        MithrilHoeID = config.getItem("Tool IDs", "Mithril Hoe ID", 15019).getInt();
-        ObsidianSwordID = config.getItem("Tool IDs", "Obsidian Sword ID", 15020).getInt();
-        ObsidianPickaxeID = config.getItem("Tool IDs", "Obsidian Pickaxe ID", 15021).getInt();
-        ObsidianShovelID = config.getItem("Tool IDs", "Obsidian Shovel ID", 15022).getInt();
-        ObsidianAxeID = config.getItem("Tool IDs", "Obsidian Axe ID", 15023).getInt();
-        ObsidianHoeID = config.getItem("Tool IDs", "Obsidian Hoe ID", 15024).getInt();
-        VerditeSwordID = config.getItem("Tool IDs", "Verdite Sword ID", 15025).getInt();
-        VerditePickaxeID = config.getItem("Tool IDs", "Verdite Pickaxe ID", 15026).getInt();
-        VerditeShovelID = config.getItem("Tool IDs", "Verdite Shovel ID", 15027).getInt();
-        VerditeAxeID = config.getItem("Tool IDs", "Verdite Axe ID", 15028).getInt();
-        VerditeHoeID = config.getItem("Tool IDs", "Verdite Hoe ID", 15029).getInt();
-        SatchelID = config.getItem("Tool IDs", "Satchel ID", 15030).getInt();
+		ItemID.RESOURCES = config.getItem("Resource Items", ItemID.RESOURCES_DEFAULT).getInt();
+		ItemID.VERDITESWORD = config.getItem("Tools", "Verdite Sword", ItemID.VERDITESWORD_DEFAULT).getInt();
+		ItemID.VERDITEPICKAXE = config.getItem("Tools", "Verdite Pickaxe", ItemID.VERDITEPICKAXE_DEFAULT).getInt();
+		ItemID.VERDITESHOVEL = config.getItem("Tools", "Verdite Shovel", ItemID.VERDITESHOVEL_DEFAULT).getInt();
+		ItemID.VERDITEAXE = config.getItem("Tools", "Verdite Axe", ItemID.VERDITEAXE_DEFAULT).getInt();
+		ItemID.VERDITEHOE = config.getItem("Tools", "Verdite Hoe", ItemID.VERDITEHOE_DEFAULT).getInt();
+		ItemID.MITHRILSWORD = config.getItem("Tools", "Mithril Sword", ItemID.MITHRILSWORD_DEFAULT).getInt();
+		ItemID.MITHRILPICKAXE = config.getItem("Tools", "Mithril Pickaxe", ItemID.MITHRILPICKAXE_DEFAULT).getInt();
+		ItemID.MITHRILSHOVEL = config.getItem("Tools", "Mithril Shovel", ItemID.MITHRILSHOVEL_DEFAULT).getInt();
+		ItemID.MITHRILAXE = config.getItem("Tools", "Mithril Axe", ItemID.MITHRILAXE_DEFAULT).getInt();
+		ItemID.MITHRILHOE = config.getItem("Tools", "Mithril Hoe", ItemID.MITHRILHOE_DEFAULT).getInt();
+		ItemID.ADAMANTINESWORD = config.getItem("Tools", "Adamantine Sword", ItemID.ADAMANTINESWORD_DEFAULT).getInt();
+		ItemID.ADAMANTINEPICKAXE = config.getItem("Tools", "Adamantine Pickaxe", ItemID.ADAMANTINEPICKAXE_DEFAULT).getInt();
+		ItemID.ADAMANTINESHOVEL = config.getItem("Tools", "Adamantine Shovel", ItemID.ADAMANTINESHOVEL_DEFAULT).getInt();
+		ItemID.ADAMANTINEAXE = config.getItem("Tools", "Adamantine Axe", ItemID.ADAMANTINEAXE_DEFAULT).getInt();
+		ItemID.ADAMANTINEHOE = config.getItem("Tools", "Adamantine Hoe", ItemID.ADAMANTINEHOE_DEFAULT).getInt();
+		ItemID.IRIDIUMSWORD = config.getItem("Tools", "Iridium Sword", ItemID.IRIDIUMSWORD_DEFAULT).getInt();
+		ItemID.IRIDIUMPICKAXE = config.getItem("Tools", "Iridium Pickaxe", ItemID.IRIDIUMPICKAXE_DEFAULT).getInt();
+		ItemID.IRIDIUMSHOVEL = config.getItem("Tools", "Iridium Shovel", ItemID.IRIDIUMSHOVEL_DEFAULT).getInt();
+		ItemID.IRIDIUMAXE = config.getItem("Tools", "Iridium Axe", ItemID.IRIDIUMAXE_DEFAULT).getInt();
+		ItemID.IRIDIUMHOE = config.getItem("Tools", "Iridium Hoe", ItemID.IRIDIUMHOE_DEFAULT).getInt();
+		ItemID.BLOODSTONESWORD = config.getItem("Tools", "Bloodstone Sword", ItemID.BLOODSTONESWORD_DEFAULT).getInt();
+		ItemID.BLOODSTONEPICKAXE = config.getItem("Tools", "Bloodstone Pickaxe", ItemID.BLOODSTONEPICKAXE_DEFAULT).getInt();
+		ItemID.BLOODSTONESHOVEL = config.getItem("Tools", "Bloodstone Shovel", ItemID.BLOODSTONESHOVEL_DEFAULT).getInt();
+		ItemID.BLOODSTONEAXE = config.getItem("Tools", "Bloodstone Axe", ItemID.BLOODSTONEAXE_DEFAULT).getInt();
+		ItemID.BLOODSTONEHOE = config.getItem("Tools", "Bloodstone Hoe", ItemID.BLOODSTONEHOE_DEFAULT).getInt();
+		ItemID.OBSIDIANSWORD = config.getItem("Tools", "Obsidian Sword", ItemID.OBSIDIANSWORD_DEFAULT).getInt();
+		ItemID.OBSIDIANPICKAXE = config.getItem("Tools", "Obsidian Pickaxe", ItemID.OBSIDIANPICKAXE_DEFAULT).getInt();
+		ItemID.OBSIDIANSHOVEL = config.getItem("Tools", "Obsidian Shovel", ItemID.OBSIDIANSHOVEL_DEFAULT).getInt();
+		ItemID.OBSIDIANAXE = config.getItem("Tools", "Obsidian Axe", ItemID.OBSIDIANAXE_DEFAULT).getInt();
+		ItemID.OBSIDIANHOE = config.getItem("Tools", "Obsidian Hoe", ItemID.OBSIDIANHOE_DEFAULT).getInt();
+		ItemID.SATCHEL = config.getItem("Satchel ID", ItemID.SATCHEL_DEFAULT).getInt();
+		
+        BlockID.BASEID = config.getBlock("Base Block ID", BlockID.BASEID_DEFAULT).getInt();
         
-        ResourcesID = config.getItem("Base Resource ID", 15031).getInt();
-               
-        BlockBaseID = config.getBlock("Base Block ID", 500).getInt();
+        Rarity.VERDITE = config.get("Ore Rarity", "Verdite Ore", Rarity.VERDITE_DEFAULT).getInt();
+        Rarity.MITHRIL = config.get("Ore Rarity", "Mithril Ore", Rarity.MITHRIL_DEFAULT).getInt();
+        Rarity.ADAMANTINE = config.get("Ore Rarity", "Adamantine Ore", Rarity.ADAMANTINE_DEFAULT).getInt();
+        Rarity.IRIDIUM = config.get("Ore Rarity", "Iridium Ore", Rarity.IRIDIUM_DEFAULT).getInt();
+        Rarity.AGATE = config.get("Ore Rarity", "Agate Ore", Rarity.AGATE_DEFAULT).getInt();
+        Rarity.AMETHYST = config.get("Ore Rarity", "Amethyst Ore", Rarity.AMETHYST_DEFAULT).getInt();
+        Rarity.TOPAZ = config.get("Ore Rarity", "Topaz Ore", Rarity.TOPAZ_DEFAULT).getInt();
+        Rarity.BLOODSTONE = config.get("Nether Ore Rarity", "Bloodstone", Rarity.BLOODSTONE_DEFAULT).getInt();
+        Rarity.REDSOULSTONE = config.get("Nether Ore Rarity", "Red Soulstone", Rarity.REDSOULSTONE_DEFAULT).getInt();
+        Rarity.BLACKSOULSTONE = config.get("Nether Ore Rarity", "Black Soulstone", Rarity.BLACKSOULSTONE_DEFAULT).getInt();
+        Rarity.BLUESOULSTONE = config.get("Nether Ore Rarity", "Blue Soulstone", Rarity.BLUESOULSTONE_DEFAULT).getInt();
         
-        AgateRarity = config.get("Ore Rarity", "Rarity of Agate", 3).getInt();
-        AmethystRarity = config.get("Ore Rarity", "Rarity of Amethyst", 3).getInt();
-        TopazRarity = config.get("Ore Rarity", "Rarity of Topaz", 3).getInt();
-        TourmalineRarity = config.get("Ore Rarity", "Rarity of Tourmaline", 3).getInt();        
-        VerditeRarity = config.get("Ore Rarity", "Rarity of Verdite Ore", 10).getInt();
-        MithrilRarity = config.get("Ore Rarity", "Rarity of Mithril Ore", 3).getInt();
-        IridiumRarity = config.get("Ore Rarity", "Rarity of Iridium Ore", 2).getInt();
-        AdamantineRarity = config.get("Ore Rarity", "Rarity of Adamantine Ore", 2).getInt();
- 
 		config.save();
   }
 
   public static void save()
   {
-    config.save();
+	  config.save();
   }
 }

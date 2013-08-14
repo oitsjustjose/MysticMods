@@ -1,27 +1,20 @@
 package MysticOres.Blocks;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import MysticOres.ConfigurationManager;
-import MysticOres.MysticOres;
-import MysticOres.Items.ItemHandler;
 import net.minecraft.block.Block;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.common.MinecraftForge;
+import MysticOres.Lib.BlockID;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BlockHandler {
 
 	public static Block BlockBase;
 	
-	public static void init() {
-		BlockBase = new BlockBase(ConfigurationManager.BlockBaseID).setStepSound(Block.soundStoneFootstep);
-		
-		registerBlocks();
-		setBlockHarvestLevels();
-	}
-	
-	private static void registerBlocks() {
+	public static void init()
+	{
+		BlockBase = new BlockBase(BlockID.BASEID).setStepSound(Block.soundStoneFootstep);
 		GameRegistry.registerBlock(BlockBase, ItemBlockBase.class, "Base Blocks");
+		
+		setBlockHarvestLevels();
 	}
 	
 	private static void setBlockHarvestLevels() {

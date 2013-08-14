@@ -14,13 +14,13 @@ import MysticOres.Items.ItemPickaxes;
 import MysticOres.Items.ItemSatchel;
 import MysticOres.Items.ItemShovels;
 import MysticOres.Items.ItemSwords;
-import MysticOres.Worldgen.WorldGenHandler;
+import MysticOres.Worldgen.GeneratorManager;
 import MysticOres.Worldgen.WorldGenAdamantine;
 import MysticOres.Worldgen.WorldGenAgate;
 import MysticOres.Worldgen.WorldGenAmethyst;
 import MysticOres.Worldgen.WorldGenIridium;
 import MysticOres.Worldgen.WorldGenMithril;
-import MysticOres.Worldgen.WorldGenMysticNetherMinable;
+import MysticOres.Worldgen.NetherGenMineable;
 import MysticOres.Worldgen.WorldGenTopaz;
 import MysticOres.Worldgen.WorldGenTourmaline;
 import MysticOres.Worldgen.WorldGenVerdite;
@@ -73,7 +73,7 @@ public class MysticOres
 		GameRegistry.registerFuelHandler(new IridiumFuelHandler());
 		RecipeManager.init();
 		OreDictManager.init();
-		WorldGenHandler.init();
+		GeneratorManager.init();
 		LanguageManager.init();
 	}
 }

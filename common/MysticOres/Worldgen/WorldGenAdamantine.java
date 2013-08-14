@@ -2,14 +2,11 @@ package MysticOres.Worldgen;
 
 import java.util.Random;
 
-import MysticOres.ConfigurationManager;
-import MysticOres.MysticOres;
-import MysticOres.Blocks.BlockHandler;
-
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-
+import MysticOres.Blocks.BlockHandler;
+import MysticOres.Lib.Rarity;
 import cpw.mods.fml.common.IWorldGenerator;
 
 public class WorldGenAdamantine implements IWorldGenerator {
@@ -22,7 +19,7 @@ public class WorldGenAdamantine implements IWorldGenerator {
 	}
 
 	private void generateSurface(World world, Random random, int blockX, int blockZ) {
-		for (int i = 0; i < ConfigurationManager.AdamantineRarity; i++)
+		for (int i = 0; i < Rarity.ADAMANTINE; i++)
 		{
 			int Xcoord = blockX + random.nextInt(8);
 			int Ycoord = random.nextInt(16);

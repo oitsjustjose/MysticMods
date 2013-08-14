@@ -2,15 +2,12 @@ package MysticOres.Worldgen;
 
 import java.util.Random;
 
-import MysticOres.ConfigurationManager;
-import MysticOres.MysticOres;
-import MysticOres.Blocks.BlockHandler;
-
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-
+import MysticOres.Blocks.BlockHandler;
+import MysticOres.Lib.Rarity;
 import cpw.mods.fml.common.IWorldGenerator;
 
 public class WorldGenAmethyst implements IWorldGenerator {
@@ -24,7 +21,7 @@ public class WorldGenAmethyst implements IWorldGenerator {
 
 	private void generateSurface(World world, Random random, int blockX, int blockZ) 
 	{
-		for (int i = 0; i < ConfigurationManager.AmethystRarity; i++)
+		for (int i = 0; i < Rarity.AMETHYST; i++)
 		{
 			int Xcoord = blockX + random.nextInt(24);
 			int Ycoord = random.nextInt(60);

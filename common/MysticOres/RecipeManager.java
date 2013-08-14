@@ -12,7 +12,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RecipeManager
 {	
-	public static void init(){
+	public static void init()
+	{
 		recipes();
 		blockRecipes();
 		blockSmelting();
@@ -66,7 +67,8 @@ public class RecipeManager
 		});
 	}
 	
-	private static void blockSmelting(){
+	private static void blockSmelting()
+	{
 		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 0, new ItemStack(ItemHandler.Resource, 1, 2), 0.9F);
 		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 3, new ItemStack(ItemHandler.Resource, 1, 1), 0.7F);
 		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 6, new ItemStack(ItemHandler.Resource, 1, 0), 0.4F);
@@ -78,7 +80,8 @@ public class RecipeManager
 		FurnaceRecipes.smelting().addSmelting(BlockHandler.BlockBase.blockID, 11, new ItemStack(ItemHandler.Resource, 1, 6), 0.4F);
 	}
 	
-	private static void itemRecipes(){        
+	private static void itemRecipes()
+	{        
     	GameRegistry.addRecipe(new ItemStack(ItemHandler.Resource, 2, 13), new Object[] {
 			"#", "#", '#', new ItemStack(ItemHandler.Resource, 1, 12)
 		});

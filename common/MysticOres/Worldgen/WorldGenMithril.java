@@ -2,15 +2,12 @@ package MysticOres.Worldgen;
 
 import java.util.Random;
 
-import MysticOres.ConfigurationManager;
-import MysticOres.MysticOres;
-import MysticOres.Blocks.BlockHandler;
-
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-
+import MysticOres.Blocks.BlockHandler;
+import MysticOres.Lib.Rarity;
 import cpw.mods.fml.common.IWorldGenerator;
 
 public class WorldGenMithril implements IWorldGenerator {
@@ -23,7 +20,7 @@ public class WorldGenMithril implements IWorldGenerator {
 	}	
 
 	private void generateSurface(World world, Random random, int blockX, int blockZ) {
-		for (int i = 0; i < ConfigurationManager.MithrilRarity; i++)
+		for (int i = 0; i < Rarity.MITHRIL; i++)
 			{
 				int Xcoord = blockX + random.nextInt(16);
 				int Ycoord = random.nextInt(64);

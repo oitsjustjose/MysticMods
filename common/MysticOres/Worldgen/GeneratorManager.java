@@ -1,10 +1,10 @@
 package MysticOres.Worldgen;
 
-import MysticOres.MysticOres;
 import MysticOres.Blocks.BlockHandler;
+import MysticOres.Lib.Rarity;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class WorldGenHandler
+public class GeneratorManager
 {
 	public static void init()
 	{
@@ -16,9 +16,9 @@ public class WorldGenHandler
 		GameRegistry.registerWorldGenerator(new WorldGenAmethyst());
 		GameRegistry.registerWorldGenerator(new WorldGenAdamantine());
 		GameRegistry.registerWorldGenerator(new WorldGenAgate());
-		GameRegistry.registerWorldGenerator(new WorldGenMysticNetherMinable(BlockHandler.BlockBase.blockID, 7, 2));
-		GameRegistry.registerWorldGenerator(new WorldGenMysticNetherMinable(BlockHandler.BlockBase.blockID, 8, 3));
-		GameRegistry.registerWorldGenerator(new WorldGenMysticNetherMinable(BlockHandler.BlockBase.blockID, 9, 2));
-		GameRegistry.registerWorldGenerator(new WorldGenMysticNetherMinable(BlockHandler.BlockBase.blockID, 10, 3));
+		GameRegistry.registerWorldGenerator(new NetherGenMineable(BlockHandler.BlockBase.blockID, 7, Rarity.BLOODSTONE + 1));
+		GameRegistry.registerWorldGenerator(new NetherGenMineable(BlockHandler.BlockBase.blockID, 8, Rarity.BLACKSOULSTONE + 1));
+		GameRegistry.registerWorldGenerator(new NetherGenMineable(BlockHandler.BlockBase.blockID, 9, Rarity.BLUESOULSTONE + 1));
+		GameRegistry.registerWorldGenerator(new NetherGenMineable(BlockHandler.BlockBase.blockID, 10, Rarity.REDSOULSTONE));
 	}
 }
