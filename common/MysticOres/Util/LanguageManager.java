@@ -1,4 +1,4 @@
-package MysticOres;
+package MysticOres.Util;
 
 import MysticOres.Blocks.BlockHandler;
 import MysticOres.Items.ItemHandler;
@@ -7,7 +7,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class LanguageManager
 {
-	public static void init()
+	public static void Initialize()
 	{				
 		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 0), "Adamantine");
 		LanguageRegistry.instance().addName(new ItemStack(BlockHandler.BlockBase, 1, 1), "Amethyst Ore");

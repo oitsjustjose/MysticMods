@@ -1,4 +1,4 @@
-package MysticOres;
+package MysticOres.Util;
 
 import MysticOres.Blocks.BlockHandler;
 import MysticOres.Items.ItemHandler;
@@ -7,7 +7,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class OreDictManager
 {
-	public static void init()
+	public static void Initialize()
 	{
 		OreDictionary.registerOre("ingotAdamantine", new ItemStack(ItemHandler.Resource, 1, 2));
 		OreDictionary.registerOre("ingotMithril", new ItemStack(ItemHandler.Resource, 1, 1));

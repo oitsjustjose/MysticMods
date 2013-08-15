@@ -14,6 +14,11 @@ import MysticOres.Items.ItemPickaxes;
 import MysticOres.Items.ItemSatchel;
 import MysticOres.Items.ItemShovels;
 import MysticOres.Items.ItemSwords;
+import MysticOres.Util.ConfigurationManager;
+import MysticOres.Util.LanguageManager;
+import MysticOres.Util.OreDictManager;
+import MysticOres.Util.RecipeManager;
+import MysticOres.Util.TabMysticOres;
 import MysticOres.Worldgen.GeneratorManager;
 import MysticOres.Worldgen.WorldGenAdamantine;
 import MysticOres.Worldgen.WorldGenAgate;
@@ -68,12 +73,14 @@ public class MysticOres
 	{		
         ConfigurationManager.initialize(new File(event.getModConfigurationDirectory(), "Mystic Mods/Mystic Ores.cfg"));
         ConfigurationManager.save();
-		BlockHandler.init();
-		ItemHandler.init();
+        
+		BlockHandler.Initialize();
+		ItemHandler.Initialize();
+		RecipeManager.Initialize();
+		OreDictManager.Initialize();
+		GeneratorManager.Initialize();
+		LanguageManager.Initialize();
+		
 		GameRegistry.registerFuelHandler(new IridiumFuelHandler());
-		RecipeManager.init();
-		OreDictManager.init();
-		GeneratorManager.init();
-		LanguageManager.init();
 	}
 }

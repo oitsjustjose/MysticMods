@@ -9,7 +9,7 @@ public class BlockHandler {
 
 	public static Block BlockBase;
 	
-	public static void init()
+	public static void Initialize()
 	{
 		BlockBase = new BlockBase(BlockID.BASEID).setStepSound(Block.soundStoneFootstep);
 		GameRegistry.registerBlock(BlockBase, ItemBlockBase.class, "Base Blocks");

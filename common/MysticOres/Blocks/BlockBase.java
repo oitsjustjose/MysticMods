@@ -8,6 +8,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
@@ -186,6 +187,16 @@ public class BlockBase extends Block
         return false;
     }
 	
+	@Override
+	public boolean isBlockSolidOnSide(World world, int x, int y, int z, ForgeDirection side)
+	{
+		int meta = world.getBlockMetadata(x, y, z);
+		if(meta == 12)
+			return false;
+		else
+			return true;
+	}
+	
 	public static int BlackSoulstoneDrops(int par1, Random random, int par3)
 	{
 		int rand = random.nextInt(2);
@@ -195,16 +206,6 @@ public class BlockBase extends Block
 		case 1:return Item.gunpowder.itemID;
 		default:return Item.sugar.itemID;
 		}
-	}
-	
-	@Override
-	public boolean isBlockSolidOnSide(World world, int x, int y, int z, ForgeDirection side)
-	{
-		int meta = world.getBlockMetadata(x, y, z);
-		if(meta == 12)
-			return false;
-		else
-			return true;
 	}
 	
 	public static int RedSoulstoneDrops(int par1, Random random, int par3)

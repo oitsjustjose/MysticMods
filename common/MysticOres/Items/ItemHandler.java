@@ -1,8 +1,8 @@
 package MysticOres.Items;
 
 import net.minecraft.item.Item;
-import MysticOres.ConfigurationManager;
 import MysticOres.Lib.ItemID;
+import MysticOres.Util.ConfigurationManager;
 
 public class ItemHandler
 {
@@ -40,7 +40,7 @@ public class ItemHandler
 	public static Item Resource;
 	public static Item Satchel;
 	
-	public static void init()
+	public static void Initialize()
 	{
 		Resource = new ItemResource(ItemID.RESOURCES);
 		

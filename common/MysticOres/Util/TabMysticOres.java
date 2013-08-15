@@ -1,4 +1,4 @@
-package MysticOres;
+package MysticOres.Util;
 
 import MysticOres.Blocks.BlockHandler;
 import net.minecraft.block.Block;

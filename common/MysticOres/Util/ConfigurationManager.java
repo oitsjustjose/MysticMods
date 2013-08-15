@@ -1,4 +1,4 @@
-package MysticOres;
+package MysticOres.Util;
 
 import java.io.File;
 

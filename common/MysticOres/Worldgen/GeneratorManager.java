@@ -6,7 +6,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class GeneratorManager
 {
-	public static void init()
+	public static void Initialize()
 	{
 		GameRegistry.registerWorldGenerator(new WorldGenVerdite());
 		GameRegistry.registerWorldGenerator(new WorldGenTopaz());
