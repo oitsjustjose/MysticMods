@@ -1,4 +1,4 @@
-package MysticWorld;
+package MysticWorld.Util;
 
 import java.io.File;
 

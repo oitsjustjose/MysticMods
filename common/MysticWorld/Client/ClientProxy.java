@@ -3,7 +3,6 @@ package MysticWorld.Client;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
-import MysticWorld.CommonProxy;
 import MysticWorld.Blocks.BlockHandler;
 import MysticWorld.Client.FX.LightCubeFX;
 import MysticWorld.Client.FX.PowerAirFX;
@@ -32,6 +31,7 @@ import MysticWorld.Renderer.ItemStaffWaterRenderer;
 import MysticWorld.Renderer.RenderStaffPower;
 import MysticWorld.Renderer.TileEntityPillarInsertRenderer;
 import MysticWorld.TileEntity.TileEntityPillarInsert;
+import MysticWorld.Util.CommonProxy;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 

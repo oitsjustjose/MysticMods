@@ -1,13 +1,13 @@
-package MysticStones;
+package MysticStones.Blocks;
 
 import java.util.List;
 import java.util.Random;
 
+import MysticStones.MysticStones;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
@@ -17,17 +17,17 @@ import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockReinforced extends Block {
-	
-	Icon[] textures;
+public class BlockStoneBricks extends Block {
 
-	public BlockReinforced(int ID) {
-		super(ID, Material.iron);
-		setHardness(4F);
-		setResistance(2000F);
+	Icon[] textures;
+	
+	public BlockStoneBricks(int ID) {
+		super(ID, Material.rock);
+		setHardness(2F);
+		setResistance(5F);
 		setCreativeTab(MysticStones.MysticStonesTab);
-		setUnlocalizedName("BlockMysticReinforcedBrick");
-		setStepSound(Block.soundMetalFootstep);
+		setUnlocalizedName("BlockMysticStoneBricks");
+		setStepSound(Block.soundStoneFootstep);
 	}
 	
 	@Override
@@ -35,11 +35,6 @@ public class BlockReinforced extends Block {
 	{
 		return j;
 	}
-	
-	 public boolean isBeaconBase(World worldObj, int x, int y, int z, int beaconX, int beaconY, int beaconZ)
-	    {
-	        return (true);
-	    }
 	
 	public ItemStack getPickBlock(MovingObjectPosition target,World world, int x, int y, int z)
 	{
@@ -65,9 +60,9 @@ public class BlockReinforced extends Block {
 	{
 		textures = new Icon[16];
 
-		for (int i = 0; i < 8; i++)
+		for (int i = 0; i < 7; i++)
 		{
-			textures[i] = iconRegister.registerIcon("MysticMods" + ":" + ItemBlockReinforced.BRICK_TYPE[i] + " Bricks");
+			textures[i] = iconRegister.registerIcon("MysticMods" + ":" + ItemStoneBricks.STONEBRICK_TYPES[i]);
 		}
 	}
 	
@@ -76,13 +71,17 @@ public class BlockReinforced extends Block {
 	{
 		return textures[meta];
 	}
-
 	
 	public void getSubBlocks(int i,CreativeTabs tab, List list)
 	{
-		for(int k=0;k<8;k++)
-		{
-			list.add(new ItemStack(i,1,k));
-		}
+		list.add(new ItemStack(i,1,0));
+		list.add(new ItemStack(i,1,1));
+		list.add(new ItemStack(i,1,2));
+		list.add(new ItemStack(i,1,3));
+		list.add(new ItemStack(i,1,4));
+		list.add(new ItemStack(i,1,5));
+		list.add(new ItemStack(i,1,6));
 	}
+	
+	
 }

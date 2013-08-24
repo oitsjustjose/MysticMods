@@ -1,4 +1,4 @@
-package MysticWorld;
+package MysticWorld.Util;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.src.ModLoader;

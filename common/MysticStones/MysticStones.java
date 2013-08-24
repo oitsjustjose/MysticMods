@@ -3,6 +3,25 @@ package MysticStones;
 import java.io.File;
 import java.util.Random;
 
+import MysticStones.Blocks.BlockPlanks;
+import MysticStones.Blocks.BlockReinforced;
+import MysticStones.Blocks.BlockStoneBricks;
+import MysticStones.Blocks.BlockStones;
+import MysticStones.Blocks.ItemPlanks;
+import MysticStones.Blocks.ItemReinforced;
+import MysticStones.Blocks.ItemStoneBricks;
+import MysticStones.Blocks.ItemStones;
+import MysticStones.Util.Config;
+import MysticStones.Util.Localizations;
+import MysticStones.Util.RecipeHandler;
+import MysticStones.Util.TabMysticStones;
+import MysticStones.Worldgen.WorldgenSmoothAnorthosite;
+import MysticStones.Worldgen.WorldgenSmoothLimestone;
+import MysticStones.Worldgen.WorldgenSmoothMarble;
+import MysticStones.Worldgen.WorldgenSmoothMigmatite;
+import MysticStones.Worldgen.WorldgenSmoothOrthogneiss;
+import MysticStones.Worldgen.WorldgenSmoothSlate;
+import MysticStones.Worldgen.WorldgenSmoothTravertine;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
@@ -32,6 +51,9 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class MysticStones
 {	
+	@Instance("Mystic Stones")
+	public static MysticStones instance;
+	
 	public static Block Planks;
 	public static Block Stones;
 	public static Block StoneBricks;
@@ -52,12 +74,12 @@ public class MysticStones
 		StoneBricks = new BlockStoneBricks(Config.StoneBricksID);
 		ReinforcedBricks = new BlockReinforced(Config.ReinforcedBricksID);
 		
-		GameRegistry.registerBlock(Planks, ItemBlockPlanks.class, "Planks");
-		GameRegistry.registerBlock(Stones, ItemBlockStones.class, "Stones");
-		GameRegistry.registerBlock(StoneBricks, ItemBlockStoneBricks.class, "StoneBricks");
-		GameRegistry.registerBlock(ReinforcedBricks, ItemBlockReinforced.class, "Reinforcedbricks");
+		GameRegistry.registerBlock(Planks, ItemPlanks.class, "Planks");
+		GameRegistry.registerBlock(Stones, ItemStones.class, "Stones");
+		GameRegistry.registerBlock(StoneBricks, ItemStoneBricks.class, "StoneBricks");
+		GameRegistry.registerBlock(ReinforcedBricks, ItemReinforced.class, "Reinforcedbricks");
 		
-		LanguageManager.init();
+		Localizations.Initialize();
 		RecipeHandler.CraftPlanks();
 		RecipeHandler.CraftStoneBricks();
 		RecipeHandler.CraftElse();

@@ -1,21 +1,21 @@
-package MysticStones;
+package MysticStones.Blocks;
 
 import java.util.List;
 
+import MysticStones.MysticStones;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 
-public class ItemBlockReinforced extends ItemBlock {
+public class ItemReinforced extends ItemBlock {
 	
 	public static String[] BRICK_TYPE = new String[] {"Mithril", "Verdite", "Iridium", "Adamantine", "Tourmaline", "Topaz", "Amethyst", "Agate"};
 
-	public ItemBlockReinforced(int par1) {
+	public ItemReinforced(int par1) {
 		super(par1);
         setMaxDamage(0);
         setHasSubtypes(true);
@@ -25,7 +25,7 @@ public class ItemBlockReinforced extends ItemBlock {
     @Override
     public String getUnlocalizedName(ItemStack itemStack) {
         int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, BRICK_TYPE.length);
-        return super.getUnlocalizedName() + BRICK_TYPE[meta];
+        return BRICK_TYPE[meta] + " Bricks";
     }
     
     public int getMetadata(int par1)

@@ -19,6 +19,7 @@ public class ItemStaff extends Item
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 	
+	@Override
     @SideOnly(Side.CLIENT)
     public boolean isFull3D()
     {

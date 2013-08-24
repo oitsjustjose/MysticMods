@@ -11,6 +11,13 @@ import MysticWorld.Entity.EntityHandler;
 import MysticWorld.Items.ItemHandler$1;
 import MysticWorld.Lib.Strings;
 import MysticWorld.TileEntity.TileEntityHandler;
+import MysticWorld.Util.CommonProxy;
+import MysticWorld.Util.Config;
+import MysticWorld.Util.Localizations;
+import MysticWorld.Util.RecipeHandler;
+import MysticWorld.Util.Reference;
+import MysticWorld.Util.TabMysticWorld;
+import MysticWorld.Util.TickHandler;
 import MysticWorld.WorldGen.*;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -72,24 +79,15 @@ public class MysticWorld
 		this.tickHandler = new TickHandler();
 			
 	    TickRegistry.registerTickHandler(this.tickHandler, Side.SERVER);
-	    VillagerRegistry.instance().registerVillagerSkin(98943, new ResourceLocation("/mods/MysticTextures/textures/mob/MysticVillager.png"));
-        VillagerRegistry.instance().registerVillageTradeHandler(98943, new VillageHutHandler());
-        VillagerRegistry.instance().registerVillageCreationHandler(new VillageHutHandler());
 		BlockHandler.init();
 		ItemHandler$1.init();
 		TileEntityHandler.init();
 		WorldGenHandler$1.init();
 		EntityHandler.init();
 		RecipeHandler.init();
-		MysticHutUtil.addLoot();
-		Lang.init();
+		Localizations.Initialize();
 		
 		proxy.registerRenderIDs();
 		proxy.registerRenders();
 	}
-	
-	@EventHandler
-    public void postInit(FMLPostInitializationEvent event) 
-	{
-    }
 }

@@ -1,14 +1,16 @@
-package MysticStones;
+package MysticStones.Worldgen;
 
 import java.util.Random;
 
+import MysticStones.MysticStones;
+import MysticStones.Util.Config;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import cpw.mods.fml.common.IWorldGenerator;
 
-public class WorldgenSmoothAnorthosite implements IWorldGenerator 
+public class WorldgenSmoothTravertine implements IWorldGenerator 
 {
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
 	{
@@ -25,7 +27,7 @@ public class WorldgenSmoothAnorthosite implements IWorldGenerator
 			int Xcoord = blockX + random.nextInt(16);
 			int Ycoord = random.nextInt(40) + 20;
 			int Zcoord = blockZ + random.nextInt(16);
-			new WorldGenMinable(MysticStones.Stones.blockID, 0, 24, Block.stone.blockID).generate(world, random, Xcoord, Ycoord, Zcoord);
+			new WorldGenMinable(MysticStones.Stones.blockID, 12, 24, Block.stone.blockID).generate(world,  random, Xcoord, Ycoord, Zcoord);
 		}
 	}
 }

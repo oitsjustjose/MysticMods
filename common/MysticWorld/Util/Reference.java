@@ -1,4 +1,4 @@
-package MysticWorld;
+package MysticWorld.Util;
 
 public class Reference {
 

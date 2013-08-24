@@ -2,8 +2,7 @@ package MysticWorld.Items;
 
 import java.util.List;
 
-import MysticWorld.Reference;
-
+import MysticWorld.Util.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;

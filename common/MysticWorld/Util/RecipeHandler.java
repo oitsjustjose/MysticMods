@@ -1,4 +1,4 @@
-package MysticWorld;
+package MysticWorld.Util;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

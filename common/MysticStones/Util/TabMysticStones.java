@@ -1,5 +1,6 @@
-package MysticStones;
+package MysticStones.Util;
 
+import MysticStones.MysticStones;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;

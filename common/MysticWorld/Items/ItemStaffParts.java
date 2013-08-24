@@ -23,16 +23,25 @@ public class ItemStaffParts extends Item {
 	
     private static final String[] STAFF_PARTS = new String[] {"Staff", "Hilt", "Handle", "Head"};
 	
-	public ItemStaffParts(int id) {
+	public ItemStaffParts(int id)
+	{
 		super(id);
         this.setHasSubtypes(true);
         this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 	
     @Override
-    public String getUnlocalizedName(ItemStack itemStack) {
+    public String getUnlocalizedName(ItemStack itemStack)
+    {
         int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, 5);
-        return super.getUnlocalizedName() + STAFF_PARTS[meta];
+        return STAFF_PARTS[meta];
+    }
+    
+	@Override
+    @SideOnly(Side.CLIENT)
+    public boolean isFull3D()
+    {
+        return true;
     }
   
 	 @Override

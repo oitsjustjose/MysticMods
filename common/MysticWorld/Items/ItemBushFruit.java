@@ -3,9 +3,8 @@ package MysticWorld.Items;
 import java.util.List;
 
 import MysticWorld.MysticWorld;
-import MysticWorld.Reference;
 import MysticWorld.Lib.Strings;
-
+import MysticWorld.Util.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -34,6 +33,7 @@ public class ItemBushFruit extends ItemFood {
         this.setCreativeTab(MysticWorld.MysticWorldTab);
         maxStackSize = 64;
         setAlwaysEdible();
+        setUnlocalizedName("bushFruit");
 	}
 	
 	  public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer player)
@@ -139,13 +139,6 @@ public class ItemBushFruit extends ItemFood {
 	  {
 	    return 24;
 	  }
-	
-    @Override
-    public String getUnlocalizedName(ItemStack itemStack) {
-
-        int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, 5);
-        return super.getUnlocalizedName() + FRUIT_TYPES[meta];
-    }
   
 	 @Override
 	 @SideOnly(Side.CLIENT)

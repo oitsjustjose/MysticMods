@@ -1,20 +1,20 @@
-package MysticStones;
+package MysticStones.Blocks;
 
 import java.util.List;
 
+import MysticStones.MysticStones;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 
-public class ItemBlockStoneBricks extends ItemBlock {
+public class ItemPlanks extends ItemBlock {
 	
-	public static String[] STONEBRICK_TYPES = new String[] {"Anorthosite Bricks", "Limestone Bricks", "Marble Bricks", "Migmatite Bricks", "Orthogneiss Bricks", "Slate Bricks", "Travertine Bricks"};
+	public static String[] PLANK_TYPE = new String[] {"Purple Planks", "Green Planks", "Black Planks", "Orange Planks", "Red Planks", "Blue Planks", "Yellow Planks"};
 
-	public ItemBlockStoneBricks(int par1) {
+	public ItemPlanks(int par1) {
 		super(par1);
         setMaxDamage(0);
         setHasSubtypes(true);
@@ -22,21 +22,19 @@ public class ItemBlockStoneBricks extends ItemBlock {
 	
     @Override
     public String getUnlocalizedName(ItemStack itemStack) {
-        int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, STONEBRICK_TYPES.length);
-        return super.getUnlocalizedName() + STONEBRICK_TYPES[meta];
+        int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, PLANK_TYPE.length);
+        return PLANK_TYPE[meta];
     }
 	
     public int getMetadata(int par1)
     {
         return par1;
     }
-
 	
 	@SideOnly(Side.CLIENT)
     public Icon getIconFromDamage(int par1)
     {
-        return MysticStones.StoneBricks.getIcon(2, par1);
+        return MysticStones.Planks.getIcon(2, par1);
     }
-
 
 }

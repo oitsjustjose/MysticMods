@@ -28,7 +28,7 @@ public class ItemBush extends ItemBlock {
     @Override
     public String getUnlocalizedName(ItemStack itemStack) {
     	int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, BUSH_TYPES.length);
-        return super.getUnlocalizedName() + BUSH_TYPES[meta];
+        return BUSH_TYPES[meta];
     }
 	
 	

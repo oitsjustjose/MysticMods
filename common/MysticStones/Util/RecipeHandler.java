@@ -1,5 +1,6 @@
-package MysticStones;
+package MysticStones.Util;
 
+import MysticStones.MysticStones;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;

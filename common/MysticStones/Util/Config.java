@@ -1,4 +1,4 @@
-package MysticStones;
+package MysticStones.Util;
 
 import java.io.File;
 

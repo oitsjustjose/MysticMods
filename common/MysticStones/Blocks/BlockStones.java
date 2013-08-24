@@ -1,8 +1,9 @@
-package MysticStones;
+package MysticStones.Blocks;
 
 import java.util.List;
 import java.util.Random;
 
+import MysticStones.MysticStones;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -16,41 +17,45 @@ import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockPlanks extends Block {
+public class BlockStones extends Block {
 	
 	Icon[] textures;
 
-	public BlockPlanks(int ID) {
-		super(ID, Material.wood);
-		setHardness(2.5F);
-		setResistance(10F);
+	public BlockStones(int ID) {
+		super(ID, Material.rock);
+		setHardness(1F);
+		setResistance(5F);
 		setCreativeTab(MysticStones.MysticStonesTab);
-		setUnlocalizedName("BlockMysticPlanks");
-		setStepSound(Block.soundWoodFootstep);
+		setUnlocalizedName("BlockMysticStones");
+		setStepSound(Block.soundStoneFootstep);
 	}
 	
 	@Override
 	public int damageDropped(int j) 
 	{
-		return j;
+		switch(j)
+		{
+		case 0:return 1;
+		case 2:return 3;
+		case 4:return 5;
+		case 6:return 7;
+		case 8:return 9;
+		case 10:return 11;
+		case 12:return 13;
+		default:return j;
+		}
 	}
 	
-	public ItemStack getPickBlock(MovingObjectPosition target,World world, int x, int y, int z)
+	protected boolean canSilkHarvest()
 	{
-		int id = idPicked(world, x, y, z);
+		return true;
+	}
+	
+	public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z)
+	{
+		int meta = world.getBlockMetadata(x, y, z);
 		
-		if (id == 0)
-		{
-			return null;
-		}
-		
-		Item item = Item.itemsList[id];
-		if (item == null)
-		{
-			return null;
-		}
-		
-		return new ItemStack(id, 1, getDamageValue(world, x, y, z));
+		return new ItemStack(this, 1, meta);
 	}
 	
 	@Override
@@ -59,21 +64,17 @@ public class BlockPlanks extends Block {
 	{
 		textures = new Icon[16];
 
-		for (int i = 0; i < 7; i++)
+		for (int i = 0; i < 14; i++)
 		{
-			textures[i] = iconRegister.registerIcon("MysticMods" + ":" + ItemBlockPlanks.PLANK_TYPE[i]);
+			textures[i] = iconRegister.registerIcon("MysticMods" + ":" + ItemStones.STONE_TYPES[i]);
 		}
 	}
 	
-	
-
 	@Override
 	public Icon getIcon(int side, int meta)
 	{
 		return textures[meta];
 	}
-
-	
 	
 	public void getSubBlocks(int i,CreativeTabs tab, List list)
 	{
@@ -84,7 +85,12 @@ public class BlockPlanks extends Block {
 		list.add(new ItemStack(i,1,4));
 		list.add(new ItemStack(i,1,5));
 		list.add(new ItemStack(i,1,6));
+		list.add(new ItemStack(i,1,7));
+		list.add(new ItemStack(i,1,8));
+		list.add(new ItemStack(i,1,9));
+		list.add(new ItemStack(i,1,10));
+		list.add(new ItemStack(i,1,11));
+		list.add(new ItemStack(i,1,12));
+		list.add(new ItemStack(i,1,13));
 	}
-	
-	
 }

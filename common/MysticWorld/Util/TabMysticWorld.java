@@ -1,4 +1,4 @@
-package MysticWorld;
+package MysticWorld.Util;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;

@@ -8,9 +8,7 @@ public class WorldGenHandler$1 {
 	public static void init()
 	{
 		if(Booleans.ENABLE_BUSH_GEN)
-		{
 			GameRegistry.registerWorldGenerator(new WorldGenBushes());
-		}
 		
 		GameRegistry.registerWorldGenerator(new WorldGenStones());
 	}
