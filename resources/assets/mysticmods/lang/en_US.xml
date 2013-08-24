@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+	<comment>English (en_US) Localization File</comment>
+	<entry key="item.VerditeSword.name">Verdite Sword</entry>
+	<entry key="item.VerditePickaxe.name">Verdite Pickaxe</entry>
+	<entry key="item.VerditeShovel.name">Verdite Shovel</entry>
+	<entry key="item.VerditeAxe.name">Verdite Axe</entry>
+	<entry key="item.VerditeHoe.name">Verdite Hoe</entry>
+    <entry key="item.MithrilSword.name">Mithril Sword</entry>
+    <entry key="item.MithrilPickaxe.name">Mithril Pickaxe</entry>
+    <entry key="item.MithrilShovel.name">Mithril Shovel</entry>
+    <entry key="item.MithrilAxe.name">Mithril Axe</entry>
+    <entry key="item.MithrilHoe.name">Mithril Hoe</entry>
+    <entry key="item.AdamantineSword.name">Adamantine Sword</entry>
+    <entry key="item.AdamantinePickaxe.name">Adamantine Pickaxe</entry>
+    <entry key="item.AdamantineShovel.name">Adamantine Shovel</entry>
+    <entry key="item.AdamantineAxe.name">Adamantine Axe</entry>
+    <entry key="item.AdamantineHoe.name">Adamantine Hoe</entry>
+    <entry key="item.IridiumSword.name">Iridium Sword</entry>
+    <entry key="item.IridiumPickaxe.name">Iridium Pickaxe</entry>
+    <entry key="item.IridiumShovel.name">Iridium Shovel</entry>
+    <entry key="item.IridiumAxe.name">Iridium Axe</entry>
+    <entry key="item.IridiumHoe.name">Iridium Hoe</entry>
+    <entry key="item.ObsidianSword.name">Obsidian Sword</entry>
+    <entry key="item.ObsidianPickaxe.name">Obsidian Pickaxe</entry>
+    <entry key="item.ObsidianShovel.name">Obsidian Shovel</entry>
+    <entry key="item.ObsidianAxe.name">Obsidian Axe</entry>
+    <entry key="item.ObsidianHoe.name">Obsidian Hoe</entry>
+    <entry key="item.BloodstoneSword.name">Bloodstone Sword</entry>
+    <entry key="item.BloodstonePickaxe.name">Bloodstone Pickaxe</entry>
+    <entry key="item.BloodstoneShovel.name">Bloodstone Shovel</entry>
+    <entry key="item.BloodstoneAxe.name">Bloodstone Axe</entry>
+    <entry key="item.BloodstoneHoe.name">Bloodstone Hoe</entry>
+    
+    <entry key="Verdite Ingot.name">Verdite Ingot</entry>
+    <entry key="Mithril Ingot.name">Mithril Ingot</entry>
+    <entry key="Adamantine Ingot.name">Adamantine Ingot</entry>
+    <entry key="Iridium Ingot.name">Iridium Ingot</entry>
+    <entry key="Iridium Nugget.name">Iridium Nugget</entry>
+    <entry key="Tourmaline Gem.name">Tourmaline Gemstone</entry>
+    <entry key="Agate Gem.name">Agate Gemstone</entry>
+    <entry key="Topaz Gem.name">Topaz Gemstone</entry>
+    <entry key="Amethyst Gem.name">Amethyst Gemstone</entry>
+    <entry key="Mystic Powder.name">Mystic Powder</entry>
+    <entry key="Bloodstone Shard.name">Bloodstone Shard</entry>
+    <entry key="Glass Shard.name">Glass Shard</entry>
+    <entry key="Obsidian Shard.name">Obsidian Shard</entry>
+    <entry key="Obsidian Rod.name">Obsidian Rod</entry>
+    <entry key="item.Satchel.name">Magical Bag</entry>
+    
+    <entry key="itemGroup.MysticOresTab">Mystic Ores</entry>
+    
+    <entry key="Adamantine Ore.name">Adamantine Ore</entry>
+    <entry key="Amethyst Ore.name">Amethyst Ore</entry>
+    <entry key="Iridium Ore.name">Iridium Ore</entry>
+    <entry key="Mithril Ore.name">Mithril Ore</entry>
+    <entry key="Tourmaline Ore.name">Tourmaline Ore</entry>
+    <entry key="Topaz Ore.name">Topaz Ore</entry>
+    <entry key="Verdite Ore.name">Verdite Ore</entry>
+    <entry key="Bloodstone.name">Bloodstone</entry>
+    <entry key="Black Soulstone.name">Black Soulstone</entry>
+    <entry key="Blue Soulstone.name">Blue Soulstone</entry>
+    <entry key="Red Soulstone.name">Red Soulstone</entry>
+    <entry key="Agate Ore.name">Agate Ore</entry>
+    <entry key="Tempered Glass.name">Tempered Glass</entry>
+</properties>
