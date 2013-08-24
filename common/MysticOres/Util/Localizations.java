@@ -14,6 +14,13 @@ import java.util.zip.ZipFile;
 import MysticOres.MysticOres;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+/*
+ * 
+ * All credits go to copygirl (or copy....boy) for this one
+ * Couldn't have done any of this without your
+ * repository, many thanks friend c:
+ * 
+ */
 
 public class Localizations
 {
