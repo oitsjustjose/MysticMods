@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties version="1.0">
-	<comment>English (en_US) Localization File</comment>
-	
-	<entry key="item.VerditeSword.name">Verdite Sword</entry>
-	<entry key="item.VerditePickaxe.name">Verdite Pickaxe</entry>
-	<entry key="item.VerditeShovel.name">Verdite Shovel</entry>
-	<entry key="item.VerditeAxe.name">Verdite Axe</entry>
-	<entry key="item.VerditeHoe.name">Verdite Hoe</entry>
-	
+    <comment>English (en_US) Localization File</comment>
+    
+    <entry key="item.VerditeSword.name">Verdite Sword</entry>
+    <entry key="item.VerditePickaxe.name">Verdite Pickaxe</entry>
+    <entry key="item.VerditeShovel.name">Verdite Shovel</entry>
+    <entry key="item.VerditeAxe.name">Verdite Axe</entry>
+    <entry key="item.VerditeHoe.name">Verdite Hoe</entry>
+    
     <entry key="item.MithrilSword.name">Mithril Sword</entry>
     <entry key="item.MithrilPickaxe.name">Mithril Pickaxe</entry>
     <entry key="item.MithrilShovel.name">Mithril Shovel</entry>
