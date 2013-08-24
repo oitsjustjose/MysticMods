@@ -89,7 +89,7 @@ public class ItemVoidShard extends Item {
 	 @SideOnly(Side.CLIENT)
 	 public void registerIcons(IconRegister iconRegister)
 	 {
-		 itemIcon = iconRegister.registerIcon("MysticTextures:ShardVoid");
+		 itemIcon = iconRegister.registerIcon("MysticMods:ShardVoid");
 	 }
     
 }

@@ -71,7 +71,7 @@ public class LightCubeFX extends EntityFX {
 		  GL11.glEnable(3042);
 		  GL11.glBlendFunc(770, 1);
 		  
-		  FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation("MysticTextures:textures" + "/misc/lightCubeFX.png"));
+		  FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation("MysticMods:textures" + "/misc/lightCubeFX.png"));
 
 		  GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.75F);
 		  

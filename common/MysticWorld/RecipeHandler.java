@@ -2,7 +2,7 @@ package MysticWorld;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import MysticOres.Items.ItemHandler;
+import MysticOres.Items.Items;
 import MysticWorld.Blocks.BlockHandler;
 import MysticWorld.Items.ItemHandler$1;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -51,28 +51,28 @@ public class RecipeHandler {
 		staffRecipe(ItemHandler$1.energyStaff, new ItemStack(ItemHandler$1.energyOrb));
 		
 		//Verdite Armor
-		helmetRecipe(ItemHandler$1.verditeHelmet, new ItemStack(ItemHandler.Resource, 1, 0));
-		chestplateRecipe(ItemHandler$1.verditeChestplate, new ItemStack(ItemHandler.Resource, 1, 0));
-		leggingsRecipe(ItemHandler$1.verditeLeggings, new ItemStack(ItemHandler.Resource, 1, 0));
-		bootsRecipe(ItemHandler$1.verditeBoots, new ItemStack(ItemHandler.Resource, 1, 0));
+		helmetRecipe(ItemHandler$1.verditeHelmet, new ItemStack(Items.Resource, 1, 0));
+		chestplateRecipe(ItemHandler$1.verditeChestplate, new ItemStack(Items.Resource, 1, 0));
+		leggingsRecipe(ItemHandler$1.verditeLeggings, new ItemStack(Items.Resource, 1, 0));
+		bootsRecipe(ItemHandler$1.verditeBoots, new ItemStack(Items.Resource, 1, 0));
 		
 		//Mithril Armor
-		helmetRecipe(ItemHandler$1.mithrilHelmet, new ItemStack(ItemHandler.Resource, 1, 1));
-		chestplateRecipe(ItemHandler$1.mithrilChestplate, new ItemStack(ItemHandler.Resource, 1, 1));
-		leggingsRecipe(ItemHandler$1.mithrilLeggings, new ItemStack(ItemHandler.Resource, 1, 1));
-		bootsRecipe(ItemHandler$1.mithrilBoots, new ItemStack(ItemHandler.Resource, 1, 1));
+		helmetRecipe(ItemHandler$1.mithrilHelmet, new ItemStack(Items.Resource, 1, 1));
+		chestplateRecipe(ItemHandler$1.mithrilChestplate, new ItemStack(Items.Resource, 1, 1));
+		leggingsRecipe(ItemHandler$1.mithrilLeggings, new ItemStack(Items.Resource, 1, 1));
+		bootsRecipe(ItemHandler$1.mithrilBoots, new ItemStack(Items.Resource, 1, 1));
 		
 		//Adamantine Armor
-		helmetRecipe(ItemHandler$1.adamantineHelmet, new ItemStack(ItemHandler.Resource, 1, 2));
-		chestplateRecipe(ItemHandler$1.adamantineChestplate, new ItemStack(ItemHandler.Resource, 1, 2));
-		leggingsRecipe(ItemHandler$1.adamantineLeggings, new ItemStack(ItemHandler.Resource, 1, 2));
-		bootsRecipe(ItemHandler$1.adamantineBoots, new ItemStack(ItemHandler.Resource, 1, 2));
+		helmetRecipe(ItemHandler$1.adamantineHelmet, new ItemStack(Items.Resource, 1, 2));
+		chestplateRecipe(ItemHandler$1.adamantineChestplate, new ItemStack(Items.Resource, 1, 2));
+		leggingsRecipe(ItemHandler$1.adamantineLeggings, new ItemStack(Items.Resource, 1, 2));
+		bootsRecipe(ItemHandler$1.adamantineBoots, new ItemStack(Items.Resource, 1, 2));
 		
 		//Iridium Armor
-		helmetRecipe(ItemHandler$1.iridiumHelmet, new ItemStack(ItemHandler.Resource, 1, 3));
-		chestplateRecipe(ItemHandler$1.iridiumChestplate, new ItemStack(ItemHandler.Resource, 1, 3));
-		leggingsRecipe(ItemHandler$1.iridiumLeggings, new ItemStack(ItemHandler.Resource, 1, 3));
-		bootsRecipe(ItemHandler$1.iridiumBoots, new ItemStack(ItemHandler.Resource, 1, 3));
+		helmetRecipe(ItemHandler$1.iridiumHelmet, new ItemStack(Items.Resource, 1, 3));
+		chestplateRecipe(ItemHandler$1.iridiumChestplate, new ItemStack(Items.Resource, 1, 3));
+		leggingsRecipe(ItemHandler$1.iridiumLeggings, new ItemStack(Items.Resource, 1, 3));
+		bootsRecipe(ItemHandler$1.iridiumBoots, new ItemStack(Items.Resource, 1, 3));
 	}
 	
 	private static void itemSmelting(){

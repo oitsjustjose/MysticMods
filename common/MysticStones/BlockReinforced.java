@@ -67,7 +67,7 @@ public class BlockReinforced extends Block {
 
 		for (int i = 0; i < 8; i++)
 		{
-			textures[i] = iconRegister.registerIcon("MysticTextures" + ":" + ItemBlockReinforced.BRICK_TYPE[i] + " Bricks");
+			textures[i] = iconRegister.registerIcon("MysticMods" + ":" + ItemBlockReinforced.BRICK_TYPE[i] + " Bricks");
 		}
 	}
 	

@@ -36,7 +36,7 @@ public class ItemResource extends Item
     public String getUnlocalizedName(ItemStack itemStack)
     {
         int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, RESOURCE_TYPES.length);
-        return super.getUnlocalizedName() + RESOURCE_TYPES[meta];
+        return RESOURCE_TYPES[meta];
     }
   
 	 @Override
@@ -46,9 +46,7 @@ public class ItemResource extends Item
 		 icons = new Icon[RESOURCE_TYPES.length];
 		 
 	     for (int i = 0; i < RESOURCE_TYPES.length; ++i)
-	     {
-	    	 icons[i] = iconRegister.registerIcon("MysticTextures" + ":" + RESOURCE_TYPES[i]);
-	     }
+	    	 icons[i] = iconRegister.registerIcon("MysticMods:" + RESOURCE_TYPES[i]);
 	 }
     
     @Override

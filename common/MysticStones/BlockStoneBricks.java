@@ -61,7 +61,7 @@ public class BlockStoneBricks extends Block {
 
 		for (int i = 0; i < 7; i++)
 		{
-			textures[i] = iconRegister.registerIcon("MysticTextures" + ":" + ItemBlockStoneBricks.STONEBRICK_TYPES[i]);
+			textures[i] = iconRegister.registerIcon("MysticMods" + ":" + ItemBlockStoneBricks.STONEBRICK_TYPES[i]);
 		}
 	}
 	

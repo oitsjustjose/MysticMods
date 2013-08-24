@@ -12,12 +12,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 
-public class ItemBlockBase extends ItemBlock
+public class ItemBase extends ItemBlock
 {	
 	public static String[] BLOCK_NAMES = new String[] {"Adamantine Ore", "Amethyst Ore", "Iridium Ore", "Mithril Ore", "Tourmaline Ore", "Topaz Ore", "Verdite Ore", "Bloodstone", "Black Soulstone", 
-		"Blue Soulstone", "Red Soulstone", "Agate Ore", "Reinforced Glass"};
+		"Blue Soulstone", "Red Soulstone", "Agate Ore", "Tempered Glass"};
 
-	public ItemBlockBase(int par1)
+	public ItemBase(int par1)
 	{
 		super(par1);
         setMaxDamage(0);
@@ -28,7 +28,7 @@ public class ItemBlockBase extends ItemBlock
     public String getUnlocalizedName(ItemStack itemStack)
     {
         int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, BLOCK_NAMES.length);
-        return super.getUnlocalizedName() + BLOCK_NAMES[meta];
+        return BLOCK_NAMES[meta];
     }
 	
     @Override

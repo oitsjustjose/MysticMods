@@ -43,6 +43,6 @@ public class ItemSatchel extends Item
 	  @Override
 	  public void registerIcons(IconRegister iconRegister)
 	  {
-	           itemIcon = iconRegister.registerIcon("MysticTextures" + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+	           itemIcon = iconRegister.registerIcon("MysticMods" + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
 	  }
 }

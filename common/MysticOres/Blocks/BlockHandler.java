@@ -12,7 +12,7 @@ public class BlockHandler {
 	public static void Initialize()
 	{
 		BlockBase = new BlockBase(BlockID.BASEID).setStepSound(Block.soundStoneFootstep);
-		GameRegistry.registerBlock(BlockBase, ItemBlockBase.class, "Base Blocks");
+		GameRegistry.registerBlock(BlockBase, ItemBase.class, "Base Blocks");
 		
 		setBlockHarvestLevels();
 	}

@@ -1,7 +1,7 @@
 package MysticOres.Util;
 
 import MysticOres.Blocks.BlockHandler;
-import MysticOres.Items.ItemHandler;
+import MysticOres.Items.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -9,15 +9,15 @@ public class OreDictManager
 {
 	public static void Initialize()
 	{
-		OreDictionary.registerOre("ingotAdamantine", new ItemStack(ItemHandler.Resource, 1, 2));
-		OreDictionary.registerOre("ingotMithril", new ItemStack(ItemHandler.Resource, 1, 1));
-		OreDictionary.registerOre("ingotVerdite", new ItemStack(ItemHandler.Resource, 1, 0));
-		OreDictionary.registerOre("ingotIridium", new ItemStack(ItemHandler.Resource, 1, 3));
-		OreDictionary.registerOre("fuelIridium", new ItemStack(ItemHandler.Resource, 1, 4));
-		OreDictionary.registerOre("gemTourmaline", new ItemStack(ItemHandler.Resource, 1, 5));
-		OreDictionary.registerOre("gemTopaz", new ItemStack(ItemHandler.Resource, 1, 7));
-		OreDictionary.registerOre("gemAmethyst", new ItemStack(ItemHandler.Resource, 1, 8));
-		OreDictionary.registerOre("gemAgate", new ItemStack(ItemHandler.Resource, 1, 6));
+		OreDictionary.registerOre("ingotAdamantine", new ItemStack(Items.Resource, 1, 2));
+		OreDictionary.registerOre("ingotMithril", new ItemStack(Items.Resource, 1, 1));
+		OreDictionary.registerOre("ingotVerdite", new ItemStack(Items.Resource, 1, 0));
+		OreDictionary.registerOre("ingotIridium", new ItemStack(Items.Resource, 1, 3));
+		OreDictionary.registerOre("fuelIridium", new ItemStack(Items.Resource, 1, 4));
+		OreDictionary.registerOre("gemTourmaline", new ItemStack(Items.Resource, 1, 5));
+		OreDictionary.registerOre("gemTopaz", new ItemStack(Items.Resource, 1, 7));
+		OreDictionary.registerOre("gemAmethyst", new ItemStack(Items.Resource, 1, 8));
+		OreDictionary.registerOre("gemAgate", new ItemStack(Items.Resource, 1, 6));
 		
 		OreDictionary.registerOre("oreAdamantine", new ItemStack(BlockHandler.BlockBase, 1, 0));
 		OreDictionary.registerOre("oreAmethyst", new ItemStack(BlockHandler.BlockBase, 1, 1));

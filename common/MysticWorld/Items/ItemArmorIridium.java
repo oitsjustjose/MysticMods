@@ -25,8 +25,8 @@ public class ItemArmorIridium extends ItemArmor
 			this.ArmorType=par4;
 			this.setMaxDamage(4000);
 			this.setCreativeTab(MysticWorld.MysticWorldTab);
-			this.ArmorFile_1 = "/assets/MysticTextures/textures/armor/iridium_1.png";
-			this.ArmorFile_2 = "/assets/MysticTextures/textures/armor/iridium_2.png";
+			this.ArmorFile_1 = "/assets/MysticMods/textures/armor/iridium_1.png";
+			this.ArmorFile_2 = "/assets/MysticMods/textures/armor/iridium_2.png";
 		}
 
 		@Override
@@ -34,16 +34,16 @@ public class ItemArmorIridium extends ItemArmor
 		{
 			switch (ArmorType){
 			case 0:
-		        itemIcon = iconRegister.registerIcon("MysticTextures:IridiumArmor_0");
+		        itemIcon = iconRegister.registerIcon("MysticMods:IridiumArmor_0");
 		        break;
 			case 1:
-				itemIcon = iconRegister.registerIcon("MysticTextures:IridiumArmor_1");
+				itemIcon = iconRegister.registerIcon("MysticMods:IridiumArmor_1");
 		        break;
 			case 2:
-				itemIcon = iconRegister.registerIcon("MysticTextures:IridiumArmor_2");
+				itemIcon = iconRegister.registerIcon("MysticMods:IridiumArmor_2");
 		        break;
 			case 3:
-				itemIcon = iconRegister.registerIcon("MysticTextures:IridiumArmor_3");
+				itemIcon = iconRegister.registerIcon("MysticMods:IridiumArmor_3");
 		        break;
 			}
 		}
@@ -52,7 +52,7 @@ public class ItemArmorIridium extends ItemArmor
 		  {
 		    int suffix = this.armorType == 2 ? 2 : 1;
 
-		    return "MysticTextures:textures" + "/models/armor/Iridium_layer_" + suffix + ".png";
+		    return "MysticMods:textures" + "/models/armor/Iridium_layer_" + suffix + ".png";
 		  }
 		
 		@Override

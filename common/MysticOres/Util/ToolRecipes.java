@@ -1,6 +1,6 @@
 package MysticOres.Util;
 
-import MysticOres.Items.ItemHandler;
+import MysticOres.Items.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
@@ -48,43 +48,43 @@ public class ToolRecipes
 	public static void AdvancedSwordRecipe(Item output, ItemStack input)
 	{
 		GameRegistry.addRecipe(new ItemStack(output, 1), new Object[] {
-				"#", "#", "S", 'S', new ItemStack(ItemHandler.Resource, 1, 13), '#', input
+				"#", "#", "S", 'S', new ItemStack(Items.Resource, 1, 13), '#', input
 		});
 	}
 	
 	public static void AdvancedPickaxeRecipe(Item output, ItemStack input)
 	{
 		GameRegistry.addRecipe(new ItemStack(output, 1), new Object[] {
-				"###", " S ", " S ", 'S', new ItemStack(ItemHandler.Resource, 1, 13), '#', input
+				"###", " S ", " S ", 'S', new ItemStack(Items.Resource, 1, 13), '#', input
 		});
 	}
 	
 	public static void AdvancedShovelRecipe(Item output, ItemStack input)
 	{
 		GameRegistry.addRecipe(new ItemStack(output, 1), new Object[] {
-				"#", "S", "S", 'S', new ItemStack(ItemHandler.Resource, 1, 13), '#', input
+				"#", "S", "S", 'S', new ItemStack(Items.Resource, 1, 13), '#', input
 		});
 	}
 	
 	public static void AdvancedAxeRecipe(Item output, ItemStack input)
 	{
 		GameRegistry.addRecipe(new ItemStack(output, 1), new Object[] {
-				"## ", "#S ", " S ", 'S', new ItemStack(ItemHandler.Resource, 1, 13), '#', input
+				"## ", "#S ", " S ", 'S', new ItemStack(Items.Resource, 1, 13), '#', input
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(output, 1), new Object[] {
-				"## ", "S# ", "S  ", 'S', new ItemStack(ItemHandler.Resource, 1, 13), '#', input
+				"## ", "S# ", "S  ", 'S', new ItemStack(Items.Resource, 1, 13), '#', input
 		});
 	}
 	
 	public static void AdvancedHoeRecipe(Item output, ItemStack input)
 	{
 		GameRegistry.addRecipe(new ItemStack(output, 1), new Object[] {
-				"## ", " S ", " S ", 'S', new ItemStack(ItemHandler.Resource, 1, 13), '#', input
+				"## ", " S ", " S ", 'S', new ItemStack(Items.Resource, 1, 13), '#', input
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(output, 1), new Object[] {
-				"## ", "S  ", "S  ", 'S', new ItemStack(ItemHandler.Resource, 1, 13), '#', input
+				"## ", "S  ", "S  ", 'S', new ItemStack(Items.Resource, 1, 13), '#', input
 		});
 	}
 }

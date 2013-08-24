@@ -4,7 +4,7 @@ import net.minecraft.item.Item;
 import MysticOres.Lib.ItemID;
 import MysticOres.Util.ConfigurationManager;
 
-public class ItemHandler
+public class Items
 {
 	public static Item VerditeSword;
 	public static Item VerditePickaxe;

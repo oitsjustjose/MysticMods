@@ -154,7 +154,7 @@ public class ItemBushFruit extends ItemFood {
 		 icons = new Icon[FRUIT_TYPES.length];
 		 
 	     for (int i = 0; i < FRUIT_TYPES.length; ++i) {
-	            icons[i] = iconRegister.registerIcon("MysticTextures:Fruit" + FRUIT_TYPES[i]);
+	            icons[i] = iconRegister.registerIcon("MysticMods:Fruit" + FRUIT_TYPES[i]);
 	        }
 	    }
     

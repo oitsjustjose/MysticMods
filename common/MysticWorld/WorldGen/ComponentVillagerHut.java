@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import MysticOres.Blocks.BlockHandler;
-import MysticOres.Items.ItemHandler;
+import MysticOres.Items.Items;
 import MysticStones.MysticStones;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;

@@ -17,7 +17,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import MysticOres.MysticOres;
-import MysticOres.Items.ItemHandler;
+import MysticOres.Items.Items;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -68,9 +68,9 @@ public class BlockBase extends Block
 	public void registerIcons(IconRegister register)
 	{
 		textures = new Icon[16];
-		for(int i=0;i<ItemBlockBase.BLOCK_NAMES.length;i++)
+		for(int i=0;i<ItemBase.BLOCK_NAMES.length;i++)
 		{
-			textures[i] = register.registerIcon("MysticTextures:" + ItemBlockBase.BLOCK_NAMES[i]);
+			textures[i] = register.registerIcon("MysticMods:" + ItemBase.BLOCK_NAMES[i]);
 		}
 	}
 	
@@ -86,16 +86,16 @@ public class BlockBase extends Block
 	{
 		switch(par1)
 		{
-		case 1:return ItemHandler.Resource.itemID;
-		case 2:return ItemHandler.Resource.itemID;
-		case 4:return ItemHandler.Resource.itemID;
-		case 5:return ItemHandler.Resource.itemID;
-		case 7:return ItemHandler.Resource.itemID;
+		case 1:return Items.Resource.itemID;
+		case 2:return Items.Resource.itemID;
+		case 4:return Items.Resource.itemID;
+		case 5:return Items.Resource.itemID;
+		case 7:return Items.Resource.itemID;
 		case 8:return this.BlackSoulstoneDrops(par1, random, par3);
 		case 9:return this.BlueSoulstoneDrops(par1, random, par3);
 		case 10:return this.RedSoulstoneDrops(par1, random, par3);
-		case 11:return ItemHandler.Resource.itemID;
-		case 12:return ItemHandler.Resource.itemID;
+		case 11:return Items.Resource.itemID;
+		case 12:return Items.Resource.itemID;
 		default:return blockID;
 		}
 	}
@@ -157,7 +157,7 @@ public class BlockBase extends Block
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int i, CreativeTabs tab, List list)
 	{
-		for(int meta = 0;meta<ItemBlockBase.BLOCK_NAMES.length; meta ++)
+		for(int meta = 0;meta<ItemBase.BLOCK_NAMES.length; meta ++)
 		{
 			list.add(new ItemStack(i, 1, meta));
 		}

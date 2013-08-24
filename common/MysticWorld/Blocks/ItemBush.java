@@ -13,13 +13,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 
-public class ItemBlockBush extends ItemBlock {
+public class ItemBush extends ItemBlock {
 
 	public static String[] BUSH_TYPES = new String[] {Strings.BUSH_NAME, Strings.POISON_BUSH_NAME, Strings.WEAKNESS_BUSH_NAME, Strings.SLOWNESS_BUSH_NAME,
 		Strings.HARMING_BUSH_NAME, Strings.WITHER_BUSH_NAME, Strings.HEALTH_BUSH_NAME, Strings.SPEED_BUSH_NAME, Strings.FIRE_RESISTANCE_BUSH_NAME,
 		Strings.REGEN_BUSH_NAME, Strings.NIGHT_VISION_BUSH_NAME, Strings.INVISIBILITY_BUSH_NAME};
 	
-	public ItemBlockBush(int par1) {
+	public ItemBush(int par1) {
 		super(par1);
         setMaxDamage(0);
         setHasSubtypes(true);

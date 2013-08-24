@@ -20,8 +20,8 @@ public class ItemArmorAdamantine extends ItemArmor
 			this.ArmorType=par4;
 			this.setMaxDamage(3000);
 			this.setCreativeTab(MysticWorld.MysticWorldTab);
-			this.ArmorFile_1 = "/MysticTextures/textures/armor/adamantine_1.png";
-			this.ArmorFile_2 = "/MysticTextures/textures/armor/adamantine_2.png";
+			this.ArmorFile_1 = "/MysticMods/textures/armor/adamantine_1.png";
+			this.ArmorFile_2 = "/MysticMods/textures/armor/adamantine_2.png";
 		}
 
 		@Override
@@ -29,16 +29,16 @@ public class ItemArmorAdamantine extends ItemArmor
 		{
 			switch (ArmorType){
 			case 0:
-		        itemIcon = iconRegister.registerIcon("MysticTextures:AdamantineArmor_0");
+		        itemIcon = iconRegister.registerIcon("MysticMods:AdamantineArmor_0");
 		        break;
 			case 1:
-				itemIcon = iconRegister.registerIcon("MysticTextures:AdamantineArmor_1");
+				itemIcon = iconRegister.registerIcon("MysticMods:AdamantineArmor_1");
 		        break;
 			case 2:
-				itemIcon = iconRegister.registerIcon("MysticTextures:AdamantineArmor_2");
+				itemIcon = iconRegister.registerIcon("MysticMods:AdamantineArmor_2");
 		        break;
 			case 3:
-				itemIcon = iconRegister.registerIcon("MysticTextures:AdamantineArmor_3");
+				itemIcon = iconRegister.registerIcon("MysticMods:AdamantineArmor_3");
 		        break;
 			}
 		}
@@ -47,6 +47,6 @@ public class ItemArmorAdamantine extends ItemArmor
 		  {
 		    int suffix = this.armorType == 2 ? 2 : 1;
 
-		    return "MysticTextures:textures" + "/models/armor/Adamantine_layer_" + suffix + ".png";
+		    return "MysticMods:textures" + "/models/armor/Adamantine_layer_" + suffix + ".png";
 		  }
 }

@@ -31,7 +31,7 @@ public class BlockPillar extends Block {
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister)
 	{
-		this.blockIcon = iconRegister.registerIcon("MysticTextures" + ":" + "Pillar");
+		this.blockIcon = iconRegister.registerIcon("MysticMods" + ":" + "Pillar");
 	}
 
 }

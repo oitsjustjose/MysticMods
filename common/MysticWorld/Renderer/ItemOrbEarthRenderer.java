@@ -85,7 +85,7 @@ public class ItemOrbEarthRenderer implements IItemRenderer {
 	    GL11.glScalef(scale, scale, scale);
 	    GL11.glRotatef(180f, 0f, 1f, 0f);
 	    
-	    FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation("mystictextures:textures" + "/models/OrbEarth.png"));
+	    FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation("mysticmods:textures" + "/models/OrbEarth.png"));
 	    
 	    modelOrb.render();
 	     

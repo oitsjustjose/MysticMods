@@ -66,7 +66,7 @@ public class ItemStaffEnergyRenderer implements IItemRenderer {
 		GL11.glScalef(scale, scale, scale);
 		GL11.glTranslatef(x, y, z);
 		GL11.glRotatef(180.0F, 0.0F, 0.0F, 0.0F);
-        FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation("mystictextures:textures" + "/models/StaffEnergy.png"));
+        FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation("mysticmods:textures" + "/models/StaffEnergy.png"));
 		model.renderModel(0.0625f);
 		GL11.glEnable(GL11.GL_LIGHTING);
 		GL11.glPopMatrix();
@@ -80,7 +80,7 @@ public class ItemStaffEnergyRenderer implements IItemRenderer {
 		GL11.glTranslatef(x, y, z);
 		GL11.glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
 		GL11.glRotatef(-45.0F, 0.0F, 0.0F, 1.0F);
-        FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation("mystictextures:textures" + "/models/StaffEnergy.png"));
+        FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation("mysticmods:textures" + "/models/StaffEnergy.png"));
 		model.renderModel(0.0625f);
 		GL11.glEnable(GL11.GL_LIGHTING);
 		GL11.glPopMatrix();

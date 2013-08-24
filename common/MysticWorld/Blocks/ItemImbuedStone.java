@@ -11,11 +11,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 
-public class ItemBlockImbuedStone extends ItemBlock {
+public class ItemImbuedStone extends ItemBlock {
 	
 	public static String[] IMBUED_STONE_TYPE = new String[] {"Fire", "Water", "Earth", "Air", "Energy"};
 
-	public ItemBlockImbuedStone(int par1) {
+	public ItemImbuedStone(int par1) {
 		super(par1);
         setMaxDamage(0);
         setHasSubtypes(true);

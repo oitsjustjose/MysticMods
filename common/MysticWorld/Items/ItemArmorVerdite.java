@@ -21,8 +21,8 @@ public class ItemArmorVerdite extends ItemArmor
 			this.ArmorType=par4;
 			this.setMaxDamage(262);
 			this.setCreativeTab(MysticWorld.MysticWorldTab);
-			this.ArmorFile_1 = "/assets/MysticTextures/textures/armor/verdite_1.png";
-			this.ArmorFile_2 = "/assets/MysticTextures/textures/armor/verdite_2.png";
+			this.ArmorFile_1 = "/assets/MysticMods/textures/armor/verdite_1.png";
+			this.ArmorFile_2 = "/assets/MysticMods/textures/armor/verdite_2.png";
 		}
 
 		@Override
@@ -30,16 +30,16 @@ public class ItemArmorVerdite extends ItemArmor
 		{
 			switch (ArmorType){
 			case 0:
-		        itemIcon = iconRegister.registerIcon("MysticTextures:VerditeArmor_0");
+		        itemIcon = iconRegister.registerIcon("MysticMods:VerditeArmor_0");
 		        break;
 			case 1:
-				itemIcon = iconRegister.registerIcon("MysticTextures:VerditeArmor_1");
+				itemIcon = iconRegister.registerIcon("MysticMods:VerditeArmor_1");
 		        break;
 			case 2:
-				itemIcon = iconRegister.registerIcon("MysticTextures:VerditeArmor_2");
+				itemIcon = iconRegister.registerIcon("MysticMods:VerditeArmor_2");
 		        break;
 			case 3:
-				itemIcon = iconRegister.registerIcon("MysticTextures:VerditeArmor_3");
+				itemIcon = iconRegister.registerIcon("MysticMods:VerditeArmor_3");
 		        break;
 			}
 		}
@@ -48,6 +48,6 @@ public class ItemArmorVerdite extends ItemArmor
 		  {
 		    int suffix = this.armorType == 2 ? 2 : 1;
 
-		    return "MysticTextures:textures" + "/models/armor/Verdite_layer_" + suffix + ".png";
+		    return "MysticMods:textures" + "/models/armor/Verdite_layer_" + suffix + ".png";
 		  }
 }

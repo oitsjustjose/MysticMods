@@ -21,8 +21,8 @@ public class ItemArmorMithril extends ItemArmor
 			this.ArmorType=par4;
 			this.setMaxDamage(500);
 			this.setCreativeTab(MysticWorld.MysticWorldTab);
-			this.ArmorFile_1 = "/assets/MysticTextures/textures/armor/mithril_1.png";
-			this.ArmorFile_2 = "/assets/MysticTextures/textures/armor/mithril_2.png";
+			this.ArmorFile_1 = "/assets/MysticMods/textures/armor/mithril_1.png";
+			this.ArmorFile_2 = "/assets/MysticMods/textures/armor/mithril_2.png";
 		}
 
 		@Override
@@ -30,16 +30,16 @@ public class ItemArmorMithril extends ItemArmor
 		{
 			switch (ArmorType){
 			case 0:
-		        itemIcon = iconRegister.registerIcon("MysticTextures:MithrilArmor_0");
+		        itemIcon = iconRegister.registerIcon("MysticMods:MithrilArmor_0");
 		        break;
 			case 1:
-				itemIcon = iconRegister.registerIcon("MysticTextures:MithrilArmor_1");
+				itemIcon = iconRegister.registerIcon("MysticMods:MithrilArmor_1");
 		        break;
 			case 2:
-				itemIcon = iconRegister.registerIcon("MysticTextures:MithrilArmor_2");
+				itemIcon = iconRegister.registerIcon("MysticMods:MithrilArmor_2");
 		        break;
 			case 3:
-				itemIcon = iconRegister.registerIcon("MysticTextures:MithrilArmor_3");
+				itemIcon = iconRegister.registerIcon("MysticMods:MithrilArmor_3");
 		        break;
 			}
 		}
@@ -48,6 +48,6 @@ public class ItemArmorMithril extends ItemArmor
 		  {
 		    int suffix = this.armorType == 2 ? 2 : 1;
 
-		    return "MysticTextures:textures" + "/models/armor/Mithril_layer_" + suffix + ".png";
+		    return "MysticMods:textures" + "/models/armor/Mithril_layer_" + suffix + ".png";
 		  }
 }

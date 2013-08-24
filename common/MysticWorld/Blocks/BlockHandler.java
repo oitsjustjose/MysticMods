@@ -38,8 +38,8 @@ public class BlockHandler {
 	}
 	
 	private static void registerBlocks() {
-		GameRegistry.registerBlock(oreImbuedStone, ItemBlockImbuedStone.class, Strings.IMBUED_STONE_NAME);
-		GameRegistry.registerBlock(bush, ItemBlockBush.class, Strings.BUSH_NAME);
+		GameRegistry.registerBlock(oreImbuedStone, ItemImbuedStone.class, Strings.IMBUED_STONE_NAME);
+		GameRegistry.registerBlock(bush, ItemBush.class, Strings.BUSH_NAME);
 		GameRegistry.registerBlock(lightCube, Strings.LIGHT_CUBE_NAME);
 		
 		GameRegistry.registerBlock(pillarPlatform, Strings.PLATFORM_NAME);

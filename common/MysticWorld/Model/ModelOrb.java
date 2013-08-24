@@ -12,7 +12,7 @@ public class ModelOrb extends ModelBase {
 	
 	public ModelOrb()
 	{
-		modelOrb = AdvancedModelLoader.loadModel("/assets/mystictextures/models/orb.obj");
+		modelOrb = AdvancedModelLoader.loadModel("/assets/mysticmods/models/orb.obj");
 	}
 	
 	public void render()

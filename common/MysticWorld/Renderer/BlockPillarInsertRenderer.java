@@ -15,7 +15,7 @@ import net.minecraftforge.client.IItemRenderer;
 
 public class BlockPillarInsertRenderer implements IItemRenderer {
 	
-	private static final ResourceLocation texture = new ResourceLocation("mystictextures:textures" + "/models/PillarInsert.png");
+	private static final ResourceLocation texture = new ResourceLocation("mysticmods:textures" + "/models/PillarInsert.png");
 	private final ModelPillarInsert model;
 	
 	public BlockPillarInsertRenderer()

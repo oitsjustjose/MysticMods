@@ -12,7 +12,7 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 public class TileEntityPillarInsertRenderer extends TileEntitySpecialRenderer {
 
-    private static final ResourceLocation texture = new ResourceLocation("mystictextures:textures" + "/models/PillarInsert.png");
+    private static final ResourceLocation texture = new ResourceLocation("mysticmods:textures" + "/models/PillarInsert.png");
 	private ModelPillarInsert model;
 	
 	public TileEntityPillarInsertRenderer()

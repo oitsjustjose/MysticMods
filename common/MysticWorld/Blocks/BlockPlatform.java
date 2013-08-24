@@ -98,7 +98,7 @@ public class BlockPlatform extends Block {
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister)
 	{
-		this.blockIcon = iconRegister.registerIcon("MysticTextures" + ":" + "Platform");
+		this.blockIcon = iconRegister.registerIcon("MysticMods" + ":" + "Platform");
 	}
 	
 }
