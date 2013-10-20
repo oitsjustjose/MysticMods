@@ -1,13 +1,11 @@
-package MysticOres.Worldgen;
+package mysticores.worldgen;
 
-import MysticOres.Blocks.BlockHandler;
-import MysticOres.Lib.Rarity;
+import mysticores.blocks.BlockHandler;
+import mysticores.lib.Rarity;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class GeneratorManager
-{
-	public static void Initialize()
-	{
+public class GeneratorManager {
+	public static void Initialize() {
 		GameRegistry.registerWorldGenerator(new WorldGenVerdite());
 		GameRegistry.registerWorldGenerator(new WorldGenTopaz());
 		GameRegistry.registerWorldGenerator(new WorldGenTourmaline());

@@ -1,4 +1,4 @@
-package MysticWorld.WorldGen;
+package mysticworld.worldgen;
 
 import java.util.Random;
 

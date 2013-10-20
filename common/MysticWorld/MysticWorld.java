@@ -1,84 +1,45 @@
-package MysticWorld;
+package mysticworld;
 
 import java.io.File;
-import java.lang.reflect.Array;
-import java.util.Random;
-import java.util.Set;
 
-import MysticWorld.Biome.BiomeHandler;
-import MysticWorld.Blocks.BlockHandler;
-import MysticWorld.Entity.EntityHandler;
-import MysticWorld.Items.ItemHandler$1;
-import MysticWorld.Lib.Strings;
-import MysticWorld.TileEntity.TileEntityHandler;
-import MysticWorld.Util.CommonProxy;
-import MysticWorld.Util.Config;
-import MysticWorld.Util.Localizations;
-import MysticWorld.Util.RecipeHandler;
-import MysticWorld.Util.Reference;
-import MysticWorld.Util.TabMysticWorld;
-import MysticWorld.Util.TickHandler;
-import MysticWorld.WorldGen.*;
-import net.minecraft.block.Block;
+import mysticworld.biome.BiomeHandler;
+import mysticworld.blocks.BlockHandler;
+import mysticworld.entity.EntityHandler;
+import mysticworld.items.ItemHandler$1;
+import mysticworld.tiles.TileEntityHandler;
+import mysticworld.util.CommonProxy;
+import mysticworld.util.Config;
+import mysticworld.util.Localizations;
+import mysticworld.util.RecipeHandler;
+import mysticworld.util.Reference;
+import mysticworld.util.TabMysticWorld;
+import mysticworld.util.TickHandler;
+import mysticworld.worldgen.WorldGenHandler$1;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.WorldType;
-import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraftforge.common.ChestGenHooks;
-import net.minecraftforge.common.DimensionManager;
-import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.Mod.PostInit;
-import cpw.mods.fml.common.Mod.PreInit;
-import cpw.mods.fml.common.Mod.ServerStarted;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerStartedEvent;
 import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.TickRegistry;
-import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION_NUMBER)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
-
-public class MysticWorld
-{
+public class MysticWorld {
 	@Instance(Reference.MOD_ID)
-    public static MysticWorld instance;
-	
+	public static MysticWorld instance;
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
-    public static CommonProxy proxy;
-	
+	public static CommonProxy proxy;
 	private TickHandler tickHandler;
-	
 	public static CreativeTabs MysticWorldTab = new TabMysticWorld(CreativeTabs.getNextID(), "MysticWorldTab");
-	
+
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{	
-		Config.initialize(new File(event.getModConfigurationDirectory(), "Mystic Mods/Mystic World.cfg"));
-        Config.save();
-        
-        BiomeHandler.init();
-        
-        instance = this;
-    }
-	
-	@EventHandler
-	public void load(FMLInitializationEvent event)
-	{
+	public void load(FMLInitializationEvent event) {
 		this.tickHandler = new TickHandler();
-			
-	    TickRegistry.registerTickHandler(this.tickHandler, Side.SERVER);
+		TickRegistry.registerTickHandler(this.tickHandler, Side.SERVER);
 		BlockHandler.init();
 		ItemHandler$1.init();
 		TileEntityHandler.init();
@@ -86,8 +47,15 @@ public class MysticWorld
 		EntityHandler.init();
 		RecipeHandler.init();
 		Localizations.Initialize();
-		
 		proxy.registerRenderIDs();
 		proxy.registerRenders();
+	}
+
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event) {
+		Config.initialize(new File(event.getModConfigurationDirectory(), "Mystic Mods/Mystic World.cfg"));
+		Config.save();
+		BiomeHandler.init();
+		instance = this;
 	}
 }

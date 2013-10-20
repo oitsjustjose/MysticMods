@@ -1,11 +1,10 @@
-package MysticWorld.Blocks;
+package mysticworld.blocks;
 
-import MysticWorld.MysticWorld;
+import mysticworld.MysticWorld;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
 public class BlockPillarTower extends Block {
-
 	public BlockPillarTower(int id) {
 		super(id, Material.rock);
 		setBlockUnbreakable();
@@ -13,15 +12,14 @@ public class BlockPillarTower extends Block {
 		setCreativeTab(MysticWorld.MysticWorldTab);
 		setBlockBounds(0.15F, 0.0F, 0.15F, 0.85F, 1.0F, 0.85F);
 	}
-	
-    public boolean renderAsNormalBlock()
-    {
-        return false;
-    }
-    
-	public boolean isOpaqueCube()
-    {
-        return false;
-    }
 
+	@Override
+	public boolean isOpaqueCube() {
+		return false;
+	}
+
+	@Override
+	public boolean renderAsNormalBlock() {
+		return false;
+	}
 }

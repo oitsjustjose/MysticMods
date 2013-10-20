@@ -1,4 +1,4 @@
-package MysticWorld.Blocks;
+package mysticworld.blocks;
 
 import java.util.List;
 

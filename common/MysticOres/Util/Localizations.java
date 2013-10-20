@@ -1,4 +1,4 @@
-package MysticOres.Util;
+package mysticores.util;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,9 +11,10 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 
-import MysticOres.MysticOres;
+import mysticores.MysticOres;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+
 /*
  * 
  * All credits go to copygirl (or copy....boy) for this one
@@ -21,17 +22,14 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
  * repository, many thanks friend c:
  * 
  */
+public class Localizations {
+	private Localizations() {
+	}
 
-public class Localizations
-{
-	private Localizations(){}
-	
-	public static void Initialize()
-	{
+	public static void Initialize() {
 		File source = Loader.instance().getReversedModObjectList().get(MysticOres.instance).getSource();
 		Pattern pattern = Pattern.compile(".*(assets/" + "mysticmods/lang/(.+)\\.(.+))");
-		for(String file : getResources(source, pattern))
-		{
+		for (String file : getResources(source, pattern)) {
 			Matcher matcher = pattern.matcher(file);
 			matcher.find();
 			String resource = "/" + matcher.group(1);
@@ -40,72 +38,57 @@ public class Localizations
 			LanguageRegistry.instance().loadLocalization(resource, lang, isXML);
 		}
 	}
-	
-	private static Collection<String> getResources(File file, Pattern pattern)
-	{
+
+	private static Collection<String> getResources(File file, Pattern pattern) {
 		ArrayList<String> retval = new ArrayList<String>();
-		if(file.isDirectory())
+		if (file.isDirectory())
 			retval.addAll(getResourcesFromDirectory(file, pattern));
-		else retval.addAll(getResourcesFromJarFile(file, pattern));
+		else
+			retval.addAll(getResourcesFromJarFile(file, pattern));
 		return retval;
 	}
-	
-	private static Collection<String> getResourcesFromJarFile(File file, Pattern pattern)
-	{
+
+	private static Collection<String> getResourcesFromDirectory(File directory, Pattern pattern) {
+		ArrayList<String> retval = new ArrayList<String>();
+		File[] FileList = directory.listFiles();
+		for (File file : FileList) {
+			if (file.isDirectory()) {
+				retval.addAll(getResourcesFromDirectory(file, pattern));
+			} else
+				try {
+					String fileName = file.getCanonicalPath().replace('\\', '/');
+					boolean accept = pattern.matcher(fileName).matches();
+					if (accept)
+						retval.add(fileName);
+				} catch (final IOException e) {
+					throw new Error(e);
+				}
+		}
+		return retval;
+	}
+
+	private static Collection<String> getResourcesFromJarFile(File file, Pattern pattern) {
 		ArrayList<String> retval = new ArrayList<String>();
 		ZipFile Zip;
-		try 
-		{
+		try {
 			Zip = new ZipFile(file);
-		}
-		catch (ZipException Ex)
-		{
+		} catch (ZipException Ex) {
 			throw new Error(Ex);
-		}
-		catch(IOException Ex)
-		{
+		} catch (IOException Ex) {
 			throw new Error(Ex);
 		}
 		Enumeration<? extends ZipEntry> entries = Zip.entries();
-		while (entries.hasMoreElements())
-		{
+		while (entries.hasMoreElements()) {
 			ZipEntry ZipE = entries.nextElement();
 			String FileName = ZipE.getName();
 			boolean accept = pattern.matcher(FileName).matches();
-			if(accept)
+			if (accept)
 				retval.add(FileName);
 		}
-		try 
-		{
+		try {
 			Zip.close();
-		}
-		catch(IOException Ex)
-		{
+		} catch (IOException Ex) {
 			throw new Error(Ex);
-		}
-		return retval;	
-	}
-	
-	private static Collection<String> getResourcesFromDirectory(File directory, Pattern pattern)
-	{
-		ArrayList<String> retval = new ArrayList<String>();
-		File[] FileList = directory.listFiles();
-		for (File file : FileList)
-		{
-			if (file.isDirectory())
-			{
-				retval.addAll(getResourcesFromDirectory(file, pattern));
-			}
-			else try
-			{
-				String fileName = file.getCanonicalPath().replace('\\', '/');
-				boolean accept = pattern.matcher(fileName).matches();
-				if (accept) retval.add(fileName);
-			}
-			catch(final IOException e)
-			{
-				throw new Error(e);
-			}
 		}
 		return retval;
 	}

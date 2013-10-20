@@ -1,4 +1,4 @@
-package MysticRuins;
+package mysticruins;
 
 import java.io.File;
 import java.util.Random;

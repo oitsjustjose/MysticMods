@@ -1,20 +1,16 @@
-package MysticWorld.Entity;
+package mysticworld.entity;
 
-import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraftforge.common.BiomeDictionary;
+import mysticworld.MysticWorld;
+import mysticworld.lib.EntityIds;
+import mysticworld.lib.Strings;
 import cpw.mods.fml.common.registry.EntityRegistry;
-import MysticWorld.MysticWorld;
-import MysticWorld.Lib.EntityIds;
-import MysticWorld.Lib.Strings;
 
 public class EntityHandler {
-
-	public static void init(){
+	public static void init() {
 		registerEntities();
 	}
-	
-	public static void registerEntities(){
+
+	public static void registerEntities() {
 		EntityRegistry.registerModEntity(EntityChargeAir.class, Strings.ENTITY_AIR_CHARGE_NAME, EntityIds.ENTITY_AIR_CHARGE, MysticWorld.instance, 80, 3, false);
 		EntityRegistry.registerModEntity(EntityChargeFire.class, Strings.ENTITY_FIREBALL_NAME, EntityIds.ENTITY_FIREBALL, MysticWorld.instance, 80, 3, false);
 		EntityRegistry.registerModEntity(EntityChargeEarth.class, Strings.ENTITY_EARTH_CHARGE_NAME, EntityIds.ENTITY_EARTH_CHARGE, MysticWorld.instance, 80, 3, false);

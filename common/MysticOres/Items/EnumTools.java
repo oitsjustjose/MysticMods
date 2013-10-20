@@ -1,4 +1,4 @@
-package MysticOres.Items;
+package mysticores.items;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.EnumToolMaterial;

@@ -1,4 +1,4 @@
-package MysticOres.Lib;
+package mysticores.lib;
 
 public class BlockID
 {

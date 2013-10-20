@@ -1,4 +1,4 @@
-package MysticWorld.Biome;
+package mysticworld.biome;
 
 import java.util.Random;
 import net.minecraft.block.Block;

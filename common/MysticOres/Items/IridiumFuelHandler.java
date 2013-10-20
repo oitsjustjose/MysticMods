@@ -1,4 +1,4 @@
-package MysticOres.Items;
+package mysticores.items;
 
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.IFuelHandler;
