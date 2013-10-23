@@ -23,12 +23,20 @@ public class StructureMysticDungeon extends WorldGenerator {
 				int j1 = (i + random.nextInt(8)) - random.nextInt(8);
 				int k1 = (j + random.nextInt(4)) - random.nextInt(4);
 				int l1 = (k + random.nextInt(8)) - random.nextInt(8);
-				if (world.isAirBlock(j1 - 1, k1 + 1, l1) && world.isAirBlock(j1 - 1, k1 + 1, l1 + 1) && world.isAirBlock(j1 - 1, k1 + 2, l1) && world.isAirBlock(j1 - 1, k1 + 2, l1 + 1)
-						&& world.getBlockId(j1, k1, l1) == Block.stone.blockID && world.getBlockId(j1, k1, l1 + 1) == Block.stone.blockID && world.getBlockId(j1 - 1, k1, l1) == Block.stone.blockID
-						&& world.getBlockId(j1 - 1, k1, l1 + 1) == Block.stone.blockID && world.getBlockId(j1, k1 + 1, l1) == Block.stone.blockID
-						&& world.getBlockId(j1, k1 + 1, l1 + 1) == Block.stone.blockID)
-					;
-				boolean flag = true;
+				boolean flag = false;
+				/*
+				 * if (world.isAirBlock(j1 - 1, k1 + 1, l1) &&
+				 * world.isAirBlock(j1 - 1, k1 + 1, l1 + 1) &&
+				 * world.isAirBlock(j1 - 1, k1 + 2, l1) && world.isAirBlock(j1 -
+				 * 1, k1 + 2, l1 + 1) && world.getBlockId(j1, k1, l1) ==
+				 * Block.stone.blockID && world.getBlockId(j1, k1, l1 + 1) ==
+				 * Block.stone.blockID && world.getBlockId(j1 - 1, k1, l1) ==
+				 * Block.stone.blockID && world.getBlockId(j1 - 1, k1, l1 + 1)
+				 * == Block.stone.blockID && world.getBlockId(j1, k1 + 1, l1) ==
+				 * Block.stone.blockID && world.getBlockId(j1, k1 + 1, l1 + 1)
+				 * == Block.stone.blockID)
+				 */
+				flag = true;
 				if (!flag) {
 					continue;
 				}
@@ -1868,6 +1876,7 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1 - 8, k1 - 10, l1 - 4, Block.blockNetherQuartz.blockID, 2, 2);
 					world.setBlock(j1 - 8, k1 - 10, l1 - 2, Block.blockNetherQuartz.blockID, 2, 2);
 				}
+				System.out.println((j1 - 8) + "," + (k1 - 10) + "," + (l1 - 2));
 			}
 		}
 		return true;
