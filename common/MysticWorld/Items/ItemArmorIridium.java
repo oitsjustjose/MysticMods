@@ -38,24 +38,24 @@ public class ItemArmorIridium extends ItemArmor {
 		ItemStack legs = player.getCurrentItemOrArmor(2);
 		ItemStack boots = player.getCurrentItemOrArmor(1);
 		if (helmet != null) {
-			if (helmet.itemID == ItemHandler$1.iridiumHelmet.itemID) {
+			if (helmet.itemID == ItemHandler.iridiumHelmet.itemID) {
 				player.addPotionEffect((new PotionEffect(Potion.nightVision.getId(), 200, 0)));
 			}
 		}
 		if (plate != null) {
-			if (plate.itemID == ItemHandler$1.iridiumChestplate.itemID) {
+			if (plate.itemID == ItemHandler.iridiumChestplate.itemID) {
 				player.addPotionEffect((new PotionEffect(Potion.regeneration.getId(), 200, 0)));
 			}
 		}
 		if (legs != null) {
-			if (legs.itemID == ItemHandler$1.iridiumLeggings.itemID) {
+			if (legs.itemID == ItemHandler.iridiumLeggings.itemID) {
 				player.addPotionEffect((new PotionEffect(Potion.moveSpeed.getId(), 200, 2)));
 				player.addVelocity(0.0005, 0, 0.0005);
 				player.stepHeight = 1.001F;
 			}
 		}
 		if (boots != null) {
-			if (boots.itemID == ItemHandler$1.iridiumBoots.itemID) {
+			if (boots.itemID == ItemHandler.iridiumBoots.itemID) {
 				player.fallDistance = 0.0F;
 				player.addPotionEffect((new PotionEffect(Potion.jump.getId(), 200, 2)));
 			}

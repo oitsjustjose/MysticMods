@@ -22,9 +22,6 @@ public class CommonProxy {
 	public void lightCubeFX(World worldObj, double x, double y, double z, double motionX, double motionY, double motionZ, float scale) {
 	}
 
-	public void registerRenderIDs() {
-	}
-
 	public void registerRenders() {
 	}
 

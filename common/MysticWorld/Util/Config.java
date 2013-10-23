@@ -61,8 +61,4 @@ public class Config {
 		ItemIds.VOID_SHARD = config.getItem(Strings.VOID_SHARD_NAME, ItemIds.VOID_SHARD_DEFAULT).getInt(ItemIds.VOID_SHARD_DEFAULT);
 		config.save();
 	}
-
-	public static void save() {
-		config.save();
-	}
 }

@@ -1,6 +1,7 @@
 package mysticworld.client;
 
 import mysticworld.blocks.BlockHandler;
+import mysticworld.blocks.BlockPillarInsert;
 import mysticworld.client.fx.LightCubeFX;
 import mysticworld.client.fx.PowerAirFX;
 import mysticworld.client.fx.PowerEarthFX;
@@ -12,8 +13,7 @@ import mysticworld.entity.EntityChargeEarth;
 import mysticworld.entity.EntityChargeEnergy;
 import mysticworld.entity.EntityChargeFire;
 import mysticworld.entity.EntityChargeWater;
-import mysticworld.items.ItemHandler$1;
-import mysticworld.lib.RenderIds;
+import mysticworld.items.ItemHandler;
 import mysticworld.renderer.BlockPillarInsertRenderer;
 import mysticworld.renderer.ItemOrbAirRenderer;
 import mysticworld.renderer.ItemOrbEarthRenderer;
@@ -29,13 +29,15 @@ import mysticworld.renderer.RenderStaffPower;
 import mysticworld.renderer.TileEntityPillarInsertRenderer;
 import mysticworld.tiles.TileEntityPillarInsert;
 import mysticworld.util.CommonProxy;
-import net.minecraft.src.ModLoader;
+import net.minecraft.client.Minecraft;
 import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy extends CommonProxy {
+	public final Minecraft mc = Minecraft.getMinecraft();
+
 	@Override
 	public int addArmor(String armor) {
 		return RenderingRegistry.addNewArmourRendererPrefix(armor);
@@ -45,51 +47,47 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void airFeetFX(World worldObj, double x, double y, double z, float scale, int age) {
 		PowerAirFX airFX = new PowerAirFX(worldObj, x, y, z, scale, age);
-		ModLoader.getMinecraftInstance().effectRenderer.addEffect(airFX);
+		mc.effectRenderer.addEffect(airFX);
 	}
 
 	@Override
 	public void earthFX(World worldObj, double x, double y, double z, float scale) {
 		PowerEarthFX earthFX = new PowerEarthFX(worldObj, x, y, z, scale);
-		ModLoader.getMinecraftInstance().effectRenderer.addEffect(earthFX);
+		mc.effectRenderer.addEffect(earthFX);
 	}
 
 	@Override
 	public void energyFX(World worldObj, double x, double y, double z, float scale) {
 		PowerEnergyFX energyFX = new PowerEnergyFX(worldObj, x, y, z, scale);
-		ModLoader.getMinecraftInstance().effectRenderer.addEffect(energyFX);
+		mc.effectRenderer.addEffect(energyFX);
 	}
 
 	@Override
 	public void fireFX(World worldObj, double x, double y, double z, float scale) {
 		PowerFireFX fireFX = new PowerFireFX(worldObj, x, y, z, scale);
-		ModLoader.getMinecraftInstance().effectRenderer.addEffect(fireFX);
+		mc.effectRenderer.addEffect(fireFX);
 	}
 
 	@Override
 	public void lightCubeFX(World worldObj, double x, double y, double z, double motionX, double motionY, double motionZ, float scale) {
 		LightCubeFX lightCubeFX = new LightCubeFX(worldObj, x, y, z, motionX, motionY, motionZ, scale);
-		ModLoader.getMinecraftInstance().effectRenderer.addEffect(lightCubeFX);
-	}
-
-	@Override
-	public void registerRenderIDs() {
-		RenderIds.RENDER_PILLAR_INSERT = RenderingRegistry.getNextAvailableRenderId();
+		mc.effectRenderer.addEffect(lightCubeFX);
 	}
 
 	@Override
 	public void registerRenders() {
+		BlockPillarInsert.RENDER_PILLAR_INSERT = RenderingRegistry.getNextAvailableRenderId();
 		MinecraftForgeClient.registerItemRenderer(BlockHandler.pillarInsert.blockID, new BlockPillarInsertRenderer());
-		MinecraftForgeClient.registerItemRenderer(ItemHandler$1.fireStaff.itemID, new ItemStaffFireRenderer());
-		MinecraftForgeClient.registerItemRenderer(ItemHandler$1.earthStaff.itemID, new ItemStaffEarthRenderer());
-		MinecraftForgeClient.registerItemRenderer(ItemHandler$1.airStaff.itemID, new ItemStaffAirRenderer());
-		MinecraftForgeClient.registerItemRenderer(ItemHandler$1.energyStaff.itemID, new ItemStaffEnergyRenderer());
-		MinecraftForgeClient.registerItemRenderer(ItemHandler$1.waterStaff.itemID, new ItemStaffWaterRenderer());
-		MinecraftForgeClient.registerItemRenderer(ItemHandler$1.fireOrb.itemID, new ItemOrbFireRenderer());
-		MinecraftForgeClient.registerItemRenderer(ItemHandler$1.earthOrb.itemID, new ItemOrbEarthRenderer());
-		MinecraftForgeClient.registerItemRenderer(ItemHandler$1.airOrb.itemID, new ItemOrbAirRenderer());
-		MinecraftForgeClient.registerItemRenderer(ItemHandler$1.energyOrb.itemID, new ItemOrbEnergyRenderer());
-		MinecraftForgeClient.registerItemRenderer(ItemHandler$1.waterOrb.itemID, new ItemOrbWaterRenderer());
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.fireStaff.itemID, new ItemStaffFireRenderer());
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.earthStaff.itemID, new ItemStaffEarthRenderer());
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.airStaff.itemID, new ItemStaffAirRenderer());
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.energyStaff.itemID, new ItemStaffEnergyRenderer());
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.waterStaff.itemID, new ItemStaffWaterRenderer());
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.fireOrb.itemID, new ItemOrbFireRenderer());
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.earthOrb.itemID, new ItemOrbEarthRenderer());
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.airOrb.itemID, new ItemOrbAirRenderer());
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.energyOrb.itemID, new ItemOrbEnergyRenderer());
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.waterOrb.itemID, new ItemOrbWaterRenderer());
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeFire.class, new RenderStaffPower(0));
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeWater.class, new RenderStaffPower(1));
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeEarth.class, new RenderStaffPower(2));
@@ -101,6 +99,6 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void waterFX(World worldObj, double x, double y, double z, float scale) {
 		PowerWaterFX waterFX = new PowerWaterFX(worldObj, x, y, z, scale);
-		ModLoader.getMinecraftInstance().effectRenderer.addEffect(waterFX);
+		mc.effectRenderer.addEffect(waterFX);
 	}
 }

@@ -5,7 +5,7 @@ import mysticworld.lib.ItemIds;
 import mysticworld.lib.Strings;
 import net.minecraft.item.Item;
 
-public class ItemHandler$1 {
+public class ItemHandler {
 	public static Item staffParts;
 	public static Item imbuedShard;
 	public static Item fireStaff;

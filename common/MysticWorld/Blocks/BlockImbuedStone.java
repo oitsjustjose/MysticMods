@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import mysticworld.MysticWorld;
-import mysticworld.items.ItemHandler$1;
+import mysticworld.items.ItemHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.material.Material;
@@ -57,7 +57,7 @@ public class BlockImbuedStone extends Block {
 
 	@Override
 	public int idDropped(int par1, Random par2Random, int par3) {
-		return ItemHandler$1.imbuedShard.itemID;
+		return ItemHandler.imbuedShard.itemID;
 	}
 
 	@Override

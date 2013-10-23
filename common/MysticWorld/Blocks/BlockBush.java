@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import mysticworld.MysticWorld;
-import mysticworld.items.ItemHandler$1;
+import mysticworld.items.ItemHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -113,7 +113,7 @@ public class BlockBush extends Block implements IPlantable {
 
 	@Override
 	public int idDropped(int par1, Random par2Random, int par3) {
-		return ItemHandler$1.bushFruit.itemID;
+		return ItemHandler.bushFruit.itemID;
 	}
 
 	@Override

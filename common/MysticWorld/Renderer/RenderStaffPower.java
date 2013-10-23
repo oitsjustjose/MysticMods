@@ -1,6 +1,6 @@
 package mysticworld.renderer;
 
-import mysticworld.items.ItemHandler$1;
+import mysticworld.items.ItemHandler;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.texture.TextureMap;
@@ -30,7 +30,7 @@ public class RenderStaffPower extends Render {
 		this.bindEntityTexture(entity);
 		GL11.glTranslatef((float) par2, (float) par4, (float) par6);
 		GL11.glEnable(GL12.GL_RESCALE_NORMAL);
-		Icon icon = ItemHandler$1.staffPower.getIconFromDamage(this.meta);
+		Icon icon = ItemHandler.staffPower.getIconFromDamage(this.meta);
 		Tessellator tessellator = Tessellator.instance;
 		float f3 = icon.getMinU();
 		float f4 = icon.getMaxU();
