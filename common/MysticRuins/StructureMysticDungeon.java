@@ -3,10 +3,6 @@ package mysticruins;
 import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
@@ -38,221 +34,62 @@ public class StructureMysticDungeon extends WorldGenerator {
 				}
 				world.setBlock(j1, k1 + 1, l1, 0);
 				world.setBlock(j1, k1 + 2, l1, 0);
-				world.setBlock(j1 - 1, k1 + 1, l1, 0);
-				world.setBlock(j1 - 1, k1 + 2, l1, 0);
-				world.setBlock(j1 - 1, k1 + 3, l1, 0);
-				world.setBlock(j1 - 1, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1 - 1, k1 + 2, l1 + 1, 0);
 				world.setBlock(j1 - 1, k1 + 1, l1 + 2, 0);
 				world.setBlock(j1 - 1, k1 + 1, l1 + 3, 0);
 				world.setBlock(j1 - 1, k1 + 2, l1 + 2, 0);
-				world.setBlock(j1 - 1, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1 - 1, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1 - 1, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1 - 1, k1 + 3, l1 - 1, 0);
-				world.setBlock(j1 - 2, k1 + 1, l1, 0);
-				world.setBlock(j1 - 2, k1 + 2, l1, 0);
-				world.setBlock(j1 - 2, k1 + 3, l1, 0);
-				world.setBlock(j1 - 2, k1 + 1, l1 + 1, 0);
+				for (int y = k1 + 1; y < k1 + 4; y++) {
+					for (int x = 1; x < 6; x++) {
+						world.setBlock(j1 - x, y, l1, 0);
+						world.setBlock(j1 - x, y, l1 + 1, 0);
+						world.setBlock(j1 - x, y, l1 - 1, 0);
+					}
+				}
 				world.setBlock(j1 - 2, k1 + 1, l1 + 2, 0);
-				world.setBlock(j1 - 1, k1 + 2, l1 + 2, 0);
-				world.setBlock(j1 - 2, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1 - 2, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1 - 2, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1 - 2, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1 - 2, k1 + 3, l1 - 1, 0);
-				world.setBlock(j1 - 3, k1 + 1, l1, 0);
-				world.setBlock(j1 - 3, k1 + 2, l1, 0);
-				world.setBlock(j1 - 3, k1 + 3, l1, 0);
-				world.setBlock(j1 - 3, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1 - 3, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1 - 3, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1 - 3, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1 - 3, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1 - 3, k1 + 3, l1 - 1, 0);
-				world.setBlock(j1 - 4, k1 + 1, l1, 0);
-				world.setBlock(j1 - 4, k1 + 2, l1, 0);
-				world.setBlock(j1 - 4, k1 + 3, l1, 0);
-				world.setBlock(j1 - 4, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1 - 4, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1 - 4, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1 - 4, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1 - 4, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1 - 4, k1 + 3, l1 - 1, 0);
-				world.setBlock(j1 - 5, k1 + 1, l1, 0);
-				world.setBlock(j1 - 5, k1 + 2, l1, 0);
-				world.setBlock(j1 - 5, k1 + 3, l1, 0);
-				world.setBlock(j1 - 5, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1 - 5, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1 - 5, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1 - 5, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1 - 5, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1 - 5, k1 + 3, l1 - 1, 0);
-				world.setBlock(j1 - 6, k1 + 1, l1, 0);
-				world.setBlock(j1 - 6, k1 + 2, l1, 0);
-				world.setBlock(j1 - 6, k1 + 3, l1, 0);
-				world.setBlock(j1 - 6, k1 + 4, l1, 0);
-				world.setBlock(j1 - 7, k1 + 2, l1, 0);
-				world.setBlock(j1 - 7, k1 + 3, l1, 0);
-				world.setBlock(j1 - 7, k1 + 4, l1, 0);
-				world.setBlock(j1 - 7, k1 + 5, l1, 0);
-				world.setBlock(j1 - 8, k1 + 3, l1, 0);
-				world.setBlock(j1 - 8, k1 + 4, l1, 0);
-				world.setBlock(j1 - 8, k1 + 5, l1, 0);
-				world.setBlock(j1 - 9, k1 + 4, l1, 0);
-				world.setBlock(j1 - 9, k1 + 5, l1, 0);
-				world.setBlock(j1 - 9, k1 + 6, l1, 0);
-				world.setBlock(j1 - 9, k1 + 7, l1, 0);
-				world.setBlock(j1 - 10, k1 + 5, l1, 0);
-				world.setBlock(j1 - 10, k1 + 6, l1, 0);
-				world.setBlock(j1 - 10, k1 + 7, l1, 0);
-				world.setBlock(j1 - 10, k1 + 8, l1, 0);
-				world.setBlock(j1 - 11, k1 + 6, l1, 0);
-				world.setBlock(j1 - 11, k1 + 7, l1, 0);
-				world.setBlock(j1 - 11, k1 + 8, l1, 0);
-				world.setBlock(j1 - 11, k1 + 9, l1, 0);
-				world.setBlock(j1 - 12, k1 + 7, l1, 0);
-				world.setBlock(j1 - 12, k1 + 8, l1, 0);
-				world.setBlock(j1 - 12, k1 + 9, l1, 0);
-				world.setBlock(j1 - 12, k1 + 10, l1, 0);
-				world.setBlock(j1 - 13, k1 + 8, l1, 0);
-				world.setBlock(j1 - 13, k1 + 9, l1, 0);
-				world.setBlock(j1 - 13, k1 + 10, l1, 0);
-				world.setBlock(j1 - 13, k1 + 11, l1, 0);
-				world.setBlock(j1 - 14, k1 + 9, l1, 0);
-				world.setBlock(j1 - 14, k1 + 10, l1, 0);
-				world.setBlock(j1 - 14, k1 + 11, l1, 0);
-				world.setBlock(j1 - 14, k1 + 12, l1, 0);
-				world.setBlock(j1 - 15, k1 + 10, l1, 0);
-				world.setBlock(j1 - 15, k1 + 11, l1, 0);
-				world.setBlock(j1 - 15, k1 + 12, l1, 0);
-				world.setBlock(j1 - 15, k1 + 13, l1, 0);
+				for (int x = 6; x < 17; x++) {
+					for (int y = 1; y < 5; y++) {
+						world.setBlock(j1 - x, k1 + y, l1, 0);
+					}
+				}
 				world.setBlock(j1 - 15, k1 + 14, l1, 0);
-				world.setBlock(j1 - 16, k1 + 11, l1, 0);
-				world.setBlock(j1 - 16, k1 + 12, l1, 0);
-				world.setBlock(j1 - 16, k1 + 13, l1, 0);
-				world.setBlock(j1 - 16, k1 + 14, l1, 0);
 				int i2 = random.nextInt(100);
 				if (i2 <= 40) {
-					world.setBlock(j1 - 16, k1 + 11, l1 - 1, 0);
-					world.setBlock(j1 - 16, k1 + 12, l1 - 1, 0);
-					world.setBlock(j1 - 16, k1 + 11, l1 - 2, 0);
-					world.setBlock(j1 - 16, k1 + 12, l1 - 2, 0);
-					world.setBlock(j1 - 16, k1 + 11, l1 - 3, 0);
-					world.setBlock(j1 - 16, k1 + 12, l1 - 3, 0);
-					world.setBlock(j1 - 16, k1 + 11, l1 - 4, 0);
-					world.setBlock(j1 - 16, k1 + 12, l1 - 4, 0);
-					world.setBlock(j1 - 16, k1 + 11, l1 - 5, 0);
-					world.setBlock(j1 - 16, k1 + 12, l1 - 5, 0);
-					world.setBlock(j1 - 16, k1 + 11, l1 - 6, 0);
-					world.setBlock(j1 - 16, k1 + 12, l1 - 6, 0);
-					world.setBlock(j1 - 16, k1 + 11, l1 - 7, 0);
-					world.setBlock(j1 - 16, k1 + 12, l1 - 7, 0);
-					world.setBlock(j1 - 16, k1 + 11, l1 - 8, 0);
-					world.setBlock(j1 - 16, k1 + 12, l1 - 8, 0);
+					for (int z = 1; z < 9; z++) {
+						world.setBlock(j1 - 16, k1 + 11, l1 - z, 0);
+						world.setBlock(j1 - 16, k1 + 12, l1 - z, 0);
+					}
 					world.setBlock(j1 - 16, k1 + 13, l1 - 8, 0);
 					world.setBlock(j1 - 16, k1 + 14, l1 - 8, 0);
-					world.setBlock(j1 - 16, k1 + 12, l1 - 9, 0);
-					world.setBlock(j1 - 16, k1 + 13, l1 - 9, 0);
-					world.setBlock(j1 - 16, k1 + 14, l1 - 9, 0);
-					world.setBlock(j1 - 16, k1 + 15, l1 - 9, 0);
-					world.setBlock(j1 - 16, k1 + 13, l1 - 10, 0);
-					world.setBlock(j1 - 16, k1 + 14, l1 - 10, 0);
-					world.setBlock(j1 - 16, k1 + 15, l1 - 10, 0);
-					world.setBlock(j1 - 16, k1 + 16, l1 - 10, 0);
-					world.setBlock(j1 - 16, k1 + 14, l1 - 11, 0);
-					world.setBlock(j1 - 16, k1 + 15, l1 - 11, 0);
-					world.setBlock(j1 - 16, k1 + 16, l1 - 11, 0);
-					world.setBlock(j1 - 16, k1 + 17, l1 - 11, 0);
-					world.setBlock(j1 - 16, k1 + 15, l1 - 12, 0);
-					world.setBlock(j1 - 16, k1 + 16, l1 - 12, 0);
-					world.setBlock(j1 - 16, k1 + 17, l1 - 12, 0);
-					world.setBlock(j1 - 16, k1 + 16, l1 - 13, 0);
-					world.setBlock(j1 - 16, k1 + 17, l1 - 13, 0);
-					world.setBlock(j1 - 16, k1 + 18, l1 - 13, 0);
-					world.setBlock(j1 - 16, k1 + 19, l1 - 13, 0);
+					for (int z = 0; z < 5; z++) {
+						for (int y = 12; y < 16; y++) {
+							world.setBlock(j1 - 16, k1 + y + z, l1 - 9 + z, 0);
+						}
+					}
 					world.setBlock(j1 - 16, k1 + 20, l1 - 13, 0);
 					int j2 = random.nextInt(100);
 					if (j2 <= 20) {
-						world.setBlock(j1 - 16, k1 + 17, l1 - 15, 0);
-						world.setBlock(j1 - 16, k1 + 18, l1 - 15, 0);
-						world.setBlock(j1 - 16, k1 + 17, l1 - 16, 0);
-						world.setBlock(j1 - 16, k1 + 18, l1 - 16, 0);
-						world.setBlock(j1 - 16, k1 + 17, l1 - 17, 0);
-						world.setBlock(j1 - 16, k1 + 18, l1 - 17, 0);
-						world.setBlock(j1 - 15, k1 + 17, l1 - 15, 0);
-						world.setBlock(j1 - 15, k1 + 18, l1 - 15, 0);
-						world.setBlock(j1 - 15, k1 + 17, l1 - 16, 0);
-						world.setBlock(j1 - 15, k1 + 18, l1 - 16, 0);
-						world.setBlock(j1 - 15, k1 + 17, l1 - 17, 0);
-						world.setBlock(j1 - 15, k1 + 18, l1 - 17, 0);
-						world.setBlock(j1 - 17, k1 + 17, l1 - 15, 0);
-						world.setBlock(j1 - 17, k1 + 18, l1 - 15, 0);
-						world.setBlock(j1 - 17, k1 + 17, l1 - 16, 0);
-						world.setBlock(j1 - 17, k1 + 18, l1 - 16, 0);
-						world.setBlock(j1 - 17, k1 + 17, l1 - 17, 0);
-						world.setBlock(j1 - 17, k1 + 18, l1 - 17, 0);
+						for (int x = 0; x < 3; x++) {
+							for (int z = 15; z < 18; z++) {
+								world.setBlock(j1 - 15 - x, k1 + 17, l1 - z, 0);
+								world.setBlock(j1 - 15 - x, k1 + 18, l1 - z, 0);
+							}
+						}
 						world.setBlock(j1 - 16, k1 + 16, l1 - 15, Block.blockLapis.blockID);
 						world.setBlock(j1 - 16, k1 + 16, l1 - 16, Block.cobblestoneMossy.blockID);
 						world.setBlock(j1 - 16, k1 + 16, l1 - 17, Block.blockLapis.blockID);
-						world.setBlock(j1 - 15, k1 + 16, l1 - 15, Block.blockLapis.blockID);
-						world.setBlock(j1 - 15, k1 + 16, l1 - 16, Block.blockLapis.blockID);
-						world.setBlock(j1 - 15, k1 + 16, l1 - 17, Block.blockLapis.blockID);
-						world.setBlock(j1 - 17, k1 + 16, l1 - 15, Block.blockLapis.blockID);
-						world.setBlock(j1 - 17, k1 + 16, l1 - 16, Block.blockLapis.blockID);
-						world.setBlock(j1 - 17, k1 + 16, l1 - 17, Block.blockLapis.blockID);
+						for (int z = 15; z < 18; z++) {
+							world.setBlock(j1 - 15, k1 + 16, l1 - z, Block.blockLapis.blockID);
+							world.setBlock(j1 - 17, k1 + 16, l1 - z, Block.blockLapis.blockID);
+						}
 						world.setBlock(j1 - 16, k1 + 17, l1 - 16, Block.chest.blockID);
-						fillWithRares(world.getBlockTileEntity(j1 - 16, k1 + 17, l1 - 16));
+						ChestFiller.fillWithRares(world.getBlockTileEntity(j1 - 16, k1 + 17, l1 - 16));
 					}
 				}
-				world.setBlock(j1 - 16, k1 + 12, l1 + 1, 0);
-				world.setBlock(j1 - 16, k1 + 13, l1 + 1, 0);
-				world.setBlock(j1 - 16, k1 + 14, l1 + 1, 0);
-				world.setBlock(j1 - 16, k1 + 15, l1 + 1, 0);
-				world.setBlock(j1 - 16, k1 + 13, l1 + 2, 0);
-				world.setBlock(j1 - 16, k1 + 14, l1 + 2, 0);
-				world.setBlock(j1 - 16, k1 + 15, l1 + 2, 0);
-				world.setBlock(j1 - 16, k1 + 16, l1 + 2, 0);
-				world.setBlock(j1 - 16, k1 + 14, l1 + 3, 0);
-				world.setBlock(j1 - 16, k1 + 15, l1 + 3, 0);
-				world.setBlock(j1 - 16, k1 + 16, l1 + 3, 0);
-				world.setBlock(j1 - 16, k1 + 15, l1 + 4, 0);
-				world.setBlock(j1 - 16, k1 + 16, l1 + 4, 0);
-				world.setBlock(j1 - 16, k1 + 17, l1 + 4, 0);
-				world.setBlock(j1 - 16, k1 + 18, l1 + 4, 0);
-				world.setBlock(j1 - 16, k1 + 16, l1 + 5, 0);
-				world.setBlock(j1 - 16, k1 + 17, l1 + 5, 0);
-				world.setBlock(j1 - 16, k1 + 18, l1 + 5, 0);
-				world.setBlock(j1 - 16, k1 + 19, l1 + 5, 0);
-				world.setBlock(j1 - 16, k1 + 17, l1 + 6, 0);
-				world.setBlock(j1 - 16, k1 + 18, l1 + 6, 0);
-				world.setBlock(j1 - 16, k1 + 19, l1 + 6, 0);
-				world.setBlock(j1 - 16, k1 + 20, l1 + 6, 0);
-				world.setBlock(j1 - 16, k1 + 18, l1 + 7, 0);
-				world.setBlock(j1 - 16, k1 + 19, l1 + 7, 0);
-				world.setBlock(j1 - 16, k1 + 20, l1 + 7, 0);
-				world.setBlock(j1 - 16, k1 + 21, l1 + 7, 0);
-				world.setBlock(j1 - 16, k1 + 19, l1 + 8, 0);
-				world.setBlock(j1 - 16, k1 + 20, l1 + 8, 0);
-				world.setBlock(j1 - 16, k1 + 21, l1 + 8, 0);
-				world.setBlock(j1 - 16, k1 + 22, l1 + 8, 0);
-				world.setBlock(j1 - 16, k1 + 20, l1 + 9, 0);
-				world.setBlock(j1 - 16, k1 + 21, l1 + 9, 0);
-				world.setBlock(j1 - 16, k1 + 22, l1 + 9, 0);
-				world.setBlock(j1 - 16, k1 + 23, l1 + 9, 0);
+				for (int z = 0; z < 12; z++) {
+					for (int y = k1 + 12 + z; y < k1 + 16 + z; y++) {
+						world.setBlock(j1 - 16, y, l1 + 1 + z, 0);
+					}
+				}
 				world.setBlock(j1 - 16, k1 + 24, l1 + 9, 0);
-				world.setBlock(j1 - 16, k1 + 21, l1 + 10, 0);
-				world.setBlock(j1 - 16, k1 + 22, l1 + 10, 0);
-				world.setBlock(j1 - 16, k1 + 23, l1 + 10, 0);
-				world.setBlock(j1 - 16, k1 + 24, l1 + 10, 0);
-				world.setBlock(j1 - 16, k1 + 22, l1 + 11, 0);
-				world.setBlock(j1 - 16, k1 + 23, l1 + 11, 0);
-				world.setBlock(j1 - 16, k1 + 24, l1 + 11, 0);
-				world.setBlock(j1 - 16, k1 + 25, l1 + 11, 0);
-				world.setBlock(j1 - 16, k1 + 23, l1 + 12, 0);
-				world.setBlock(j1 - 16, k1 + 24, l1 + 12, 0);
-				world.setBlock(j1 - 16, k1 + 25, l1 + 12, 0);
-				world.setBlock(j1 - 16, k1 + 26, l1 + 12, 0);
 				world.setBlock(j1, k1 + 1, l1, 0);
 				world.setBlock(j1, k1 + 2, l1, 0);
 				world.setBlock(j1, k1, l1, Block.cobblestoneMossy.blockID);
@@ -276,86 +113,62 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 + 1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 - 1, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 + 1, l1, 0);
-				world.setBlock(j1, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1, k1 + 2, l1, 0);
-				world.setBlock(j1, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1, k1 + 3, l1, 0);
-				world.setBlock(j1, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1, k1 + 3, l1 - 1, 0);
+				for (int y = 1; y < 4; y++) {
+					world.setBlock(j1, k1 + y, l1, 0);
+					world.setBlock(j1, k1 + y, l1 + 1, 0);
+					world.setBlock(j1, k1 + y, l1 - 1, 0);
+				}
 				world.setBlock(j1, k1 + 1, l1 - 2, Block.cobblestone.blockID);
 				j1++;
 				world.setBlock(j1, k1, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 + 1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1, l1 - 1, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 + 1, l1, 0);
-				world.setBlock(j1, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1, k1 + 2, l1, 0);
-				world.setBlock(j1, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1, k1 + 3, l1, 0);
-				world.setBlock(j1, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1, k1 + 3, l1 - 1, 0);
+				for (int y = 1; y < 4; y++) {
+					world.setBlock(j1, k1 + y, l1, 0);
+					world.setBlock(j1, k1 + y, l1 + 1, 0);
+					world.setBlock(j1, k1 + y, l1 - 1, 0);
+				}
 				world.setBlock(j1, k1 + 2, l1 + 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 + 3, l1 + 2, Block.cobblestone.blockID);
 				j1++;
 				world.setBlock(j1, k1, l1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1, l1 + 1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 - 1, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 + 1, l1, 0);
-				world.setBlock(j1, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1, k1 + 2, l1, 0);
-				world.setBlock(j1, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1, k1 + 3, l1, 0);
-				world.setBlock(j1, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1, k1 + 3, l1 - 1, 0);
+				for (int y = 1; y < 4; y++) {
+					world.setBlock(j1, k1 + y, l1, 0);
+					world.setBlock(j1, k1 + y, l1 + 1, 0);
+					world.setBlock(j1, k1 + y, l1 - 1, 0);
+				}
 				j1++;
 				world.setBlock(j1, k1, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 + 1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1, l1 - 1, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 + 1, l1, 0);
-				world.setBlock(j1, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1, k1 + 2, l1, 0);
-				world.setBlock(j1, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1, k1 + 3, l1, 0);
-				world.setBlock(j1, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1, k1 + 3, l1 - 1, 0);
+				for (int y = 1; y < 4; y++) {
+					world.setBlock(j1, k1 + y, l1, 0);
+					world.setBlock(j1, k1 + y, l1 + 1, 0);
+					world.setBlock(j1, k1 + y, l1 - 1, 0);
+				}
 				world.setBlock(j1, k1 + 1, l1 + 2, Block.cobblestoneMossy.blockID);
 				j1++;
 				world.setBlock(j1, k1, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 + 1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 - 1, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 + 1, l1, 0);
-				world.setBlock(j1, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1, k1 + 2, l1, 0);
-				world.setBlock(j1, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1, k1 + 3, l1, 0);
-				world.setBlock(j1, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1, k1 + 3, l1 - 1, 0);
+				for (int y = 1; y < 4; y++) {
+					world.setBlock(j1, k1 + y, l1, 0);
+					world.setBlock(j1, k1 + y, l1 + 1, 0);
+					world.setBlock(j1, k1 + y, l1 - 1, 0);
+				}
 				world.setBlock(j1, k1 + 1, l1 - 2, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 + 2, l1 - 2, Block.cobblestone.blockID);
 				j1++;
 				world.setBlock(j1, k1, l1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1, l1 + 1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1, l1 - 1, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 + 1, l1, 0);
-				world.setBlock(j1, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1, k1 + 2, l1, 0);
-				world.setBlock(j1, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1, k1 + 3, l1, 0);
-				world.setBlock(j1, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1, k1 + 3, l1 - 1, 0);
+				for (int y = 1; y < 4; y++) {
+					world.setBlock(j1, k1 + y, l1, 0);
+					world.setBlock(j1, k1 + y, l1 + 1, 0);
+					world.setBlock(j1, k1 + y, l1 - 1, 0);
+				}
 				int l2 = random.nextInt(100);
 				if (l2 <= 30) {
 					world.setBlock(j1 - 1, k1 + 3, l1, Block.vine.blockID);
@@ -366,100 +179,27 @@ public class StructureMysticDungeon extends WorldGenerator {
 				}
 				int i3 = random.nextInt(100);
 				if (i3 <= 40) {
-					world.setBlock(j1, k1 + 1, l1 - 2, 0);
-					world.setBlock(j1, k1 + 2, l1 - 2, 0);
-					world.setBlock(j1, k1 + 1, l1 - 3, 0);
-					world.setBlock(j1, k1 + 2, l1 - 3, 0);
-					world.setBlock(j1, k1 + 1, l1 - 4, 0);
-					world.setBlock(j1, k1 + 2, l1 - 4, 0);
-					world.setBlock(j1, k1 + 1, l1 - 5, 0);
-					world.setBlock(j1, k1 + 2, l1 - 5, 0);
-					world.setBlock(j1, k1 + 1, l1 - 6, 0);
-					world.setBlock(j1, k1 + 2, l1 - 6, 0);
-					world.setBlock(j1, k1 + 1, l1 - 7, 0);
-					world.setBlock(j1, k1 + 2, l1 - 7, 0);
-					world.setBlock(j1, k1 + 1, l1 - 8, 0);
-					world.setBlock(j1, k1 + 2, l1 - 8, 0);
-					world.setBlock(j1, k1 + 1, l1 - 9, 0);
-					world.setBlock(j1, k1 + 2, l1 - 9, 0);
-					world.setBlock(j1, k1 + 1, l1 - 10, 0);
-					world.setBlock(j1, k1 + 2, l1 - 10, 0);
-					world.setBlock(j1, k1 + 3, l1 - 10, 0);
-					world.setBlock(j1, k1 + 4, l1 - 10, 0);
-					world.setBlock(j1, k1 + 2, l1 - 11, 0);
-					world.setBlock(j1, k1 + 3, l1 - 11, 0);
-					world.setBlock(j1, k1 + 4, l1 - 11, 0);
-					world.setBlock(j1, k1 + 5, l1 - 11, 0);
-					world.setBlock(j1, k1 + 3, l1 - 12, 0);
-					world.setBlock(j1, k1 + 4, l1 - 12, 0);
-					world.setBlock(j1, k1 + 5, l1 - 12, 0);
-					world.setBlock(j1, k1 + 6, l1 - 12, 0);
-					world.setBlock(j1, k1 + 4, l1 - 13, 0);
-					world.setBlock(j1, k1 + 5, l1 - 13, 0);
-					world.setBlock(j1, k1 + 6, l1 - 13, 0);
-					world.setBlock(j1, k1 + 7, l1 - 13, 0);
-					world.setBlock(j1, k1 + 5, l1 - 14, 0);
-					world.setBlock(j1, k1 + 6, l1 - 14, 0);
-					world.setBlock(j1, k1 + 7, l1 - 14, 0);
-					world.setBlock(j1, k1 + 8, l1 - 14, 0);
-					world.setBlock(j1, k1 + 6, l1 - 15, 0);
-					world.setBlock(j1, k1 + 7, l1 - 15, 0);
-					world.setBlock(j1, k1 + 8, l1 - 15, 0);
-					world.setBlock(j1, k1 + 9, l1 - 15, 0);
-					world.setBlock(j1, k1 + 7, l1 - 16, 0);
-					world.setBlock(j1, k1 + 8, l1 - 16, 0);
-					world.setBlock(j1, k1 + 9, l1 - 16, 0);
-					world.setBlock(j1, k1 + 10, l1 - 16, 0);
-					world.setBlock(j1, k1 + 8, l1 - 17, 0);
-					world.setBlock(j1, k1 + 9, l1 - 17, 0);
-					world.setBlock(j1, k1 + 10, l1 - 17, 0);
-					world.setBlock(j1, k1 + 11, l1 - 17, 0);
-					world.setBlock(j1, k1 + 9, l1 - 18, 0);
-					world.setBlock(j1, k1 + 10, l1 - 18, 0);
-					world.setBlock(j1, k1 + 11, l1 - 18, 0);
-					world.setBlock(j1, k1 + 12, l1 - 18, 0);
-					world.setBlock(j1, k1 + 10, l1 - 19, 0);
-					world.setBlock(j1, k1 + 11, l1 - 19, 0);
-					world.setBlock(j1, k1 + 12, l1 - 19, 0);
-					world.setBlock(j1, k1 + 13, l1 - 19, 0);
-					world.setBlock(j1, k1 + 11, l1 - 20, 0);
-					world.setBlock(j1, k1 + 12, l1 - 20, 0);
-					world.setBlock(j1, k1 + 13, l1 - 20, 0);
-					world.setBlock(j1, k1 + 14, l1 - 20, 0);
+					for (int z = 2; z < 10; z++) {
+						world.setBlock(j1, k1 + 1, l1 - z, 0);
+						world.setBlock(j1, k1 + 2, l1 - z, 0);
+					}
+					for (int z = 0; z < 14; z++) {
+						for (int y = k1 + 1 + z; y < k + 5 + z; y++) {
+							world.setBlock(j1, y, l1 - 10 - z, 0);
+						}
+					}
 					world.setBlock(j1, k1 + 15, l1 - 20, 0);
-					world.setBlock(j1, k1 + 12, l1 - 21, 0);
-					world.setBlock(j1, k1 + 13, l1 - 21, 0);
-					world.setBlock(j1, k1 + 14, l1 - 21, 0);
-					world.setBlock(j1, k1 + 15, l1 - 21, 0);
 					world.setBlock(j1, k1 + 16, l1 - 21, 0);
-					world.setBlock(j1, k1 + 13, l1 - 22, 0);
-					world.setBlock(j1, k1 + 14, l1 - 22, 0);
-					world.setBlock(j1, k1 + 15, l1 - 22, 0);
-					world.setBlock(j1, k1 + 16, l1 - 22, 0);
-					world.setBlock(j1, k1 + 14, l1 - 23, 0);
-					world.setBlock(j1, k1 + 15, l1 - 23, 0);
-					world.setBlock(j1, k1 + 16, l1 - 23, 0);
-					world.setBlock(j1, k1 + 17, l1 - 23, 0);
 					int j3 = random.nextInt(100);
 					if (j3 <= 20) {
-						world.setBlock(j1, k1 + 15, l1 - 25, 0);
-						world.setBlock(j1, k1 + 16, l1 - 25, 0);
-						world.setBlock(j1, k1 + 15, l1 - 26, 0);
-						world.setBlock(j1, k1 + 16, l1 - 26, 0);
-						world.setBlock(j1, k1 + 15, l1 - 27, 0);
-						world.setBlock(j1, k1 + 16, l1 - 27, 0);
-						world.setBlock(j1 + 1, k1 + 15, l1 - 25, 0);
-						world.setBlock(j1 + 1, k1 + 16, l1 - 25, 0);
-						world.setBlock(j1 + 1, k1 + 15, l1 - 26, 0);
-						world.setBlock(j1 + 1, k1 + 16, l1 - 26, 0);
-						world.setBlock(j1 + 1, k1 + 15, l1 - 27, 0);
-						world.setBlock(j1 + 1, k1 + 16, l1 - 27, 0);
-						world.setBlock(j1 - 1, k1 + 15, l1 - 25, 0);
-						world.setBlock(j1 - 1, k1 + 16, l1 - 25, 0);
-						world.setBlock(j1 - 1, k1 + 15, l1 - 26, 0);
-						world.setBlock(j1 - 1, k1 + 16, l1 - 26, 0);
-						world.setBlock(j1 - 1, k1 + 15, l1 - 27, 0);
-						world.setBlock(j1 - 1, k1 + 16, l1 - 27, 0);
+						for (int x = -1; x < 2; x++) {
+							world.setBlock(j1 + x, k1 + 15, l1 - 25, 0);
+							world.setBlock(j1 + x, k1 + 16, l1 - 25, 0);
+							world.setBlock(j1 + x, k1 + 15, l1 - 26, 0);
+							world.setBlock(j1 + x, k1 + 16, l1 - 26, 0);
+							world.setBlock(j1 + x, k1 + 15, l1 - 27, 0);
+							world.setBlock(j1 + x, k1 + 16, l1 - 27, 0);
+						}
 						world.setBlock(j1 - 16, k1 + 14, l1 - 15, 0);
 						world.setBlock(j1 - 16, k1 + 14, l1 - 16, Block.cobblestoneMossy.blockID);
 						world.setBlock(j1 - 16, k1 + 14, l1 - 17, 0);
@@ -470,87 +210,61 @@ public class StructureMysticDungeon extends WorldGenerator {
 						world.setBlock(j1 - 17, k1 + 14, l1 - 16, 0);
 						world.setBlock(j1 - 17, k1 + 14, l1 - 17, 0);
 						world.setBlock(j1 - 16, k1 + 15, l1 - 16, Block.chest.blockID);
-						fillWithValuables(world.getBlockTileEntity(j1 - 16, k1 + 15, l1 - 16));
+						ChestFiller.fillWithValuables(world.getBlockTileEntity(j1 - 16, k1 + 15, l1 - 16));
 					}
 				}
 				j1++;
 				world.setBlock(j1, k1, l1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1, l1 + 1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 - 1, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 + 1, l1, 0);
-				world.setBlock(j1, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1, k1 + 2, l1, 0);
-				world.setBlock(j1, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1, k1 + 3, l1, 0);
-				world.setBlock(j1, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1, k1 + 3, l1 - 1, 0);
+				for (int y = 1; y < 4; y++) {
+					world.setBlock(j1, k1 + y, l1, 0);
+					world.setBlock(j1, k1 + y, l1 + 1, 0);
+					world.setBlock(j1, k1 + y, l1 - 1, 0);
+				}
 				world.setBlock(j1, k1 + 1, l1 + 2, Block.cobblestoneMossy.blockID);
 				j1++;
 				world.setBlock(j1, k1, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 + 1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1, l1 - 1, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 + 1, l1, 0);
-				world.setBlock(j1, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1, k1 + 2, l1, 0);
-				world.setBlock(j1, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1, k1 + 3, l1, 0);
-				world.setBlock(j1, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1, k1 + 3, l1 - 1, 0);
+				for (int y = 1; y < 4; y++) {
+					world.setBlock(j1, k1 + y, l1, 0);
+					world.setBlock(j1, k1 + y, l1 + 1, 0);
+					world.setBlock(j1, k1 + y, l1 - 1, 0);
+				}
 				j1++;
 				world.setBlock(j1, k1, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 + 1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 - 1, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 + 1, l1, 0);
-				world.setBlock(j1, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1, k1 + 2, l1, 0);
-				world.setBlock(j1, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1, k1 + 3, l1, 0);
-				world.setBlock(j1, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1, k1 + 3, l1 - 1, 0);
+				for (int y = 1; y < 4; y++) {
+					world.setBlock(j1, k1 + y, l1, 0);
+					world.setBlock(j1, k1 + y, l1 + 1, 0);
+					world.setBlock(j1, k1 + y, l1 - 1, 0);
+				}
 				world.setBlock(j1, k1 + 3, l1 + 2, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 + 1, l1 - 2, Block.cobblestone.blockID);
 				j1++;
 				world.setBlock(j1, k1, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 + 1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 - 1, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 + 1, l1, 0);
-				world.setBlock(j1, k1 + 1, l1 + 1, 0);
+				for (int y = 1; y < 4; y++) {
+					world.setBlock(j1, k1 + y, l1, 0);
+					world.setBlock(j1, k1 + y, l1 + 1, 0);
+					world.setBlock(j1, k1 + y, l1 - 1, 0);
+				}
 				world.setBlock(j1, k1 + 1, l1 + 2, 0);
-				world.setBlock(j1, k1 + 1, l1 - 1, 0);
 				world.setBlock(j1, k1 + 1, l1 - 2, 0);
-				world.setBlock(j1, k1 + 2, l1, 0);
-				world.setBlock(j1, k1 + 2, l1 + 1, 0);
 				world.setBlock(j1, k1 + 2, l1 + 2, 0);
-				world.setBlock(j1, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1, k1 + 3, l1, 0);
-				world.setBlock(j1, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1, k1 + 3, l1 - 1, 0);
 				j1++;
 				world.setBlock(j1, k1, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 + 1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1, l1 - 1, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 + 1, l1, 0);
-				world.setBlock(j1, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1, k1 + 1, l1 + 2, 0);
+				for (int y = 1; y < 4; y++) {
+					for (int z = -2; z < 3; z++) {
+						world.setBlock(j1, k1 + y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 + 1, l1 + 3, 0);
-				world.setBlock(j1, k1 + 1, l1 - 2, 0);
-				world.setBlock(j1, k1 + 2, l1, 0);
-				world.setBlock(j1, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1, k1 + 2, l1 + 2, 0);
-				world.setBlock(j1, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1, k1 + 2, l1 - 2, 0);
-				world.setBlock(j1, k1 + 3, l1, 0);
-				world.setBlock(j1, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1, k1 + 3, l1 + 2, 0);
-				world.setBlock(j1, k1 + 3, l1 - 1, 0);
-				world.setBlock(j1, k1 + 3, l1 - 2, 0);
 				world.setBlock(j1, k1 + 3, l1 - 3, 0);
 				world.setBlock(j1, k1 + 1, l1 + 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 + 2, l1 + 2, Block.cobblestoneMossy.blockID);
@@ -581,42 +295,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 2, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1, l1 - 3, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 4, Block.cobblestone.blockID);
-					world.setBlock(j1, k1 + 1, l1, 0);
-					world.setBlock(j1, k1 + 2, l1, 0);
-					world.setBlock(j1, k1 + 3, l1, 0);
-					world.setBlock(j1, k1 + 4, l1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 2, 0);
-					world.setBlock(j1, k1 + 1, l1 + 3, 0);
-					world.setBlock(j1, k1 + 1, l1 + 4, 0);
-					world.setBlock(j1, k1 + 1, l1 - 1, 0);
-					world.setBlock(j1, k1 + 1, l1 - 2, 0);
-					world.setBlock(j1, k1 + 1, l1 - 3, 0);
-					world.setBlock(j1, k1 + 1, l1 - 4, 0);
-					world.setBlock(j1, k1 + 2, l1 + 1, 0);
-					world.setBlock(j1, k1 + 2, l1 + 2, 0);
-					world.setBlock(j1, k1 + 2, l1 + 3, 0);
-					world.setBlock(j1, k1 + 2, l1 + 4, 0);
-					world.setBlock(j1, k1 + 2, l1 - 1, 0);
-					world.setBlock(j1, k1 + 2, l1 - 2, 0);
-					world.setBlock(j1, k1 + 2, l1 - 3, 0);
-					world.setBlock(j1, k1 + 2, l1 - 4, 0);
-					world.setBlock(j1, k1 + 3, l1 + 1, 0);
-					world.setBlock(j1, k1 + 3, l1 + 2, 0);
-					world.setBlock(j1, k1 + 3, l1 + 3, 0);
-					world.setBlock(j1, k1 + 3, l1 + 4, 0);
-					world.setBlock(j1, k1 + 3, l1 - 1, 0);
-					world.setBlock(j1, k1 + 3, l1 - 2, 0);
-					world.setBlock(j1, k1 + 3, l1 - 3, 0);
-					world.setBlock(j1, k1 + 3, l1 - 4, 0);
-					world.setBlock(j1, k1 + 4, l1 + 1, 0);
-					world.setBlock(j1, k1 + 4, l1 + 2, 0);
-					world.setBlock(j1, k1 + 4, l1 + 3, 0);
-					world.setBlock(j1, k1 + 4, l1 + 4, 0);
-					world.setBlock(j1, k1 + 4, l1 - 1, 0);
-					world.setBlock(j1, k1 + 4, l1 - 2, 0);
-					world.setBlock(j1, k1 + 4, l1 - 3, 0);
-					world.setBlock(j1, k1 + 4, l1 - 4, 0);
+					for (int y = 1; y < 5; y++) {
+						for (int z = -4; z < 5; z++) {
+							world.setBlock(j1, k1 + y, l1 + z, 0);
+						}
+					}
 					world.setBlock(j1, k1 + 1, l1 + 5, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1 + 1, l1 - 5, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1 + 2, l1 - 5, Block.cobblestone.blockID);
@@ -631,14 +314,10 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 3, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1, l1 - 4, Block.cobblestone.blockID);
 					for (int u = 0; u < 5; u++) {
-						world.setBlock(j1, k1 + 1, l1 + u, 0);
-						world.setBlock(j1, k1 + 2, l1 + u, 0);
-						world.setBlock(j1, k1 + 3, l1 + u, 0);
-						world.setBlock(j1, k1 + 4, l1 + u, 0);
-						world.setBlock(j1, k1 + 1, l1 - u, 0);
-						world.setBlock(j1, k1 + 2, l1 - u, 0);
-						world.setBlock(j1, k1 + 3, l1 - u, 0);
-						world.setBlock(j1, k1 + 4, l1 - u, 0);
+						for (int y = 1; y < 5; y++) {
+							world.setBlock(j1, k1 + y, l1 + u, 0);
+							world.setBlock(j1, k1 + y, l1 - u, 0);
+						}
 					}
 					world.setBlock(j1, k1 + 1, l1 + 5, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1 + 2, l1 + 5, Block.cobblestone.blockID);
@@ -675,14 +354,10 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 3, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 4, Block.cobblestone.blockID);
 					for (int u = 0; u < 5; u++) {
-						world.setBlock(j1, k1 + 1, l1 + u, 0);
-						world.setBlock(j1, k1 + 2, l1 + u, 0);
-						world.setBlock(j1, k1 + 3, l1 + u, 0);
-						world.setBlock(j1, k1 + 4, l1 + u, 0);
-						world.setBlock(j1, k1 + 1, l1 - u, 0);
-						world.setBlock(j1, k1 + 2, l1 - u, 0);
-						world.setBlock(j1, k1 + 3, l1 - u, 0);
-						world.setBlock(j1, k1 + 4, l1 - u, 0);
+						for (int y = 1; y < 5; y++) {
+							world.setBlock(j1, k1 + y, l1 + u, 0);
+							world.setBlock(j1, k1 + y, l1 - u, 0);
+						}
 					}
 					world.setBlock(j1, k1 + 2, l1 + 5, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 1, l1 - 5, Block.cobblestoneMossy.blockID);
@@ -707,14 +382,10 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 3, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1, l1 - 4, Block.cobblestone.blockID);
 					for (int u = 0; u < 5; u++) {
-						world.setBlock(j1, k1 + 1, l1 + u, 0);
-						world.setBlock(j1, k1 + 2, l1 + u, 0);
-						world.setBlock(j1, k1 + 3, l1 + u, 0);
-						world.setBlock(j1, k1 + 4, l1 + u, 0);
-						world.setBlock(j1, k1 + 1, l1 - u, 0);
-						world.setBlock(j1, k1 + 2, l1 - u, 0);
-						world.setBlock(j1, k1 + 3, l1 - u, 0);
-						world.setBlock(j1, k1 + 4, l1 - u, 0);
+						for (int y = 1; y < 5; y++) {
+							world.setBlock(j1, k1 + y, l1 + u, 0);
+							world.setBlock(j1, k1 + y, l1 - u, 0);
+						}
 					}
 					world.setBlock(j1, k1 + 1, l1 + 5, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 2, l1 + 5, Block.cobblestoneMossy.blockID);
@@ -729,7 +400,7 @@ public class StructureMysticDungeon extends WorldGenerator {
 								spawner.getSpawnerLogic().setMobID("Zombie");
 							}
 							world.setBlock(j1, k1 + 2, l1 + 1, Block.chest.blockID);
-							fillWithRares(world.getBlockTileEntity(j1, k1 + 2, l1 + 1));
+							ChestFiller.fillWithRares(world.getBlockTileEntity(j1, k1 + 2, l1 + 1));
 							world.setBlock(j1, k1 + 3, l1 + 1, Block.mobSpawner.blockID);
 							TileEntityMobSpawner spawnerII = (TileEntityMobSpawner) world.getBlockTileEntity(j1, k1 + 3, l1 + 1);
 							if (spawnerII != null) {
@@ -756,14 +427,10 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 3, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 4, Block.cobblestone.blockID);
 					for (int u = 0; u < 5; u++) {
-						world.setBlock(j1, k1 + 1, l1 + u, 0);
-						world.setBlock(j1, k1 + 2, l1 + u, 0);
-						world.setBlock(j1, k1 + 3, l1 + u, 0);
-						world.setBlock(j1, k1 + 4, l1 + u, 0);
-						world.setBlock(j1, k1 + 1, l1 - u, 0);
-						world.setBlock(j1, k1 + 2, l1 - u, 0);
-						world.setBlock(j1, k1 + 3, l1 - u, 0);
-						world.setBlock(j1, k1 + 4, l1 - u, 0);
+						for (int y = 1; y < 5; y++) {
+							world.setBlock(j1, k1 + y, l1 + u, 0);
+							world.setBlock(j1, k1 + y, l1 - u, 0);
+						}
 					}
 					world.setBlock(j1, k1 + 1, l1 + 5, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 2, l1 + 5, Block.cobblestoneMossy.blockID);
@@ -796,14 +463,10 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 3, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 4, Block.cobblestoneMossy.blockID);
 					for (int u = 0; u < 5; u++) {
-						world.setBlock(j1, k1 + 1, l1 + u, 0);
-						world.setBlock(j1, k1 + 2, l1 + u, 0);
-						world.setBlock(j1, k1 + 3, l1 + u, 0);
-						world.setBlock(j1, k1 + 4, l1 + u, 0);
-						world.setBlock(j1, k1 + 1, l1 - u, 0);
-						world.setBlock(j1, k1 + 2, l1 - u, 0);
-						world.setBlock(j1, k1 + 3, l1 - u, 0);
-						world.setBlock(j1, k1 + 4, l1 - u, 0);
+						for (int y = 1; y < 5; y++) {
+							world.setBlock(j1, k1 + y, l1 + u, 0);
+							world.setBlock(j1, k1 + y, l1 - u, 0);
+						}
 					}
 					world.setBlock(j1, k1 + 1, l1 + 5, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 2, l1 + 5, Block.cobblestoneMossy.blockID);
@@ -848,14 +511,10 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 3, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 4, Block.cobblestoneMossy.blockID);
 					for (int u = 0; u < 5; u++) {
-						world.setBlock(j1, k1 + 1, l1 + u, 0);
-						world.setBlock(j1, k1 + 2, l1 + u, 0);
-						world.setBlock(j1, k1 + 3, l1 + u, 0);
-						world.setBlock(j1, k1 + 4, l1 + u, 0);
-						world.setBlock(j1, k1 + 1, l1 - u, 0);
-						world.setBlock(j1, k1 + 2, l1 - u, 0);
-						world.setBlock(j1, k1 + 3, l1 - u, 0);
-						world.setBlock(j1, k1 + 4, l1 - u, 0);
+						for (int y = 1; y < 5; y++) {
+							world.setBlock(j1, k1 + y, l1 + u, 0);
+							world.setBlock(j1, k1 + y, l1 - u, 0);
+						}
 					}
 					world.setBlock(j1, k1 + 1, l1 + 5, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 2, l1 + 5, Block.cobblestoneMossy.blockID);
@@ -884,14 +543,10 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 3, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1, l1 - 4, Block.cobblestoneMossy.blockID);
 					for (int u = 0; u < 5; u++) {
-						world.setBlock(j1, k1 + 1, l1 + u, 0);
-						world.setBlock(j1, k1 + 2, l1 + u, 0);
-						world.setBlock(j1, k1 + 3, l1 + u, 0);
-						world.setBlock(j1, k1 + 4, l1 + u, 0);
-						world.setBlock(j1, k1 + 1, l1 - u, 0);
-						world.setBlock(j1, k1 + 2, l1 - u, 0);
-						world.setBlock(j1, k1 + 3, l1 - u, 0);
-						world.setBlock(j1, k1 + 4, l1 - u, 0);
+						for (int y = 1; y < 5; y++) {
+							world.setBlock(j1, k1 + y, l1 + u, 0);
+							world.setBlock(j1, k1 + y, l1 - u, 0);
+						}
 					}
 					world.setBlock(j1, k1 + 1, l1 + 5, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 2, l1 + 5, Block.cobblestone.blockID);
@@ -900,15 +555,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 					if (l3 == 1) {
 						int i7 = random.nextInt(100);
 						if (i7 <= 60) {
-							world.setBlock(j1, k1 + 1, l1 + 1, Block.bookShelf.blockID);
-							world.setBlock(j1, k1 + 2, l1 + 1, Block.bookShelf.blockID);
-							world.setBlock(j1, k1 + 3, l1 + 1, Block.bookShelf.blockID);
-							world.setBlock(j1, k1 + 1, l1 + 2, Block.bookShelf.blockID);
-							world.setBlock(j1, k1 + 2, l1 + 2, Block.bookShelf.blockID);
-							world.setBlock(j1, k1 + 3, l1 + 2, Block.bookShelf.blockID);
-							world.setBlock(j1, k1 + 1, l1 + 3, Block.bookShelf.blockID);
-							world.setBlock(j1, k1 + 2, l1 + 3, Block.bookShelf.blockID);
-							world.setBlock(j1, k1 + 3, l1 + 3, Block.bookShelf.blockID);
+							for (int y = 1; y < 4; y++) {
+								for (int z = 1; z < 4; z++) {
+									world.setBlock(j1, k1 + y, l1 + z, Block.bookShelf.blockID);
+								}
+							}
 						}
 					}
 					if (l3 == 2) {
@@ -946,7 +597,7 @@ public class StructureMysticDungeon extends WorldGenerator {
 						int j11 = random.nextInt(100);
 						if (j11 <= 15) {
 							world.setBlock(j1 - 5, k1 + 1, l1 - 2, Block.chest.blockID);
-							fillWithValuables(world.getBlockTileEntity(j1 - 5, k1 + 1, l1 - 2));
+							ChestFiller.fillWithValuables(world.getBlockTileEntity(j1 - 5, k1 + 1, l1 - 2));
 							world.setBlock(j1 - 5, k1 + 1, l1 - 3, 0);
 						}
 					}
@@ -961,14 +612,10 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 3, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1, l1 - 4, Block.cobblestone.blockID);
 					for (int u = 0; u < 5; u++) {
-						world.setBlock(j1, k1 + 1, l1 + u, 0);
-						world.setBlock(j1, k1 + 2, l1 + u, 0);
-						world.setBlock(j1, k1 + 3, l1 + u, 0);
-						world.setBlock(j1, k1 + 4, l1 + u, 0);
-						world.setBlock(j1, k1 + 1, l1 - u, 0);
-						world.setBlock(j1, k1 + 2, l1 - u, 0);
-						world.setBlock(j1, k1 + 3, l1 - u, 0);
-						world.setBlock(j1, k1 + 4, l1 - u, 0);
+						for (int y = 1; y < 5; y++) {
+							world.setBlock(j1, k1 + y, l1 + u, 0);
+							world.setBlock(j1, k1 + y, l1 - u, 0);
+						}
 					}
 					world.setBlock(j1, k1 + 2, l1 - 5, Block.cobblestone.blockID);
 					int k7 = random.nextInt(100);
@@ -1029,16 +676,10 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 7, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 8, Block.cobblestone.blockID);
 					for (int u = 0; u < 9; u++) {
-						world.setBlock(j1, k1 + 1, l1 + u, 0);
-						world.setBlock(j1, k1 + 2, l1 + u, 0);
-						world.setBlock(j1, k1 + 3, l1 + u, 0);
-						world.setBlock(j1, k1 + 4, l1 + u, 0);
-						world.setBlock(j1, k1 + 5, l1 + u, 0);
-						world.setBlock(j1, k1 + 1, l1 - u, 0);
-						world.setBlock(j1, k1 + 2, l1 - u, 0);
-						world.setBlock(j1, k1 + 3, l1 - u, 0);
-						world.setBlock(j1, k1 + 4, l1 - u, 0);
-						world.setBlock(j1, k1 + 5, l1 - u, 0);
+						for (int y = 1; y < 6; y++) {
+							world.setBlock(j1, k1 + y, l1 + u, 0);
+							world.setBlock(j1, k1 + y, l1 - u, 0);
+						}
 					}
 					world.setBlock(j1, k1 + 1, l1 + 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 2, l1 + 9, Block.cobblestoneMossy.blockID);
@@ -1047,23 +688,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1 + 3, l1 - 9, Block.cobblestoneMossy.blockID);
 					int i4 = random.nextInt(100);
 					if (i4 <= 60) {
-						world.setBlock(j1, k1, l1, 0);
-						world.setBlock(j1, k1 - 1, l1, 0);
-						world.setBlock(j1, k1 - 2, l1, 0);
-						world.setBlock(j1, k1 - 3, l1, 0);
-						world.setBlock(j1, k1 - 4, l1, 0);
-						world.setBlock(j1, k1 - 5, l1, 0);
-						world.setBlock(j1, k1 - 6, l1, 0);
-						world.setBlock(j1, k1 - 7, l1, 0);
-						world.setBlock(j1, k1 - 8, l1, 0);
-						world.setBlock(j1, k1 - 9, l1, 0);
-						world.setBlock(j1, k1 - 10, l1, 0);
-						world.setBlock(j1, k1 - 11, l1, 0);
-						world.setBlock(j1, k1 - 12, l1, 0);
-						world.setBlock(j1, k1 - 13, l1, 0);
+						for (int y = 0; y < 15; y++) {
+							world.setBlock(j1 + 7, k1 - y, l1, 0);
+						}
 						world.setBlock(j1, k1 - 13, l1 + 1, 0);
 						world.setBlock(j1, k1 - 13, l1 - 1, 0);
-						world.setBlock(j1, k1 - 14, l1, 0);
 						world.setBlock(j1, k1 - 14, l1 + 1, 0);
 						world.setBlock(j1, k1 - 14, l1 - 1, 0);
 						world.setBlock(j1 + 1, k1 - 13, l1 + 1, 0);
@@ -1073,21 +702,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 					}
 					int j6 = random.nextInt(100);
 					if (j6 <= 70) {
-						world.setBlock(j1, k1, l1 + 6, 0);
-						world.setBlock(j1, k1 - 1, l1 + 6, 0);
-						world.setBlock(j1, k1 - 2, l1 + 6, 0);
-						world.setBlock(j1, k1 - 3, l1 + 6, 0);
-						world.setBlock(j1, k1 - 4, l1 + 6, 0);
-						world.setBlock(j1, k1 - 5, l1 + 6, 0);
-						world.setBlock(j1, k1 - 6, l1 + 6, 0);
-						world.setBlock(j1, k1 - 7, l1 + 6, 0);
-						world.setBlock(j1, k1 - 8, l1 + 6, 0);
-						world.setBlock(j1, k1 - 9, l1 + 6, 0);
-						world.setBlock(j1, k1 - 10, l1 + 6, 0);
-						world.setBlock(j1, k1 - 11, l1 + 6, 0);
+						for (int y = 0; y < 13; y++) {
+							world.setBlock(j1 + 7, k1 - y, l1 + 6, 0);
+						}
 						world.setBlock(j1, k1 - 11, l1 + 7, 0);
 						world.setBlock(j1, k1 - 11, l1 + 5, 0);
-						world.setBlock(j1, k1 - 12, l1 + 6, 0);
 						world.setBlock(j1, k1 - 12, l1 + 7, 0);
 						world.setBlock(j1, k1 - 12, l1 + 5, 0);
 						world.setBlock(j1 + 1, k1 - 11, l1 + 7, 0);
@@ -1097,25 +716,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 					}
 					int l7 = random.nextInt(100);
 					if (l7 <= 50) {
-						world.setBlock(j1 + 7, k1, l1 - 4, 0);
-						world.setBlock(j1 + 7, k1 - 1, l1 - 4, 0);
-						world.setBlock(j1 + 7, k1 - 2, l1 - 4, 0);
-						world.setBlock(j1 + 7, k1 - 3, l1 - 4, 0);
-						world.setBlock(j1 + 7, k1 - 4, l1 - 4, 0);
-						world.setBlock(j1 + 7, k1 - 5, l1 - 4, 0);
-						world.setBlock(j1 + 7, k1 - 6, l1 - 4, 0);
-						world.setBlock(j1 + 7, k1 - 7, l1 - 4, 0);
-						world.setBlock(j1 + 7, k1 - 8, l1 - 4, 0);
-						world.setBlock(j1 + 7, k1 - 9, l1 - 4, 0);
-						world.setBlock(j1 + 7, k1 - 10, l1 - 4, 0);
-						world.setBlock(j1 + 7, k1 - 11, l1 - 4, 0);
-						world.setBlock(j1 + 7, k1 - 12, l1 - 4, 0);
-						world.setBlock(j1 + 7, k1 - 13, l1 - 4, 0);
-						world.setBlock(j1 + 7, k1 - 14, l1 - 4, 0);
-						world.setBlock(j1 + 7, k1 - 15, l1 - 4, 0);
+						for (int y = 0; y < 17; y++) {
+							world.setBlock(j1 + 7, k1 - y, l1 - 4, 0);
+						}
 						world.setBlock(j1 + 7, k1 - 15, l1 - 5, 0);
 						world.setBlock(j1 + 7, k1 - 15, l1 - 3, 0);
-						world.setBlock(j1 + 7, k1 - 16, l1 - 4, 0);
 						world.setBlock(j1 + 7, k1 - 16, l1 - 5, 0);
 						world.setBlock(j1 + 7, k1 - 16, l1 - 3, 0);
 						world.setBlock(j1 + 8, k1 - 15, l1 - 5, 0);
@@ -1141,115 +746,29 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 6, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1, l1 - 7, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1, l1 - 8, Block.cobblestone.blockID);
-					world.setBlock(j1, k1 + 1, l1, 0);
-					world.setBlock(j1, k1 + 2, l1, 0);
-					world.setBlock(j1, k1 + 3, l1, 0);
-					world.setBlock(j1, k1 + 4, l1, 0);
-					world.setBlock(j1, k1 + 5, l1, 0);
 					world.setBlock(j1, k1 + 6, l1, 0);
-					world.setBlock(j1, k1 + 7, l1, 0);
 					world.setBlock(j1, k1 + 6, l1 + 1, 0);
 					world.setBlock(j1, k1 + 6, l1 - 1, 0);
 					world.setBlock(j1, k1 + 6, l1 + 2, 0);
 					world.setBlock(j1, k1 + 6, l1 - 2, 0);
 					world.setBlock(j1, k1 + 7, l1 + 1, 0);
+					world.setBlock(j1, k1 + 7, l1, 0);
 					world.setBlock(j1, k1 + 7, l1 - 1, 0);
 					world.setBlock(j1, k1 + 8, l1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 2, 0);
-					world.setBlock(j1, k1 + 1, l1 + 3, 0);
-					world.setBlock(j1, k1 + 1, l1 + 4, 0);
-					world.setBlock(j1, k1 + 1, l1 + 5, 0);
-					world.setBlock(j1, k1 + 1, l1 + 6, 0);
-					world.setBlock(j1, k1 + 1, l1 + 7, 0);
-					world.setBlock(j1, k1 + 1, l1 + 8, 0);
-					world.setBlock(j1, k1 + 1, l1 - 1, 0);
-					world.setBlock(j1, k1 + 1, l1 - 2, 0);
-					world.setBlock(j1, k1 + 1, l1 - 3, 0);
-					world.setBlock(j1, k1 + 1, l1 - 4, 0);
-					world.setBlock(j1, k1 + 1, l1 - 5, 0);
-					world.setBlock(j1, k1 + 1, l1 - 6, 0);
-					world.setBlock(j1, k1 + 1, l1 - 7, 0);
-					world.setBlock(j1, k1 + 1, l1 - 8, 0);
-					world.setBlock(j1, k1 + 2, l1 + 1, 0);
-					world.setBlock(j1, k1 + 2, l1 + 2, 0);
-					world.setBlock(j1, k1 + 2, l1 + 3, 0);
-					world.setBlock(j1, k1 + 2, l1 + 4, 0);
-					world.setBlock(j1, k1 + 2, l1 + 5, 0);
-					world.setBlock(j1, k1 + 2, l1 + 6, 0);
-					world.setBlock(j1, k1 + 2, l1 + 7, 0);
-					world.setBlock(j1, k1 + 2, l1 + 8, 0);
-					world.setBlock(j1, k1 + 2, l1 - 1, 0);
-					world.setBlock(j1, k1 + 2, l1 - 2, 0);
-					world.setBlock(j1, k1 + 2, l1 - 3, 0);
-					world.setBlock(j1, k1 + 2, l1 - 4, 0);
-					world.setBlock(j1, k1 + 2, l1 - 5, 0);
-					world.setBlock(j1, k1 + 2, l1 - 6, 0);
-					world.setBlock(j1, k1 + 2, l1 - 7, 0);
-					world.setBlock(j1, k1 + 2, l1 - 8, 0);
-					world.setBlock(j1, k1 + 3, l1 + 1, 0);
-					world.setBlock(j1, k1 + 3, l1 + 2, 0);
-					world.setBlock(j1, k1 + 3, l1 + 3, 0);
-					world.setBlock(j1, k1 + 3, l1 + 4, 0);
-					world.setBlock(j1, k1 + 3, l1 + 5, 0);
-					world.setBlock(j1, k1 + 3, l1 + 6, 0);
-					world.setBlock(j1, k1 + 3, l1 + 7, 0);
-					world.setBlock(j1, k1 + 3, l1 + 8, 0);
-					world.setBlock(j1, k1 + 3, l1 - 1, 0);
-					world.setBlock(j1, k1 + 3, l1 - 2, 0);
-					world.setBlock(j1, k1 + 3, l1 - 3, 0);
-					world.setBlock(j1, k1 + 3, l1 - 4, 0);
-					world.setBlock(j1, k1 + 3, l1 - 5, 0);
-					world.setBlock(j1, k1 + 3, l1 - 6, 0);
-					world.setBlock(j1, k1 + 3, l1 - 7, 0);
-					world.setBlock(j1, k1 + 3, l1 - 8, 0);
-					world.setBlock(j1, k1 + 4, l1 + 1, 0);
-					world.setBlock(j1, k1 + 4, l1 + 2, 0);
-					world.setBlock(j1, k1 + 4, l1 + 3, 0);
-					world.setBlock(j1, k1 + 4, l1 + 4, 0);
-					world.setBlock(j1, k1 + 4, l1 + 5, 0);
-					world.setBlock(j1, k1 + 4, l1 + 6, 0);
-					world.setBlock(j1, k1 + 4, l1 + 7, 0);
-					world.setBlock(j1, k1 + 4, l1 + 8, 0);
-					world.setBlock(j1, k1 + 4, l1 - 1, 0);
-					world.setBlock(j1, k1 + 4, l1 - 2, 0);
-					world.setBlock(j1, k1 + 4, l1 - 3, 0);
-					world.setBlock(j1, k1 + 4, l1 - 4, 0);
-					world.setBlock(j1, k1 + 4, l1 - 5, 0);
-					world.setBlock(j1, k1 + 4, l1 - 6, 0);
-					world.setBlock(j1, k1 + 4, l1 - 7, 0);
-					world.setBlock(j1, k1 + 4, l1 - 8, 0);
-					world.setBlock(j1, k1 + 5, l1 + 1, 0);
-					world.setBlock(j1, k1 + 5, l1 + 2, 0);
-					world.setBlock(j1, k1 + 5, l1 + 3, 0);
-					world.setBlock(j1, k1 + 5, l1 + 4, 0);
-					world.setBlock(j1, k1 + 5, l1 + 5, 0);
-					world.setBlock(j1, k1 + 5, l1 + 6, 0);
-					world.setBlock(j1, k1 + 5, l1 + 7, 0);
-					world.setBlock(j1, k1 + 5, l1 + 8, 0);
-					world.setBlock(j1, k1 + 5, l1 - 1, 0);
-					world.setBlock(j1, k1 + 5, l1 - 2, 0);
-					world.setBlock(j1, k1 + 5, l1 - 3, 0);
-					world.setBlock(j1, k1 + 5, l1 - 4, 0);
-					world.setBlock(j1, k1 + 5, l1 - 5, 0);
-					world.setBlock(j1, k1 + 5, l1 - 6, 0);
-					world.setBlock(j1, k1 + 5, l1 - 7, 0);
-					world.setBlock(j1, k1 + 5, l1 - 8, 0);
+					for (int y = 1; y < 6; y++) {
+						for (int z = -8; z < 9; z++) {
+							world.setBlock(j1, k1 + y, l1 + 1, 0);
+						}
+					}
 					world.setBlock(j1, k1 + 1, l1 + 9, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1 + 2, l1 + 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 3, l1 + 9, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1 + 1, l1 - 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 2, l1 - 9, Block.cobblestoneMossy.blockID);
-					world.setBlock(j1, k1 + 1, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 2, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 3, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 4, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 5, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 1, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 2, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 3, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 4, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 5, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
+					for (int y = 1; y < 6; y++) {
+						world.setBlock(j1, k1 + y, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
+						world.setBlock(j1, k1 + y, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
+					}
 					j1++;
 					world.setBlock(j1, k1, l1, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1, l1 + 1, Block.cobblestoneMossy.blockID);
@@ -1283,16 +802,10 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1 + 7, l1 - 1, 0);
 					world.setBlock(j1, k1 + 8, l1, 0);
 					for (int u = 1; u < 9; u++) {
-						world.setBlock(j1, k1 + 1, l1 + u, 0);
-						world.setBlock(j1, k1 + 2, l1 + u, 0);
-						world.setBlock(j1, k1 + 3, l1 + u, 0);
-						world.setBlock(j1, k1 + 4, l1 + u, 0);
-						world.setBlock(j1, k1 + 5, l1 + u, 0);
-						world.setBlock(j1, k1 + 1, l1 - u, 0);
-						world.setBlock(j1, k1 + 2, l1 - u, 0);
-						world.setBlock(j1, k1 + 3, l1 - u, 0);
-						world.setBlock(j1, k1 + 4, l1 - u, 0);
-						world.setBlock(j1, k1 + 5, l1 - u, 0);
+						for (int y = 1; y < 6; y++) {
+							world.setBlock(j1, k1 + y, l1 + u, 0);
+							world.setBlock(j1, k1 + y, l1 - u, 0);
+						}
 					}
 					world.setBlock(j1, k1 + 2, l1 + 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 1, l1 - 9, Block.cobblestoneMossy.blockID);
@@ -1322,137 +835,41 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 6, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1, l1 - 7, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1, l1 - 8, Block.cobblestoneMossy.blockID);
-					world.setBlock(j1, k1 + 1, l1, 0);
-					world.setBlock(j1, k1 + 2, l1, 0);
-					world.setBlock(j1, k1 + 3, l1, 0);
-					world.setBlock(j1, k1 + 4, l1, 0);
-					world.setBlock(j1, k1 + 5, l1, 0);
 					world.setBlock(j1, k1 + 6, l1, 0);
-					world.setBlock(j1, k1 + 7, l1, 0);
 					world.setBlock(j1, k1 + 6, l1 + 1, 0);
 					world.setBlock(j1, k1 + 6, l1 - 1, 0);
 					world.setBlock(j1, k1 + 6, l1 + 2, 0);
 					world.setBlock(j1, k1 + 6, l1 - 2, 0);
+					world.setBlock(j1, k1 + 7, l1, 0);
 					world.setBlock(j1, k1 + 7, l1 + 1, 0);
 					world.setBlock(j1, k1 + 7, l1 - 1, 0);
 					world.setBlock(j1, k1 + 8, l1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 2, 0);
-					world.setBlock(j1, k1 + 1, l1 + 3, 0);
-					world.setBlock(j1, k1 + 1, l1 + 4, 0);
-					world.setBlock(j1, k1 + 1, l1 + 5, 0);
-					world.setBlock(j1, k1 + 1, l1 + 6, 0);
-					world.setBlock(j1, k1 + 1, l1 + 7, 0);
-					world.setBlock(j1, k1 + 1, l1 + 8, 0);
-					world.setBlock(j1, k1 + 1, l1 - 1, 0);
-					world.setBlock(j1, k1 + 1, l1 - 2, 0);
-					world.setBlock(j1, k1 + 1, l1 - 3, 0);
-					world.setBlock(j1, k1 + 1, l1 - 4, 0);
-					world.setBlock(j1, k1 + 1, l1 - 5, 0);
-					world.setBlock(j1, k1 + 1, l1 - 6, 0);
-					world.setBlock(j1, k1 + 1, l1 - 7, 0);
-					world.setBlock(j1, k1 + 1, l1 - 8, 0);
-					world.setBlock(j1, k1 + 2, l1 + 1, 0);
-					world.setBlock(j1, k1 + 2, l1 + 2, 0);
-					world.setBlock(j1, k1 + 2, l1 + 3, 0);
-					world.setBlock(j1, k1 + 2, l1 + 4, 0);
-					world.setBlock(j1, k1 + 2, l1 + 5, 0);
-					world.setBlock(j1, k1 + 2, l1 + 6, 0);
-					world.setBlock(j1, k1 + 2, l1 + 7, 0);
-					world.setBlock(j1, k1 + 2, l1 + 8, 0);
-					world.setBlock(j1, k1 + 2, l1 - 1, 0);
-					world.setBlock(j1, k1 + 2, l1 - 2, 0);
-					world.setBlock(j1, k1 + 2, l1 - 3, 0);
-					world.setBlock(j1, k1 + 2, l1 - 4, 0);
-					world.setBlock(j1, k1 + 2, l1 - 5, 0);
-					world.setBlock(j1, k1 + 2, l1 - 6, 0);
-					world.setBlock(j1, k1 + 2, l1 - 7, 0);
-					world.setBlock(j1, k1 + 2, l1 - 8, 0);
-					world.setBlock(j1, k1 + 3, l1 + 1, 0);
-					world.setBlock(j1, k1 + 3, l1 + 2, 0);
-					world.setBlock(j1, k1 + 3, l1 + 3, 0);
-					world.setBlock(j1, k1 + 3, l1 + 4, 0);
-					world.setBlock(j1, k1 + 3, l1 + 5, 0);
-					world.setBlock(j1, k1 + 3, l1 + 6, 0);
-					world.setBlock(j1, k1 + 3, l1 + 7, 0);
-					world.setBlock(j1, k1 + 3, l1 + 8, 0);
-					world.setBlock(j1, k1 + 3, l1 - 1, 0);
-					world.setBlock(j1, k1 + 3, l1 - 2, 0);
-					world.setBlock(j1, k1 + 3, l1 - 3, 0);
-					world.setBlock(j1, k1 + 3, l1 - 4, 0);
-					world.setBlock(j1, k1 + 3, l1 - 5, 0);
-					world.setBlock(j1, k1 + 3, l1 - 6, 0);
-					world.setBlock(j1, k1 + 3, l1 - 7, 0);
-					world.setBlock(j1, k1 + 3, l1 - 8, 0);
-					world.setBlock(j1, k1 + 4, l1 + 1, 0);
-					world.setBlock(j1, k1 + 4, l1 + 2, 0);
-					world.setBlock(j1, k1 + 4, l1 + 3, 0);
-					world.setBlock(j1, k1 + 4, l1 + 4, 0);
-					world.setBlock(j1, k1 + 4, l1 + 5, 0);
-					world.setBlock(j1, k1 + 4, l1 + 6, 0);
-					world.setBlock(j1, k1 + 4, l1 + 7, 0);
-					world.setBlock(j1, k1 + 4, l1 + 8, 0);
-					world.setBlock(j1, k1 + 4, l1 - 1, 0);
-					world.setBlock(j1, k1 + 4, l1 - 2, 0);
-					world.setBlock(j1, k1 + 4, l1 - 3, 0);
-					world.setBlock(j1, k1 + 4, l1 - 4, 0);
-					world.setBlock(j1, k1 + 4, l1 - 5, 0);
-					world.setBlock(j1, k1 + 4, l1 - 6, 0);
-					world.setBlock(j1, k1 + 4, l1 - 7, 0);
-					world.setBlock(j1, k1 + 4, l1 - 8, 0);
-					world.setBlock(j1, k1 + 5, l1 + 1, 0);
-					world.setBlock(j1, k1 + 5, l1 + 2, 0);
-					world.setBlock(j1, k1 + 5, l1 + 3, 0);
-					world.setBlock(j1, k1 + 5, l1 + 4, 0);
-					world.setBlock(j1, k1 + 5, l1 + 5, 0);
-					world.setBlock(j1, k1 + 5, l1 + 6, 0);
-					world.setBlock(j1, k1 + 5, l1 + 7, 0);
-					world.setBlock(j1, k1 + 5, l1 + 8, 0);
-					world.setBlock(j1, k1 + 5, l1 - 1, 0);
-					world.setBlock(j1, k1 + 5, l1 - 2, 0);
-					world.setBlock(j1, k1 + 5, l1 - 3, 0);
-					world.setBlock(j1, k1 + 5, l1 - 4, 0);
-					world.setBlock(j1, k1 + 5, l1 - 5, 0);
-					world.setBlock(j1, k1 + 5, l1 - 6, 0);
-					world.setBlock(j1, k1 + 5, l1 - 7, 0);
-					world.setBlock(j1, k1 + 5, l1 - 8, 0);
+					for (int y = 1; y < 6; y++) {
+						for (int z = -8; z < 9; z++) {
+							world.setBlock(j1, k1 + y, l1 + 1, 0);
+						}
+					}
 					world.setBlock(j1, k1 + 1, l1 + 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 2, l1 + 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 3, l1 + 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 1, l1 - 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 2, l1 - 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 1, l1 + 3, Block.stoneSingleSlab.blockID);
-					world.setBlock(j1, k1, l1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 1, l1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 2, l1, Block.obsidian.blockID);
-					world.setBlock(j1, k1, l1 + 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 1, l1 + 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 2, l1 + 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1, l1 + 2, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 1, l1 + 2, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 2, l1 + 2, Block.obsidian.blockID);
-					world.setBlock(j1, k1, l1 - 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 1, l1 - 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 2, l1 - 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1, l1 - 2, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 1, l1 - 2, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 2, l1 - 2, Block.obsidian.blockID);
+					for (int z = -2; z < 3; z++) {
+						world.setBlock(j1, k1, l1 + z, Block.obsidian.blockID);
+						world.setBlock(j1, k1 + 1, l1 + z, Block.obsidian.blockID);
+						world.setBlock(j1, k1 + 2, l1 + z, Block.obsidian.blockID);
+					}
 					world.setBlock(j1, k1 + 1, l1 - 3, Block.stoneSingleSlab.blockID);
-					world.setBlock(j1, k1 + 1, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 2, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 3, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 4, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 5, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 1, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
+					for (int y = 1; y < 6; y++) {
+						world.setBlock(j1, k1 + y, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
+						world.setBlock(j1, k1 + y, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
+					}
 					int k8 = random.nextInt(100);
 					if (k8 <= 15) {
 						world.setBlock(j1, k1 + 1, l1 - 7, Block.chest.blockID);
-						fillWithValuables(world.getBlockTileEntity(j1, k1 + 1, l1 - 7));
+						ChestFiller.fillWithValuables(world.getBlockTileEntity(j1, k1 + 1, l1 - 7));
 					}
-					world.setBlock(j1, k1 + 2, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 3, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 4, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 5, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
 					j1++;
 					world.setBlock(j1, k1, l1, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1, l1 + 1, Block.cobblestoneMossy.blockID);
@@ -1471,122 +888,34 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 6, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 7, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 8, Block.cobblestone.blockID);
-					world.setBlock(j1, k1 + 1, l1, 0);
-					world.setBlock(j1, k1 + 2, l1, 0);
-					world.setBlock(j1, k1 + 3, l1, 0);
-					world.setBlock(j1, k1 + 4, l1, 0);
-					world.setBlock(j1, k1 + 5, l1, 0);
 					world.setBlock(j1, k1 + 6, l1, 0);
-					world.setBlock(j1, k1 + 7, l1, 0);
 					world.setBlock(j1, k1 + 6, l1 + 1, 0);
 					world.setBlock(j1, k1 + 6, l1 - 1, 0);
 					world.setBlock(j1, k1 + 6, l1 + 2, 0);
 					world.setBlock(j1, k1 + 6, l1 - 2, 0);
+					world.setBlock(j1, k1 + 7, l1, 0);
 					world.setBlock(j1, k1 + 7, l1 + 1, 0);
 					world.setBlock(j1, k1 + 7, l1 - 1, 0);
 					world.setBlock(j1, k1 + 8, l1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 2, 0);
-					world.setBlock(j1, k1 + 1, l1 + 3, 0);
-					world.setBlock(j1, k1 + 1, l1 + 4, 0);
-					world.setBlock(j1, k1 + 1, l1 + 5, 0);
-					world.setBlock(j1, k1 + 1, l1 + 6, 0);
-					world.setBlock(j1, k1 + 1, l1 + 7, 0);
-					world.setBlock(j1, k1 + 1, l1 + 8, 0);
-					world.setBlock(j1, k1 + 1, l1 - 1, 0);
-					world.setBlock(j1, k1 + 1, l1 - 2, 0);
-					world.setBlock(j1, k1 + 1, l1 - 3, 0);
-					world.setBlock(j1, k1 + 1, l1 - 4, 0);
-					world.setBlock(j1, k1 + 1, l1 - 5, 0);
-					world.setBlock(j1, k1 + 1, l1 - 6, 0);
-					world.setBlock(j1, k1 + 1, l1 - 7, 0);
-					world.setBlock(j1, k1 + 1, l1 - 8, 0);
-					world.setBlock(j1, k1 + 2, l1 + 1, 0);
-					world.setBlock(j1, k1 + 2, l1 + 2, 0);
-					world.setBlock(j1, k1 + 2, l1 + 3, 0);
-					world.setBlock(j1, k1 + 2, l1 + 4, 0);
-					world.setBlock(j1, k1 + 2, l1 + 5, 0);
-					world.setBlock(j1, k1 + 2, l1 + 6, 0);
-					world.setBlock(j1, k1 + 2, l1 + 7, 0);
-					world.setBlock(j1, k1 + 2, l1 + 8, 0);
-					world.setBlock(j1, k1 + 2, l1 - 1, 0);
-					world.setBlock(j1, k1 + 2, l1 - 2, 0);
-					world.setBlock(j1, k1 + 2, l1 - 3, 0);
-					world.setBlock(j1, k1 + 2, l1 - 4, 0);
-					world.setBlock(j1, k1 + 2, l1 - 5, 0);
-					world.setBlock(j1, k1 + 2, l1 - 6, 0);
-					world.setBlock(j1, k1 + 2, l1 - 7, 0);
-					world.setBlock(j1, k1 + 2, l1 - 8, 0);
-					world.setBlock(j1, k1 + 3, l1 + 1, 0);
-					world.setBlock(j1, k1 + 3, l1 + 2, 0);
-					world.setBlock(j1, k1 + 3, l1 + 3, 0);
-					world.setBlock(j1, k1 + 3, l1 + 4, 0);
-					world.setBlock(j1, k1 + 3, l1 + 5, 0);
-					world.setBlock(j1, k1 + 3, l1 + 6, 0);
-					world.setBlock(j1, k1 + 3, l1 + 7, 0);
-					world.setBlock(j1, k1 + 3, l1 + 8, 0);
-					world.setBlock(j1, k1 + 3, l1 - 1, 0);
-					world.setBlock(j1, k1 + 3, l1 - 2, 0);
-					world.setBlock(j1, k1 + 3, l1 - 3, 0);
-					world.setBlock(j1, k1 + 3, l1 - 4, 0);
-					world.setBlock(j1, k1 + 3, l1 - 5, 0);
-					world.setBlock(j1, k1 + 3, l1 - 6, 0);
-					world.setBlock(j1, k1 + 3, l1 - 7, 0);
-					world.setBlock(j1, k1 + 3, l1 - 8, 0);
-					world.setBlock(j1, k1 + 4, l1 + 1, 0);
-					world.setBlock(j1, k1 + 4, l1 + 2, 0);
-					world.setBlock(j1, k1 + 4, l1 + 3, 0);
-					world.setBlock(j1, k1 + 4, l1 + 4, 0);
-					world.setBlock(j1, k1 + 4, l1 + 5, 0);
-					world.setBlock(j1, k1 + 4, l1 + 6, 0);
-					world.setBlock(j1, k1 + 4, l1 + 7, 0);
-					world.setBlock(j1, k1 + 4, l1 + 8, 0);
-					world.setBlock(j1, k1 + 4, l1 - 1, 0);
-					world.setBlock(j1, k1 + 4, l1 - 2, 0);
-					world.setBlock(j1, k1 + 4, l1 - 3, 0);
-					world.setBlock(j1, k1 + 4, l1 - 4, 0);
-					world.setBlock(j1, k1 + 4, l1 - 5, 0);
-					world.setBlock(j1, k1 + 4, l1 - 6, 0);
-					world.setBlock(j1, k1 + 4, l1 - 7, 0);
-					world.setBlock(j1, k1 + 4, l1 - 8, 0);
-					world.setBlock(j1, k1 + 5, l1 + 1, 0);
-					world.setBlock(j1, k1 + 5, l1 + 2, 0);
-					world.setBlock(j1, k1 + 5, l1 + 3, 0);
-					world.setBlock(j1, k1 + 5, l1 + 4, 0);
-					world.setBlock(j1, k1 + 5, l1 + 5, 0);
-					world.setBlock(j1, k1 + 5, l1 + 6, 0);
-					world.setBlock(j1, k1 + 5, l1 + 7, 0);
-					world.setBlock(j1, k1 + 5, l1 + 8, 0);
-					world.setBlock(j1, k1 + 5, l1 - 1, 0);
-					world.setBlock(j1, k1 + 5, l1 - 2, 0);
-					world.setBlock(j1, k1 + 5, l1 - 3, 0);
-					world.setBlock(j1, k1 + 5, l1 - 4, 0);
-					world.setBlock(j1, k1 + 5, l1 - 5, 0);
-					world.setBlock(j1, k1 + 5, l1 - 6, 0);
-					world.setBlock(j1, k1 + 5, l1 - 7, 0);
-					world.setBlock(j1, k1 + 5, l1 - 8, 0);
+					for (int y = 1; y < 6; y++) {
+						for (int z = -8; z < 9; z++) {
+							world.setBlock(j1, k1 + y, l1 + 1, 0);
+						}
+					}
 					world.setBlock(j1, k1 + 2, l1 + 9, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1 + 3, l1 + 9, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1 + 1, l1 - 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 2, l1 - 9, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1 + 4, l1 - 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 1, l1 + 3, Block.stoneSingleSlab.blockID);
-					world.setBlock(j1, k1, l1, Block.obsidian.blockID);
 					world.setBlock(j1, k1 + 1, l1, Block.chest.blockID);
-					fillWithValuables(world.getBlockTileEntity(j1, k1 + 1, l1));
-					world.setBlock(j1, k1 + 2, l1, Block.obsidian.blockID);
-					world.setBlock(j1, k1, l1 + 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 1, l1 + 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 2, l1 + 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1, l1 + 2, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 1, l1 + 2, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 2, l1 + 2, Block.obsidian.blockID);
-					world.setBlock(j1, k1, l1 - 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 1, l1 - 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 2, l1 - 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1, l1 - 2, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 1, l1 - 2, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 2, l1 - 2, Block.obsidian.blockID);
+					ChestFiller.fillWithValuables(world.getBlockTileEntity(j1, k1 + 1, l1));
+					for (int z = -2; z < 3; z++) {
+						world.setBlock(j1, k1, l1 + z, Block.obsidian.blockID);
+						if (z != 0)
+							world.setBlock(j1, k1 + 1, l1 + z, Block.obsidian.blockID);
+						world.setBlock(j1, k1 + 2, l1 + z, Block.obsidian.blockID);
+					}
 					world.setBlock(j1, k1 + 1, l1 - 3, Block.stoneSingleSlab.blockID);
 					int k9 = random.nextInt(100);
 					if (k9 <= 75) {
@@ -1621,130 +950,34 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 6, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 7, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 8, Block.cobblestone.blockID);
-					world.setBlock(j1, k1 + 1, l1, 0);
-					world.setBlock(j1, k1 + 2, l1, 0);
-					world.setBlock(j1, k1 + 3, l1, 0);
-					world.setBlock(j1, k1 + 4, l1, 0);
-					world.setBlock(j1, k1 + 5, l1, 0);
 					world.setBlock(j1, k1 + 6, l1, 0);
-					world.setBlock(j1, k1 + 7, l1, 0);
 					world.setBlock(j1, k1 + 6, l1 + 1, 0);
 					world.setBlock(j1, k1 + 6, l1 - 1, 0);
 					world.setBlock(j1, k1 + 6, l1 + 2, 0);
 					world.setBlock(j1, k1 + 6, l1 - 2, 0);
+					world.setBlock(j1, k1 + 7, l1, 0);
 					world.setBlock(j1, k1 + 7, l1 + 1, 0);
 					world.setBlock(j1, k1 + 7, l1 - 1, 0);
 					world.setBlock(j1, k1 + 8, l1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 2, 0);
-					world.setBlock(j1, k1 + 1, l1 + 3, 0);
-					world.setBlock(j1, k1 + 1, l1 + 4, 0);
-					world.setBlock(j1, k1 + 1, l1 + 5, 0);
-					world.setBlock(j1, k1 + 1, l1 + 6, 0);
-					world.setBlock(j1, k1 + 1, l1 + 7, 0);
-					world.setBlock(j1, k1 + 1, l1 + 8, 0);
-					world.setBlock(j1, k1 + 1, l1 - 1, 0);
-					world.setBlock(j1, k1 + 1, l1 - 2, 0);
-					world.setBlock(j1, k1 + 1, l1 - 3, 0);
-					world.setBlock(j1, k1 + 1, l1 - 4, 0);
-					world.setBlock(j1, k1 + 1, l1 - 5, 0);
-					world.setBlock(j1, k1 + 1, l1 - 6, 0);
-					world.setBlock(j1, k1 + 1, l1 - 7, 0);
-					world.setBlock(j1, k1 + 1, l1 - 8, 0);
-					world.setBlock(j1, k1 + 2, l1 + 1, 0);
-					world.setBlock(j1, k1 + 2, l1 + 2, 0);
-					world.setBlock(j1, k1 + 2, l1 + 3, 0);
-					world.setBlock(j1, k1 + 2, l1 + 4, 0);
-					world.setBlock(j1, k1 + 2, l1 + 5, 0);
-					world.setBlock(j1, k1 + 2, l1 + 6, 0);
-					world.setBlock(j1, k1 + 2, l1 + 7, 0);
-					world.setBlock(j1, k1 + 2, l1 + 8, 0);
-					world.setBlock(j1, k1 + 2, l1 - 1, 0);
-					world.setBlock(j1, k1 + 2, l1 - 2, 0);
-					world.setBlock(j1, k1 + 2, l1 - 3, 0);
-					world.setBlock(j1, k1 + 2, l1 - 4, 0);
-					world.setBlock(j1, k1 + 2, l1 - 5, 0);
-					world.setBlock(j1, k1 + 2, l1 - 6, 0);
-					world.setBlock(j1, k1 + 2, l1 - 7, 0);
-					world.setBlock(j1, k1 + 2, l1 - 8, 0);
-					world.setBlock(j1, k1 + 3, l1 + 1, 0);
-					world.setBlock(j1, k1 + 3, l1 + 2, 0);
-					world.setBlock(j1, k1 + 3, l1 + 3, 0);
-					world.setBlock(j1, k1 + 3, l1 + 4, 0);
-					world.setBlock(j1, k1 + 3, l1 + 5, 0);
-					world.setBlock(j1, k1 + 3, l1 + 6, 0);
-					world.setBlock(j1, k1 + 3, l1 + 7, 0);
-					world.setBlock(j1, k1 + 3, l1 + 8, 0);
-					world.setBlock(j1, k1 + 3, l1 - 1, 0);
-					world.setBlock(j1, k1 + 3, l1 - 2, 0);
-					world.setBlock(j1, k1 + 3, l1 - 3, 0);
-					world.setBlock(j1, k1 + 3, l1 - 4, 0);
-					world.setBlock(j1, k1 + 3, l1 - 5, 0);
-					world.setBlock(j1, k1 + 3, l1 - 6, 0);
-					world.setBlock(j1, k1 + 3, l1 - 7, 0);
-					world.setBlock(j1, k1 + 3, l1 - 8, 0);
-					world.setBlock(j1, k1 + 4, l1 + 1, 0);
-					world.setBlock(j1, k1 + 4, l1 + 2, 0);
-					world.setBlock(j1, k1 + 4, l1 + 3, 0);
-					world.setBlock(j1, k1 + 4, l1 + 4, 0);
-					world.setBlock(j1, k1 + 4, l1 + 5, 0);
-					world.setBlock(j1, k1 + 4, l1 + 6, 0);
-					world.setBlock(j1, k1 + 4, l1 + 7, 0);
-					world.setBlock(j1, k1 + 4, l1 + 8, 0);
-					world.setBlock(j1, k1 + 4, l1 - 1, 0);
-					world.setBlock(j1, k1 + 4, l1 - 2, 0);
-					world.setBlock(j1, k1 + 4, l1 - 3, 0);
-					world.setBlock(j1, k1 + 4, l1 - 4, 0);
-					world.setBlock(j1, k1 + 4, l1 - 5, 0);
-					world.setBlock(j1, k1 + 4, l1 - 6, 0);
-					world.setBlock(j1, k1 + 4, l1 - 7, 0);
-					world.setBlock(j1, k1 + 4, l1 - 8, 0);
-					world.setBlock(j1, k1 + 5, l1 + 1, 0);
-					world.setBlock(j1, k1 + 5, l1 + 2, 0);
-					world.setBlock(j1, k1 + 5, l1 + 3, 0);
-					world.setBlock(j1, k1 + 5, l1 + 4, 0);
-					world.setBlock(j1, k1 + 5, l1 + 5, 0);
-					world.setBlock(j1, k1 + 5, l1 + 6, 0);
-					world.setBlock(j1, k1 + 5, l1 + 7, 0);
-					world.setBlock(j1, k1 + 5, l1 + 8, 0);
-					world.setBlock(j1, k1 + 5, l1 - 1, 0);
-					world.setBlock(j1, k1 + 5, l1 - 2, 0);
-					world.setBlock(j1, k1 + 5, l1 - 3, 0);
-					world.setBlock(j1, k1 + 5, l1 - 4, 0);
-					world.setBlock(j1, k1 + 5, l1 - 5, 0);
-					world.setBlock(j1, k1 + 5, l1 - 6, 0);
-					world.setBlock(j1, k1 + 5, l1 - 7, 0);
-					world.setBlock(j1, k1 + 5, l1 - 8, 0);
+					for (int y = 1; y < 6; y++) {
+						for (int z = -8; z < 9; z++) {
+							world.setBlock(j1, k1 + y, l1 + 1, 0);
+						}
+					}
 					world.setBlock(j1, k1 + 1, l1 + 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 1, l1 - 9, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1 + 2, l1 - 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 1, l1 + 3, Block.stoneSingleSlab.blockID);
-					world.setBlock(j1, k1, l1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 1, l1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 2, l1, Block.obsidian.blockID);
-					world.setBlock(j1, k1, l1 + 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 1, l1 + 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 2, l1 + 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1, l1 + 2, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 1, l1 + 2, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 2, l1 + 2, Block.obsidian.blockID);
-					world.setBlock(j1, k1, l1 - 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 1, l1 - 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 2, l1 - 1, Block.obsidian.blockID);
-					world.setBlock(j1, k1, l1 - 2, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 1, l1 - 2, Block.obsidian.blockID);
-					world.setBlock(j1, k1 + 2, l1 - 2, Block.obsidian.blockID);
+					for (int z = -2; z < 3; z++) {
+						world.setBlock(j1, k1, l1 + z, Block.obsidian.blockID);
+						world.setBlock(j1, k1 + 1, l1 + z, Block.obsidian.blockID);
+						world.setBlock(j1, k1 + 2, l1 + z, Block.obsidian.blockID);
+					}
 					world.setBlock(j1, k1 + 1, l1 - 3, Block.stoneSingleSlab.blockID);
-					world.setBlock(j1, k1 + 1, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 2, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 3, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 4, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 5, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 1, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 2, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 3, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 4, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 5, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
+					for (int y = 1; y < 6; y++) {
+						world.setBlock(j1, k1 + y, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
+						world.setBlock(j1, k1 + y, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
+					}
 					int k10 = random.nextInt(100);
 					if (k10 <= 50) {
 						world.setBlock(j1, k1 + 1, l1 + 7, Block.blockNetherQuartz.blockID, 2, 2);
@@ -1784,113 +1017,29 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 6, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 7, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 8, Block.cobblestone.blockID);
-					world.setBlock(j1, k1 + 1, l1, 0);
-					world.setBlock(j1, k1 + 2, l1, 0);
-					world.setBlock(j1, k1 + 3, l1, 0);
-					world.setBlock(j1, k1 + 4, l1, 0);
-					world.setBlock(j1, k1 + 5, l1, 0);
 					world.setBlock(j1, k1 + 6, l1, 0);
-					world.setBlock(j1, k1 + 7, l1, 0);
 					world.setBlock(j1, k1 + 6, l1 + 1, 0);
 					world.setBlock(j1, k1 + 6, l1 - 1, 0);
 					world.setBlock(j1, k1 + 6, l1 + 2, 0);
 					world.setBlock(j1, k1 + 6, l1 - 2, 0);
+					world.setBlock(j1, k1 + 7, l1, 0);
 					world.setBlock(j1, k1 + 7, l1 + 1, 0);
 					world.setBlock(j1, k1 + 7, l1 - 1, 0);
 					world.setBlock(j1, k1 + 8, l1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 2, 0);
-					world.setBlock(j1, k1 + 1, l1 + 3, 0);
-					world.setBlock(j1, k1 + 1, l1 + 4, 0);
-					world.setBlock(j1, k1 + 1, l1 + 5, 0);
-					world.setBlock(j1, k1 + 1, l1 + 6, 0);
-					world.setBlock(j1, k1 + 1, l1 + 7, 0);
-					world.setBlock(j1, k1 + 1, l1 + 8, 0);
-					world.setBlock(j1, k1 + 1, l1 - 1, 0);
-					world.setBlock(j1, k1 + 1, l1 - 2, 0);
-					world.setBlock(j1, k1 + 1, l1 - 3, 0);
-					world.setBlock(j1, k1 + 1, l1 - 4, 0);
-					world.setBlock(j1, k1 + 1, l1 - 5, 0);
-					world.setBlock(j1, k1 + 1, l1 - 6, 0);
-					world.setBlock(j1, k1 + 1, l1 - 7, 0);
-					world.setBlock(j1, k1 + 1, l1 - 8, 0);
-					world.setBlock(j1, k1 + 2, l1 + 1, 0);
-					world.setBlock(j1, k1 + 2, l1 + 2, 0);
-					world.setBlock(j1, k1 + 2, l1 + 3, 0);
-					world.setBlock(j1, k1 + 2, l1 + 4, 0);
-					world.setBlock(j1, k1 + 2, l1 + 5, 0);
-					world.setBlock(j1, k1 + 2, l1 + 6, 0);
-					world.setBlock(j1, k1 + 2, l1 + 7, 0);
-					world.setBlock(j1, k1 + 2, l1 + 8, 0);
-					world.setBlock(j1, k1 + 2, l1 - 1, 0);
-					world.setBlock(j1, k1 + 2, l1 - 2, 0);
-					world.setBlock(j1, k1 + 2, l1 - 3, 0);
-					world.setBlock(j1, k1 + 2, l1 - 4, 0);
-					world.setBlock(j1, k1 + 2, l1 - 5, 0);
-					world.setBlock(j1, k1 + 2, l1 - 6, 0);
-					world.setBlock(j1, k1 + 2, l1 - 7, 0);
-					world.setBlock(j1, k1 + 2, l1 - 8, 0);
-					world.setBlock(j1, k1 + 3, l1 + 1, 0);
-					world.setBlock(j1, k1 + 3, l1 + 2, 0);
-					world.setBlock(j1, k1 + 3, l1 + 3, 0);
-					world.setBlock(j1, k1 + 3, l1 + 4, 0);
-					world.setBlock(j1, k1 + 3, l1 + 5, 0);
-					world.setBlock(j1, k1 + 3, l1 + 6, 0);
-					world.setBlock(j1, k1 + 3, l1 + 7, 0);
-					world.setBlock(j1, k1 + 3, l1 + 8, 0);
-					world.setBlock(j1, k1 + 3, l1 - 1, 0);
-					world.setBlock(j1, k1 + 3, l1 - 2, 0);
-					world.setBlock(j1, k1 + 3, l1 - 3, 0);
-					world.setBlock(j1, k1 + 3, l1 - 4, 0);
-					world.setBlock(j1, k1 + 3, l1 - 5, 0);
-					world.setBlock(j1, k1 + 3, l1 - 6, 0);
-					world.setBlock(j1, k1 + 3, l1 - 7, 0);
-					world.setBlock(j1, k1 + 3, l1 - 8, 0);
-					world.setBlock(j1, k1 + 4, l1 + 1, 0);
-					world.setBlock(j1, k1 + 4, l1 + 2, 0);
-					world.setBlock(j1, k1 + 4, l1 + 3, 0);
-					world.setBlock(j1, k1 + 4, l1 + 4, 0);
-					world.setBlock(j1, k1 + 4, l1 + 5, 0);
-					world.setBlock(j1, k1 + 4, l1 + 6, 0);
-					world.setBlock(j1, k1 + 4, l1 + 7, 0);
-					world.setBlock(j1, k1 + 4, l1 + 8, 0);
-					world.setBlock(j1, k1 + 4, l1 - 1, 0);
-					world.setBlock(j1, k1 + 4, l1 - 2, 0);
-					world.setBlock(j1, k1 + 4, l1 - 3, 0);
-					world.setBlock(j1, k1 + 4, l1 - 4, 0);
-					world.setBlock(j1, k1 + 4, l1 - 5, 0);
-					world.setBlock(j1, k1 + 4, l1 - 6, 0);
-					world.setBlock(j1, k1 + 4, l1 - 7, 0);
-					world.setBlock(j1, k1 + 4, l1 - 8, 0);
-					world.setBlock(j1, k1 + 5, l1 + 1, 0);
-					world.setBlock(j1, k1 + 5, l1 + 2, 0);
-					world.setBlock(j1, k1 + 5, l1 + 3, 0);
-					world.setBlock(j1, k1 + 5, l1 + 4, 0);
-					world.setBlock(j1, k1 + 5, l1 + 5, 0);
-					world.setBlock(j1, k1 + 5, l1 + 6, 0);
-					world.setBlock(j1, k1 + 5, l1 + 7, 0);
-					world.setBlock(j1, k1 + 5, l1 + 8, 0);
-					world.setBlock(j1, k1 + 5, l1 - 1, 0);
-					world.setBlock(j1, k1 + 5, l1 - 2, 0);
-					world.setBlock(j1, k1 + 5, l1 - 3, 0);
-					world.setBlock(j1, k1 + 5, l1 - 4, 0);
-					world.setBlock(j1, k1 + 5, l1 - 5, 0);
-					world.setBlock(j1, k1 + 5, l1 - 6, 0);
-					world.setBlock(j1, k1 + 5, l1 - 7, 0);
-					world.setBlock(j1, k1 + 5, l1 - 8, 0);
+					for (int y = 1; y < 6; y++) {
+						for (int z = -8; z < 9; z++) {
+							world.setBlock(j1, k1 + y, l1 + 1, 0);
+						}
+					}
 					world.setBlock(j1, k1 + 1, l1 + 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 2, l1 + 9, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1 + 4, l1 + 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 1, l1 - 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 2, l1 - 9, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1 + 3, l1 - 9, Block.cobblestone.blockID);
-					world.setBlock(j1, k1 + 1, l1, Block.stoneSingleSlab.blockID);
-					world.setBlock(j1, k1 + 1, l1 + 1, Block.stoneSingleSlab.blockID);
-					world.setBlock(j1, k1 + 1, l1 + 2, Block.stoneSingleSlab.blockID);
-					world.setBlock(j1, k1 + 1, l1 + 3, Block.stoneSingleSlab.blockID);
-					world.setBlock(j1, k1 + 1, l1 - 1, Block.stoneSingleSlab.blockID);
-					world.setBlock(j1, k1 + 1, l1 - 2, Block.stoneSingleSlab.blockID);
-					world.setBlock(j1, k1 + 1, l1 - 3, Block.stoneSingleSlab.blockID);
+					for (int z = -3; z < 4; z++) {
+						world.setBlock(j1, k1 + 1, l1 + z, Block.stoneSingleSlab.blockID);
+					}
 					j1++;
 					world.setBlock(j1, k1, l1, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1, l1 + 1, Block.cobblestone.blockID);
@@ -1909,114 +1058,28 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 6, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 7, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 8, Block.cobblestoneMossy.blockID);
-					world.setBlock(j1, k1 + 1, l1, 0);
-					world.setBlock(j1, k1 + 2, l1, 0);
-					world.setBlock(j1, k1 + 3, l1, 0);
-					world.setBlock(j1, k1 + 4, l1, 0);
-					world.setBlock(j1, k1 + 5, l1, 0);
 					world.setBlock(j1, k1 + 6, l1, 0);
-					world.setBlock(j1, k1 + 7, l1, 0);
 					world.setBlock(j1, k1 + 6, l1 + 1, 0);
 					world.setBlock(j1, k1 + 6, l1 - 1, 0);
 					world.setBlock(j1, k1 + 6, l1 + 2, 0);
 					world.setBlock(j1, k1 + 6, l1 - 2, 0);
+					world.setBlock(j1, k1 + 7, l1, 0);
 					world.setBlock(j1, k1 + 7, l1 + 1, 0);
 					world.setBlock(j1, k1 + 7, l1 - 1, 0);
 					world.setBlock(j1, k1 + 8, l1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 2, 0);
-					world.setBlock(j1, k1 + 1, l1 + 3, 0);
-					world.setBlock(j1, k1 + 1, l1 + 4, 0);
-					world.setBlock(j1, k1 + 1, l1 + 5, 0);
-					world.setBlock(j1, k1 + 1, l1 + 6, 0);
-					world.setBlock(j1, k1 + 1, l1 + 7, 0);
-					world.setBlock(j1, k1 + 1, l1 + 8, 0);
-					world.setBlock(j1, k1 + 1, l1 - 1, 0);
-					world.setBlock(j1, k1 + 1, l1 - 2, 0);
-					world.setBlock(j1, k1 + 1, l1 - 3, 0);
-					world.setBlock(j1, k1 + 1, l1 - 4, 0);
-					world.setBlock(j1, k1 + 1, l1 - 5, 0);
-					world.setBlock(j1, k1 + 1, l1 - 6, 0);
-					world.setBlock(j1, k1 + 1, l1 - 7, 0);
-					world.setBlock(j1, k1 + 1, l1 - 8, 0);
-					world.setBlock(j1, k1 + 2, l1 + 1, 0);
-					world.setBlock(j1, k1 + 2, l1 + 2, 0);
-					world.setBlock(j1, k1 + 2, l1 + 3, 0);
-					world.setBlock(j1, k1 + 2, l1 + 4, 0);
-					world.setBlock(j1, k1 + 2, l1 + 5, 0);
-					world.setBlock(j1, k1 + 2, l1 + 6, 0);
-					world.setBlock(j1, k1 + 2, l1 + 7, 0);
-					world.setBlock(j1, k1 + 2, l1 + 8, 0);
-					world.setBlock(j1, k1 + 2, l1 - 1, 0);
-					world.setBlock(j1, k1 + 2, l1 - 2, 0);
-					world.setBlock(j1, k1 + 2, l1 - 3, 0);
-					world.setBlock(j1, k1 + 2, l1 - 4, 0);
-					world.setBlock(j1, k1 + 2, l1 - 5, 0);
-					world.setBlock(j1, k1 + 2, l1 - 6, 0);
-					world.setBlock(j1, k1 + 2, l1 - 7, 0);
-					world.setBlock(j1, k1 + 2, l1 - 8, 0);
-					world.setBlock(j1, k1 + 3, l1 + 1, 0);
-					world.setBlock(j1, k1 + 3, l1 + 2, 0);
-					world.setBlock(j1, k1 + 3, l1 + 3, 0);
-					world.setBlock(j1, k1 + 3, l1 + 4, 0);
-					world.setBlock(j1, k1 + 3, l1 + 5, 0);
-					world.setBlock(j1, k1 + 3, l1 + 6, 0);
-					world.setBlock(j1, k1 + 3, l1 + 7, 0);
-					world.setBlock(j1, k1 + 3, l1 + 8, 0);
-					world.setBlock(j1, k1 + 3, l1 - 1, 0);
-					world.setBlock(j1, k1 + 3, l1 - 2, 0);
-					world.setBlock(j1, k1 + 3, l1 - 3, 0);
-					world.setBlock(j1, k1 + 3, l1 - 4, 0);
-					world.setBlock(j1, k1 + 3, l1 - 5, 0);
-					world.setBlock(j1, k1 + 3, l1 - 6, 0);
-					world.setBlock(j1, k1 + 3, l1 - 7, 0);
-					world.setBlock(j1, k1 + 3, l1 - 8, 0);
-					world.setBlock(j1, k1 + 4, l1 + 1, 0);
-					world.setBlock(j1, k1 + 4, l1 + 2, 0);
-					world.setBlock(j1, k1 + 4, l1 + 3, 0);
-					world.setBlock(j1, k1 + 4, l1 + 4, 0);
-					world.setBlock(j1, k1 + 4, l1 + 5, 0);
-					world.setBlock(j1, k1 + 4, l1 + 6, 0);
-					world.setBlock(j1, k1 + 4, l1 + 7, 0);
-					world.setBlock(j1, k1 + 4, l1 + 8, 0);
-					world.setBlock(j1, k1 + 4, l1 - 1, 0);
-					world.setBlock(j1, k1 + 4, l1 - 2, 0);
-					world.setBlock(j1, k1 + 4, l1 - 3, 0);
-					world.setBlock(j1, k1 + 4, l1 - 4, 0);
-					world.setBlock(j1, k1 + 4, l1 - 5, 0);
-					world.setBlock(j1, k1 + 4, l1 - 6, 0);
-					world.setBlock(j1, k1 + 4, l1 - 7, 0);
-					world.setBlock(j1, k1 + 4, l1 - 8, 0);
-					world.setBlock(j1, k1 + 5, l1 + 1, 0);
-					world.setBlock(j1, k1 + 5, l1 + 2, 0);
-					world.setBlock(j1, k1 + 5, l1 + 3, 0);
-					world.setBlock(j1, k1 + 5, l1 + 4, 0);
-					world.setBlock(j1, k1 + 5, l1 + 5, 0);
-					world.setBlock(j1, k1 + 5, l1 + 6, 0);
-					world.setBlock(j1, k1 + 5, l1 + 7, 0);
-					world.setBlock(j1, k1 + 5, l1 + 8, 0);
-					world.setBlock(j1, k1 + 5, l1 - 1, 0);
-					world.setBlock(j1, k1 + 5, l1 - 2, 0);
-					world.setBlock(j1, k1 + 5, l1 - 3, 0);
-					world.setBlock(j1, k1 + 5, l1 - 4, 0);
-					world.setBlock(j1, k1 + 5, l1 - 5, 0);
-					world.setBlock(j1, k1 + 5, l1 - 6, 0);
-					world.setBlock(j1, k1 + 5, l1 - 7, 0);
-					world.setBlock(j1, k1 + 5, l1 - 8, 0);
+					for (int y = 1; y < 6; y++) {
+						for (int z = -8; z < 9; z++) {
+							world.setBlock(j1, k1 + y, l1 + 1, 0);
+						}
+					}
 					world.setBlock(j1, k1 + 1, l1 + 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 3, l1 + 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 1, l1 - 9, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1 + 2, l1 - 9, Block.cobblestone.blockID);
-					world.setBlock(j1, k1 + 1, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 2, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 3, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 4, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 5, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 1, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 2, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 3, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 4, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
-					world.setBlock(j1, k1 + 5, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
+					for (int y = 1; y < 6; y++) {
+						world.setBlock(j1, k1 + y, l1 + 6, Block.blockNetherQuartz.blockID, 2, 2);
+						world.setBlock(j1, k1 + y, l1 - 6, Block.blockNetherQuartz.blockID, 2, 2);
+					}
 					int j12 = random.nextInt(100);
 					if (j12 <= 50) {
 						world.setBlock(j1, k1 + 1, l1 - 7, Block.blockNetherQuartz.blockID, 2, 2);
@@ -2044,100 +1107,20 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1, l1 - 6, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 7, Block.cobblestone.blockID);
 					world.setBlock(j1, k1, l1 - 8, Block.cobblestone.blockID);
-					world.setBlock(j1, k1 + 1, l1, 0);
-					world.setBlock(j1, k1 + 2, l1, 0);
-					world.setBlock(j1, k1 + 3, l1, 0);
-					world.setBlock(j1, k1 + 4, l1, 0);
-					world.setBlock(j1, k1 + 5, l1, 0);
 					world.setBlock(j1, k1 + 6, l1, 0);
-					world.setBlock(j1, k1 + 7, l1, 0);
 					world.setBlock(j1, k1 + 6, l1 + 1, 0);
 					world.setBlock(j1, k1 + 6, l1 - 1, 0);
 					world.setBlock(j1, k1 + 6, l1 + 2, 0);
 					world.setBlock(j1, k1 + 6, l1 - 2, 0);
+					world.setBlock(j1, k1 + 7, l1, 0);
 					world.setBlock(j1, k1 + 7, l1 + 1, 0);
 					world.setBlock(j1, k1 + 7, l1 - 1, 0);
 					world.setBlock(j1, k1 + 8, l1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 1, 0);
-					world.setBlock(j1, k1 + 1, l1 + 2, 0);
-					world.setBlock(j1, k1 + 1, l1 + 3, 0);
-					world.setBlock(j1, k1 + 1, l1 + 4, 0);
-					world.setBlock(j1, k1 + 1, l1 + 5, 0);
-					world.setBlock(j1, k1 + 1, l1 + 6, 0);
-					world.setBlock(j1, k1 + 1, l1 + 7, 0);
-					world.setBlock(j1, k1 + 1, l1 + 8, 0);
-					world.setBlock(j1, k1 + 1, l1 - 1, 0);
-					world.setBlock(j1, k1 + 1, l1 - 2, 0);
-					world.setBlock(j1, k1 + 1, l1 - 3, 0);
-					world.setBlock(j1, k1 + 1, l1 - 4, 0);
-					world.setBlock(j1, k1 + 1, l1 - 5, 0);
-					world.setBlock(j1, k1 + 1, l1 - 6, 0);
-					world.setBlock(j1, k1 + 1, l1 - 7, 0);
-					world.setBlock(j1, k1 + 1, l1 - 8, 0);
-					world.setBlock(j1, k1 + 2, l1 + 1, 0);
-					world.setBlock(j1, k1 + 2, l1 + 2, 0);
-					world.setBlock(j1, k1 + 2, l1 + 3, 0);
-					world.setBlock(j1, k1 + 2, l1 + 4, 0);
-					world.setBlock(j1, k1 + 2, l1 + 5, 0);
-					world.setBlock(j1, k1 + 2, l1 + 6, 0);
-					world.setBlock(j1, k1 + 2, l1 + 7, 0);
-					world.setBlock(j1, k1 + 2, l1 + 8, 0);
-					world.setBlock(j1, k1 + 2, l1 - 1, 0);
-					world.setBlock(j1, k1 + 2, l1 - 2, 0);
-					world.setBlock(j1, k1 + 2, l1 - 3, 0);
-					world.setBlock(j1, k1 + 2, l1 - 4, 0);
-					world.setBlock(j1, k1 + 2, l1 - 5, 0);
-					world.setBlock(j1, k1 + 2, l1 - 6, 0);
-					world.setBlock(j1, k1 + 2, l1 - 7, 0);
-					world.setBlock(j1, k1 + 2, l1 - 8, 0);
-					world.setBlock(j1, k1 + 3, l1 + 1, 0);
-					world.setBlock(j1, k1 + 3, l1 + 2, 0);
-					world.setBlock(j1, k1 + 3, l1 + 3, 0);
-					world.setBlock(j1, k1 + 3, l1 + 4, 0);
-					world.setBlock(j1, k1 + 3, l1 + 5, 0);
-					world.setBlock(j1, k1 + 3, l1 + 6, 0);
-					world.setBlock(j1, k1 + 3, l1 + 7, 0);
-					world.setBlock(j1, k1 + 3, l1 + 8, 0);
-					world.setBlock(j1, k1 + 3, l1 - 1, 0);
-					world.setBlock(j1, k1 + 3, l1 - 2, 0);
-					world.setBlock(j1, k1 + 3, l1 - 3, 0);
-					world.setBlock(j1, k1 + 3, l1 - 4, 0);
-					world.setBlock(j1, k1 + 3, l1 - 5, 0);
-					world.setBlock(j1, k1 + 3, l1 - 6, 0);
-					world.setBlock(j1, k1 + 3, l1 - 7, 0);
-					world.setBlock(j1, k1 + 3, l1 - 8, 0);
-					world.setBlock(j1, k1 + 4, l1 + 1, 0);
-					world.setBlock(j1, k1 + 4, l1 + 2, 0);
-					world.setBlock(j1, k1 + 4, l1 + 3, 0);
-					world.setBlock(j1, k1 + 4, l1 + 4, 0);
-					world.setBlock(j1, k1 + 4, l1 + 5, 0);
-					world.setBlock(j1, k1 + 4, l1 + 6, 0);
-					world.setBlock(j1, k1 + 4, l1 + 7, 0);
-					world.setBlock(j1, k1 + 4, l1 + 8, 0);
-					world.setBlock(j1, k1 + 4, l1 - 1, 0);
-					world.setBlock(j1, k1 + 4, l1 - 2, 0);
-					world.setBlock(j1, k1 + 4, l1 - 3, 0);
-					world.setBlock(j1, k1 + 4, l1 - 4, 0);
-					world.setBlock(j1, k1 + 4, l1 - 5, 0);
-					world.setBlock(j1, k1 + 4, l1 - 6, 0);
-					world.setBlock(j1, k1 + 4, l1 - 7, 0);
-					world.setBlock(j1, k1 + 4, l1 - 8, 0);
-					world.setBlock(j1, k1 + 5, l1 + 1, 0);
-					world.setBlock(j1, k1 + 5, l1 + 2, 0);
-					world.setBlock(j1, k1 + 5, l1 + 3, 0);
-					world.setBlock(j1, k1 + 5, l1 + 4, 0);
-					world.setBlock(j1, k1 + 5, l1 + 5, 0);
-					world.setBlock(j1, k1 + 5, l1 + 6, 0);
-					world.setBlock(j1, k1 + 5, l1 + 7, 0);
-					world.setBlock(j1, k1 + 5, l1 + 8, 0);
-					world.setBlock(j1, k1 + 5, l1 - 1, 0);
-					world.setBlock(j1, k1 + 5, l1 - 2, 0);
-					world.setBlock(j1, k1 + 5, l1 - 3, 0);
-					world.setBlock(j1, k1 + 5, l1 - 4, 0);
-					world.setBlock(j1, k1 + 5, l1 - 5, 0);
-					world.setBlock(j1, k1 + 5, l1 - 6, 0);
-					world.setBlock(j1, k1 + 5, l1 - 7, 0);
-					world.setBlock(j1, k1 + 5, l1 - 8, 0);
+					for (int y = 1; y < 6; y++) {
+						for (int z = -8; z < 9; z++) {
+							world.setBlock(j1, k1 + y, l1 + 1, 0);
+						}
+					}
 					world.setBlock(j1, k1 + 1, l1 + 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 2, l1 + 9, Block.cobblestone.blockID);
 					world.setBlock(j1, k1 + 1, l1 - 9, Block.cobblestone.blockID);
@@ -2160,28 +1143,20 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 + 1, l1 - 1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 + 2, l1 - 1, Block.cobblestoneMossy.blockID);
 				j1++;
-				world.setBlock(j1, k1 + 1, l1, 0);
-				world.setBlock(j1, k1 + 2, l1, 0);
-				world.setBlock(j1, k1 + 3, l1, 0);
-				world.setBlock(j1, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1, k1 + 3, l1 - 1, 0);
+				for (int y = 1; y < 4; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 + y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 + 1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1, l1 - 1, Block.cobblestone.blockID);
 				j1++;
-				world.setBlock(j1, k1 + 1, l1, 0);
-				world.setBlock(j1, k1 + 2, l1, 0);
-				world.setBlock(j1, k1 + 3, l1, 0);
-				world.setBlock(j1, k1 + 1, l1 + 1, 0);
-				world.setBlock(j1, k1 + 2, l1 + 1, 0);
-				world.setBlock(j1, k1 + 3, l1 + 1, 0);
-				world.setBlock(j1, k1 + 1, l1 - 1, 0);
-				world.setBlock(j1, k1 + 2, l1 - 1, 0);
-				world.setBlock(j1, k1 + 3, l1 - 1, 0);
+				for (int y = 1; y < 4; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 + y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1, l1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1, l1 + 1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1, l1 - 1, Block.cobblestoneMossy.blockID);
@@ -2237,103 +1212,28 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 5, l1, 0);
 				world.setBlock(j1, k1 - 4, l1, 0);
 				j1++;
-				world.setBlock(j1, k1 - 5, l1, 0);
-				world.setBlock(j1, k1 - 4, l1, 0);
-				world.setBlock(j1, k1 - 5, l1 + 1, 0);
-				world.setBlock(j1, k1 - 4, l1 + 1, 0);
-				world.setBlock(j1, k1 - 5, l1 + 2, 0);
-				world.setBlock(j1, k1 - 4, l1 + 2, 0);
-				world.setBlock(j1, k1 - 5, l1 + 3, 0);
-				world.setBlock(j1, k1 - 4, l1 + 3, 0);
-				world.setBlock(j1, k1 - 5, l1 + 4, 0);
-				world.setBlock(j1, k1 - 4, l1 + 4, 0);
-				world.setBlock(j1, k1 - 5, l1 + 5, 0);
-				world.setBlock(j1, k1 - 4, l1 + 5, 0);
-				world.setBlock(j1, k1 - 5, l1 + 6, 0);
-				world.setBlock(j1, k1 - 4, l1 + 6, 0);
-				world.setBlock(j1, k1 - 5, l1 + 7, 0);
-				world.setBlock(j1, k1 - 4, l1 + 7, 0);
-				world.setBlock(j1, k1 - 5, l1 + 8, 0);
-				world.setBlock(j1, k1 - 4, l1 + 8, 0);
-				world.setBlock(j1, k1 - 5, l1 + 9, 0);
-				world.setBlock(j1, k1 - 4, l1 + 9, 0);
-				world.setBlock(j1, k1 - 5, l1 + 10, 0);
-				world.setBlock(j1, k1 - 4, l1 + 10, 0);
-				world.setBlock(j1, k1 - 5, l1 + 11, 0);
-				world.setBlock(j1, k1 - 4, l1 + 11, 0);
-				world.setBlock(j1, k1 - 5, l1 + 12, 0);
-				world.setBlock(j1, k1 - 4, l1 + 12, 0);
-				world.setBlock(j1, k1 - 5, l1 + 13, 0);
-				world.setBlock(j1, k1 - 4, l1 + 13, 0);
-				world.setBlock(j1, k1 - 5, l1 + 14, 0);
-				world.setBlock(j1, k1 - 4, l1 + 14, 0);
-				world.setBlock(j1, k1 - 5, l1 + 15, 0);
-				world.setBlock(j1, k1 - 4, l1 + 15, 0);
-				world.setBlock(j1, k1 - 5, l1 + 16, 0);
-				world.setBlock(j1, k1 - 4, l1 + 16, 0);
-				world.setBlock(j1, k1 - 5, l1 + 17, 0);
-				world.setBlock(j1, k1 - 4, l1 + 17, 0);
-				world.setBlock(j1, k1 - 5, l1 + 18, 0);
-				world.setBlock(j1, k1 - 4, l1 + 18, 0);
-				world.setBlock(j1, k1 - 5, l1 + 19, 0);
-				world.setBlock(j1, k1 - 4, l1 + 19, 0);
-				world.setBlock(j1, k1 - 5, l1 + 20, 0);
-				world.setBlock(j1, k1 - 4, l1 + 20, 0);
+				for (int z = 0; z < 21; z++) {
+					world.setBlock(j1, k1 - 5, l1, 0);
+					world.setBlock(j1, k1 - 4, l1, 0);
+				}
 				world.setBlock(j1, k1 - 4, l1 + 21, 0);
 				world.setBlock(j1, k1 - 5, l1 + 21, 0);
 				world.setBlock(j1, k1 - 6, l1 + 21, 0);
-				world.setBlock(j1, k1 - 4, l1 + 22, 0);
-				world.setBlock(j1, k1 - 5, l1 + 22, 0);
-				world.setBlock(j1, k1 - 6, l1 + 22, 0);
-				world.setBlock(j1, k1 - 7, l1 + 22, 0);
-				world.setBlock(j1, k1 - 5, l1 + 23, 0);
-				world.setBlock(j1, k1 - 6, l1 + 23, 0);
-				world.setBlock(j1, k1 - 7, l1 + 23, 0);
-				world.setBlock(j1, k1 - 8, l1 + 23, 0);
-				world.setBlock(j1, k1 - 6, l1 + 24, 0);
-				world.setBlock(j1, k1 - 7, l1 + 24, 0);
-				world.setBlock(j1, k1 - 8, l1 + 24, 0);
-				world.setBlock(j1, k1 - 9, l1 + 24, 0);
-				world.setBlock(j1, k1 - 7, l1 + 25, 0);
-				world.setBlock(j1, k1 - 8, l1 + 25, 0);
-				world.setBlock(j1, k1 - 9, l1 + 25, 0);
-				world.setBlock(j1, k1 - 10, l1 + 25, 0);
-				world.setBlock(j1, k1 - 8, l1 + 26, 0);
-				world.setBlock(j1, k1 - 9, l1 + 26, 0);
-				world.setBlock(j1, k1 - 10, l1 + 26, 0);
-				world.setBlock(j1, k1 - 11, l1 + 26, 0);
-				world.setBlock(j1, k1 - 9, l1 + 27, 0);
-				world.setBlock(j1, k1 - 10, l1 + 27, 0);
-				world.setBlock(j1, k1 - 11, l1 + 27, 0);
-				world.setBlock(j1, k1 - 12, l1 + 27, 0);
-				world.setBlock(j1, k1 - 10, l1 + 28, 0);
-				world.setBlock(j1, k1 - 11, l1 + 28, 0);
-				world.setBlock(j1, k1 - 12, l1 + 28, 0);
-				world.setBlock(j1, k1 - 13, l1 + 28, 0);
-				world.setBlock(j1, k1 - 11, l1 + 29, 0);
-				world.setBlock(j1, k1 - 12, l1 + 29, 0);
-				world.setBlock(j1, k1 - 13, l1 + 29, 0);
-				world.setBlock(j1, k1 - 14, l1 + 29, 0);
+				for (int z = 0; z < 8; z++) {
+					for (int y = 4; y < 7; y++) {
+						world.setBlock(j1, k1 - y - z, l1 + 22 + z, 0);
+					}
+				}
 				int j4 = random.nextInt(100);
 				if (j4 <= 20) {
-					world.setBlock(j1, k1 - 12, l1 + 31, 0);
-					world.setBlock(j1, k1 - 13, l1 + 31, 0);
-					world.setBlock(j1, k1 - 12, l1 + 32, 0);
-					world.setBlock(j1, k1 - 13, l1 + 32, 0);
-					world.setBlock(j1, k1 - 12, l1 + 33, 0);
-					world.setBlock(j1, k1 - 13, l1 + 33, 0);
-					world.setBlock(j1 + 1, k1 - 12, l1 + 31, 0);
-					world.setBlock(j1 + 1, k1 - 13, l1 + 31, 0);
-					world.setBlock(j1 + 1, k1 - 12, l1 + 32, 0);
-					world.setBlock(j1 + 1, k1 - 13, l1 + 32, 0);
-					world.setBlock(j1 + 1, k1 - 12, l1 + 33, 0);
-					world.setBlock(j1 + 1, k1 - 13, l1 + 33, 0);
-					world.setBlock(j1 - 1, k1 - 12, l1 + 31, 0);
-					world.setBlock(j1 - 1, k1 - 13, l1 + 31, 0);
-					world.setBlock(j1 - 1, k1 - 12, l1 + 32, 0);
-					world.setBlock(j1 - 1, k1 - 13, l1 + 32, 0);
-					world.setBlock(j1 - 1, k1 - 12, l1 + 33, 0);
-					world.setBlock(j1 - 1, k1 - 13, l1 + 33, 0);
+					for (int x = -1; x < 2; x++) {
+						world.setBlock(j1 + x, k1 - 12, l1 + 31, 0);
+						world.setBlock(j1 + x, k1 - 13, l1 + 31, 0);
+						world.setBlock(j1 + x, k1 - 12, l1 + 32, 0);
+						world.setBlock(j1 + x, k1 - 13, l1 + 32, 0);
+						world.setBlock(j1 + x, k1 - 12, l1 + 33, 0);
+						world.setBlock(j1 + x, k1 - 13, l1 + 33, 0);
+					}
 					world.setBlock(j1, k1 - 10, l1 + 31, Block.blockLapis.blockID);
 					world.setBlock(j1, k1 - 10, l1 + 32, Block.cobblestoneMossy.blockID);
 					world.setBlock(j1, k1 - 10, l1 + 33, Block.blockLapis.blockID);
@@ -2344,7 +1244,7 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1 - 1, k1 - 10, l1 + 32, Block.blockLapis.blockID);
 					world.setBlock(j1 - 1, k1 - 10, l1 + 33, Block.blockLapis.blockID);
 					world.setBlock(j1, k1 - 11, l1 + 32, Block.chest.blockID);
-					fillWithRares(world.getBlockTileEntity(j1, k1 - 11, l1 + 32));
+					ChestFiller.fillWithRares(world.getBlockTileEntity(j1, k1 - 11, l1 + 32));
 				}
 				j1++;
 				world.setBlock(j1, k1 - 4, l1, 0);
@@ -2392,29 +1292,21 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 + 1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 1, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
+				for (int y = 0; y < 3; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 - 2, Block.cobblestone.blockID);
 				j1++;
 				world.setBlock(j1, k1 - 11, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 + 1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 1, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
+				for (int y = 0; y < 3; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 2, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 10, l1 - 2, Block.cobblestone.blockID);
@@ -2422,15 +1314,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 + 1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 1, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
+				for (int y = 0; y < 3; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 2, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 10, l1 - 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 - 2, Block.cobblestoneMossy.blockID);
@@ -2438,29 +1326,21 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 + 1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 1, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
+				for (int y = 0; y < 3; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 2, Block.cobblestone.blockID);
 				j1++;
 				world.setBlock(j1, k1 - 11, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 + 1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 1, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
+				for (int y = 0; y < 3; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 2, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 10, l1 - 2, Block.cobblestone.blockID);
@@ -2468,15 +1348,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 + 1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 1, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
+				for (int y = 0; y < 3; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 10, l1 - 2, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 9, l1 - 2, Block.cobblestone.blockID);
@@ -2484,15 +1360,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 + 1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 1, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
+				for (int y = 0; y < 3; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 2, Block.stone.blockID);
 				world.setBlock(j1, k1 - 10, l1 - 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 - 2, Block.cobblestone.blockID);
@@ -2500,15 +1372,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 + 1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 1, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
+				for (int y = 0; y < 3; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 10, l1 - 2, Block.cobblestoneMossy.blockID);
@@ -2516,30 +1384,22 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 + 1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 1, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
+				for (int y = 0; y < 3; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 8, l1 + 2, Block.cobblestone.blockID);
 				j1++;
 				world.setBlock(j1, k1 - 11, l1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 + 1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 1, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
+				for (int y = 0; y < 3; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 2, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 10, l1 - 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 - 2, Block.cobblestoneMossy.blockID);
@@ -2547,43 +1407,31 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 + 1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 1, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
+				for (int y = 0; y < 3; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 2, Block.cobblestone.blockID);
 				j1++;
 				world.setBlock(j1, k1 - 11, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 + 1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 1, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
+				for (int y = 0; y < 3; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 2, Block.cobblestoneMossy.blockID);
 				j1++;
 				world.setBlock(j1, k1 - 11, l1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 + 1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 1, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
+				for (int y = 0; y < 3; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 - 2, Block.cobblestoneMossy.blockID);
@@ -2591,29 +1439,21 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 + 1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 1, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
+				for (int y = 0; y < 3; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 - 2, Block.cobblestone.blockID);
 				j1++;
 				world.setBlock(j1, k1 - 11, l1, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 + 1, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 1, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
+				for (int y = 0; y < 3; y++) {
+					for (int z = -1; z < 2; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 2, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 2, Block.cobblestone.blockID);
 				j1++;
@@ -2647,42 +1487,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1 - 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 3, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 4, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 7, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 2, 0);
-				world.setBlock(j1, k1 - 10, l1 + 3, 0);
-				world.setBlock(j1, k1 - 10, l1 + 4, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 2, 0);
-				world.setBlock(j1, k1 - 10, l1 - 3, 0);
-				world.setBlock(j1, k1 - 10, l1 - 4, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 2, 0);
-				world.setBlock(j1, k1 - 9, l1 + 3, 0);
-				world.setBlock(j1, k1 - 9, l1 + 4, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 2, 0);
-				world.setBlock(j1, k1 - 9, l1 - 3, 0);
-				world.setBlock(j1, k1 - 9, l1 - 4, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 2, 0);
-				world.setBlock(j1, k1 - 8, l1 + 3, 0);
-				world.setBlock(j1, k1 - 8, l1 + 4, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 2, 0);
-				world.setBlock(j1, k1 - 8, l1 - 3, 0);
-				world.setBlock(j1, k1 - 8, l1 - 4, 0);
-				world.setBlock(j1, k1 - 7, l1 + 1, 0);
-				world.setBlock(j1, k1 - 7, l1 + 2, 0);
-				world.setBlock(j1, k1 - 7, l1 + 3, 0);
-				world.setBlock(j1, k1 - 7, l1 + 4, 0);
-				world.setBlock(j1, k1 - 7, l1 - 1, 0);
-				world.setBlock(j1, k1 - 7, l1 - 2, 0);
-				world.setBlock(j1, k1 - 7, l1 - 3, 0);
-				world.setBlock(j1, k1 - 7, l1 - 4, 0);
+				for (int y = 0; y < 4; y++) {
+					for (int z = -4; z < 5; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 10, l1 - 5, Block.cobblestone.blockID);
@@ -2698,42 +1507,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1 - 2, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 3, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 4, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 7, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 2, 0);
-				world.setBlock(j1, k1 - 10, l1 + 3, 0);
-				world.setBlock(j1, k1 - 10, l1 + 4, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 2, 0);
-				world.setBlock(j1, k1 - 10, l1 - 3, 0);
-				world.setBlock(j1, k1 - 10, l1 - 4, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 2, 0);
-				world.setBlock(j1, k1 - 9, l1 + 3, 0);
-				world.setBlock(j1, k1 - 9, l1 + 4, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 2, 0);
-				world.setBlock(j1, k1 - 9, l1 - 3, 0);
-				world.setBlock(j1, k1 - 9, l1 - 4, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 2, 0);
-				world.setBlock(j1, k1 - 8, l1 + 3, 0);
-				world.setBlock(j1, k1 - 8, l1 + 4, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 2, 0);
-				world.setBlock(j1, k1 - 8, l1 - 3, 0);
-				world.setBlock(j1, k1 - 8, l1 - 4, 0);
-				world.setBlock(j1, k1 - 7, l1 + 1, 0);
-				world.setBlock(j1, k1 - 7, l1 + 2, 0);
-				world.setBlock(j1, k1 - 7, l1 + 3, 0);
-				world.setBlock(j1, k1 - 7, l1 + 4, 0);
-				world.setBlock(j1, k1 - 7, l1 - 1, 0);
-				world.setBlock(j1, k1 - 7, l1 - 2, 0);
-				world.setBlock(j1, k1 - 7, l1 - 3, 0);
-				world.setBlock(j1, k1 - 7, l1 - 4, 0);
+				for (int y = 0; y < 4; y++) {
+					for (int z = -4; z < 5; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 5, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 9, l1 - 5, Block.cobblestoneMossy.blockID);
@@ -2747,42 +1525,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1 - 2, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 3, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 4, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 7, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 2, 0);
-				world.setBlock(j1, k1 - 10, l1 + 3, 0);
-				world.setBlock(j1, k1 - 10, l1 + 4, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 2, 0);
-				world.setBlock(j1, k1 - 10, l1 - 3, 0);
-				world.setBlock(j1, k1 - 10, l1 - 4, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 2, 0);
-				world.setBlock(j1, k1 - 9, l1 + 3, 0);
-				world.setBlock(j1, k1 - 9, l1 + 4, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 2, 0);
-				world.setBlock(j1, k1 - 9, l1 - 3, 0);
-				world.setBlock(j1, k1 - 9, l1 - 4, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 2, 0);
-				world.setBlock(j1, k1 - 8, l1 + 3, 0);
-				world.setBlock(j1, k1 - 8, l1 + 4, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 2, 0);
-				world.setBlock(j1, k1 - 8, l1 - 3, 0);
-				world.setBlock(j1, k1 - 8, l1 - 4, 0);
-				world.setBlock(j1, k1 - 7, l1 + 1, 0);
-				world.setBlock(j1, k1 - 7, l1 + 2, 0);
-				world.setBlock(j1, k1 - 7, l1 + 3, 0);
-				world.setBlock(j1, k1 - 7, l1 + 4, 0);
-				world.setBlock(j1, k1 - 7, l1 - 1, 0);
-				world.setBlock(j1, k1 - 7, l1 - 2, 0);
-				world.setBlock(j1, k1 - 7, l1 - 3, 0);
-				world.setBlock(j1, k1 - 7, l1 - 4, 0);
+				for (int y = 0; y < 4; y++) {
+					for (int z = -4; z < 5; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 5, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 8, l1 + 5, Block.cobblestone.blockID);
@@ -2798,42 +1545,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1 - 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 3, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 4, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 7, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 2, 0);
-				world.setBlock(j1, k1 - 10, l1 + 3, 0);
-				world.setBlock(j1, k1 - 10, l1 + 4, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 2, 0);
-				world.setBlock(j1, k1 - 10, l1 - 3, 0);
-				world.setBlock(j1, k1 - 10, l1 - 4, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 2, 0);
-				world.setBlock(j1, k1 - 9, l1 + 3, 0);
-				world.setBlock(j1, k1 - 9, l1 + 4, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 2, 0);
-				world.setBlock(j1, k1 - 9, l1 - 3, 0);
-				world.setBlock(j1, k1 - 9, l1 - 4, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 2, 0);
-				world.setBlock(j1, k1 - 8, l1 + 3, 0);
-				world.setBlock(j1, k1 - 8, l1 + 4, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 2, 0);
-				world.setBlock(j1, k1 - 8, l1 - 3, 0);
-				world.setBlock(j1, k1 - 8, l1 - 4, 0);
-				world.setBlock(j1, k1 - 7, l1 + 1, 0);
-				world.setBlock(j1, k1 - 7, l1 + 2, 0);
-				world.setBlock(j1, k1 - 7, l1 + 3, 0);
-				world.setBlock(j1, k1 - 7, l1 + 4, 0);
-				world.setBlock(j1, k1 - 7, l1 - 1, 0);
-				world.setBlock(j1, k1 - 7, l1 - 2, 0);
-				world.setBlock(j1, k1 - 7, l1 - 3, 0);
-				world.setBlock(j1, k1 - 7, l1 - 4, 0);
+				for (int y = 0; y < 4; y++) {
+					for (int z = -4; z < 5; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 10, l1 - 5, Block.cobblestone.blockID);
@@ -2849,42 +1565,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1 - 2, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 3, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 4, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 7, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 2, 0);
-				world.setBlock(j1, k1 - 10, l1 + 3, 0);
-				world.setBlock(j1, k1 - 10, l1 + 4, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 2, 0);
-				world.setBlock(j1, k1 - 10, l1 - 3, 0);
-				world.setBlock(j1, k1 - 10, l1 - 4, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 2, 0);
-				world.setBlock(j1, k1 - 9, l1 + 3, 0);
-				world.setBlock(j1, k1 - 9, l1 + 4, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 2, 0);
-				world.setBlock(j1, k1 - 9, l1 - 3, 0);
-				world.setBlock(j1, k1 - 9, l1 - 4, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 2, 0);
-				world.setBlock(j1, k1 - 8, l1 + 3, 0);
-				world.setBlock(j1, k1 - 8, l1 + 4, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 2, 0);
-				world.setBlock(j1, k1 - 8, l1 - 3, 0);
-				world.setBlock(j1, k1 - 8, l1 - 4, 0);
-				world.setBlock(j1, k1 - 7, l1 + 1, 0);
-				world.setBlock(j1, k1 - 7, l1 + 2, 0);
-				world.setBlock(j1, k1 - 7, l1 + 3, 0);
-				world.setBlock(j1, k1 - 7, l1 + 4, 0);
-				world.setBlock(j1, k1 - 7, l1 - 1, 0);
-				world.setBlock(j1, k1 - 7, l1 - 2, 0);
-				world.setBlock(j1, k1 - 7, l1 - 3, 0);
-				world.setBlock(j1, k1 - 7, l1 - 4, 0);
+				for (int y = 0; y < 4; y++) {
+					for (int z = -4; z < 5; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 5, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 8, l1 + 5, Block.cobblestone.blockID);
@@ -2900,42 +1585,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1 - 2, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 3, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 4, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 7, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 2, 0);
-				world.setBlock(j1, k1 - 10, l1 + 3, 0);
-				world.setBlock(j1, k1 - 10, l1 + 4, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 2, 0);
-				world.setBlock(j1, k1 - 10, l1 - 3, 0);
-				world.setBlock(j1, k1 - 10, l1 - 4, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 2, 0);
-				world.setBlock(j1, k1 - 9, l1 + 3, 0);
-				world.setBlock(j1, k1 - 9, l1 + 4, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 2, 0);
-				world.setBlock(j1, k1 - 9, l1 - 3, 0);
-				world.setBlock(j1, k1 - 9, l1 - 4, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 2, 0);
-				world.setBlock(j1, k1 - 8, l1 + 3, 0);
-				world.setBlock(j1, k1 - 8, l1 + 4, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 2, 0);
-				world.setBlock(j1, k1 - 8, l1 - 3, 0);
-				world.setBlock(j1, k1 - 8, l1 - 4, 0);
-				world.setBlock(j1, k1 - 7, l1 + 1, 0);
-				world.setBlock(j1, k1 - 7, l1 + 2, 0);
-				world.setBlock(j1, k1 - 7, l1 + 3, 0);
-				world.setBlock(j1, k1 - 7, l1 + 4, 0);
-				world.setBlock(j1, k1 - 7, l1 - 1, 0);
-				world.setBlock(j1, k1 - 7, l1 - 2, 0);
-				world.setBlock(j1, k1 - 7, l1 - 3, 0);
-				world.setBlock(j1, k1 - 7, l1 - 4, 0);
+				for (int y = 0; y < 4; y++) {
+					for (int z = -4; z < 5; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 8, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 - 5, Block.cobblestone.blockID);
@@ -2949,42 +1603,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1 - 2, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 3, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 4, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 7, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 2, 0);
-				world.setBlock(j1, k1 - 10, l1 + 3, 0);
-				world.setBlock(j1, k1 - 10, l1 + 4, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 2, 0);
-				world.setBlock(j1, k1 - 10, l1 - 3, 0);
-				world.setBlock(j1, k1 - 10, l1 - 4, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 2, 0);
-				world.setBlock(j1, k1 - 9, l1 + 3, 0);
-				world.setBlock(j1, k1 - 9, l1 + 4, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 2, 0);
-				world.setBlock(j1, k1 - 9, l1 - 3, 0);
-				world.setBlock(j1, k1 - 9, l1 - 4, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 2, 0);
-				world.setBlock(j1, k1 - 8, l1 + 3, 0);
-				world.setBlock(j1, k1 - 8, l1 + 4, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 2, 0);
-				world.setBlock(j1, k1 - 8, l1 - 3, 0);
-				world.setBlock(j1, k1 - 8, l1 - 4, 0);
-				world.setBlock(j1, k1 - 7, l1 + 1, 0);
-				world.setBlock(j1, k1 - 7, l1 + 2, 0);
-				world.setBlock(j1, k1 - 7, l1 + 3, 0);
-				world.setBlock(j1, k1 - 7, l1 + 4, 0);
-				world.setBlock(j1, k1 - 7, l1 - 1, 0);
-				world.setBlock(j1, k1 - 7, l1 - 2, 0);
-				world.setBlock(j1, k1 - 7, l1 - 3, 0);
-				world.setBlock(j1, k1 - 7, l1 - 4, 0);
+				for (int y = 0; y < 4; y++) {
+					for (int z = -4; z < 5; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 5, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 8, l1 + 5, Block.cobblestone.blockID);
@@ -2999,42 +1622,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1 - 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 3, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 4, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 7, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 2, 0);
-				world.setBlock(j1, k1 - 10, l1 + 3, 0);
-				world.setBlock(j1, k1 - 10, l1 + 4, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 2, 0);
-				world.setBlock(j1, k1 - 10, l1 - 3, 0);
-				world.setBlock(j1, k1 - 10, l1 - 4, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 2, 0);
-				world.setBlock(j1, k1 - 9, l1 + 3, 0);
-				world.setBlock(j1, k1 - 9, l1 + 4, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 2, 0);
-				world.setBlock(j1, k1 - 9, l1 - 3, 0);
-				world.setBlock(j1, k1 - 9, l1 - 4, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 2, 0);
-				world.setBlock(j1, k1 - 8, l1 + 3, 0);
-				world.setBlock(j1, k1 - 8, l1 + 4, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 2, 0);
-				world.setBlock(j1, k1 - 8, l1 - 3, 0);
-				world.setBlock(j1, k1 - 8, l1 - 4, 0);
-				world.setBlock(j1, k1 - 7, l1 + 1, 0);
-				world.setBlock(j1, k1 - 7, l1 + 2, 0);
-				world.setBlock(j1, k1 - 7, l1 + 3, 0);
-				world.setBlock(j1, k1 - 7, l1 + 4, 0);
-				world.setBlock(j1, k1 - 7, l1 - 1, 0);
-				world.setBlock(j1, k1 - 7, l1 - 2, 0);
-				world.setBlock(j1, k1 - 7, l1 - 3, 0);
-				world.setBlock(j1, k1 - 7, l1 - 4, 0);
+				for (int y = 0; y < 4; y++) {
+					for (int z = -4; z < 5; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 5, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 8, l1 + 5, Block.cobblestone.blockID);
@@ -3048,42 +1640,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1 - 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 3, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 4, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 7, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 2, 0);
-				world.setBlock(j1, k1 - 10, l1 + 3, 0);
-				world.setBlock(j1, k1 - 10, l1 + 4, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 2, 0);
-				world.setBlock(j1, k1 - 10, l1 - 3, 0);
-				world.setBlock(j1, k1 - 10, l1 - 4, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 2, 0);
-				world.setBlock(j1, k1 - 9, l1 + 3, 0);
-				world.setBlock(j1, k1 - 9, l1 + 4, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 2, 0);
-				world.setBlock(j1, k1 - 9, l1 - 3, 0);
-				world.setBlock(j1, k1 - 9, l1 - 4, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 2, 0);
-				world.setBlock(j1, k1 - 8, l1 + 3, 0);
-				world.setBlock(j1, k1 - 8, l1 + 4, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 2, 0);
-				world.setBlock(j1, k1 - 8, l1 - 3, 0);
-				world.setBlock(j1, k1 - 8, l1 - 4, 0);
-				world.setBlock(j1, k1 - 7, l1 + 1, 0);
-				world.setBlock(j1, k1 - 7, l1 + 2, 0);
-				world.setBlock(j1, k1 - 7, l1 + 3, 0);
-				world.setBlock(j1, k1 - 7, l1 + 4, 0);
-				world.setBlock(j1, k1 - 7, l1 - 1, 0);
-				world.setBlock(j1, k1 - 7, l1 - 2, 0);
-				world.setBlock(j1, k1 - 7, l1 - 3, 0);
-				world.setBlock(j1, k1 - 7, l1 - 4, 0);
+				for (int y = 0; y < 4; y++) {
+					for (int z = -4; z < 5; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 10, l1 - 5, Block.cobblestone.blockID);
@@ -3099,42 +1660,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1 - 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 3, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 4, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 7, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 2, 0);
-				world.setBlock(j1, k1 - 10, l1 + 3, 0);
-				world.setBlock(j1, k1 - 10, l1 + 4, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 2, 0);
-				world.setBlock(j1, k1 - 10, l1 - 3, 0);
-				world.setBlock(j1, k1 - 10, l1 - 4, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 2, 0);
-				world.setBlock(j1, k1 - 9, l1 + 3, 0);
-				world.setBlock(j1, k1 - 9, l1 + 4, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 2, 0);
-				world.setBlock(j1, k1 - 9, l1 - 3, 0);
-				world.setBlock(j1, k1 - 9, l1 - 4, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 2, 0);
-				world.setBlock(j1, k1 - 8, l1 + 3, 0);
-				world.setBlock(j1, k1 - 8, l1 + 4, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 2, 0);
-				world.setBlock(j1, k1 - 8, l1 - 3, 0);
-				world.setBlock(j1, k1 - 8, l1 - 4, 0);
-				world.setBlock(j1, k1 - 7, l1 + 1, 0);
-				world.setBlock(j1, k1 - 7, l1 + 2, 0);
-				world.setBlock(j1, k1 - 7, l1 + 3, 0);
-				world.setBlock(j1, k1 - 7, l1 + 4, 0);
-				world.setBlock(j1, k1 - 7, l1 - 1, 0);
-				world.setBlock(j1, k1 - 7, l1 - 2, 0);
-				world.setBlock(j1, k1 - 7, l1 - 3, 0);
-				world.setBlock(j1, k1 - 7, l1 - 4, 0);
+				for (int y = 0; y < 4; y++) {
+					for (int z = -4; z < 5; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 5, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 9, l1 - 5, Block.cobblestoneMossy.blockID);
@@ -3149,42 +1679,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1 - 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 3, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 4, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 7, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 2, 0);
-				world.setBlock(j1, k1 - 10, l1 + 3, 0);
-				world.setBlock(j1, k1 - 10, l1 + 4, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 2, 0);
-				world.setBlock(j1, k1 - 10, l1 - 3, 0);
-				world.setBlock(j1, k1 - 10, l1 - 4, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 2, 0);
-				world.setBlock(j1, k1 - 9, l1 + 3, 0);
-				world.setBlock(j1, k1 - 9, l1 + 4, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 2, 0);
-				world.setBlock(j1, k1 - 9, l1 - 3, 0);
-				world.setBlock(j1, k1 - 9, l1 - 4, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 2, 0);
-				world.setBlock(j1, k1 - 8, l1 + 3, 0);
-				world.setBlock(j1, k1 - 8, l1 + 4, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 2, 0);
-				world.setBlock(j1, k1 - 8, l1 - 3, 0);
-				world.setBlock(j1, k1 - 8, l1 - 4, 0);
-				world.setBlock(j1, k1 - 7, l1 + 1, 0);
-				world.setBlock(j1, k1 - 7, l1 + 2, 0);
-				world.setBlock(j1, k1 - 7, l1 + 3, 0);
-				world.setBlock(j1, k1 - 7, l1 + 4, 0);
-				world.setBlock(j1, k1 - 7, l1 - 1, 0);
-				world.setBlock(j1, k1 - 7, l1 - 2, 0);
-				world.setBlock(j1, k1 - 7, l1 - 3, 0);
-				world.setBlock(j1, k1 - 7, l1 - 4, 0);
+				for (int y = 0; y < 4; y++) {
+					for (int z = -4; z < 5; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 5, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 8, l1 + 5, Block.cobblestone.blockID);
@@ -3198,42 +1697,11 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1 - 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 3, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 4, Block.cobblestone.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 7, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 2, 0);
-				world.setBlock(j1, k1 - 10, l1 + 3, 0);
-				world.setBlock(j1, k1 - 10, l1 + 4, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 2, 0);
-				world.setBlock(j1, k1 - 10, l1 - 3, 0);
-				world.setBlock(j1, k1 - 10, l1 - 4, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 2, 0);
-				world.setBlock(j1, k1 - 9, l1 + 3, 0);
-				world.setBlock(j1, k1 - 9, l1 + 4, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 2, 0);
-				world.setBlock(j1, k1 - 9, l1 - 3, 0);
-				world.setBlock(j1, k1 - 9, l1 - 4, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 2, 0);
-				world.setBlock(j1, k1 - 8, l1 + 3, 0);
-				world.setBlock(j1, k1 - 8, l1 + 4, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 2, 0);
-				world.setBlock(j1, k1 - 8, l1 - 3, 0);
-				world.setBlock(j1, k1 - 8, l1 - 4, 0);
-				world.setBlock(j1, k1 - 7, l1 + 1, 0);
-				world.setBlock(j1, k1 - 7, l1 + 2, 0);
-				world.setBlock(j1, k1 - 7, l1 + 3, 0);
-				world.setBlock(j1, k1 - 7, l1 + 4, 0);
-				world.setBlock(j1, k1 - 7, l1 - 1, 0);
-				world.setBlock(j1, k1 - 7, l1 - 2, 0);
-				world.setBlock(j1, k1 - 7, l1 - 3, 0);
-				world.setBlock(j1, k1 - 7, l1 - 4, 0);
+				for (int y = 0; y < 4; y++) {
+					for (int z = -4; z < 5; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 5, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 10, l1 + 5, Block.cobblestone.blockID);
 				j1++;
@@ -3246,59 +1714,21 @@ public class StructureMysticDungeon extends WorldGenerator {
 				world.setBlock(j1, k1 - 11, l1 - 2, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 3, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 11, l1 - 4, Block.cobblestoneMossy.blockID);
-				world.setBlock(j1, k1 - 10, l1, 0);
-				world.setBlock(j1, k1 - 9, l1, 0);
-				world.setBlock(j1, k1 - 8, l1, 0);
-				world.setBlock(j1, k1 - 7, l1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 1, 0);
-				world.setBlock(j1, k1 - 10, l1 + 2, 0);
-				world.setBlock(j1, k1 - 10, l1 + 3, 0);
-				world.setBlock(j1, k1 - 10, l1 + 4, 0);
-				world.setBlock(j1, k1 - 10, l1 - 1, 0);
-				world.setBlock(j1, k1 - 10, l1 - 2, 0);
-				world.setBlock(j1, k1 - 10, l1 - 3, 0);
-				world.setBlock(j1, k1 - 10, l1 - 4, 0);
-				world.setBlock(j1, k1 - 9, l1 + 1, 0);
-				world.setBlock(j1, k1 - 9, l1 + 2, 0);
-				world.setBlock(j1, k1 - 9, l1 + 3, 0);
-				world.setBlock(j1, k1 - 9, l1 + 4, 0);
-				world.setBlock(j1, k1 - 9, l1 - 1, 0);
-				world.setBlock(j1, k1 - 9, l1 - 2, 0);
-				world.setBlock(j1, k1 - 9, l1 - 3, 0);
-				world.setBlock(j1, k1 - 9, l1 - 4, 0);
-				world.setBlock(j1, k1 - 8, l1 + 1, 0);
-				world.setBlock(j1, k1 - 8, l1 + 2, 0);
-				world.setBlock(j1, k1 - 8, l1 + 3, 0);
-				world.setBlock(j1, k1 - 8, l1 + 4, 0);
-				world.setBlock(j1, k1 - 8, l1 - 1, 0);
-				world.setBlock(j1, k1 - 8, l1 - 2, 0);
-				world.setBlock(j1, k1 - 8, l1 - 3, 0);
-				world.setBlock(j1, k1 - 8, l1 - 4, 0);
-				world.setBlock(j1, k1 - 7, l1 + 1, 0);
-				world.setBlock(j1, k1 - 7, l1 + 2, 0);
-				world.setBlock(j1, k1 - 7, l1 + 3, 0);
-				world.setBlock(j1, k1 - 7, l1 + 4, 0);
-				world.setBlock(j1, k1 - 7, l1 - 1, 0);
-				world.setBlock(j1, k1 - 7, l1 - 2, 0);
-				world.setBlock(j1, k1 - 7, l1 - 3, 0);
-				world.setBlock(j1, k1 - 7, l1 - 4, 0);
+				for (int y = 0; y < 4; y++) {
+					for (int z = -4; z < 5; z++) {
+						world.setBlock(j1, k1 - 10 - y, l1 + z, 0);
+					}
+				}
 				world.setBlock(j1, k1 - 10, l1 + 5, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - 9, l1 + 5, Block.cobblestoneMossy.blockID);
 				world.setBlock(j1, k1 - 8, l1 + 5, Block.cobblestone.blockID);
 				int i8 = random.nextInt(2) + 1;
 				if (i8 == 1) {
-					world.setBlock(j1 - 2, k1 - 10, l1, Block.cobblestone.blockID);
-					world.setBlock(j1 - 2, k1 - 9, l1, Block.cobblestone.blockID);
-					world.setBlock(j1 - 2, k1 - 8, l1, Block.cobblestone.blockID);
-					world.setBlock(j1 - 2, k1 - 7, l1, Block.cobblestone.blockID);
-					world.setBlock(j1 - 6, k1 - 10, l1, Block.cobblestone.blockID);
-					world.setBlock(j1 - 6, k1 - 9, l1, Block.cobblestone.blockID);
-					world.setBlock(j1 - 6, k1 - 8, l1, Block.cobblestone.blockID);
-					world.setBlock(j1 - 6, k1 - 7, l1, Block.cobblestone.blockID);
-					world.setBlock(j1 - 10, k1 - 10, l1, Block.cobblestone.blockID);
-					world.setBlock(j1 - 10, k1 - 9, l1, Block.cobblestone.blockID);
-					world.setBlock(j1 - 10, k1 - 8, l1, Block.cobblestone.blockID);
-					world.setBlock(j1 - 10, k1 - 7, l1, Block.cobblestone.blockID);
+					for (int y = 0; y < 4; y++) {
+						world.setBlock(j1 - 2, k1 - 10 - y, l1, Block.cobblestone.blockID);
+						world.setBlock(j1 - 6, k1 - 10 - y, l1, Block.cobblestone.blockID);
+						world.setBlock(j1 - 10, k1 - 10 - y, l1, Block.cobblestone.blockID);
+					}
 					int l8 = random.nextInt(100);
 					if (l8 <= 50) {
 						world.setBlock(j1 - 1, k1 - 10, l1 + 2, Block.stoneDoubleSlab.blockID);
@@ -3360,41 +1790,25 @@ public class StructureMysticDungeon extends WorldGenerator {
 					int j13 = random.nextInt(100);
 					if (j13 <= 15) {
 						world.setBlock(j1 - 9, k1 - 10, l1 + 2, Block.chest.blockID);
-						fillWithValuables(world.getBlockTileEntity(j1 - 9, k1 - 10, l1 + 2));
+						ChestFiller.fillWithValuables(world.getBlockTileEntity(j1 - 9, k1 - 10, l1 + 2));
 					}
 					int k13 = random.nextInt(100);
 					if (k13 <= 15) {
 						world.setBlock(j1 - 9, k1 - 10, l1 - 2, Block.chest.blockID);
-						fillWithRares(world.getBlockTileEntity(j1 - 9, k1 - 10, l1 - 2));
+						ChestFiller.fillWithRares(world.getBlockTileEntity(j1 - 9, k1 - 10, l1 - 2));
 					}
 				}
 				if (i8 != 2) {
 					continue;
 				}
-				world.setBlock(j1 - 1, k1 - 10, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 1, k1 - 9, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 1, k1 - 8, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 1, k1 - 7, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 1, k1 - 10, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 1, k1 - 9, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 1, k1 - 8, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 1, k1 - 7, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 1, k1 - 10, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 1, k1 - 9, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 1, k1 - 8, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 1, k1 - 7, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 3, k1 - 10, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 3, k1 - 9, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 3, k1 - 8, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 3, k1 - 7, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 3, k1 - 10, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 3, k1 - 9, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 3, k1 - 8, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 3, k1 - 7, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 3, k1 - 10, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 3, k1 - 9, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 3, k1 - 8, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 3, k1 - 7, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
+				for (int y = 0; y < 4; y++) {
+					world.setBlock(j1 - 1, k1 - 10 - y, l1, Block.blockNetherQuartz.blockID, 2, 2);
+					world.setBlock(j1 - 1, k1 - 10 - y, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
+					world.setBlock(j1 - 1, k1 - 10 - y, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
+					world.setBlock(j1 - 3, k1 - 10 - y, l1, Block.blockNetherQuartz.blockID, 2, 2);
+					world.setBlock(j1 - 3, k1 - 10 - y, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
+					world.setBlock(j1 - 3, k1 - 10 - y, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
+				}
 				world.setBlock(j1 - 4, k1 - 10, l1, Block.mobSpawner.blockID);
 				TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1 - 4, k1 - 10, l1);
 				if (spawner != null) {
@@ -3417,40 +1831,24 @@ public class StructureMysticDungeon extends WorldGenerator {
 				int i9 = random.nextInt(100);
 				if (i9 <= 30) {
 					world.setBlock(j1 - 6, k1 - 9, l1, Block.chest.blockID);
-					fillWithValuables(world.getBlockTileEntity(j1 - 6, k1 - 9, l1));
+					ChestFiller.fillWithValuables(world.getBlockTileEntity(j1 - 6, k1 - 9, l1));
 				}
 				if (i9 <= 10) {
 					world.setBlock(j1 - 6, k1 - 9, l1, Block.chest.blockID);
-					fillWithRares(world.getBlockTileEntity(j1 - 6, k1 - 9, l1));
+					ChestFiller.fillWithRares(world.getBlockTileEntity(j1 - 6, k1 - 9, l1));
 				}
-				world.setBlock(j1 - 9, k1 - 10, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 9, k1 - 9, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 9, k1 - 8, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 9, k1 - 7, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 9, k1 - 10, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 9, k1 - 9, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 9, k1 - 8, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 9, k1 - 7, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 9, k1 - 10, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 9, k1 - 9, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 9, k1 - 8, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 9, k1 - 7, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 11, k1 - 10, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 11, k1 - 9, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 11, k1 - 8, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 11, k1 - 7, l1, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 11, k1 - 10, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 11, k1 - 9, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 11, k1 - 8, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 11, k1 - 7, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 11, k1 - 10, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 11, k1 - 9, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 11, k1 - 8, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
-				world.setBlock(j1 - 11, k1 - 7, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
+				for (int y = 0; y < 4; y++) {
+					world.setBlock(j1 - 9, k1 - 10 - y, l1, Block.blockNetherQuartz.blockID, 2, 2);
+					world.setBlock(j1 - 9, k1 - 10 - y, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
+					world.setBlock(j1 - 9, k1 - 10 - y, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
+					world.setBlock(j1 - 11, k1 - 10 - y, l1, Block.blockNetherQuartz.blockID, 2, 2);
+					world.setBlock(j1 - 11, k1 - 10 - y, l1 + 3, Block.blockNetherQuartz.blockID, 2, 2);
+					world.setBlock(j1 - 11, k1 - 10 - y, l1 - 3, Block.blockNetherQuartz.blockID, 2, 2);
+				}
 				int i10 = random.nextInt(100);
 				if (i10 <= 20) {
 					world.setBlock(j1 - 2, k1 - 10, l1 + 4, Block.chest.blockID);
-					fillWithValuables(world.getBlockTileEntity(j1 - 2, k1 - 10, l1 + 4));
+					ChestFiller.fillWithValuables(world.getBlockTileEntity(j1 - 2, k1 - 10, l1 + 4));
 				}
 				int i11 = random.nextInt(100);
 				if (i11 <= 40) {
@@ -3473,63 +1871,5 @@ public class StructureMysticDungeon extends WorldGenerator {
 			}
 		}
 		return true;
-	}
-
-	private void fillWithValuables(TileEntity tile) {
-		if (tile instanceof IInventory) {
-			IInventory chest = (IInventory) tile;
-			Random rand = new Random();
-			int num;
-			for (int slot = 0; slot < chest.getSizeInventory(); slot++) {
-				num = rand.nextInt(32);
-				if (num == 1) {
-					chest.setInventorySlotContents(slot, new ItemStack(Item.pickaxeIron, 1, 0));
-				}
-				if (num == 2) {
-					chest.setInventorySlotContents(slot, new ItemStack(Item.axeIron, 1, 0));
-				}
-				if (num == 3) {
-					chest.setInventorySlotContents(slot, new ItemStack(Item.swordIron, 1, 0));
-				}
-				if (num == 4) {
-					chest.setInventorySlotContents(slot, new ItemStack(Item.shovelIron, 1, 0));
-				}
-				if (num == 5) {
-					chest.setInventorySlotContents(slot, new ItemStack(Item.ingotGold, 1, 0));
-				}
-				if (num == 6) {
-					chest.setInventorySlotContents(slot, new ItemStack(Item.ingotIron, 1, 0));
-				}
-			}
-		}
-	}
-
-	private void fillWithRares(TileEntity tile) {
-		if (tile instanceof IInventory) {
-			IInventory chest = (IInventory) tile;
-			Random rand = new Random();
-			int num;
-			for (int slot = 0; slot < chest.getSizeInventory(); slot++) {
-				num = rand.nextInt(16);
-				if (num == 1) {
-					chest.setInventorySlotContents(slot, new ItemStack(Item.enderPearl, 4, 0));
-				}
-				if (num == 2) {
-					chest.setInventorySlotContents(slot, new ItemStack(Item.diamond, 1, 0));
-				}
-				if (num == 3) {
-					chest.setInventorySlotContents(slot, new ItemStack(Item.emerald, 1, 0));
-				}
-				if (num == 4) {
-					chest.setInventorySlotContents(slot, new ItemStack(Item.appleGold, 1, 0));
-				}
-				if (num == 5) {
-					chest.setInventorySlotContents(slot, new ItemStack(Item.ingotGold, 1, 0));
-				}
-				if (num == 6) {
-					chest.setInventorySlotContents(slot, new ItemStack(Item.ingotIron, 1, 0));
-				}
-			}
-		}
 	}
 }
