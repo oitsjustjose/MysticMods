@@ -1,22 +1,19 @@
-package MysticOres.Blocks;
+package mysticores.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraftforge.common.MinecraftForge;
-import MysticOres.Lib.BlockID;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BlockHandler {
-
 	public static Block BlockBase;
-	
-	public static void Initialize()
-	{
-		BlockBase = new BlockBase(BlockID.BASEID).setStepSound(Block.soundStoneFootstep);
+	public static int BASEID = 540;
+
+	public static void initialize() {
+		BlockBase = new BlockBase(BASEID).setStepSound(Block.soundStoneFootstep);
 		GameRegistry.registerBlock(BlockBase, ItemBase.class, "Base Blocks");
-		
 		setBlockHarvestLevels();
 	}
-	
+
 	private static void setBlockHarvestLevels() {
 		MinecraftForge.setBlockHarvestLevel(BlockBase, 0, "pickaxe", 3);
 		MinecraftForge.setBlockHarvestLevel(BlockBase, 1, "pickaxe", 2);
@@ -31,5 +28,4 @@ public class BlockHandler {
 		MinecraftForge.setBlockHarvestLevel(BlockBase, 10, "pickaxe", 2);
 		MinecraftForge.setBlockHarvestLevel(BlockBase, 11, "pickaxe", 2);
 	}
-	
 }

@@ -1,4 +1,4 @@
-package MysticWorld.Lib;
+package mysticworld.lib;
 
 public class ItemIds {
 	

@@ -1,4 +1,4 @@
-package MysticWorld.Items;
+package mysticworld.items;
 
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraftforge.common.EnumHelper;

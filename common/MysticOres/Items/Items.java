@@ -1,11 +1,9 @@
-package MysticOres.Items;
+package mysticores.items;
 
+import mysticores.lib.ItemID;
 import net.minecraft.item.Item;
-import MysticOres.Lib.ItemID;
-import MysticOres.Util.ConfigurationManager;
 
-public class Items
-{
+public class Items {
 	public static Item VerditeSword;
 	public static Item VerditePickaxe;
 	public static Item VerditeShovel;
@@ -36,14 +34,11 @@ public class Items
 	public static Item ObsidianShovel;
 	public static Item ObsidianAxe;
 	public static Item ObsidianHoe;
-	
 	public static Item Resource;
 	public static Item Satchel;
-	
-	public static void Initialize()
-	{
+
+	public static void initialize() {
 		Resource = new ItemResource(ItemID.RESOURCES);
-		
 		VerditeSword = new ItemSwords(ItemID.VERDITESWORD, EnumTools.verditeToolMaterial).setUnlocalizedName("VerditeSword");
 		VerditePickaxe = new ItemPickaxes(ItemID.VERDITEPICKAXE, EnumTools.verditeToolMaterial).setUnlocalizedName("VerditePickaxe");
 		VerditeShovel = new ItemShovels(ItemID.VERDITESHOVEL, EnumTools.verditeToolMaterial).setUnlocalizedName("VerditeShovel");
@@ -74,6 +69,6 @@ public class Items
 		ObsidianShovel = new ItemShovels(ItemID.OBSIDIANSHOVEL, EnumTools.obsidianToolMaterial).setUnlocalizedName("ObsidianShovel");
 		ObsidianAxe = new ItemAxes(ItemID.OBSIDIANAXE, EnumTools.obsidianToolMaterial).setUnlocalizedName("ObsidianAxe");
 		ObsidianHoe = new ItemHoes(ItemID.OBSIDIANHOE, EnumTools.obsidianToolMaterial).setUnlocalizedName("ObsidianHoe");
-		Satchel = new ItemSatchel(ItemID.SATCHEL).setUnlocalizedName("Satchel"); 
+		Satchel = new ItemSatchel(ItemID.SATCHEL).setUnlocalizedName("Satchel");
 	}
 }

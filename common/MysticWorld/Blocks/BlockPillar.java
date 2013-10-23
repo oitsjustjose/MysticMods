@@ -1,14 +1,13 @@
-package MysticWorld.Blocks;
+package mysticworld.blocks;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import MysticWorld.MysticWorld;
+import mysticworld.MysticWorld;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockPillar extends Block {
-
 	public BlockPillar(int id) {
 		super(id, Material.rock);
 		setBlockUnbreakable();
@@ -16,22 +15,20 @@ public class BlockPillar extends Block {
 		setCreativeTab(MysticWorld.MysticWorldTab);
 		setBlockBounds(0.15F, 0.0F, 0.15F, 0.85F, 1.0F, 0.85F);
 	}
-	
-    public boolean renderAsNormalBlock()
-    {
-        return false;
-    }
-    
-	public boolean isOpaqueCube()
-    {
-        return false;
-    }
-	
+
+	@Override
+	public boolean isOpaqueCube() {
+		return false;
+	}
+
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister)
-	{
+	public void registerIcons(IconRegister iconRegister) {
 		this.blockIcon = iconRegister.registerIcon("MysticMods" + ":" + "Pillar");
 	}
 
+	@Override
+	public boolean renderAsNormalBlock() {
+		return false;
+	}
 }
