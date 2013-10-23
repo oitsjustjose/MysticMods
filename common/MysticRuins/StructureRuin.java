@@ -3,9 +3,6 @@ package mysticruins;
 import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -59,31 +56,7 @@ public class StructureRuin extends WorldGenerator {
 				world.setBlock(j1, (k1 - j5) + 2, l1 + 3, Block.cobblestone.blockID);
 				world.setBlock(j1, k1 - j5 - k4 - 1, l1 + 2, Block.dirt.blockID);
 				world.setBlock(j1, k1 - j5 - k4, l1 + 2, Block.chest.blockID);
-				if (world.getBlockTileEntity(j1, k1 - j5 - k4, l1 + 2) instanceof IInventory) {
-					IInventory tileentitychest = (IInventory) world.getBlockTileEntity(j1, k1 - j5 - k4, l1 + 2);
-					Random rand = new Random();
-					for (int slot = 0; slot < tileentitychest.getSizeInventory(); slot++) {
-						int num = rand.nextInt(32);
-						if (num == 1) {
-							tileentitychest.setInventorySlotContents(slot, new ItemStack(Item.pickaxeIron, 1, 0));
-						}
-						if (num == 2) {
-							tileentitychest.setInventorySlotContents(slot, new ItemStack(Item.axeIron, 1, 0));
-						}
-						if (num == 3) {
-							tileentitychest.setInventorySlotContents(slot, new ItemStack(Item.swordIron, 1, 0));
-						}
-						if (num == 4) {
-							tileentitychest.setInventorySlotContents(slot, new ItemStack(Item.shovelIron, 1, 0));
-						}
-						if (num == 5) {
-							tileentitychest.setInventorySlotContents(slot, new ItemStack(Item.ingotGold, 1, 0));
-						}
-						if (num == 6) {
-							tileentitychest.setInventorySlotContents(slot, new ItemStack(Item.ingotIron, 1, 0));
-						}
-					}
-				}
+				ChestFiller.fillWithValuables(world.getBlockTileEntity(j1, k1 - j5 - k4, l1 + 2));
 				l6 = 1;
 				i6 = 0;
 				flag = false;
@@ -453,31 +426,7 @@ public class StructureRuin extends WorldGenerator {
 			if (i8 <= 30) {
 				world.setBlock(j1 - 3, k1 - l5 - k6 - i5 - 1, l1 + k3 + 3, Block.dirt.blockID);
 				world.setBlock(j1 - 3, k1 - l5 - k6 - i5, l1 + k3 + 3, Block.chest.blockID);
-				if (world.getBlockTileEntity(j1 - 3, k1 - l5 - k6 - i5, l1 + k3 + 3) instanceof IInventory) {
-					IInventory chest = (IInventory) world.getBlockTileEntity(j1 - 3, k1 - l5 - k6 - i5, l1 + k3 + 3);
-					Random rand = new Random();
-					for (int slot = 0; slot < chest.getSizeInventory(); slot++) {
-						int num = rand.nextInt(16);
-						if (num == 1) {
-							chest.setInventorySlotContents(slot, new ItemStack(Item.enderPearl, 4, 0));
-						}
-						if (num == 2) {
-							chest.setInventorySlotContents(slot, new ItemStack(Item.diamond, 1, 0));
-						}
-						if (num == 3) {
-							chest.setInventorySlotContents(slot, new ItemStack(Item.emerald, 1, 0));
-						}
-						if (num == 4) {
-							chest.setInventorySlotContents(slot, new ItemStack(Item.appleGold, 1, 0));
-						}
-						if (num == 5) {
-							chest.setInventorySlotContents(slot, new ItemStack(Item.ingotGold, 1, 0));
-						}
-						if (num == 6) {
-							chest.setInventorySlotContents(slot, new ItemStack(Item.ingotIron, 1, 0));
-						}
-					}
-				}
+				ChestFiller.fillWithRares(world.getBlockTileEntity(j1 - 3, k1 - l5 - k6 - i5, l1 + k3 + 3));
 			}
 		}
 		return true;
