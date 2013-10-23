@@ -1,12 +1,8 @@
 package mysticstones.blocks;
 
-import java.util.List;
-
-import mysticstones.MysticStones;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MovingObjectPosition;
@@ -14,14 +10,11 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockStones extends Block {
-	Icon[] textures;
-
+public class BlockStones extends BlockMulti {
 	public BlockStones(int ID) {
 		super(ID, Material.rock);
 		setHardness(1F);
 		setResistance(5F);
-		setCreativeTab(MysticStones.MysticStonesTab);
 		setUnlocalizedName("BlockMysticStones");
 		setStepSound(Block.soundStoneFootstep);
 	}
@@ -49,39 +42,15 @@ public class BlockStones extends Block {
 	}
 
 	@Override
-	public Icon getIcon(int side, int meta) {
-		return textures[meta];
-	}
-
-	@Override
 	public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z) {
-		int meta = world.getBlockMetadata(x, y, z);
-		return new ItemStack(this, 1, meta);
-	}
-
-	@Override
-	public void getSubBlocks(int i, CreativeTabs tab, List list) {
-		list.add(new ItemStack(i, 1, 0));
-		list.add(new ItemStack(i, 1, 1));
-		list.add(new ItemStack(i, 1, 2));
-		list.add(new ItemStack(i, 1, 3));
-		list.add(new ItemStack(i, 1, 4));
-		list.add(new ItemStack(i, 1, 5));
-		list.add(new ItemStack(i, 1, 6));
-		list.add(new ItemStack(i, 1, 7));
-		list.add(new ItemStack(i, 1, 8));
-		list.add(new ItemStack(i, 1, 9));
-		list.add(new ItemStack(i, 1, 10));
-		list.add(new ItemStack(i, 1, 11));
-		list.add(new ItemStack(i, 1, 12));
-		list.add(new ItemStack(i, 1, 13));
+		return new ItemStack(this, 1, world.getBlockMetadata(x, y, z));
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
-		textures = new Icon[16];
-		for (int i = 0; i < 14; i++) {
+		textures = new Icon[ItemStones.STONE_TYPES.length];
+		for (int i = 0; i < textures.length; i++) {
 			textures[i] = iconRegister.registerIcon("MysticMods" + ":" + ItemStones.STONE_TYPES[i]);
 		}
 	}
