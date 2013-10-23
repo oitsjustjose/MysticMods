@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.common.DungeonHooks;
 
 public class StructureRuin$1 extends WorldGenerator {
 	public StructureRuin$1() {
@@ -89,7 +90,7 @@ public class StructureRuin$1 extends WorldGenerator {
 					world.setBlock(j1 + l3, k1 - j5 - i6 - k4, l1 + l3 + 5, Block.mobSpawner.blockID);
 					TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1 + l3, k1 - j5 - i6 - k4, l1 + l3 + 5);
 					if (spawner != null) {
-						spawner.getSpawnerLogic().setMobID("Zombie");
+						spawner.getSpawnerLogic().setMobID(DungeonHooks.getRandomDungeonMob(random));
 					}
 					world.setBlock(j1 + l3, k1 - j5 - i6 - k4 - 1, l1 + l3 + 5, Block.dirt.blockID);
 				}

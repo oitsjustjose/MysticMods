@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.common.DungeonHooks;
 
 public class StructureRuin extends WorldGenerator {
 	public StructureRuin() {
@@ -89,7 +90,7 @@ public class StructureRuin extends WorldGenerator {
 					world.setBlock(j1 + l3, k1 - j5 - i6 - k4, l1 + l3 + 5, Block.mobSpawner.blockID);
 					TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1 + l3, k1 - j5 - i6 - k4, l1 + l3 + 5);
 					if (spawner != null) {
-						spawner.getSpawnerLogic().setMobID("Zombie");
+						spawner.getSpawnerLogic().setMobID(DungeonHooks.getRandomDungeonMob(random));
 					}
 					world.setBlock(j1 + l3, k1 - j5 - i6 - k4 - 1, l1 + l3 + 5, Block.dirt.blockID);
 				}
@@ -117,8 +118,7 @@ public class StructureRuin extends WorldGenerator {
 					world.setBlock(j1 - i3 - 1, k1 - j5 - i6 - k4, l1 - 5, Block.dirt.blockID);
 					world.setBlock(j1 - i3 - 1, k1 - j5 - i6 - k4 - 1, l1 - 5, Block.dirt.blockID);
 				}
-			}
-			if (i2 == 2) {
+			} else if (i2 == 2) {
 				int k2 = random.nextInt(8) + 5;
 				int j3 = random.nextInt(8) + 5;
 				int i4 = random.nextInt(8) + 5;
