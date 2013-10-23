@@ -1,15 +1,15 @@
 package mysticores.blocks;
 
-import mysticores.lib.BlockID;
 import net.minecraft.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BlockHandler {
 	public static Block BlockBase;
+	public static int BASEID = 540;
 
-	public static void Initialize() {
-		BlockBase = new BlockBase(BlockID.BASEID).setStepSound(Block.soundStoneFootstep);
+	public static void initialize() {
+		BlockBase = new BlockBase(BASEID).setStepSound(Block.soundStoneFootstep);
 		GameRegistry.registerBlock(BlockBase, ItemBase.class, "Base Blocks");
 		setBlockHarvestLevels();
 	}

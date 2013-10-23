@@ -3,6 +3,7 @@ package mysticores.blocks;
 import java.util.List;
 import java.util.Random;
 
+import mysticores.MysticOres;
 import mysticores.items.Items;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -24,7 +25,7 @@ public class BlockBase extends Block {
 
 	public BlockBase(int ID) {
 		super(ID, Material.rock);
-		setCreativeTab(mysticores.MysticOres.MysticOresTab);
+		setCreativeTab(MysticOres.MysticOresTab);
 	}
 
 	@Override
@@ -41,9 +42,7 @@ public class BlockBase extends Block {
 		case 7:
 			return 10;
 		case 8:
-			return 0;
 		case 9:
-			return 0;
 		case 10:
 			return 0;
 		case 11:
@@ -106,14 +105,12 @@ public class BlockBase extends Block {
 	public int idDropped(int par1, Random random, int par3) {
 		switch (par1) {
 		case 1:
-			return Items.Resource.itemID;
 		case 2:
-			return Items.Resource.itemID;
 		case 4:
-			return Items.Resource.itemID;
 		case 5:
-			return Items.Resource.itemID;
 		case 7:
+		case 11:
+		case 12:
 			return Items.Resource.itemID;
 		case 8:
 			return this.BlackSoulstoneDrops(par1, random, par3);
@@ -121,10 +118,6 @@ public class BlockBase extends Block {
 			return this.BlueSoulstoneDrops(par1, random, par3);
 		case 10:
 			return this.RedSoulstoneDrops(par1, random, par3);
-		case 11:
-			return Items.Resource.itemID;
-		case 12:
-			return Items.Resource.itemID;
 		default:
 			return blockID;
 		}

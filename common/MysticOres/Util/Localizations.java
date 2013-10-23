@@ -26,7 +26,7 @@ public class Localizations {
 	private Localizations() {
 	}
 
-	public static void Initialize() {
+	public static void initialize() {
 		File source = Loader.instance().getReversedModObjectList().get(MysticOres.instance).getSource();
 		Pattern pattern = Pattern.compile(".*(assets/" + "mysticmods/lang/(.+)\\.(.+))");
 		for (String file : getResources(source, pattern)) {

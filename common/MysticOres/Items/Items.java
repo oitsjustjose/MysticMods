@@ -37,7 +37,7 @@ public class Items {
 	public static Item Resource;
 	public static Item Satchel;
 
-	public static void Initialize() {
+	public static void initialize() {
 		Resource = new ItemResource(ItemID.RESOURCES);
 		VerditeSword = new ItemSwords(ItemID.VERDITESWORD, EnumTools.verditeToolMaterial).setUnlocalizedName("VerditeSword");
 		VerditePickaxe = new ItemPickaxes(ItemID.VERDITEPICKAXE, EnumTools.verditeToolMaterial).setUnlocalizedName("VerditePickaxe");
