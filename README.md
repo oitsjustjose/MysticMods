@@ -1,4 +1,3 @@
-MysticMods
-==========
+# This Repo has Moved!
 
-A culmination of Mystic Ores, Ruins, and Stones
+This repository has been moved to a [new location!](https://git.oitsjustjose.com/me/MysticMods)
