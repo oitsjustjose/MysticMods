@@ -33,7 +33,7 @@ public class ItemBushFruit extends ItemFood {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public Icon getIconFromDamage(int meta) {
-		int j = MathHelper.clamp_int(meta, 0, FRUIT_TYPES.length);
+		int j = MathHelper.clamp_int(meta, 0, FRUIT_TYPES.length - 1);
 		return icons[j];
 	}
 
