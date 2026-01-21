@@ -1,31 +1,17 @@
 package mysticores.blocks;
 
-import net.minecraft.block.Block;
-import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BlockHandler {
+    public static final ArrayList<String> BLOCK_NAMES = new ArrayList<String>(Arrays.asList("Adamantine Ore", "Amethyst Ore", "Iridium Ore", "Mithril Ore", "Tourmaline Ore", "Topaz Ore", "Verdite Ore", "Bloodstone", "Black Soulstone",
+            "Blue Soulstone", "Red Soulstone", "Agate Ore", "Tempered Glass"));
 	public static Block BlockBase;
-	public static int BASEID = 540;
 
 	public static void initialize() {
-		BlockBase = new BlockBase(BASEID).setStepSound(Block.soundStoneFootstep);
-		GameRegistry.registerBlock(BlockBase, ItemBase.class, "Base Blocks");
-		setBlockHarvestLevels();
-	}
-
-	private static void setBlockHarvestLevels() {
-		MinecraftForge.setBlockHarvestLevel(BlockBase, 0, "pickaxe", 3);
-		MinecraftForge.setBlockHarvestLevel(BlockBase, 1, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockBase, 2, "pickaxe", 3);
-		MinecraftForge.setBlockHarvestLevel(BlockBase, 3, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockBase, 4, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockBase, 5, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockBase, 6, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(BlockBase, 7, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockBase, 8, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockBase, 9, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockBase, 10, "pickaxe", 2);
-		MinecraftForge.setBlockHarvestLevel(BlockBase, 11, "pickaxe", 2);
+		BlockBase = GameRegistry.registerBlock(new BlockBase().setStepSound(Block.soundTypeStone), ItemBase.class, "Base Blocks", BLOCK_NAMES);
 	}
 }

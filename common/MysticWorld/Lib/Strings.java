@@ -25,10 +25,6 @@ public class Strings {
 	public static final String PILLAR_INSERT_NAME = "pillarInsert";	
 	
 	//Item Names
-	public static final String STAFF_HILT_NAME = "staffHilt";
-	public static final String STAFF_HANDLE_NAME = "staffHandle";
-	public static final String STAFF_HEAD_NAME = "staffHead";
-	public static final String STAFF_NAME = "staff";
 	
 	public static final String IMBUED_SHARD_NAME = "imbuedShard";
 	
@@ -38,7 +34,7 @@ public class Strings {
 	public static final String AIR_STAFF_NAME = "airStaff";
 	public static final String ENERGY_STAFF_NAME = "energyStaff";
 	
-	public static final String POWER_STAFF_NAME = "staffPoweredItem";
+	public static final String STAFF_PART_NAME = "staffparts";
 	
 	public static final String FIRE_ORB_NAME = "fireOrb";
 	public static final String WATER_ORB_NAME = "waterOrb";
@@ -79,8 +75,5 @@ public class Strings {
 	
 	//Tile Entity Names
 	public static final String PILLAR_INSERT_TE_NAME = "pillarInsert";
-	
-	//Config Category Names
-	public static final String ENTITY_CATEGORY = "entity";
 	
 }

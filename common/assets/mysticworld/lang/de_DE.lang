@@ -1,0 +1,72 @@
+﻿    
+imbuedStoneFire.name=Magmatischer Felsbrocken
+imbuedStoneWater.name=Aquatischer Felsbrocken
+imbuedStoneEarth.name=Fruchtbarer Felsbrocken
+imbuedStoneAir.name=Durchlüfteter Felsbrocken
+imbuedStoneEnergy.name=Kinetischer Felsbrocken
+    
+Bush.name=Gewöhnlicher Busch
+Poisonous Bush.name=Giftiger Busch
+Weakness Bush.name=Schwächender Busch
+Slowness Bush.name=Langsamkeitsbusch
+Harming Bush.name=Schadender Busch
+Wither Bush.name=Verzehrender Busch
+Health Bush.name=Heilender Busch
+Speed Bush.name=Geschwindigkeitsbusch
+Fire Resistance Bush.name=Löschender Busch
+Regen Bush.name=Regenerationsbusch
+Night Vision Bush.name=Nachtsichtbusch
+Invisibility Bush.name=Unsichtbarkeitsbusch
+    
+tile.platform.name=Säulenplattform
+tile.pillar.name=Säulenturm
+tile.pillarInsert.name=Säuleneinlage
+    
+Staff.name=Stab
+Hilt.name=Stabheft
+Handle.name=Stabgriff
+Head.name=Stabspitze
+    
+item.imbuedShardFire.name=Magmatische Scherbe
+item.imbuedShardWater.name=Aquatische Scherbe
+item.imbuedShardEarth.name=Fruchtbare Scherbe
+item.imbuedShardAir.name=Durchlüftete Scherbe
+item.imbuedShardEnergy.name=Kinetische Scherbe
+    
+item.fireStaff.name=Magmastab
+item.waterStaff.name=Aquastab
+item.earthStaff.name=Fruchtbarer Stab
+item.airStaff.name=Durchlüftungsstab
+item.energyStaff.name=Kinesisstab
+    
+item.bushFruit.name=Mysteriöse Frucht
+    
+item.verditeHelmet.name=Verdithelm
+item.verditeChestplate.name=Verditbrustplatte
+item.verditeLeggings.name=Verditehose
+item.verditeBoots.name=Verditestiefel
+    
+item.mithrilHelmet.name=Mithrilhelm
+item.mithrilChestplate.name=Mithrilbrustplatte
+item.mithrilLeggings.name=Mithrilhose
+item.mithrilBoots.name=Mithrilstiefel
+    
+item.adamantineHelmet.name=Adamantiner Helmet
+item.adamantineChestplate.name=Adamantine Brustplatte
+item.adamantineLeggings.name=Adamantine Hose
+item.adamantineBoots.name=Adamantine Stiefel
+    
+item.iridiumHelmet.name=Iridiumhelm
+item.iridiumChestplate.name=Iridiumbrustplatte
+item.iridiumLeggings.name=Iridiumhose
+item.iridiumBoots.name=Iridiumstiefel
+    
+item.fireOrb.name=Magmatischer Orb
+item.waterOrb.name=Aquatischer Orb
+item.earthOrb.name=Orb der Fruchtbarkeit
+item.airOrb.name=Durchlüftender Orb
+item.energyOrb.name=Kinesis-Orb
+    
+item.voidShard.name=Scherbe der Leere
+    
+itemGroup.MysticWorldTab=Mystc World

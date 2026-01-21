@@ -1,33 +1,33 @@
 package mysticstones.blocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.util.Icon;
-import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.util.IIcon;
+import net.minecraft.world.IBlockAccess;
 
 public class BlockReinforced extends BlockMulti {
-	public BlockReinforced(int ID) {
-		super(ID, Material.iron);
-		setHardness(4F);
-		setResistance(2000F);
-		setUnlocalizedName("BlockMysticReinforcedBrick");
-		setStepSound(Block.soundMetalFootstep);
+	public BlockReinforced() {
+		super(Material.iron);
+        setHardness(4F);
+        setResistance(2000F);
+        setBlockName("BlockMysticReinforcedBrick");
+        setStepSound(Block.soundTypeMetal);
 	}
 
 	@Override
-	public boolean isBeaconBase(World worldObj, int x, int y, int z, int beaconX, int beaconY, int beaconZ) {
+	public boolean isBeaconBase(IBlockAccess worldObj, int x, int y, int z, int beaconX, int beaconY, int beaconZ) {
 		return true;
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister) {
-		textures = new Icon[ItemReinforced.BRICK_TYPE.length];
+	public void registerBlockIcons(IIconRegister iconRegister) {
+		textures = new IIcon[ItemReinforced.BRICK_TYPE.size()];
 		for (int i = 0; i < textures.length; i++) {
-			textures[i] = iconRegister.registerIcon("MysticMods" + ":" + ItemReinforced.BRICK_TYPE[i] + " Bricks");
+			textures[i] = iconRegister.registerIcon("mysticstones:" + ItemReinforced.BRICK_TYPE.get(i));
 		}
 	}
 }

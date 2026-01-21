@@ -1,38 +1,25 @@
 package mysticworld.blocks;
 
-import mysticworld.lib.BlockIds;
+import cpw.mods.fml.common.registry.GameRegistry;
 import mysticworld.lib.Strings;
 import net.minecraft.block.Block;
-import cpw.mods.fml.common.registry.GameRegistry;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BlockHandler {
-	public static Block oreImbuedStone;
-	public static Block bush;
-	public static Block lightCube;
-	public static Block pillarPlatform;
-	public static Block pillar;
-	public static Block pillarInsert;
+    public static final ArrayList<String> IMBUED_STONE_TYPE = new ArrayList<String>(Arrays.asList(Strings.IMBUED_STONE_NAME+"Fire", Strings.IMBUED_STONE_NAME+"Water", Strings.IMBUED_STONE_NAME+"Earth", Strings.IMBUED_STONE_NAME+"Air", Strings.IMBUED_STONE_NAME+"Energy"));
+    public static final ArrayList<String> BUSH_TYPES = new ArrayList<String>(Arrays.asList(Strings.BUSH_NAME, Strings.POISON_BUSH_NAME, Strings.WEAKNESS_BUSH_NAME, Strings.SLOWNESS_BUSH_NAME, Strings.HARMING_BUSH_NAME,
+            Strings.WITHER_BUSH_NAME, Strings.HEALTH_BUSH_NAME, Strings.SPEED_BUSH_NAME, Strings.FIRE_RESISTANCE_BUSH_NAME, Strings.REGEN_BUSH_NAME, Strings.NIGHT_VISION_BUSH_NAME,
+            Strings.INVISIBILITY_BUSH_NAME));
+	public static Block oreImbuedStone, bush, lightCube, pillarPlatform, pillar, pillarInsert;
 
 	public static void init() {
-		oreImbuedStone = new BlockImbuedStone(BlockIds.ORE_STONE_1).setUnlocalizedName(Strings.IMBUED_STONE_NAME);
-		bush = new BlockBush(BlockIds.BUSH).setUnlocalizedName(Strings.BUSH_NAME);
-		lightCube = new BlockLightCube(BlockIds.LIGHT_CUBE).setUnlocalizedName(Strings.LIGHT_CUBE_NAME);
-		pillarPlatform = new BlockPlatform(BlockIds.PLATFORM).setUnlocalizedName(Strings.PLATFORM_NAME);
-		pillar = new BlockPillar(BlockIds.PILLAR).setUnlocalizedName(Strings.PILLAR_NAME);
-		pillarInsert = new BlockPillarInsert(BlockIds.PILLAR_INSERT).setUnlocalizedName(Strings.PILLAR_INSERT_NAME);
-		registerBlocks();
-		setBlockHarvestLevels();
-	}
-
-	private static void registerBlocks() {
-		GameRegistry.registerBlock(oreImbuedStone, ItemImbuedStone.class, Strings.IMBUED_STONE_NAME);
-		GameRegistry.registerBlock(bush, ItemBush.class, Strings.BUSH_NAME);
-		GameRegistry.registerBlock(lightCube, Strings.LIGHT_CUBE_NAME);
-		GameRegistry.registerBlock(pillarPlatform, Strings.PLATFORM_NAME);
-		GameRegistry.registerBlock(pillar, Strings.PILLAR_NAME);
-		GameRegistry.registerBlock(pillarInsert, Strings.PILLAR_INSERT_NAME);
-	}
-
-	private static void setBlockHarvestLevels() {
+        oreImbuedStone = GameRegistry.registerBlock(new BlockImbuedStone().setBlockName(Strings.IMBUED_STONE_NAME), ItemBlockMulti.class, Strings.IMBUED_STONE_NAME, IMBUED_STONE_TYPE);
+		bush = GameRegistry.registerBlock(new BlockBushes().setBlockName(Strings.BUSH_NAME), ItemBlockMulti.class, Strings.BUSH_NAME, BUSH_TYPES);
+		lightCube = GameRegistry.registerBlock(new BlockLightCube().setBlockName(Strings.LIGHT_CUBE_NAME).setBlockTextureName("mysticworld:lightCube"), Strings.LIGHT_CUBE_NAME);
+		pillarPlatform = GameRegistry.registerBlock(new BlockPlatform().setBlockName(Strings.PLATFORM_NAME).setBlockTextureName("mysticworld:Platform"), Strings.PLATFORM_NAME);
+		pillar = GameRegistry.registerBlock(new BlockPillar().setBlockName(Strings.PILLAR_NAME).setBlockTextureName("mysticworld:Pillar"), Strings.PILLAR_NAME);
+		pillarInsert = GameRegistry.registerBlock(new BlockPillarInsert().setBlockName(Strings.PILLAR_INSERT_NAME), Strings.PILLAR_INSERT_NAME);
 	}
 }

@@ -1,0 +1,68 @@
+﻿
+item.VerditeSword.name=Вердитовый меч 
+item.VerditePickaxe.name=Вердитовая кирка 
+item.VerditeShovel.name=Вердитовая лопата 
+item.VerditeAxe.name=Вердитовый топор 
+item.VerditeHoe.name=Вердитовая мотыга
+
+item.MithrilSword.name=Мифриловый меч 
+item.MithrilPickaxe.name=Мифриловая кирка 
+item.MithrilShovel.name=Мифриловая лопата 
+item.MithrilAxe.name=Мифриловый топор 
+item.MithrilHoe.name=Мифриловая мотыга
+
+item.AdamantineSword.name=Адамантиновый меч 
+item.AdamantinePickaxe.name=Адамантиновая кирка 
+item.AdamantineShovel.name=Адамантиновая лопата 
+item.AdamantineAxe.name=Адамантиновый топор 
+item.AdamantineHoe.name=Адамантиновая мотыга
+
+item.IridiumSword.name=Иридиевый меч 
+item.IridiumPickaxe.name=Иридиевая кирка 
+item.IridiumShovel.name=Иридиевая лопата 
+item.IridiumAxe.name=Иридиевый топор 
+item.IridiumHoe.name=Иридиевая мотыга
+
+item.ObsidianSword.name=Обсидиановый меч 
+item.ObsidianPickaxe.name=Обсидиановая кирка 
+item.ObsidianShovel.name=Обсидиановая лопата 
+item.ObsidianAxe.name=Обсидиановый топор 
+item.ObsidianHoe.name=Обсидиановая мотыга
+
+item.BloodstoneSword.name=Меч из кровавого камня 
+item.BloodstonePickaxe.name=Кирка из кровавого камня 
+item.BloodstoneShovel.name=Лопата из кровавого камня 
+item.BloodstoneAxe.name=Топор из кровавого камня 
+item.BloodstoneHoe.name=Мотыга из кровавого камня
+
+Verdite Ingot.name=Вердитовый слиток 
+Mithril Ingot.name=Мифриловый слиток 
+Adamantine Ingot.name=Адамантиновый слиток 
+Iridium Ingot.name=Иридиевый слиток 
+Iridium Nugget.name=Иридиевый самородок 
+Tourmaline Gem.name=Турмалин 
+Agate Gem.name=Агат 
+Topaz Gem.name=Топаз 
+Amethyst Gem.name=Аметист 
+Mystic Powder.name=Мистическая пыль 
+Bloodstone Shard.name=Осколок кровавого камня 
+Glass Shard.name=Осколок стекла 
+Obsidian Shard.name=Осколок обсидиана 
+Obsidian Rod.name=Обсидиановый стержень 
+item.Satchel.name=Магический рюкзак
+   
+Adamantine Ore.name=Адамантиновая руда 
+Amethyst Ore.name=Аметистовая руда 
+Iridium Ore.name=Иридиевая руда 
+Mithril Ore.name=Мифриловая руда 
+Tourmaline Ore.name=Турмалиновая руда
+Topaz Ore.name=Топазовая руда 
+Verdite Ore.name=Вердитовая руда 
+Bloodstone.name=Кровавый камень 
+Black Soulstone.name=Чёрный Камень Душ 
+Blue Soulstone.name=Синий Камень Душ 
+Red Soulstone.name=Красный Камень Душ 
+Agate Ore.name=Агатовая руда
+Tempered Glass.name=Закалённое стекло 
+
+itemGroup.MysticOresTab=MysticMods (Руды и инструменты)

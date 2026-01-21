@@ -1,17 +1,15 @@
 package mysticworld.renderer;
 
+import cpw.mods.fml.client.FMLClientHandler;
 import mysticworld.model.ModelPillarInsert;
 import mysticworld.tiles.TileEntityPillarInsert;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
-
 import org.lwjgl.opengl.GL11;
 
-import cpw.mods.fml.client.FMLClientHandler;
-
 public class TileEntityPillarInsertRenderer extends TileEntitySpecialRenderer {
-	private static final ResourceLocation texture = new ResourceLocation("mysticmods:textures" + "/models/PillarInsert.png");
+	private static final ResourceLocation texture = new ResourceLocation("mysticworld", "textures/models/PillarInsert.png");
 	private ModelPillarInsert model;
 
 	public TileEntityPillarInsertRenderer() {

@@ -1,16 +1,14 @@
 package mysticworld.renderer;
 
+import cpw.mods.fml.client.FMLClientHandler;
 import mysticworld.model.ModelPillarInsert;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.IItemRenderer;
-
 import org.lwjgl.opengl.GL11;
 
-import cpw.mods.fml.client.FMLClientHandler;
-
 public class BlockPillarInsertRenderer implements IItemRenderer {
-	private static final ResourceLocation texture = new ResourceLocation("mysticmods:textures" + "/models/PillarInsert.png");
+	private static final ResourceLocation texture = new ResourceLocation("mysticworld", "textures/models/PillarInsert.png");
 	private final ModelPillarInsert model;
 
 	public BlockPillarInsertRenderer() {

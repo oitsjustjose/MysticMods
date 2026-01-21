@@ -1,0 +1,68 @@
+﻿
+item.VerditeSword.name=Verditschwert
+item.VerditePickaxe.name=Verditspitzhacke
+item.VerditeShovel.name=Verditschaufel
+item.VerditeAxe.name=Verditaxt
+item.VerditeHoe.name=Verdithacke
+    
+item.MithrilSword.name=Mithrilschwert
+item.MithrilPickaxe.name=Mithrilspitzhacke
+item.MithrilShovel.name=Mithrilschaufel
+item.MithrilAxe.name=Mithrilaxt
+item.MithrilHoe.name=Mithrilhacke
+    
+item.AdamantineSword.name=Adamantines Schwert
+item.AdamantinePickaxe.name=Adamantine Spitzhacke
+item.AdamantineShovel.name=Adamantine Schaufel
+item.AdamantineAxe.name=Adamantine Axt
+item.AdamantineHoe.name=Adamantine Hacke
+    
+item.IridiumSword.name=Iridiumschwert
+item.IridiumPickaxe.name=Iridiumspitzhacke
+item.IridiumShovel.name=Iridiumschaufel
+item.IridiumAxe.name=Iridiumaxt
+item.IridiumHoe.name=Iridiumhacke
+    
+item.ObsidianSword.name=Obsidianschwert
+item.ObsidianPickaxe.name=Obsidianspitzhacke
+item.ObsidianShovel.name=Obsidianschaufel
+item.ObsidianAxe.name=Obsidianaxt
+item.ObsidianHoe.name=Obsidianhacke
+    
+item.BloodstoneSword.name=Blutsteinschwert
+item.BloodstonePickaxe.name=Blutsteinspitzhacke
+item.BloodstoneShovel.name=Blutsteinschaufel
+item.BloodstoneAxe.name=Blutsteinaxt
+item.BloodstoneHoe.name=Blutsteinhacke
+    
+Verdite Ingot.name=Verditbarren
+Mithril Ingot.name=Mithrilbarren
+Adamantine Ingot.name=Adamantiner Barren
+Iridium Ingot.name=Iridiumbarren
+Iridium Nugget.name=Iridiumnugget
+Tourmaline Gem.name=Turmalin
+Agate Gem.name=Achat
+Topaz Gem.name=Topas
+Amethyst Gem.name=Amethyst
+Mystic Powder.name=Mystisches Pulver
+Bloodstone Shard.name=Blutsteinscherbe
+Glass Shard.name=Glasscherbe
+Obsidian Shard.name=Obsidianscherbe
+Obsidian Rod.name=Obsidianstab
+item.Satchel.name=Magischer Beutel
+        
+Adamantine Ore.name=Adamantines Erz
+Amethyst Ore.name=Amethysterz
+Iridium Ore.name=Iridiumerz
+Mithril Ore.name=Mithrilerz
+Tourmaline Ore.name=Turmalinerz
+Topaz Ore.name=Topaserz
+Verdite Ore.name=Verditerz
+Bloodstone.name=Blutstein
+Black Soulstone.name=Schwarzer Seelenstein
+Blue Soulstone.name=Blauer Seelenstein
+Red Soulstone.name=Roter Seelenstein
+Agate Ore.name=Achaterz
+Tempered Glass.name=Gehärtetes Glas
+    
+itemGroup.MysticOresTab=Mystic Ores

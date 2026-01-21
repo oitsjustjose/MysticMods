@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/../../MinecraftForge/build/test/MysticMods"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<excludeFolder url="file://$MODULE_DIR$/.gradle"/>
+		<excludeFolder url="file://$MODULE_DIR$/.settings"/>
+		<excludeFolder url="file://$MODULE_DIR$/bin"/>
+		<excludeFolder url="file://$MODULE_DIR$/build"/>
+	</contentEntry>
+	<levels>
+		<level name="Gradle: forge-1.6.4-9.11.1.964-mcp" value="project"/>
+	</levels>
+</component>

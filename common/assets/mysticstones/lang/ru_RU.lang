@@ -1,0 +1,43 @@
+﻿
+Purple Planks.name=Фиолетовые доски 
+Green Planks.name=Зелёные доски 
+Black Planks.name=Чёрные доски 
+Orange Planks.name=Оранжевые доски 
+Red Planks.name=Красные доски
+Blue Planks.name=Синие доски 
+Yellow Planks.name=Жёлтые доски 
+
+Smooth Anorthosite.name=Гладкий анортозит 
+Smooth Limestone.name=Гладкий известняк 
+Smooth Slate.name=Гладкий сланец
+Smooth Migmatite.name=Гладкий мигматит 
+Smooth Orthogneiss.name=Гладкий ортогнейс 
+Smooth Marble.name=Гладкий мрамор
+Smooth Travertine.name=Гладкий травертин
+
+Anorthosite.name=Анортозит 
+Limestone.name=Известняк 
+Slate.name=Сланец
+Migmatite.name=Мигматит 
+Orthogneiss.name=Ортогнейс 
+Marble.name=Мрамор
+Travertine.name=Травертин    
+
+Anorthosite Bricks.name=Анортозитовый кирпич 
+Limestone Bricks.name=Известняковый кирпич 
+Slate Bricks.name=Сланцевый кирпич 
+Migmatite Bricks.name=Мигматитовый кирпич 
+Orthogneiss Bricks.name=Ортогнейсовый кирпич 
+Marble Bricks.name=Мраморный кирпич 
+Travertine Bricks.name=Травертиновый кирпич 
+
+Verdite Bricks.name=Вердитовый армированный кирпич 
+Mithril Bricks.name=Мифриловый армированный кирпич 
+Adamantine Bricks.name=Адамантиновый армированный кирпич 
+Iridium Bricks.name=Иридиевый армированный кирпич 
+Topaz Bricks.name=Топазовый армированный кирпич 
+Tourmaline Bricks.name=Турмалиновый армированный кирпич 
+Amethyst Bricks.name=Аметистовый армированный кирпич 
+Agate Bricks.name=Агатовый армированный кирпич
+
+itemGroup.MysticStonesTab=MysticMods (Камни и доски)

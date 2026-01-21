@@ -1,0 +1,43 @@
+﻿    
+Purple Planks.name=Violette Planken
+Green Planks.name=Grüne Planken
+Black Planks.name=Schwarze Planken
+Orange Planks.name=Orange Planken
+Red Planks.name=Rote Planken
+Blue Planks.name=Blaue Planken
+Yellow Planks.name=Gelbe Planken
+    
+Smooth Anorthosite.name=Glattes Anorthosit
+Smooth Limestone.name=Glatter Kalkstein
+Smooth Slate.name=Glatter Schiefer
+Smooth Migmatite.name=Glattes Migmatit
+Smooth Orthogneiss.name=Glattes Orthogneis
+Smooth Marble.name=Glatter Marmor
+Smooth Travertine.name=Glattes Travertin
+    
+Anorthosite.name=Anorthosit
+Limestone.name=Kalkstein
+Slate.name=Schiefer
+Migmatite.name=Migmatit
+Orthogneiss.name=Orthogneis
+Marble.name=Marmor
+Travertine.name=Travertin
+    
+Anorthosite Bricks.name=Anorthositziegel
+Limestone Bricks.name=Kalksteinziegel
+Slate Bricks.name=Schieferziegel
+Migmatite Bricks.name=Migmatitziegel
+Orthogneiss Bricks.name=Orthogneisziegel
+Marble Bricks.name=Marmorziegel
+Travertine Bricks.name=Travertinziegel
+    
+Verdite Bricks.name=Verdit-verstärkte Ziegel
+Mithril Bricks.name=Mithril-verstärkte Ziegel
+Adamantine Bricks.name=Adamantine Verstärkte Ziegel
+Iridium Bricks.name=Iridium-verstärkte Ziegel
+Topaz Bricks.name=Topas-verstärkte Ziegel
+Tourmaline Bricks.name=Turmalin-verstärkte Ziegel
+Amethyst Bricks.name=Amethyst-verstärkte Ziegel
+Agate Bricks.name=Achat-verstärkte Ziegel
+    
+itemGroup.MysticStonesTab=Mystic Stones

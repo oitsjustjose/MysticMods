@@ -1,0 +1,70 @@
+[
+{
+  "modid": "mysticores",
+  "name": "Mystic Ores",
+  "description": "Adds ores into the Nether and Overworld",
+  "version": $version,
+  "credits": "oitsjustjose",
+  "logoFile": "",
+  "mcversion": $mcversion,
+  "url": "http://bit.ly/13ep6OW",
+  "updateUrl": "",
+  "authorList": [ "oitsjustjose", "GotoLink" ],
+  "parent":"",
+  "screenshots": [],
+  "dependencies": [
+     "MinecraftForge"
+  ]
+},
+{
+  "modid": "mysticruins",
+  "name": "Mystic Ruins",
+  "description": "Magical structures to explore in your minecraft game!",
+  "version": $version,
+  "credits": "oitsjustjose",
+  "logoFile": "",
+  "mcversion": $mcversion,
+  "url": "http://bit.ly/13ep6OW",
+  "updateUrl": "",
+  "authorList": [ "oitsjustjose", "GotoLink" ],
+  "parent":"",
+  "screenshots": [],
+  "dependencies": [
+     "MinecraftForge"
+  ]
+},
+{
+  "modid": "mysticstones",
+  "name": "Mystic Stones",
+  "description": "Adds stones into selected worlds",
+  "version": $version,
+  "credits": "oitsjustjose",
+  "logoFile": "",
+  "mcversion": $mcversion,
+  "url": "http://bit.ly/13ep6OW",
+  "updateUrl": "",
+  "authorList": [ "oitsjustjose", "GotoLink" ],
+  "parent":"",
+  "screenshots": [],
+  "dependencies": [
+     "MinecraftForge"
+  ]
+},
+ {
+   "modid": "mysticworld",
+   "name": "Mystic World",
+   "description": "Adds a lot of stuff related to the other mystic mods",
+   "version": $version,
+   "credits": "oitsjustjose",
+   "logoFile": "",
+   "mcversion": $mcversion,
+   "url": "http://bit.ly/13ep6OW",
+   "updateUrl": "",
+   "authorList": [ "oitsjustjose", "GotoLink" ],
+   "parent":"",
+   "screenshots": [],
+   "dependencies": [
+      "MinecraftForge"
+   ]
+ }
+]

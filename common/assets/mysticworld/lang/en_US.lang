@@ -1,0 +1,69 @@
+﻿
+imbuedStoneFire.name=Magmatic Stone Chunk
+imbuedStoneWater.name=Aquatic Stone Chunk
+imbuedStoneEarth.name=Fertile Stone Chunk
+imbuedStoneAir.name=Aerated Stone Chunk
+imbuedStoneEnergy.name=Kinetic Stone Chunk
+  
+Bush.name=Mundane Bush 
+Poisonous Bush.name=Poisonous Bush 
+Weakness Bush.name=Weakening Bush 
+Slowness Bush.name=Slowness Bush 
+Harming Bush.name=Harming Bush 
+Wither Bush.name=Withering Bush 
+Health Bush.name=Healing Bush 
+Speed Bush.name=Speed Bush 
+Fire Resistance Bush.name=Extinguishing Bush 
+Regen Bush.name=Regeneration Bush
+Night Vision Bush.name=Night Vision Bush 
+Invisibility Bush.name=Invisibility Bush
+
+tile.platform.name=Pillar Platform 
+tile.pillar.name=Pillar Tower 
+tile.pillarInsert.name=Pillarinsert 
+    
+Staff.name=Staff 
+Hilt.name=Staff Hilt 
+Handle.name=Staff Handle 
+Head.name=Staff Topper 
+
+item.imbuedShardFire.name=Magmatic Shard 
+item.imbuedShardWater.name=Aquatic Shard 
+item.imbuedShardEarth.name=Fertile Shard 
+item.imbuedShardAir.name=Aerated Shard 
+item.imbuedShardEnergy.name=Kinetic Shard 
+item.fireStaff.name=Magma Staff 
+item.waterStaff.name=Aqua Staff 
+item.earthStaff.name=Fertile Staff 
+item.airStaff.name=Aeration Staff 
+item.energyStaff.name=Kinesis Staff 
+item.bushFruit.name=Mysterious Fruit
+
+item.verditeHelmet.name=Verdite Helmet 
+item.verditeChestplate.name=Verdite Chestplate 
+item.verditeLeggings.name=Verdite Leggings 
+item.verditeBoots.name=Verdite Boots 
+
+item.mithrilHelmet.name=Mithril Helmet 
+item.mithrilChestplate.name=Mithril Chestplate 
+item.mithrilLeggings.name=Mithril Leggings 
+item.mithrilBoots.name=Mithril Boots
+
+item.adamantineHelmet.name=Adamantine Helmet 
+item.adamantineChestplate.name=Adamantine Chestplate 
+item.adamantineLeggings.name=Adamantine Leggings 
+item.adamantineBoots.name=Adamantine Boots
+
+item.iridiumHelmet.name=Iridium Helmet 
+item.iridiumChestplate.name=Iridium Chestplate 
+item.iridiumLeggings.name=Iridium Leggings 
+item.iridiumBoots.name=Iridium Boots
+
+item.fireOrb.name=Magmatic Orb
+item.waterOrb.name=Aquatic Orb
+item.earthOrb.name=Orb of Fertility 
+item.airOrb.name=Aerating Orb
+item.energyOrb.name=Kinesis Orb
+item.voidShard.name=Void Shard
+
+itemGroup.MysticWorldTab=Mystic World

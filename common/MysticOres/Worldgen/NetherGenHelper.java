@@ -1,23 +1,24 @@
 package mysticores.worldgen;
 
-import java.util.Random;
-
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
+import java.util.Random;
+
 public class NetherGenHelper extends WorldGenerator {
-	private int minableBlockId;
+	private Block minableBlockId;
 	private int minableBlockMeta = 0;
 	private int numberOfBlocks;
 
-	public NetherGenHelper(int par1, int par2) {
+	public NetherGenHelper(Block par1, int par2) {
 		this.minableBlockId = par1;
 		this.numberOfBlocks = par2;
 	}
 
-	public NetherGenHelper(int id, int meta, int number) {
+	public NetherGenHelper(Block id, int meta, int number) {
 		this(id, number);
 		minableBlockMeta = meta;
 	}
@@ -52,8 +53,8 @@ public class NetherGenHelper extends WorldGenerator {
 						if (var39 * var39 + var42 * var42 < 1.0D) {
 							for (int var44 = var34; var44 <= var37; ++var44) {
 								double var45 = (var44 + 0.5D - var24) / (var28 / 2.0D);
-								int blocktoreplace = par1World.getBlockId(var38, var41, var44);
-								if (var39 * var39 + var42 * var42 + var45 * var45 < 1.0D && blocktoreplace == Block.netherrack.blockID) {
+								Block blocktoreplace = par1World.getBlock(var38, var41, var44);
+								if (var39 * var39 + var42 * var42 + var45 * var45 < 1.0D && blocktoreplace == Blocks.netherrack) {
 									par1World.setBlock(var38, var41, var44, this.minableBlockId, minableBlockMeta, 3);
 								}
 							}

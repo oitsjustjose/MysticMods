@@ -5,95 +5,86 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-import org.lwjgl.input.Mouse;
-
 public class ItemOrbAir extends ItemOrb {
-	public ItemOrbAir(int id) {
-		super(id);
+	public ItemOrbAir() {
+		super();
 	}
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
-		if (itemStack.stackTagCompound == null)
-			itemStack.setTagCompound(new NBTTagCompound());
-		if (itemStack.stackTagCompound.getBoolean("charging") == false) {
-			itemStack.stackTagCompound.setBoolean("charging", true);
-		}
-		return itemStack;
+        player.setItemInUse(itemStack, this.getMaxItemUseDuration(itemStack));
+        return itemStack;
 	}
+
+    @Override
+    public int getMaxItemUseDuration(ItemStack itemStack){
+        return 5*20;
+    }
+
+    @Override
+    public void onPlayerStoppedUsing(ItemStack itemStack, World world, EntityPlayer player, int time) {
+        int charge = getMaxItemUseDuration(itemStack)-time;
+        if (charge > 0) {
+            if (player.onGround) {
+                world.playSoundEffect(player.posX, player.posY, player.posZ, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+                if(!world.isRemote){
+                    player.addPotionEffect(new PotionEffect(Potion.jump.getId(), 50, charge*25/getMaxItemUseDuration(itemStack)));
+                }
+                itemStack.damageItem(1, player);
+            }
+            resetData(itemStack);
+        }
+    }
 
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) {
-		if (itemStack.stackTagCompound == null)
-			itemStack.setTagCompound(new NBTTagCompound());
-		EntityPlayer player = (EntityPlayer) entity;
-		ItemStack currentItem = player.inventory.getCurrentItem();
-		itemStack.stackTagCompound.setInteger("maxChargeTime", 5 * 20);
-		if (currentItem != null) {
-			if (currentItem.itemID == itemStack.itemID) {
-				player.fallDistance = 0.0F;
-				chargeEffect(itemStack, world, player);
-				if (!Mouse.isButtonDown(1)) {
-					if (itemStack.stackTagCompound.getInteger("chargeTime") > 0) {
-						if (player.onGround) {
-							world.playSoundEffect(player.posX, player.posY, player.posZ, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-							player.setVelocity(0.0D, 1.0D + (itemStack.stackTagCompound.getInteger("chargeTime")) * (2.5D * (1.0D / itemStack.stackTagCompound.getInteger("maxChargeTime"))), 0.0D);
-							itemStack.damageItem(1, player);
-						}
-					}
-					resetData(itemStack);
-				} else {
-					if (itemStack.stackTagCompound.getBoolean("charging") == true) {
-						incrementData(itemStack);
-					}
-					spiralEffect(itemStack, world, player);
-				}
-			}
-		} else {
-			resetData(itemStack);
-			itemStack.stackTagCompound.setFloat("angle", 0);
-			itemStack.stackTagCompound.setDouble("radius", 0);
-		}
-		if (itemStack.stackTagCompound.getInteger("chargeTime") > itemStack.stackTagCompound.getInteger("maxChargeTime")) {
-			itemStack.stackTagCompound.setInteger("chargeTime", itemStack.stackTagCompound.getInteger("maxChargeTime"));
-		}
-		if (itemStack.stackTagCompound.getDouble("radius") > 2.5D) {
-			itemStack.stackTagCompound.setDouble("radius", 2.5D);
-		}
-		if (itemStack.stackTagCompound.getFloat("angle") > 6.0f) {
-			itemStack.stackTagCompound.setFloat("angle", 0.0f);
-		}
+        if (par5) {
+            entity.fallDistance = 0.0F;
+            chargeEffect(itemStack, world, entity);
+        }
 	}
 
-	private void chargeEffect(ItemStack itemStack, World world, EntityPlayer player) {
-		double particleX = (player.posX - 0.5D) + rand.nextDouble();
-		double particleZ = (player.posZ - 0.5D) + rand.nextDouble();
-		if (!world.isRemote)
-			MysticWorld.proxy.airFeetFX(world, particleX, player.posY, particleZ, 1.0f, 15);
+    @Override
+    public void onUsingTick(ItemStack stack, EntityPlayer player, int count){
+        if (stack.stackTagCompound == null){
+            stack.setTagCompound(new NBTTagCompound());
+        }
+        incrementData(stack, getMaxItemUseDuration(stack) - count);
+        spiralEffect(stack, player.worldObj, player, getMaxItemUseDuration(stack) - count);
+    }
+
+	private void chargeEffect(ItemStack itemStack, World world, Entity player) {
+		double particleX = (player.posX - 0.5D) + itemRand.nextDouble();
+		double particleZ = (player.posZ - 0.5D) + itemRand.nextDouble();
+        MysticWorld.proxy.airFeetFX(world, particleX, player.posY, particleZ, 1.0f, 15);
 	}
 
-	private void incrementData(ItemStack itemStack) {
-		itemStack.stackTagCompound.setInteger("chargeTime", itemStack.stackTagCompound.getInteger("chargeTime") + 1);
+	private void incrementData(ItemStack itemStack, int charge) {
 		itemStack.stackTagCompound.setFloat("angle", itemStack.stackTagCompound.getFloat("angle") + 0.2f);
-		itemStack.stackTagCompound.setDouble("radius", itemStack.stackTagCompound.getInteger("chargeTime") * 0.025D);
+		itemStack.stackTagCompound.setDouble("radius", charge * 0.025D);
+        if (itemStack.stackTagCompound.getDouble("radius") > 2.5D) {
+            itemStack.stackTagCompound.setDouble("radius", 2.5D);
+        }
+        if (itemStack.stackTagCompound.getFloat("angle") > 6.0f) {
+            itemStack.stackTagCompound.setFloat("angle", 0.0f);
+        }
 	}
 
 	private void resetData(ItemStack itemStack) {
-		itemStack.stackTagCompound.setInteger("chargeTime", 0);
-		itemStack.stackTagCompound.setBoolean("charging", false);
 		itemStack.stackTagCompound.setFloat("angle", 0);
 		itemStack.stackTagCompound.setDouble("radius", 0);
 	}
 
-	private void spiralEffect(ItemStack itemStack, World world, EntityPlayer player) {
+	private void spiralEffect(ItemStack itemStack, World world, EntityPlayer player, int charge) {
 		double particleX = player.posX + (MathHelper.cos(itemStack.stackTagCompound.getFloat("angle"))) * itemStack.stackTagCompound.getDouble("radius");
 		double particleY = player.posY;
 		double particleZ = player.posZ + (MathHelper.sin(itemStack.stackTagCompound.getFloat("angle"))) * itemStack.stackTagCompound.getDouble("radius");
-		float particleScale = ((itemStack.stackTagCompound.getInteger("chargeTime")) * (5.0f * (1 / (float) itemStack.stackTagCompound.getInteger("maxChargeTime"))));
-		if (!world.isRemote)
-			MysticWorld.proxy.airFeetFX(world, particleX, particleY, particleZ, 1.0f + particleScale, 15);
+		float particleScale = charge * 5.0f / getMaxItemUseDuration(itemStack);
+        MysticWorld.proxy.airFeetFX(world, particleX, particleY, particleZ, 1.0f + particleScale, 15);
 	}
 }

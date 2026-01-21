@@ -1,36 +1,37 @@
 package mysticworld.blocks;
 
-import java.util.List;
-import java.util.Random;
-
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import mysticworld.MysticWorld;
 import mysticworld.items.ItemHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+import java.util.List;
+import java.util.Random;
 
 public class BlockImbuedStone extends Block {
-	Icon[] textures;
+	IIcon[] textures;
 
-	public BlockImbuedStone(int ID) {
-		super(ID, Material.rock);
-		setHardness(0.5F);
-		setResistance(5F);
+	public BlockImbuedStone() {
+		super(Material.rock);
+        setHardness(0.5F);
+        setResistance(5F);
 		setCreativeTab(MysticWorld.MysticWorldTab);
-		setBlockBounds(0.25F, 0.0F, 0.25F, 0.75F, 0.125F, 0.75F);
-		setLightValue(0.625f);
+        setBlockBounds(0.25F, 0.0F, 0.25F, 0.75F, 0.125F, 0.75F);
+        setLightLevel(0.625f);
 	}
 
 	@Override
 	public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4) {
-		return par1World.doesBlockHaveSolidTopSurface(par2, par3 - 1, par4);
+		return World.doesBlockHaveSolidTopSurface(par1World, par2, par3 - 1, par4);
 	}
 
 	@Override
@@ -44,30 +45,22 @@ public class BlockImbuedStone extends Block {
 	}
 
 	@Override
-	public Icon getIcon(int side, int meta) {
+    @SideOnly(Side.CLIENT)
+	public IIcon getIcon(int side, int meta) {
 		return textures[meta];
 	}
 
 	@Override
-	public void getSubBlocks(int i, CreativeTabs tab, List list) {
+    @SideOnly(Side.CLIENT)
+	public void getSubBlocks(Item i, CreativeTabs tab, List list) {
 		for (int j = 0; j < 5; j++) {
 			list.add(new ItemStack(i, 1, j));
 		}
 	}
 
 	@Override
-	public int idDropped(int par1, Random par2Random, int par3) {
-		return ItemHandler.imbuedShard.itemID;
-	}
-
-	@Override
-	public int idPicked(World par1World, int par2, int par3, int par4) {
-		return blockID;
-	}
-
-	@Override
-	public boolean isOpaqueCube() {
-		return false;
+	public Item getItemDropped(int par1, Random par2Random, int par3) {
+		return ItemHandler.imbuedShard;
 	}
 
 	@Override
@@ -76,9 +69,9 @@ public class BlockImbuedStone extends Block {
 	}
 
 	@Override
-	public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int par5) {
+	public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, Block par5) {
 		boolean flag = false;
-		if (!par1World.doesBlockHaveSolidTopSurface(par2, par3 - 1, par4) && !BlockFence.isIdAFence(par1World.getBlockId(par2, par3 - 1, par4))) {
+		if (!World.doesBlockHaveSolidTopSurface(par1World, par2, par3 - 1, par4) && !BlockFence.func_149825_a(par1World.getBlock(par2, par3 - 1, par4))) {
 			flag = true;
 		}
 		if (flag) {
@@ -89,24 +82,24 @@ public class BlockImbuedStone extends Block {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister) {
-		textures = new Icon[16];
+	public void registerBlockIcons(IIconRegister iconRegister) {
+		textures = new IIcon[16];
 		for (int i = 0; i < 5; i++) {
-			textures[i] = iconRegister.registerIcon("MysticMods" + ":" + ItemImbuedStone.IMBUED_STONE_TYPE[i] + " Imbued Stone");
+			textures[i] = iconRegister.registerIcon("mysticworld:" + BlockHandler.IMBUED_STONE_TYPE.get(i).substring(11) + " Imbued Stone");
 		}
 	}
 
-	@Override
-	public boolean renderAsNormalBlock() {
-		return false;
-	}
+    @Override
+    public boolean renderAsNormalBlock(){
+        return false;
+    }
+
+    @Override
+    public boolean isOpaqueCube(){
+        return false;
+    }
 
 	public int xpDropAmount(int j) {
 		return 5;
-	}
-
-	@Override
-	protected boolean canSilkHarvest() {
-		return true;
 	}
 }

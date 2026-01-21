@@ -1,10 +1,10 @@
 package mysticworld.items;
 
 import mysticworld.MysticWorld;
-import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -12,14 +12,15 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
 public class ItemOrbFire extends ItemOrb {
-	public ItemOrbFire(int id) {
-		super(id);
+	public ItemOrbFire() {
+		super();
 	}
 
-	public boolean itemInteractionForEntity(ItemStack itemStack, EntityLiving entityLiving) {
-		entityLiving.setFire(5);
-		entityLiving.attackEntityFrom(DamageSource.magic, 7);
-		itemStack.damageItem(1, entityLiving);
+	@Override
+	public boolean itemInteractionForEntity(ItemStack itemStack, EntityPlayer entityPlayer, EntityLivingBase entity) {
+		entity.setFire(5);
+		entity.attackEntityFrom(DamageSource.magic, 7);
+		itemStack.damageItem(1, entityPlayer);
 		return true;
 	}
 
@@ -48,7 +49,7 @@ public class ItemOrbFire extends ItemOrb {
 		} else {
 			if (par3World.isAirBlock(par4, par5, par6)) {
 				par3World.playSoundEffect(par4 + 0.5D, par5 + 0.5D, par6 + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-				par3World.setBlock(par4, par5, par6, Block.fire.blockID);
+				par3World.setBlock(par4, par5, par6, Blocks.fire);
 			}
 			par1ItemStack.damageItem(1, par2EntityPlayer);
 			return true;
@@ -65,15 +66,9 @@ public class ItemOrbFire extends ItemOrb {
 
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) {
-		EntityPlayer player = (EntityPlayer) entity;
-		ItemStack currentItem = player.inventory.getCurrentItem();
-		if (!world.isRemote) {
-			if (currentItem != null) {
-				if (currentItem.itemID == itemStack.itemID) {
-					player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
-					MysticWorld.proxy.fireFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
-				}
-			}
+		if (entity instanceof EntityPlayer && par5) {
+            ((EntityPlayer)entity).addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
+			MysticWorld.proxy.fireFX(world, (entity.posX - 0.5D) + itemRand.nextDouble(), entity.posY, (entity.posZ - 0.5D) + itemRand.nextDouble(), 1.0F);
 		}
 	}
 }

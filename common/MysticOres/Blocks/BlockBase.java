@@ -1,31 +1,37 @@
 package mysticores.blocks;
 
-import java.util.List;
-import java.util.Random;
-
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import mysticores.MysticOres;
 import mysticores.items.Items;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.Facing;
+import net.minecraft.util.IIcon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.common.ForgeDirection;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.common.util.ForgeDirection;
+
+import java.util.List;
+import java.util.Random;
 
 public class BlockBase extends Block {
-	Icon[] textures;
+	IIcon[] textures;
 
-	public BlockBase(int ID) {
-		super(ID, Material.rock);
-		setCreativeTab(MysticOres.MysticOresTab);
+	public BlockBase() {
+		super(Material.rock);
+        setCreativeTab(MysticOres.MysticOresTab);
+        setHarvestLevel("pickaxe", 2);
+        setHarvestLevel("pickaxe", 3, 0);
+        setHarvestLevel("pickaxe", 3, 2);
+        setHarvestLevel("pickaxe", 1, 6);
 	}
 
 	@Override
@@ -74,7 +80,7 @@ public class BlockBase extends Block {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public Icon getIcon(int side, int meta) {
+	public IIcon getIcon(int side, int meta) {
 		return textures[meta];
 	}
 
@@ -95,14 +101,14 @@ public class BlockBase extends Block {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void getSubBlocks(int i, CreativeTabs tab, List list) {
-		for (int meta = 0; meta < ItemBase.BLOCK_NAMES.length; meta++) {
+	public void getSubBlocks(Item i, CreativeTabs tab, List list) {
+		for (int meta = 0; meta < BlockHandler.BLOCK_NAMES.size(); meta++) {
 			list.add(new ItemStack(i, 1, meta));
 		}
 	}
 
 	@Override
-	public int idDropped(int par1, Random random, int par3) {
+	public Item getItemDropped(int par1, Random random, int par3) {
 		switch (par1) {
 		case 1:
 		case 2:
@@ -111,25 +117,20 @@ public class BlockBase extends Block {
 		case 7:
 		case 11:
 		case 12:
-			return Items.Resource.itemID;
+			return Items.Resource;
 		case 8:
-			return this.BlackSoulstoneDrops(par1, random, par3);
+			return BlackSoulstoneDrops(par1, random, par3);
 		case 9:
-			return this.BlueSoulstoneDrops(par1, random, par3);
+			return BlueSoulstoneDrops(par1, random, par3);
 		case 10:
-			return this.RedSoulstoneDrops(par1, random, par3);
+			return RedSoulstoneDrops(par1, random, par3);
 		default:
-			return blockID;
+			return super.getItemDropped(par1, random, par3);
 		}
 	}
 
 	@Override
-	public int idPicked(World world, int x, int y, int z) {
-		return this.blockID;
-	}
-
-	@Override
-	public boolean isBlockSolidOnSide(World world, int x, int y, int z, ForgeDirection side) {
+	public boolean isSideSolid(IBlockAccess world, int x, int y, int z, ForgeDirection side) {
 		int meta = world.getBlockMetadata(x, y, z);
 		if (meta == 12)
 			return false;
@@ -138,9 +139,9 @@ public class BlockBase extends Block {
 	}
 
 	@Override
-	public boolean isOpaqueCube() {
-		return false;
-	}
+    public boolean isOpaqueCube(){
+        return false;
+    }
 
 	@Override
 	public int quantityDropped(int meta, int fortune, Random random) {
@@ -164,79 +165,72 @@ public class BlockBase extends Block {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister register) {
-		textures = new Icon[16];
-		for (int i = 0; i < ItemBase.BLOCK_NAMES.length; i++) {
-			textures[i] = register.registerIcon("MysticMods:" + ItemBase.BLOCK_NAMES[i]);
+	public void registerBlockIcons(IIconRegister register) {
+		textures = new IIcon[16];
+		for (int i = 0; i < BlockHandler.BLOCK_NAMES.size(); i++) {
+			textures[i] = register.registerIcon("mysticores:" + BlockHandler.BLOCK_NAMES.get(i));
 		}
 	}
 
 	@Override
-	public boolean renderAsNormalBlock() {
-		return false;
-	}
+    public boolean renderAsNormalBlock(){
+        return false;
+    }
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public boolean shouldSideBeRendered(IBlockAccess world, int x, int y, int z, int par) {
+	public boolean shouldSideBeRendered(IBlockAccess world, int x, int y, int z, int side) {
 		int meta = world.getBlockMetadata(x, y, z);
-		int blockID = world.getBlockId(x, y, z);
-		if (meta == 12 && blockID == this.blockID)
-			return false;
-		else
+		if (meta == 12 && world.getBlock(x, y, z) == this){
+            return !(world.getBlock(x-Facing.offsetsXForSide[side], y-Facing.offsetsYForSide[side], z-Facing.offsetsZForSide[side])==this&&world.getBlockMetadata(x-Facing.offsetsXForSide[side], y-Facing.offsetsYForSide[side], z-Facing.offsetsZForSide[side])==meta);
+        }else
 			return true;
 	}
 
-	@Override
-	protected boolean canSilkHarvest() {
-		return true;
-	}
-
-	public static int BlackSoulstoneDrops(int par1, Random random, int par3) {
+	public static Item BlackSoulstoneDrops(int par1, Random random, int par3) {
 		int rand = random.nextInt(2);
 		switch (rand) {
 		case 0:
-			return Item.coal.itemID;
+			return net.minecraft.init.Items.coal;
 		case 1:
-			return Item.gunpowder.itemID;
+			return net.minecraft.init.Items.gunpowder;
 		default:
-			return Item.sugar.itemID;
+			return net.minecraft.init.Items.sugar;
 		}
 	}
 
-	public static int BlueSoulstoneDrops(int par1, Random random, int par3) {
+	public static Item BlueSoulstoneDrops(int par1, Random random, int par3) {
 		int rand = random.nextInt(5);
 		switch (rand) {
 		case 0:
-			return Item.diamond.itemID;
+			return net.minecraft.init.Items.diamond;
 		case 1:
-			return Block.obsidian.blockID;
+			return Item.getItemFromBlock(Blocks.obsidian);
 		case 2:
-			return Item.gunpowder.itemID;
+			return net.minecraft.init.Items.gunpowder;
 		case 3:
-			return Item.glowstone.itemID;
+			return net.minecraft.init.Items.glowstone_dust;
 		case 4:
-			return Item.blazeRod.itemID;
+			return net.minecraft.init.Items.blaze_rod;
 		case 5:
-			return Item.emerald.itemID;
 		default:
-			return Item.emerald.itemID;
+			return net.minecraft.init.Items.emerald;
 		}
 	}
 
-	public static int RedSoulstoneDrops(int par1, Random random, int par3) {
+	public static Item RedSoulstoneDrops(int par1, Random random, int par3) {
 		int rand = random.nextInt(4);
 		switch (rand) {
 		case 0:
-			return Item.glowstone.itemID;
+			return net.minecraft.init.Items.glowstone_dust;
 		case 1:
-			return Item.gunpowder.itemID;
+			return net.minecraft.init.Items.gunpowder;
 		case 2:
-			return Item.redstone.itemID;
+			return net.minecraft.init.Items.redstone;
 		case 3:
-			return Block.obsidian.blockID;
+			return Item.getItemFromBlock(Blocks.obsidian);
 		default:
-			return Item.blazePowder.itemID;
+			return net.minecraft.init.Items.blaze_powder;
 		}
 	}
 }

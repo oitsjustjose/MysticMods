@@ -1,37 +1,37 @@
 package mysticworld.items;
 
-import java.util.List;
-
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import mysticworld.MysticWorld;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+import java.util.List;
 
 public class ItemStaffParts extends Item {
-	private Icon[] icons;
+	private IIcon[] icons;
 	private static final String[] STAFF_PARTS = new String[] { "Staff", "Hilt", "Handle", "Head" };
 
-	public ItemStaffParts(int id) {
-		super(id);
+	public ItemStaffParts() {
+		super();
 		this.setHasSubtypes(true);
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public Icon getIconFromDamage(int meta) {
+	public IIcon getIconFromDamage(int meta) {
 		int j = MathHelper.clamp_int(meta, 0, STAFF_PARTS.length);
 		return icons[j];
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List) {
+	public void getSubItems(Item par1, CreativeTabs par2CreativeTabs, List par3List) {
 		for (int var4 = 0; var4 < STAFF_PARTS.length; var4++) {
 			par3List.add(new ItemStack(par1, 1, var4));
 		}
@@ -51,10 +51,10 @@ public class ItemStaffParts extends Item {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister) {
-		icons = new Icon[STAFF_PARTS.length];
+	public void registerIcons(IIconRegister iconRegister) {
+		icons = new IIcon[STAFF_PARTS.length];
 		for (int i = 0; i < STAFF_PARTS.length; ++i) {
-			icons[i] = iconRegister.registerIcon("MysticMods:StaffPart_" + STAFF_PARTS[i]);
+			icons[i] = iconRegister.registerIcon("mysticworld:StaffPart_" + STAFF_PARTS[i]);
 		}
 	}
 }

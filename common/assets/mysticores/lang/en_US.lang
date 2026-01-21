@@ -1,0 +1,68 @@
+﻿
+item.VerditeSword.name=Verdite Sword 
+item.VerditePickaxe.name=Verdite Pickaxe 
+item.VerditeShovel.name=Verdite Shovel 
+item.VerditeAxe.name=Verdite Axe 
+item.VerditeHoe.name=Verdite Hoe
+
+item.MithrilSword.name=Mithril Sword 
+item.MithrilPickaxe.name=Mithril Pickaxe 
+item.MithrilShovel.name=Mithril Shovel 
+item.MithrilAxe.name=Mithril Axe 
+item.MithrilHoe.name=Mithril Hoe
+
+item.AdamantineSword.name=Adamantine Sword 
+item.AdamantinePickaxe.name=Adamantine Pickaxe 
+item.AdamantineShovel.name=Adamantine Shovel 
+item.AdamantineAxe.name=Adamantine Axe 
+item.AdamantineHoe.name=Adamantine Hoe 
+
+item.IridiumSword.name=Iridium Sword 
+item.IridiumPickaxe.name=Iridium Pickaxe 
+item.IridiumShovel.name=Iridium Shovel 
+item.IridiumAxe.name=Iridium Axe 
+item.IridiumHoe.name=Iridium Hoe
+
+item.ObsidianSword.name=Obsidian Sword 
+item.ObsidianPickaxe.name=Obsidian Pickaxe 
+item.ObsidianShovel.name=Obsidian Shovel 
+item.ObsidianAxe.name=Obsidian Axe 
+item.ObsidianHoe.name=Obsidian Hoe
+
+item.BloodstoneSword.name=Bloodstone Sword 
+item.BloodstonePickaxe.name=Bloodstone Pickaxe 
+item.BloodstoneShovel.name=Bloodstone Shovel 
+item.BloodstoneAxe.name=Bloodstone Axe 
+item.BloodstoneHoe.name=Bloodstone Hoe
+
+Verdite Ingot.name=Verdite Ingot 
+Mithril Ingot.name=Mithril Ingot 
+Adamantine Ingot.name=Adamantine Ingot 
+Iridium Ingot.name=Iridium Ingot 
+Iridium Nugget.name=Iridium Nugget 
+Tourmaline Gem.name=Tourmaline Gemstone 
+Agate Gem.name=Agate Gemstone 
+Topaz Gem.name=Topaz Gemstone 
+Amethyst Gem.name=Amethyst Gemstone 
+Mystic Powder.name=Mystic Powder 
+Bloodstone Shard.name=Bloodstone Shard 
+Glass Shard.name=Glass Shard 
+Obsidian Shard.name=Obsidian Shard 
+Obsidian Rod.name=Obsidian Rod 
+item.Satchel.name=Magical Bag
+   
+Adamantine Ore.name=Adamantine Ore 
+Amethyst Ore.name=Amethyst Ore 
+Iridium Ore.name=Iridium Ore 
+Mithril Ore.name=Mithril Ore 
+Tourmaline Ore.name=Tourmaline Ore 
+Topaz Ore.name=Topaz Ore 
+Verdite Ore.name=Verdite Ore 
+Bloodstone.name=Bloodstone 
+Black Soulstone.name=Black Soulstone 
+Blue Soulstone.name=Blue Soulstone 
+Red Soulstone.name=Red Soulstone 
+Agate Ore.name=Agate Ore
+Tempered Glass.name=Tempered Glass 
+
+itemGroup.MysticOresTab=Mystic Ores

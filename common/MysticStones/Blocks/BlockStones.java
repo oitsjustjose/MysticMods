@@ -1,22 +1,23 @@
 package mysticstones.blocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
-import net.minecraft.util.MovingObjectPosition;
-import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import mysticstones.MysticStones;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
+import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.world.World;
 
 public class BlockStones extends BlockMulti {
-	public BlockStones(int ID) {
-		super(ID, Material.rock);
-		setHardness(1F);
-		setResistance(5F);
-		setUnlocalizedName("BlockMysticStones");
-		setStepSound(Block.soundStoneFootstep);
+	public BlockStones() {
+		super(Material.rock);
+        setHardness(1F);
+        setResistance(5F);
+        setBlockName("BlockMysticStones");
+		setStepSound(Block.soundTypeStone);
 	}
 
 	@Override
@@ -48,15 +49,10 @@ public class BlockStones extends BlockMulti {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister) {
-		textures = new Icon[ItemStones.STONE_TYPES.length];
+	public void registerBlockIcons(IIconRegister iconRegister) {
+		textures = new IIcon[MysticStones.STONE_TYPES.size()];
 		for (int i = 0; i < textures.length; i++) {
-			textures[i] = iconRegister.registerIcon("MysticMods" + ":" + ItemStones.STONE_TYPES[i]);
+			textures[i] = iconRegister.registerIcon("mysticstones:" + MysticStones.STONE_TYPES.get(i));
 		}
-	}
-
-	@Override
-	protected boolean canSilkHarvest() {
-		return true;
 	}
 }

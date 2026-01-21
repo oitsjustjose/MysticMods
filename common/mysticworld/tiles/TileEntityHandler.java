@@ -1,7 +1,7 @@
 package mysticworld.tiles;
 
-import mysticworld.lib.Strings;
 import cpw.mods.fml.common.registry.GameRegistry;
+import mysticworld.lib.Strings;
 
 public class TileEntityHandler {
 	public static void init() {

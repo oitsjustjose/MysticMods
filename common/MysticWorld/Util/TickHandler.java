@@ -1,68 +1,36 @@
 package mysticworld.util;
 
-import java.util.EnumSet;
-import java.util.Random;
-
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.TickEvent;
 import mysticworld.blocks.BlockHandler;
+import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.item.Item;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
-import cpw.mods.fml.common.IScheduledTickHandler;
-import cpw.mods.fml.common.TickType;
 
-public class TickHandler implements IScheduledTickHandler {
-	private EnumSet ticks;
+import java.util.Random;
+
+public class TickHandler {
 	public static final Enchantment[] enchantmentsPick = { Enchantment.efficiency, Enchantment.fortune, Enchantment.silkTouch, Enchantment.unbreaking };
 
-	public TickHandler() {
-		this.ticks = EnumSet.of(TickType.PLAYER);
+	@SubscribeEvent
+	public void tickStart(TickEvent.PlayerTickEvent event) {
+        if(event.phase == TickEvent.Phase.START && event.side.isServer() && event.player.worldObj.getWorldTime()%20==0)
+		    pillarTick(event.player, event.player.worldObj, event.player.getRNG());
 	}
 
-	@Override
-	public String getLabel() {
-		return "mystic world tick";
-	}
-
-	@Override
-	public int nextTickSpacing() {
-		return 20;
-	}
-
-	@Override
-	public void tickEnd(EnumSet<TickType> type, Object... tickData) {
-		EntityPlayer player = (EntityPlayer) tickData[0];
-		World world = player.worldObj;
-		InventoryPlayer inventory = player.inventory;
-	}
-
-	@Override
-	public EnumSet ticks() {
-		return this.ticks;
-	}
-
-	@Override
-	public void tickStart(EnumSet<TickType> type, Object... tickData) {
-		Random rand = new Random();
-		EntityPlayer player = (EntityPlayer) tickData[0];
-		World world = player.worldObj;
-		InventoryPlayer inventory = player.inventory;
-		ItemStack itemstack = inventory.getCurrentItem();
-		pillarTick(player, world, inventory, rand);
-	}
-
-	private static void pillarTick(EntityPlayer player, World world, InventoryPlayer inventory, Random rand) {
-		ItemStack itemStack = inventory.getCurrentItem();
+	private static void pillarTick(EntityPlayer player, World world, Random rand) {
+		ItemStack itemStack = player.inventory.getCurrentItem();
 		int blockX = (int) player.posX - 1;
 		int blockY = (int) (player.posY - 0.15D);
 		int blockZ = (int) player.posZ - 1;
-		int blockId = world.getBlockId(blockX, blockY, blockZ);
+		Block blockId = world.getBlock(blockX, blockY, blockZ);
 		int blockMeta = world.getBlockMetadata(blockX, blockY, blockZ);
-		if (blockId == BlockHandler.pillarPlatform.blockID) {
+		if (blockId == BlockHandler.pillarPlatform) {
 			switch (blockMeta) {
 			//food
 			case 0:
@@ -97,9 +65,9 @@ public class TickHandler implements IScheduledTickHandler {
 			//enchanter
 			case 7:
 				if (itemStack != null
-						&& (itemStack.itemID == Item.pickaxeWood.itemID || itemStack.itemID == Item.pickaxeStone.itemID || itemStack.itemID == Item.pickaxeIron.itemID
-								|| itemStack.itemID == Item.pickaxeGold.itemID || itemStack.itemID == Item.pickaxeDiamond.itemID)) {
-					if (itemStack.isItemEnchanted() != true && player.experienceLevel >= 10) {
+						&& (itemStack.getItem() == Items.wooden_pickaxe || itemStack.getItem() == Items.stone_pickaxe || itemStack.getItem() == Items.iron_pickaxe
+								|| itemStack.getItem() == Items.golden_pickaxe || itemStack.getItem() == Items.diamond_pickaxe)) {
+					if (!itemStack.isItemEnchanted() && player.experienceLevel >= 10) {
 						player.experienceLevel -= 10;
 						itemStack.addEnchantment(enchantmentsPick[rand.nextInt(3)], rand.nextInt(4) + 1);
 					}

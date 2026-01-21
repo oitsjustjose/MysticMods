@@ -1,7 +1,5 @@
 package mysticstones.blocks;
 
-import java.util.List;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mysticstones.MysticStones;
@@ -10,15 +8,17 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-public class BlockMulti extends Block {
-	Icon[] textures;
+import java.util.List;
 
-	public BlockMulti(int par1, Material par2Material) {
-		super(par1, par2Material);
+public class BlockMulti extends Block {
+	IIcon[] textures;
+
+	public BlockMulti(Material par2Material) {
+		super(par2Material);
 		setCreativeTab(MysticStones.MysticStonesTab);
 	}
 
@@ -29,26 +29,22 @@ public class BlockMulti extends Block {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public Icon getIcon(int side, int meta) {
+	public IIcon getIcon(int side, int meta) {
 		return textures[meta];
 	}
 
 	@Override
 	public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z) {
-		int id = idPicked(world, x, y, z);
-		if (id == 0) {
-			return null;
-		}
-		Item item = Item.itemsList[id];
+		Item item = getItem(world, x, y, z);
 		if (item == null) {
 			return null;
 		}
-		return new ItemStack(id, 1, getDamageValue(world, x, y, z));
+		return new ItemStack(item, 1, getDamageValue(world, x, y, z));
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void getSubBlocks(int i, CreativeTabs tab, List list) {
+	public void getSubBlocks(Item i, CreativeTabs tab, List list) {
 		for (int j = 0; j < textures.length; j++) {
 			list.add(new ItemStack(i, 1, j));
 		}

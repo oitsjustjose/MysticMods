@@ -1,0 +1,69 @@
+﻿
+imbuedStoneFire.name=Часть Магмового Камня
+imbuedStoneWater.name=Часть Камня Воды
+imbuedStoneEarth.name=Часть Камня Изобилия
+imbuedStoneAir.name=Часть Камня Воздуха
+imbuedStoneEnergy.name=Часть Камня Энергии
+  
+Bush.name=Кусты Мира 
+Poisonous Bush.name=Ядовитый куст 
+Weakness Bush.name=Куст слабости 
+Slowness Bush.name=Куст замедления 
+Harming Bush.name=Вредный куст 
+Wither Bush.name=Куст-иссушитель 
+Health Bush.name=Лечащий куст 
+Speed Bush.name=Куст скорости 
+Fire Resistance Bush.name=Куст спасения от огня 
+Regen Bush.name=Куст регенерации
+Night Vision Bush.name=Куст ночного зрения 
+Invisibility Bush.name=Куст-невидимка
+
+tile.platform.name=Навершие колонны 
+tile.pillar.name=Колонна
+tile.pillarInsert.name=Колонна 
+    
+Staff.name=Посох 
+Hilt.name=Древко посоха 
+Handle.name=Рукоять посоха 
+Head.name=Навершие посоха 
+
+item.imbuedShardFire.name=Магмовый осколок 
+item.imbuedShardWater.name=Водяной осколок 
+item.imbuedShardEarth.name=Осколок изобилия 
+item.imbuedShardAir.name=Воздушный осколок 
+item.imbuedShardEnergy.name=Энергетический осколок 
+item.fireStaff.name=Магмовый посох 
+item.waterStaff.name=Посох Воды 
+item.earthStaff.name=Посох Изобилия 
+item.airStaff.name=Посох Воздуха 
+item.energyStaff.name=Посох Энергии 
+item.bushFruit.name=Таинственный фрукт
+
+item.verditeHelmet.name=Вердитовый шлем 
+item.verditeChestplate.name=Вердитовый нагрудник 
+item.verditeLeggings.name=Вердитовые поножи 
+item.verditeBoots.name=Вердитовые ботинки 
+
+item.mithrilHelmet.name=Мифриловый шлем 
+item.mithrilChestplate.name=Мифриловый нагрудник 
+item.mithrilLeggings.name=Мифриловые поножи 
+item.mithrilBoots.name=Мифриловые ботинки
+
+item.adamantineHelmet.name=Адамантиновый шлем 
+item.adamantineChestplate.name=Адамантиновый нагрудник 
+item.adamantineLeggings.name=Адамантиновые поножи 
+item.adamantineBoots.name=Адамантиновые ботинки
+
+item.iridiumHelmet.name=Иридиевый шлем 
+item.iridiumChestplate.name=Иридиевый нагрудник 
+item.iridiumLeggings.name=Иридиевые поножи 
+item.iridiumBoots.name=Иридиевые ботинки
+
+item.fireOrb.name=Магмовый шар
+item.waterOrb.name=Водяной шар
+item.earthOrb.name=Шар изобилия 
+item.airOrb.name=Воздушный шар
+item.energyOrb.name=Энергетический шар
+item.voidShard.name=Пустой осколок
+
+itemGroup.MysticWorldTab=MysticMods (Мир)

@@ -1,10 +1,10 @@
 package mysticworld.util;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import mysticores.items.Items;
 import mysticworld.items.ItemHandler;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RecipeHandler {
 	public static void init() {
@@ -13,27 +13,27 @@ public class RecipeHandler {
 	}
 
 	private static void bootsRecipe(Item output, ItemStack input) {
-		GameRegistry.addRecipe(new ItemStack(output), new Object[] { "# #", "# #", '#', input });
+		GameRegistry.addRecipe(new ItemStack(output), "# #", "# #", '#', input);
 	}
 
 	private static void chestplateRecipe(Item output, ItemStack input) {
-		GameRegistry.addRecipe(new ItemStack(output), new Object[] { "# #", "###", "###", '#', input });
+		GameRegistry.addRecipe(new ItemStack(output), "# #", "###", "###", '#', input);
 	}
 
 	private static void helmetRecipe(Item output, ItemStack input) {
-		GameRegistry.addRecipe(new ItemStack(output), new Object[] { "###", "# #", '#', input });
+		GameRegistry.addRecipe(new ItemStack(output), "###", "# #", '#', input);
 	}
 
 	private static void itemRecipes() {
 		//Staff Hilt Recipe
-		GameRegistry.addRecipe(new ItemStack(ItemHandler.staffParts, 1, 1), new Object[] { " # ", "#$#", " # ", '#', Item.ingotGold, '$', Item.diamond });
+		GameRegistry.addRecipe(new ItemStack(ItemHandler.staffParts, 1, 1), " # ", "#$#", " # ", '#', net.minecraft.init.Items.gold_ingot, '$', net.minecraft.init.Items.diamond);
 		//Staff Handle Recipe
-		GameRegistry.addRecipe(new ItemStack(ItemHandler.staffParts, 1, 2), new Object[] { "#", "$", "S", '#', Item.goldNugget, '$', Item.stick, 'S', Item.dyePowder });
+		GameRegistry.addRecipe(new ItemStack(ItemHandler.staffParts, 1, 2), "#", "$", "S", '#', net.minecraft.init.Items.gold_nugget, '$', net.minecraft.init.Items.stick, 'S', net.minecraft.init.Items.dye);
 		//Staff Topper Recipe
-		GameRegistry.addRecipe(new ItemStack(ItemHandler.staffParts, 1, 3), new Object[] { " # ", "#$#", " # ", '#', Item.ingotGold, '$', Item.netherStar });
+		GameRegistry.addRecipe(new ItemStack(ItemHandler.staffParts, 1, 3), " # ", "#$#", " # ", '#', net.minecraft.init.Items.gold_ingot, '$', net.minecraft.init.Items.nether_star);
 		//Staff Recipe
-		GameRegistry.addRecipe(new ItemStack(ItemHandler.staffParts, 1, 0), new Object[] { "  #", " X ", "Y  ", '#', new ItemStack(ItemHandler.staffParts, 1, 3), 'X',
-				new ItemStack(ItemHandler.staffParts, 1, 2), 'Y', new ItemStack(ItemHandler.staffParts, 1, 1) });
+		GameRegistry.addRecipe(new ItemStack(ItemHandler.staffParts, 1, 0), "  #", " X ", "Y  ", '#', new ItemStack(ItemHandler.staffParts, 1, 3), 'X',
+				new ItemStack(ItemHandler.staffParts, 1, 2), 'Y', new ItemStack(ItemHandler.staffParts, 1, 1));
 		//Orb Recipes
 		orbRecipe(ItemHandler.fireOrb, new ItemStack(ItemHandler.imbuedShard, 1, 0));
 		orbRecipe(ItemHandler.waterOrb, new ItemStack(ItemHandler.imbuedShard, 1, 1));
@@ -69,15 +69,15 @@ public class RecipeHandler {
 	}
 
 	private static void itemSmelting() {
-		GameRegistry.addSmelting(ItemHandler.imbuedShard.itemID, new ItemStack(ItemHandler.voidShard), 0.5f);
+		GameRegistry.addSmelting(ItemHandler.imbuedShard, new ItemStack(ItemHandler.voidShard), 0.5f);
 	}
 
 	private static void leggingsRecipe(Item output, ItemStack input) {
-		GameRegistry.addRecipe(new ItemStack(output), new Object[] { "###", "# #", "# #", '#', input });
+		GameRegistry.addRecipe(new ItemStack(output), "###", "# #", "# #", '#', input);
 	}
 
 	private static void orbRecipe(Item output, ItemStack input) {
-		GameRegistry.addRecipe(new ItemStack(output), new Object[] { "##", "##", '#', input });
+		GameRegistry.addRecipe(new ItemStack(output), "##", "##", '#', input);
 	}
 
 	private static void staffRecipe(Item output, ItemStack input) {
